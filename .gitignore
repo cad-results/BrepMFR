@@ -203,9 +203,5 @@ brepformer/analysis_results/
 brepformer/pipeline_output/
 lightning_logs/
 
-# Claude
-.claude/
-CLAUDE.md
-
 # OS
 *:Zone.Identifier

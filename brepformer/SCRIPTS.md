@@ -206,7 +206,7 @@ brepformer/pipeline_output/<filename>/
 ## Data Preprocessing
 
 ### `copy data command`
-cp -r /mnt/c/projects/data/mftrcad /home/adminho/BrepMFR/brepformer/data/mftrcad
+cp -r /mnt/c/projects/data/mftrcad /home/user/BrepMFR/brepformer/data/mftrcad
 
 #### Defeature Dataset — Data Preparation
 

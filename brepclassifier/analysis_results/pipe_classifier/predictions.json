@@ -1590,7 +1590,7 @@
       "correct": true
     },
     {
-      "model_id": "BIMDex_Project_Example-BIMDex_Project_Example-TAG_GROUP-001-0A9BAC43D790E3966FE5EAE648C3053F",
+      "model_id": "ProjectB_Project_Example-ProjectB_Project_Example-TAG_GROUP-001-0A9BAC43D790E3966FE5EAE648C3053F",
       "predicted_class": 3,
       "predicted_name": "Tee - Weld Fitting",
       "target_class": 1,
@@ -2148,7 +2148,7 @@
       "correct": false
     },
     {
-      "model_id": "BIMDex_Project_Example-BIMDex_Project_Example-TAG_GROUP-002-CB8D3883F9363759340FFFB0AB3278DF",
+      "model_id": "ProjectB_Project_Example-ProjectB_Project_Example-TAG_GROUP-002-CB8D3883F9363759340FFFB0AB3278DF",
       "predicted_class": 1,
       "predicted_name": "Elbow - Pipe End Fitting",
       "target_class": 0,

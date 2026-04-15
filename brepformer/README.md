@@ -1,4 +1,3 @@
-claude --resume 7f900540-0344-4942-8c9b-5df3fca8e092
 # BrepFormer: Transformer-Based B-rep Classification
 
 This is an implementation of the BrepFormer architecture for whole B-rep (Boundary Representation) classification, based on the paper ["BrepFormer: Transformer-Based B-rep Geometric Feature Recognition"](https://arxiv.org/abs/2504.07378).
