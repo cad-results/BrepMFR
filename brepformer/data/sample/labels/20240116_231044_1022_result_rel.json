@@ -1,0 +1,1 @@
+{"relation": [["circle_array", [1, 2, 3, 4, 5]], ["mirror", [6, 7]], ["superpose_on", [6, 0]], ["superpose_on", [7, 0]], ["mirror", [8, 9]], ["superpose_on", [8, 0]], ["superpose_on", [9, 0]], ["general_paratactic", [11, 10]], ["superpose_on", [11, 0]], ["superpose_on", [10, 0]]]}

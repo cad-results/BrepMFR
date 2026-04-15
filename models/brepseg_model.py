@@ -41,31 +41,7 @@ class NonLinearClassifier(nn.Module):
         x = F.relu(self.bn3(self.linear3(x)))
         x = self.dp3(x)
         x = self.linear4(x)
-        x = F.softmax(x, dim=-1)
         return x
-
-
-def CrossEntropyLoss(label, predict_prob, class_level_weight=None, instance_level_weight=None, epsilon=1e-12):
-    N, C = label.size()
-    N_, C_ = predict_prob.size()
-    assert N == N_ and C == C_, 'fatal error: dimension mismatch!'
-
-    if class_level_weight is None:
-        class_level_weight = 1.0
-    else:
-        if len(class_level_weight.size()) == 1:
-            class_level_weight = class_level_weight.view(1, class_level_weight.size(0))
-        assert class_level_weight.size(1) == C, 'fatal error: dimension mismatch!'
-
-    if instance_level_weight is None:
-        instance_level_weight = 1.0
-    else:
-        if len(instance_level_weight.size()) == 1:
-            instance_level_weight = instance_level_weight.view(instance_level_weight.size(0), 1)
-        assert instance_level_weight.size(0) == N, 'fatal error: dimension mismatch!'
-
-    ce = -label * torch.log(predict_prob + epsilon)
-    return torch.sum(instance_level_weight * ce * class_level_weight) / float(N)
 
 
 class Attention(nn.Module):
@@ -115,6 +91,8 @@ class BrepSeg(pl.LightningModule):
 
         self.classifier = NonLinearClassifier(args.dim_node, args.num_classes, args.dropout)
 
+        self.loss_fn = nn.CrossEntropyLoss()
+
         self.pred = []
         self.label = []
 
@@ -123,7 +101,6 @@ class BrepSeg(pl.LightningModule):
         self.brep_encoder.train()
         self.attention.train()
         self.classifier.train()
-        torch.cuda.empty_cache()
 
         # brep encoder----------------------------------------------------------------------------------
         node_emb, graph_emb = self.brep_encoder(batch, last_state_only=True)
@@ -142,8 +119,7 @@ class BrepSeg(pl.LightningModule):
 
         # loss-------------------------------------------------------------------------------------------
         labels = batch["label_feature"].long()
-        labels_onehot = F.one_hot(labels, self.num_classes)
-        loss = CrossEntropyLoss(labels_onehot, node_seg)
+        loss = self.loss_fn(node_seg, labels)
         self.log("train_loss", loss, on_step=False, on_epoch=True)
         return loss
 
@@ -156,7 +132,6 @@ class BrepSeg(pl.LightningModule):
         self.brep_encoder.eval()
         self.attention.eval()
         self.classifier.eval()
-        torch.cuda.empty_cache()
 
         node_emb, graph_emb = self.brep_encoder(batch, last_state_only=True)  # logits [total_nodes, num_classes]
 
@@ -173,8 +148,7 @@ class BrepSeg(pl.LightningModule):
 
         labels = batch["label_feature"].long()  # labels [total_nodes]
         labels_np = labels.long().detach().cpu().numpy()
-        labels_onehot = F.one_hot(labels, self.num_classes)
-        loss = CrossEntropyLoss(labels_onehot, node_seg)
+        loss = self.loss_fn(node_seg, labels)
         self.log("eval_loss", loss, on_step=False, on_epoch=True)
 
         preds = torch.argmax(node_seg, dim=-1)  # pres [total_nodes]
@@ -223,26 +197,26 @@ class BrepSeg(pl.LightningModule):
         for i in range(len(preds_np)): self.pred.append(preds_np[i])
         for i in range(len(labels_np)): self.label.append(labels_np[i])
 
-        # 将结果转为txt文件----------------------------------------------------------------------------
+        # Write per-face predictions to text files
         n_graph, max_n_node = batch["padding_mask"].size()[:2]
         node_pos = torch.where(batch["padding_mask"] == False)
         face_feature = -1 * torch.ones([n_graph, max_n_node], device=self.device, dtype=torch.long)
         face_feature[node_pos] = preds[:]
         out_face_feature = face_feature.long().detach().cpu().numpy()  # [n_graph, max_n_node]
-        for i in range(n_graph):
-            # 计算每个graph的实际n_node
-            end_index = max_n_node - np.sum((out_face_feature[i][:] == -1).astype(np.int))
-            # masked出实际face feature
-            pred_feature = out_face_feature[i][:end_index + 1]  # (n_node)
 
-            output_path = pathlib.Path("/home/zhang/datasets_segmentation/2_val")
+        output_path = pathlib.Path(os.getcwd()) / "test_predictions"
+        output_path.mkdir(parents=True, exist_ok=True)
+
+        for i in range(n_graph):
+            n_node = int((out_face_feature[i] != -1).sum())
+            pred_feature = out_face_feature[i][:n_node]
+
             file_name = "feature_" + str(batch["id"][i].long().detach().cpu().numpy()) + ".txt"
-            file_path = os.path.join(output_path, file_name)
-            feature_file = open(file_path, mode="a")
-            for j in range(end_index):
-                feature_file.write(str(pred_feature[j]))
-                feature_file.write("\n")
-            feature_file.close()
+            file_path = output_path / file_name
+            with open(file_path, mode="w") as feature_file:
+                for j in range(n_node):
+                    feature_file.write(str(pred_feature[j]))
+                    feature_file.write("\n")
 
     def test_epoch_end(self, outputs):
         print("num_classes: %s" % self.num_classes)
@@ -303,18 +277,18 @@ class BrepSeg(pl.LightningModule):
 
 
     def configure_optimizers(self):
-        optimizer = torch.optim.AdamW(self.parameters(), lr=0.002, betas=(0.99, 0.999))
+        optimizer = torch.optim.AdamW(self.parameters(), lr=0.001, betas=(0.9, 0.999))
 
-        # 学习策略
-        scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=5,
-                                                               threshold=0.0001, threshold_mode='rel',
-                                                               min_lr=0.000001, cooldown=2, verbose=False)
+        scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+            optimizer, mode='min', factor=0.5, patience=5,
+            threshold=0.0001, threshold_mode='rel',
+            min_lr=1e-6, cooldown=2, verbose=False
+        )
 
         return {"optimizer": optimizer,
                 "lr_scheduler": {"scheduler": scheduler, "interval": "epoch", "frequency": 1, "monitor": "eval_loss"}
                 }
 
-    # 逐渐增大学习率
     def optimizer_step(self,
                        epoch,
                        batch_idx,
@@ -328,8 +302,8 @@ class BrepSeg(pl.LightningModule):
         # update params
         optimizer.step(closure=optimizer_closure)
 
-        # manually warm up lr without a scheduler
+        # linear warmup for the first 5000 steps
         if self.trainer.global_step < 5000:
             lr_scale = min(1.0, float(self.trainer.global_step + 1) / 5000.0)
             for pg in optimizer.param_groups:
-                pg["lr"] = lr_scale * 0.002
+                pg["lr"] = lr_scale * 0.001

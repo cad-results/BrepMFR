@@ -190,9 +190,9 @@ class GraphNodeFeature(nn.Module):
         )
         # self.face_area_encoder = nn.Linear(1, int(0.125*hidden_dim), bias=False)
         self.face_area_encoder = NonLinear(1, int(0.125*hidden_dim))
-        self.face_type_encoder = nn.Embedding(6, int(0.125*hidden_dim), padding_idx=0)
-        self.face_loop_encoder = nn.Embedding(256, int(0.125*hidden_dim), padding_idx=0)
-        self.degree_encoder = nn.Embedding(num_degree, int(0.125*hidden_dim), padding_idx=0)
+        self.face_type_encoder = nn.Embedding(7, int(0.125*hidden_dim), padding_idx=0)  # +1 for padding at idx 0
+        self.face_loop_encoder = nn.Embedding(257, int(0.125*hidden_dim), padding_idx=0)  # +1 for padding at idx 0
+        self.degree_encoder = nn.Embedding(num_degree + 1, int(0.125*hidden_dim), padding_idx=0)  # +1 for padding
         self.graph_token = nn.Embedding(1, hidden_dim)
         self.apply(lambda module: init_params(module, n_layers=n_layers))
 
@@ -204,9 +204,9 @@ class GraphNodeFeature(nn.Module):
         x = x.permute(0, 3, 1, 2)
         x_ = self.surf_encoder(x)  # [total_nodes, n_hidden]
         face_area_ = self.face_area_encoder(face_area.unsqueeze(dim=1))  # [total_nodes, n_hidden]
-        face_type_ = self.face_type_encoder(face_type)  # [total_nodes, n_hidden]
-        face_loop_ = self.face_loop_encoder(face_loop)
-        face_degree_ = self.degree_encoder(face_degree)
+        face_type_ = self.face_type_encoder(face_type + 1)  # +1 to reserve idx 0 for padding
+        face_loop_ = self.face_loop_encoder(face_loop + 1)  # +1 to reserve idx 0 for padding
+        face_degree_ = self.degree_encoder((face_degree + 1).clamp(max=self.degree_encoder.num_embeddings - 1))
         node_feature = torch.cat((x_, face_area_, face_type_, face_loop_, face_degree_), dim=-1)
 
         face_feature = torch.zeros([n_graph, n_node, self.hidden_dim], device=x.device, dtype=x.dtype)
@@ -335,10 +335,10 @@ class GraphAttnBias(nn.Module):
 
         # edge_feature encode
         self.curv_encoder = CurveEncoder(in_channels=7, output_dims=num_heads)
-        self.edge_type_encoder = nn.Embedding(6, num_heads, padding_idx=0)
+        self.edge_type_encoder = nn.Embedding(7, num_heads, padding_idx=0)  # +1 for padding at idx 0
         self.edge_len_encoder = NonLinear(1, num_heads)
         self.edge_ang_encoder = NonLinear(1, num_heads)
-        self.edge_conv_encoder = nn.Embedding(3, num_heads, padding_idx=0)
+        self.edge_conv_encoder = nn.Embedding(4, num_heads, padding_idx=0)  # +1 for padding at idx 0
 
         self.edge_type = edge_type
         if self.edge_type == "multi_hop":
@@ -400,10 +400,10 @@ class GraphAttnBias(nn.Module):
             # 调整维度，进行curv_encode
             edge_data = edge_data.permute(0, 2, 1)
             edge_data_ = self.curv_encoder(edge_data)  # [total_edges, n_head]
-            edge_type_ = self.edge_type_encoder(edge_type)
+            edge_type_ = self.edge_type_encoder(edge_type + 1)  # +1 to reserve idx 0 for padding
             edge_len_ = self.edge_len_encoder(edge_len.unsqueeze(dim=1))
             edge_ang_ = self.edge_ang_encoder(edge_ang.unsqueeze(dim=1))
-            edge_conv_ = self.edge_conv_encoder(edge_conv)
+            edge_conv_ = self.edge_conv_encoder(edge_conv + 1)  # +1 to reserve idx 0 for padding
             edge_feat = edge_data_ + edge_type_ + edge_len_ + edge_ang_ + edge_conv_
 
             # add node_feature to edge_feature

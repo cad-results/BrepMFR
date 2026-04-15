@@ -1,0 +1,3240 @@
+{
+  "summary": {
+    "total_samples": 359,
+    "correct": 249,
+    "accuracy": 0.6935933147632312
+  },
+  "predictions": [
+    {
+      "model_id": "Victaulic_SS-StrengThin_Elb_45_Deg_No_403DX_STG_8_200",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8911592960357666,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_Vic-Ring_Tee_No_W20_VR_AGR_14_350",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 5,
+      "target_name": "Tee - Socket Fitting",
+      "confidence": 0.8460401892662048,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_244",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.99755859375,
+      "correct": true
+    },
+    {
+      "model_id": "IfcFlowFitting_29251Scale_7",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8350327610969543,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_OGS-200_Elb_45_Deg_No_811HC_OG2_3_80",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8683627247810364,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Tee_No_20_OGS_12_300",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.91925448179245,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_127",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976105690002441,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-PE_Elb_45_Deg_No_11P_PE_1_25",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9071987271308899,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-PE_Elb_45_Deg_SWS_No_11P_PE_4_100",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8872735500335693,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_generic_standard_11",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9972368478775024,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_198",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.997607946395874,
+      "correct": true
+    },
+    {
+      "model_id": "macro_152353",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.7722028493881226,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_Vic-Ring_Elb_90_Deg_LR_No_W100_VR_AGR_20_500",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8765632510185242,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_11.25_Deg_LR_No_13-3D_OGS_20_500",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.865727961063385,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-AGS_Tee_No_W20_AGS_48_1200",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.7394528985023499,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_218",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.8290811777114868,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_419",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976118803024292,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_116",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976118803024292,
+      "correct": true
+    },
+    {
+      "model_id": "110_45degelbow_pe",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.886427640914917,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_45_Deg_LR_No_110-3D_OGS_2.5_65",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8966672420501709,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_60_Deg_LR_No_14-6D_OGS_4.5_120",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8990046381950378,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-OGS_Tee_Sched_10S_No_420_SS_OGS_02.5_76.1_65",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.6049591302871704,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_SS-AGS_Tee_No_W420_AGS_20_500",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.46778053045272827,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_generic_standard_6",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976261258125305,
+      "correct": true
+    },
+    {
+      "model_id": "tcg150_local",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.5368582010269165,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_AWWA_Elb_90_Deg_LR_No_100-C_DRG_30_750",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9019055366516113,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-PE_Elb_45_Deg_SWS_No_11P_PE_6_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8878719806671143,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_521",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976097345352173,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_FP_Tee_IR_No_102_OGS_2_50",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.8660308122634888,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-AGS_Elb_22.5_Deg_No_W12_AGS_60_1500",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8706122636795044,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-Vic-Press-TP304_Tee_Redc_Style_P593_VP_02.0x01.0_50x25",
+      "predicted_class": 7,
+      "predicted_name": "Tee - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.39573436975479126,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_90_Deg_Redc_Base_Sprt_CL_150_No_R-10F_OGSxFLG_08.0x06.0_200x150",
+      "predicted_class": 7,
+      "predicted_name": "Tee - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.3783029019832611,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_475",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975591897964478,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_22.5_Deg_LR_No_12-6D_OGS_8_200",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8929327130317688,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_400",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975825548171997,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_AWWA_Tee_Redc_Base_No_25-CB_DRG_24.0x10.0_600x250",
+      "predicted_class": 7,
+      "predicted_name": "Tee - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.4161807894706726,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_49",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9340441226959229,
+      "correct": true
+    },
+    {
+      "model_id": "1117T14_Iron_Pipe_Fitting_with_Flanged_Ends",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.6023147702217102,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_OGS-200_Tee_No_820C_OG2_4_100",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9490478038787842,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_498",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975827932357788,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_Cu_Elb_45_Deg_No_611_CRG_4_100",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8871106505393982,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_241",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9106263518333435,
+      "correct": true
+    },
+    {
+      "model_id": "DT15-T90-025-WWCS",
+      "predicted_class": 7,
+      "predicted_name": "Tee - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.8302825689315796,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_AWWA_Elb_90_Deg_No_10-C_DRG_30_750",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8309280872344971,
+      "correct": true
+    },
+    {
+      "model_id": "4810T116_British_Standard_Low-Pressure_Stainless_Steel_Pipe_Fitting",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.31506797671318054,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_547",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975281357765198,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_31",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.8649632334709167,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_AWWA_Elb_90_Deg_Base_LR_No_100-CB_DRG_18_450",
+      "predicted_class": 7,
+      "predicted_name": "Tee - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.6723582744598389,
+      "correct": false
+    },
+    {
+      "model_id": "macro_140799",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.6875256896018982,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_Cu_AS_Tee_No_620-AS_CRG_6_150",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9501582384109497,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_90_Deg_LR_No_100-5D_OGS_10_250",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8806204199790955,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-AGS_Tee_No_W20_AGS_28_700",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.39173027873039246,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_189",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9299764633178711,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_376",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975773692131042,
+      "correct": true
+    },
+    {
+      "model_id": "IfcFlowFitting_44462",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.9003888964653015,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_generic_standard_36",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9972510933876038,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_22.5_Deg_LR_No_12-3D_OGS_2_50",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9074708819389343,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_175",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9340290427207947,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-Vic-Press-TP316_Tee_Thd_Style_P578_VPxFPT_01.0x0.50_25x15",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.6138204336166382,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_135",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9620075821876526,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Shldrd_Tee_No_SC20_SHG_06.0_165.1_150",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.939678430557251,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-OGS_Elbow_90_Deg_Sched_40S_No_410H_SS_OGS_8_200",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8808532953262329,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_327",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975591897964478,
+      "correct": true
+    },
+    {
+      "model_id": "45deg_CxC_Elbow-Copper",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.8576528429985046,
+      "correct": false
+    },
+    {
+      "model_id": "ELBOW_45_AWWA_C110_DI_MJxFLG",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.5901184678077698,
+      "correct": false
+    },
+    {
+      "model_id": "RVL_-_CONDUIT_-_BELOW_GRADE_-_C01_01",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.6245205998420715,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_Cu_Tee_No_620_CRG_2_50",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9474254250526428,
+      "correct": true
+    },
+    {
+      "model_id": "315_tee_pe",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.8778162598609924,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_Cu_AS_Elb_90_Deg_LR_No_610-AS_CRG_3_80",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8136503100395203,
+      "correct": true
+    },
+    {
+      "model_id": "TEE-BW-STR-STL-A234-WPBW",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.899544358253479,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_566",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976153373718262,
+      "correct": true
+    },
+    {
+      "model_id": "NBSS07-E90L-Sch40-015",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.5061041712760925,
+      "correct": true
+    },
+    {
+      "model_id": "TEE_STRAIGHT_BUTTWELD_A234_SCH_STD",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.7265477180480957,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_45_Deg_No_110_FFT_OGS_3_80",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8920175433158875,
+      "correct": true
+    },
+    {
+      "model_id": "CONNECTOR_LIQUIDTIGHT_CONDUIT_90_INSULATED",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8570510149002075,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_45_Deg_LR_No_110-6D_OGS_16_400",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8716986179351807,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_283",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976100921630859,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_15",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976116418838501,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_Base_Sprt_Redc_No_R100G_OGSxOGS_03.0x02.0_80x50",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.810748279094696,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_OGS-200_Elb_45_Deg_No_811HC_OG2_4_100",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.868190348148346,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_AWWA_Elb_11.25_Deg_No_13-C_DRG_4_100",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.4571082890033722,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_AWWA_Elb_45_Deg_No_11-C_DRG_30_750",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8507066965103149,
+      "correct": true
+    },
+    {
+      "model_id": "4810T502_British_Standard_Low-Pressure_Stainless_Steel_Pipe_Fitting",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.7392292022705078,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_520",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976123571395874,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_45_Deg_No_V11_OGS_3_80",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8904856443405151,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_366",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976071119308472,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-PE_Tee_No_20P_PE_3_80",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.8394069075584412,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_AWWA_Tee_Redc_Base_No_25-CB_DRG_12.0x04.0_300x100",
+      "predicted_class": 7,
+      "predicted_name": "Tee - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.40918347239494324,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_308",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976106882095337,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-QVSD_Elb_90_Deg_IR_No_P10_PE_0.5_15",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8559843301773071,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_AWWA_Elb_90_Deg_Side_Out_No_10-CS_DRG_24_600",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.9296769499778748,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_552",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976100921630859,
+      "correct": true
+    },
+    {
+      "model_id": "2inSchedule40_1_Pipe_8-Proyecto_final",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.4701550006866455,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-QVSD_Tee_Redc_Run_No_P27_PE_01.25x01.0x01.25_32x25x32",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.44392648339271545,
+      "correct": false
+    },
+    {
+      "model_id": "IfcFlowFitting_29566",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8278308510780334,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_90_Deg_LR_No_100_OGS_6_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8797526955604553,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_236",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9322113394737244,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_AWWA_Tee_Redc_Base_No_25-CB_DRG_24.0x08.0_600x200",
+      "predicted_class": 7,
+      "predicted_name": "Tee - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.3888263404369354,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_generic_standard_34",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975928664207458,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_60_Deg_LR_No_14-6D_OGS_8_200",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8895090222358704,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_FP_Elb_90_Deg_No_001_OGS_8_200",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.851140558719635,
+      "correct": true
+    },
+    {
+      "model_id": "macro_137114",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.3934372663497925,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_OGS-200_Tee_No_820C_OG2_06.0_165.1_150",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9487683176994324,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_22.5_Deg_No_12_SWS_OGS_16_400",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8745911717414856,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_36",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975812435150146,
+      "correct": true
+    },
+    {
+      "model_id": "IfcFlowFitting_862Scale_1",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.4581283628940582,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-XL_Elb_90_Deg_3D_No_XL100_XLG_12_300",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.881172776222229,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_Cu_Tee_No_620_CRG_3_80",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9475030899047852,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_45_Deg_No_11_SWS_OGS_1.25_32",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8577032685279846,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-AGS_Tee_No_W20_AGS_46_1150",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.8106474876403809,
+      "correct": true
+    },
+    {
+      "model_id": "tee_fitting_1_00",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.749489963054657,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_Cu_Elb_45_Deg_No_611_CRG_2_50",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8862488865852356,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-Vic-Press-TP316_Elb_90_Deg_Style_P568_VP_1.5_40",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.5696642994880676,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_45_Deg_LR_No_110-5D_OGS_16_400",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8669686317443848,
+      "correct": true
+    },
+    {
+      "model_id": "1739K11_Thick-Wall_Butt-Weld_Unthreaded_Pipe_Fitting",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.5673431158065796,
+      "correct": true
+    },
+    {
+      "model_id": "G-ASME_B16.11_Elbow",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.8905481100082397,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_483",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975547194480896,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-OGS_Elbow_11.25_Deg_Sched_10S_No_413_SS_OGS_12_300",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.6901626586914062,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_215",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.8896988034248352,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_202",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975557327270508,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-AGS_Elb_45_Deg_No_W411_AGS_16_400",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.631523072719574,
+      "correct": false
+    },
+    {
+      "model_id": "cad-044669_90l_lr_inch_1_5_sch4",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.6104811429977417,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_PGS-300_Tee_Mld_No_352_PG3_6_150",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.952513575553894,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_26",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975548386573792,
+      "correct": true
+    },
+    {
+      "model_id": "Mapress_CAx_Bogen",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.9950560331344604,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_45_Deg_No_V11_OGS_5_125",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8900578022003174,
+      "correct": true
+    },
+    {
+      "model_id": "10in_90_degree",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8783177137374878,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_486",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975558519363403,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_AWWA_Elb_90_Deg_Flare_LR_No_100-CF_DRG_6_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.848921537399292,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_292",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975833892822266,
+      "correct": true
+    },
+    {
+      "model_id": "Tee_ISO_49_Reducing_on_the_Branch_B1",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 5,
+      "target_name": "Tee - Socket Fitting",
+      "confidence": 0.7650143504142761,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_321",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975599050521851,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_90_Deg_LR_No_100_OGS_2_50",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8846189379692078,
+      "correct": true
+    },
+    {
+      "model_id": "Elbow_DIN_8063_90_Deg_Single_Socket_Bend_Bonded_Type_MQ-KS",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8838387131690979,
+      "correct": false
+    },
+    {
+      "model_id": "ELBOW_90_AWWA_C153_DI_MJ",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.7470893859863281,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Tee_Thd_No_29M_OGSxMPT_2_50",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9415150284767151,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_133",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.99755859375,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_60_Deg_LR_No_14-6D_OGS_2.5_65",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9046270251274109,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_Base_Sprt_Redc_No_R100F_OGSxFLG_06.0x04.0_150x100",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.6382268071174622,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_280",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975599050521851,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_420",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975599050521851,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_90_Deg_LR_No_100-3D_OGS_8_200",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.889816403388977,
+      "correct": true
+    },
+    {
+      "model_id": "NBCS08-E45-Sch40-015",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.4550936222076416,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_60_Deg_LR_No_14-5D_OGS_6_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8945514559745789,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_206",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.8041028380393982,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_30_Deg_LR_No_15-5D_OGS_20_500",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8699764013290405,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_450",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.997577965259552,
+      "correct": true
+    },
+    {
+      "model_id": "macro_151188",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.417697548866272,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_30_Deg_LR_No_15-3D_OGS_2_50",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9073097109794617,
+      "correct": true
+    },
+    {
+      "model_id": "0-ELBOW_VESDA_CPVC_FIRE_RESISTANT_SOCKET_90_0.75in_SCH_80",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8355506658554077,
+      "correct": true
+    },
+    {
+      "model_id": "Elbow_ISO_4144_E1",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8004554510116577,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-ST100_Elb_45_Deg_No_E491_ST1_2_50",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.5924680829048157,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_373",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975599050521851,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_113",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975599050521851,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-Vic-Press-TP304_Tee_Thd_Style_P588_VPxFPT_01.0x0.50_25x15",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.6127600073814392,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_22.5_Deg_No_12_SWS_OGS_10_250",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8812892436981201,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_long-rad_90deg-200nb",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.7791047692298889,
+      "correct": false
+    },
+    {
+      "model_id": "45605K513_Standard-Wall_Butt-Weld_Unthreaded_Pipe_Fitting",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.6681687831878662,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_171",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975571632385254,
+      "correct": true
+    },
+    {
+      "model_id": "DT09-T176_-_mkII",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.5227445363998413,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_OGS-200_Tee_No_820HC_OG2_3_80",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.949082612991333,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-Vic-Press-TP316_Tee_Thd_Style_P578_VPxFPT_01.5x01.0_40x25",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.6174929738044739,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_209",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9970566034317017,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_87",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9313644766807556,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_OGS-200_Tee_No_820C_OG2_02.5_76.1_65",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9490870237350464,
+      "correct": true
+    },
+    {
+      "model_id": "ASME_B16.9_Short_Radius_90_Deg_Elbow_8_x_0.322",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.555320143699646,
+      "correct": false
+    },
+    {
+      "model_id": "45605K563_Standard-Wall_Butt-Weld_Unthreaded_Pipe_Fitting",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.2915075123310089,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_OGS-200_Elb_45_Deg_No_811HC_OG2_6_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8629712462425232,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_FP_Elb_90_Deg_No_001_OGS_2_50",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.824179470539093,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_JIS_Elb_45_Deg_No_11_VJG_12_300",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.896388590335846,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_374",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975842237472534,
+      "correct": true
+    },
+    {
+      "model_id": "H01_DOG_EAR_90deg_sr_inch_elbow",
+      "predicted_class": 7,
+      "predicted_name": "Tee - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8935441970825195,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_SS-OGS_Elbow_22.5_Deg_Sched_10S_No_412_SS_OGS_2.5_65",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.693602979183197,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_522",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.99755859375,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_541",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975603818893433,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_11.25_Deg_LR_No_13-6D_OGS_12_300",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8850482702255249,
+      "correct": true
+    },
+    {
+      "model_id": "BIMDex_Project_Example-BIMDex_Project_Example-TAG_GROUP-001-0A9BAC43D790E3966FE5EAE648C3053F",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.7525526881217957,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_SS-Vic-Press-TP304_Tee_Redc_Style_P593_VP_0.75x0.50_20x15",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.4946712851524353,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_SS-Vic-Press-TP304_Tee_Redc_Style_P593_VP_02.0x0.50_50x15",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.4939328730106354,
+      "correct": false
+    },
+    {
+      "model_id": "IfcFlowFitting_43104",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.7694516181945801,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_SS-Vic-Press-TP304_Tee_Style_P592_VP_2_50",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.4983055293560028,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS_Tee_No_V20_OGS_06.0_165.1_150",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9276288747787476,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_514",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975841045379639,
+      "correct": true
+    },
+    {
+      "model_id": "90deg_lr_inch_elbow",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.6052459478378296,
+      "correct": false
+    },
+    {
+      "model_id": "IfcFlowFitting_31342",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8787006735801697,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_288",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975603818893433,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_22.5_Deg_No_12_OGS_10_250",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8839164972305298,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_30_Deg_LR_No_15-6D_OGS_10_250",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8879165053367615,
+      "correct": true
+    },
+    {
+      "model_id": "250_45degelbow_pe",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8859700560569763,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_FP_Elb_90_Deg_No_001_OGS_3_80",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.833173394203186,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_297",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975839853286743,
+      "correct": true
+    },
+    {
+      "model_id": "500_45degelbow_pe",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8160248398780823,
+      "correct": true
+    },
+    {
+      "model_id": "xcadmodel-R1132101148588-00003188",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.7059663534164429,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_8",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.928063690662384,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_generic_standard_24",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9972509741783142,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_378",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975370168685913,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_Vic-Ring_Elb_90_Deg_LR_No_W100_VR_AGR_12_300",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8831596374511719,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Tee_Thd_No_29M_OGSxBSPT_EP_16_400",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9507908225059509,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_22.5_Deg_LR_No_12-5D_OGS_24_600",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8630944490432739,
+      "correct": true
+    },
+    {
+      "model_id": "Coude_pour_gaine",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.4612275958061218,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_11.25_Deg_LR_No_13-5D_OGS_15_375",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8772278428077698,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_22.5_Deg_LR_No_12-3D_OGS_6_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9020671248435974,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Tee_Thd_No_29M_OGSxMPT_0.75_20",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9400579333305359,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_457",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975727200508118,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_90_Deg_LR_No_100-6D_OGS_6_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.891323447227478,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Tee_Thd_No_29M_OGSxMPT_05.0_139.7_125",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9463872313499451,
+      "correct": true
+    },
+    {
+      "model_id": "45tee_34_CxCxC_PN_13436",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.4483166038990021,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_30_Deg_LR_No_15-5D_OGS_4.5_120",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9027164578437805,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_PGS-300_Elb_90_Deg_Mld_No_350_PG3_2.5_65",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8800800442695618,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_354",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.997536301612854,
+      "correct": true
+    },
+    {
+      "model_id": "110_45degtee_pe",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.7155970931053162,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_166",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.8477146625518799,
+      "correct": true
+    },
+    {
+      "model_id": "IfcFlowFitting_32115",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8937259912490845,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_45_Deg_LR_No_110-3D_OGS_5_125",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8940439820289612,
+      "correct": true
+    },
+    {
+      "model_id": "macro_159677",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.714833676815033,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_252",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9590954780578613,
+      "correct": true
+    },
+    {
+      "model_id": "180deg_3r_inch_elbow",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.6415301561355591,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_179",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975727200508118,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_60_Deg_LR_No_14-3D_OGS_18_450",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8711368441581726,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_90_Deg_No_10_SWS_OGS_2.5_65",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8658971190452576,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_223",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.8476640582084656,
+      "correct": true
+    },
+    {
+      "model_id": "45605K211_Standard-Wall_Butt-Weld_Unthreaded_Pipe_Fitting",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.7670125961303711,
+      "correct": true
+    },
+    {
+      "model_id": "000722689",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.7569780349731445,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_generic_standard_12",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9972423315048218,
+      "correct": true
+    },
+    {
+      "model_id": "50_tee_pvc",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.8190293908119202,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_45_Deg_LR_No_110-5D_OGS_4_100",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8930026292800903,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_30_Deg_LR_No_15-5D_OGS_14_350",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8786966800689697,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-ST100_Elb_11.25_Deg_No_E413_ST1_8_200",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8966571688652039,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_AWWA_Tee_No_20-C_DRG_20_500",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9430983662605286,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_OGS-200_Tee_No_820C_OG2_3_80",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9490768909454346,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-Vic-Press-TP316_Tee_Thd_Style_P578_VPxFPT_0.5x0.5_15x15",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.6216338276863098,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_45_Deg_No_110_FFT_OGS_2_50",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8898358345031738,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_41",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9620073437690735,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-AGS_Elb_45_Deg_No_W411_AGS_20_500",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.5887201428413391,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_HDPE-ISO_Elb_90_Deg_No_H10_PE_63",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9224597215652466,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_SS-Vic-Press-TP304_Elb_90_Deg_Street_Style_P542_VPxPE_2_50",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.3374083936214447,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_HDPE-IPS_Tee_No_H20_PE_4_100",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 4,
+      "target_name": "Tee - Pipe End Fitting",
+      "confidence": 0.6210108995437622,
+      "correct": false
+    },
+    {
+      "model_id": "PP-00804-200-01",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.9195950031280518,
+      "correct": false
+    },
+    {
+      "model_id": "BIMDex_Project_Example-BIMDex_Project_Example-TAG_GROUP-002-CB8D3883F9363759340FFFB0AB3278DF",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.8831959962844849,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-PE_Tee_No_20P_PE_1.5_40",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.8376593589782715,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_22.5_Deg_LR_No_12-6D_OGS_2_50",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9069793224334717,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_Cu_Elb_45_Deg_No_611_CRG_6_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8874789476394653,
+      "correct": true
+    },
+    {
+      "model_id": "macro_138826",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.4186755418777466,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_Cu_Tee_Redc_No_626_CRGxCUP_03.0x01.5_80x40",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.9228095412254333,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_225",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9972444772720337,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_45_Deg_No_11_OGS_12_300",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8813861608505249,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_45_Deg_LR_No_110-3D_OGS_24_600",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8557305932044983,
+      "correct": true
+    },
+    {
+      "model_id": "IfcFlowFitting_34511Scale_15",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8330508470535278,
+      "correct": false
+    },
+    {
+      "model_id": "macro_168392",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.7476058006286621,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_HDPE-IPS_Elb_45_Deg_No_H11_PE_4_100",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9021836519241333,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_244",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9340290427207947,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-XL_Elb_45_Deg_3D_No_XL110_XLG_5_125",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8905103802680969,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_90_Deg_No_10_OGS_6_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8593450784683228,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_27",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.892882227897644,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Tee_Thd_No_29M_OGSxMPT_EP_16_400",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.951259434223175,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_45_Deg_LR_No_110-3D_OGS_22_550",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8569411635398865,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_90_Deg_No_10_OGS_5_125",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8606794476509094,
+      "correct": true
+    },
+    {
+      "model_id": "7393798",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9477820992469788,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_Vic-Ring_Tee_No_W20_VR_AGR_48_1200",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 5,
+      "target_name": "Tee - Socket Fitting",
+      "confidence": 0.7373223900794983,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_77",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975881576538086,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_560",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.997564435005188,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_OGS-200_Elb_90_Deg_No_890S_OG2_6_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8823691606521606,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_90_Deg_LR_No_100-6D_OGS_24_600",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9582362174987793,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_524",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975881576538086,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_247",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.8581594228744507,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_199",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9017204642295837,
+      "correct": true
+    },
+    {
+      "model_id": "PipeInlineAsset_1B7F.0001",
+      "predicted_class": 7,
+      "predicted_name": "Tee - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.5857642292976379,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_97",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.8710008263587952,
+      "correct": true
+    },
+    {
+      "model_id": "macro_138398",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.425276517868042,
+      "correct": false
+    },
+    {
+      "model_id": "ConduitElbow45_PVC_2_Sch40_R9.5_in_2.375_in_9.5_in",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.6453141570091248,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_11.25_Deg_No_13_OGS_06.0_165.1_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8918861150741577,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_AWWA_Tee_Redc_Base_No_25-CB_DRG_12.0x08.0_300x200",
+      "predicted_class": 7,
+      "predicted_name": "Tee - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.47900518774986267,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-StrengThin_Elb_45_Deg_No_403DX_STG_16_400",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8825114965438843,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_FP_Tee_Low-Pf_Spr_Style_912_OGSxFBSPP_01.5x0.50_40x15",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.3135654926300049,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_SS-Vic-Press-TP304_Tee_Thd_Style_P588_VPxFPT_02.0x01.0_50x25",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.6137199401855469,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_31",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9973044395446777,
+      "correct": true
+    },
+    {
+      "model_id": "7427200",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9537734389305115,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_90_Deg_No_100_FFT_OGS_1.5_40",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8886316418647766,
+      "correct": true
+    },
+    {
+      "model_id": "90691A114_Premium_Low-Pressure_304_Stainless_Steel_Pipe_Fitting",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.23537442088127136,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-ST100_Elb_45_Deg_No_E491_ST1_02.5_76.1_65",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.5907981991767883,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_SS-OGS_Elbow_22.5_Deg_Sched_10S_No_412_SS_OGS_1.5_40",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.6862773895263672,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_30_Deg_LR_No_15-6D_OGS_2.5_65",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9065411686897278,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_22.5_Deg_LR_No_12-6D_OGS_24_600",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8642805814743042,
+      "correct": true
+    },
+    {
+      "model_id": "Gerardo_Madero_-_44605K119_LOW-PRESSURE_BLK_MALLEABLE_IRON_THRD_FITTING_2_Inch",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.5308950543403625,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-AGS_Elb_11.25_Deg_No_W13_AGS_32_800",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.7898858785629272,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_22.5_Deg_No_12_SWS_OGS_14_350",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8781093955039978,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_Cu_AS_Elb_45_Deg_No_611-AS_CRG_2.5_65",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8928638100624084,
+      "correct": true
+    },
+    {
+      "model_id": "CH183-02-03-20-246_Outlet_for_Filter",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.872916042804718,
+      "correct": false
+    },
+    {
+      "model_id": "Reinforce_90_degrees_elbow_FPTxFPT",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.6205909252166748,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-AGS_Tee_No_W20_AGS_42_1050",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.4356231093406677,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-OGS_Elbow_90_Deg_Sched_40S_No_410H_SS_OGS_12_300",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8768746256828308,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_277",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975557327270508,
+      "correct": true
+    },
+    {
+      "model_id": "Elbow_DIN_8063_90_Deg_Double_Socket_Bend_Bonded_Type_MMQ-KS",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8723964095115662,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_SS-OGS_Elbow_11.25_Deg_Sched_40S_No_413H_SS_OGS_12_300",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.5961059331893921,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_177",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975557327270508,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-AGS_Elb_45_Deg_LR_No_W110_AGS_30_750",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.7999480962753296,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_368",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9972317814826965,
+      "correct": true
+    },
+    {
+      "model_id": "Tee_ISO_4145_B1",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.7360653877258301,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_316",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975807666778564,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_90_Deg_Redc_Base_Sprt_CL_150_No_R-10F_OGSxFLG_06.0x05.0_150x125",
+      "predicted_class": 7,
+      "predicted_name": "Tee - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.31159624457359314,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_Vic-Ring_Elb_45_Deg_LR_No_W110_VR_AGR_36_900",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9106143712997437,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-AGS_Elb_22.5_Deg_No_W12_AGS_40_1000",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8739728331565857,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_165",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9448738694190979,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_60_Deg_LR_No_14-3D_OGS_16_400",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8705351948738098,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_11.25_Deg_LR_No_13-3D_OGS_2.5_65",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9077329635620117,
+      "correct": true
+    },
+    {
+      "model_id": "ASME_B16.9_Short_Radius_90_Deg_Elbow_10_x_0.365",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.4884353280067444,
+      "correct": false
+    },
+    {
+      "model_id": "Elbow_DIN_2605_90_Deg_Type_2",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.814659059047699,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_90_Deg_LR_No_100-6D_OGS_18_450",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9607958793640137,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-AGS_Elb_90_Deg_No_W10_AGS_20_500",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.33028924465179443,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-StrengThin_Elb_90_Deg_No_401DX_STG_3_80",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8904995322227478,
+      "correct": true
+    },
+    {
+      "model_id": "Elbow_ISO_49_Long_Sweep_G1",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.7378106713294983,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS_Tee_No_20_OGS_EP_20_500",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.954859733581543,
+      "correct": true
+    },
+    {
+      "model_id": "Threaded_Tee_-_ANSI_B_16.11",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 5,
+      "target_name": "Tee - Socket Fitting",
+      "confidence": 0.4263247549533844,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_20",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.8595812916755676,
+      "correct": true
+    },
+    {
+      "model_id": "Fabricated_90_elbow",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8636868596076965,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_SS-OGS_Elbow_22.5_Deg_Sched_40S_No_412H_SS_OGS_8_200",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.4855267107486725,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_52",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975812435150146,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_538",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975811243057251,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-Vic-Press-TP316_Elb_90_Deg_Street_Style_P562_VPxPE_0.5_15",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.4592927396297455,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_JIS_Elb_90_Deg_No_10_VJG_12_300",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8743172287940979,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_30_Deg_LR_No_15-3D_OGS_18_450",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8676901459693909,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_OGS-200_Elb_45_Deg_No_811C_OG2_6_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8635685443878174,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_FP_Elb_45_Deg_IR_No_103_OGS_2.5_65",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8554325699806213,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_SS-ST100_Elb_22.5_Deg_No_E412_ST1_12_300",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8896809816360474,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_AWWA_Tee_Side_Out_No_20-CS_DRG_4_100",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.826808750629425,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_30_Deg_LR_No_15-3D_OGS_16_400",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8736142516136169,
+      "correct": true
+    },
+    {
+      "model_id": "Conduit_Solid_Bend",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8069208264350891,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_AWWA_Tee_Redc_Base_No_25-CB_DRG_14.0x10.0_350x250",
+      "predicted_class": 7,
+      "predicted_name": "Tee - Miscellaneous",
+      "target_class": 7,
+      "target_name": "Tee - Miscellaneous",
+      "confidence": 0.45681798458099365,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_60_Deg_LR_No_14-3D_OGS_15_375",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8717231750488281,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_88",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.8778761625289917,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_90_Deg_No_V10_OGS_4_100",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.862820565700531,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_HDPE-ISO_Elb_90_Deg_No_H10_PE_90",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.9210988283157349,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_167",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9359471797943115,
+      "correct": true
+    },
+    {
+      "model_id": "macro_178912",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.6885079741477966,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS-EndSeal_Elb_90_Deg_LR_No_62-ES_ESG_2.5_65",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8627166152000427,
+      "correct": false
+    },
+    {
+      "model_id": "45605K557_Standard-Wall_Butt-Weld_Unthreaded_Pipe_Fitting",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.30018386244773865,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_flanged_-_cs_160",
+      "predicted_class": 2,
+      "predicted_name": "Elbow - Socket Fitting",
+      "target_class": 2,
+      "target_name": "Elbow - Socket Fitting",
+      "confidence": 0.9329131841659546,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-ST100_Elb_11.25_Deg_No_E413_ST1_02.5_76.1_65",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.903340220451355,
+      "correct": true
+    },
+    {
+      "model_id": "ifcbeam_32992",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.832892894744873,
+      "correct": false
+    },
+    {
+      "model_id": "IfcFlowFitting_41067",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8341863751411438,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_OGS-200_Tee_No_820HC_OG2_8_200",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.9474074244499207,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_385",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976043105125427,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_JIS_Elb_45_Deg_No_11_VJG_10_250",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8989812731742859,
+      "correct": true
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_516",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9976029992103577,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-QVSD_Elb_45_Deg_IR_No_P11_PE_0.75_20",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8588213324546814,
+      "correct": false
+    },
+    {
+      "model_id": "macro_153871",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.7713721394538879,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_AWWA_Elb_90_Deg_Side_Out_No_10-CS_DRG_20_500",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.9093008041381836,
+      "correct": false
+    },
+    {
+      "model_id": "IfcFlowFitting_55178",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.8868477940559387,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_IPS_Tee_No_20_SWS_OGS_5_125",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.950412392616272,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_90_Deg_No_100_FFT_OGS_6_150",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8883237242698669,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_SS-ST100_Elb_22.5_Deg_No_E412_ST1_10_250",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8933985829353333,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_30_Deg_LR_No_15-6D_OGS_14_350",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8777517080307007,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS_Elb_45_Deg_No_110_FFT_OGS_1_25",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8880472779273987,
+      "correct": true
+    },
+    {
+      "model_id": "EMT_Conduit_0.75_Inch_Elbow_Adapter",
+      "predicted_class": 3,
+      "predicted_name": "Tee - Weld Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.2679186463356018,
+      "correct": false
+    },
+    {
+      "model_id": "macro_138089",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 6,
+      "target_name": "Elbow - Miscellaneous",
+      "confidence": 0.41799843311309814,
+      "correct": false
+    },
+    {
+      "model_id": "elbow_-_welded_-_gen_465",
+      "predicted_class": 0,
+      "predicted_name": "Elbow - Weld Fitting",
+      "target_class": 0,
+      "target_name": "Elbow - Weld Fitting",
+      "confidence": 0.9975837469100952,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-Spcl_Elb_60_Deg_LR_No_14-5D_OGS_16_400",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8838403820991516,
+      "correct": true
+    },
+    {
+      "model_id": "Victaulic_IPS-AGS_Tee_No_W20_AGS_24_600",
+      "predicted_class": 6,
+      "predicted_name": "Elbow - Miscellaneous",
+      "target_class": 3,
+      "target_name": "Tee - Weld Fitting",
+      "confidence": 0.4677295684814453,
+      "correct": false
+    },
+    {
+      "model_id": "Victaulic_FP_Elb_90_Deg_No_001_OGS_05.0_139.7_125",
+      "predicted_class": 1,
+      "predicted_name": "Elbow - Pipe End Fitting",
+      "target_class": 1,
+      "target_name": "Elbow - Pipe End Fitting",
+      "confidence": 0.8445001244544983,
+      "correct": true
+    }
+  ]
+}

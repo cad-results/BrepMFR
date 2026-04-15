@@ -160,4 +160,52 @@ cython_debug/
 .idea/
 
 # this is .gitignore file
+# Exclude results/ but keep specific best model checkpoints
 results/
+!results/trial1_ss1500/
+results/trial1_ss1500/*
+!results/trial1_ss1500/best-epoch=57-val/
+results/trial1_ss1500/best-epoch=57-val/*
+!results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt
+
+!results/trial1_ss/
+results/trial1_ss/*
+!results/trial1_ss/best-epoch=41-val/
+results/trial1_ss/best-epoch=41-val/*
+!results/trial1_ss/best-epoch=41-val/f1=0.9476.ckpt
+
+!results/face_seg_heavy/
+results/face_seg_heavy/*
+!results/face_seg_heavy/best-epoch=46-val/
+results/face_seg_heavy/best-epoch=46-val/*
+!results/face_seg_heavy/best-epoch=46-val/f1=0.8608.ckpt
+
+!results/trial2/
+results/trial2/*
+!results/trial2/best-epoch=111-val/
+results/trial2/best-epoch=111-val/*
+!results/trial2/best-epoch=111-val/f1=0.8558.ckpt
+
+# Large data directories
+brepformer/data/mftrcad/
+brepformer/data/mftrcad_processed/
+brepformer/data/defeature/
+brepformer/data/defeature_processed/
+brepformer/data/sample_processed/
+brepclassifier/data/
+
+# Generated outputs
+inference/
+brepformer/preds/
+brepformer/defeatured_output/
+brepformer/plots/
+brepformer/analysis_results/
+brepformer/pipeline_output/
+lightning_logs/
+
+# Claude
+.claude/
+CLAUDE.md
+
+# OS
+*:Zone.Identifier
