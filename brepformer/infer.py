@@ -166,23 +166,41 @@ def infer_single(model, step_path: str, device: torch.device) -> dict:
     Returns:
         Dictionary with model_id, num_faces, model_classes, face_preds, face_probs.
     """
+    import traceback
+
+    if not Path(step_path).exists():
+        return {"error": f"STEP file not found: {step_path}"}
+
     # Try preprocessed data first (exact match with training)
     sample = load_sample_from_preprocessed(step_path)
 
     if sample is None:
         # Fall back to step_to_graph conversion (for new STEP files)
         from brepformer.data.step_to_graph import step_to_preprocessed_sample
-        sample = step_to_preprocessed_sample(step_path)
+        try:
+            sample = step_to_preprocessed_sample(step_path)
+        except Exception as e:
+            traceback.print_exc()
+            return {"error": f"step_to_graph conversion failed for {step_path}: {e}"}
 
     if sample is None:
-        return {"error": f"Failed to convert {step_path}"}
+        return {"error": f"Failed to convert {step_path} (step_to_graph returned None)"}
 
-    batch = prepare_batch(sample, device)
+    try:
+        batch = prepare_batch(sample, device)
+    except Exception as e:
+        traceback.print_exc()
+        return {"error": f"Failed to prepare batch for {step_path}: {e}"}
+
     num_faces = sample["num_faces"]
     model_id = sample["model_id"]
 
-    with torch.no_grad():
-        output = model(batch)
+    try:
+        with torch.no_grad():
+            output = model(batch)
+    except Exception as e:
+        traceback.print_exc()
+        return {"error": f"Model forward pass failed for {step_path}: {e}"}
 
     result = {"model_id": model_id, "num_faces": num_faces}
 

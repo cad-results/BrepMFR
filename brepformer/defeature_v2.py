@@ -105,6 +105,10 @@ def parse_args():
                         help="Print detailed defeaturing progress")
     parser.add_argument("--max_fuzzy", type=float, default=1e-3,
                         help="Max fuzzy tolerance for adaptive retry (default: 1e-3)")
+    parser.add_argument("--primitives", action="store_true",
+                        help="After defeaturing, fit geometric primitives to the result")
+    parser.add_argument("--primitives_tol", type=float, default=0.1,
+                        help="Geometric tolerance for primitive face grouping (default: 0.1)")
     return parser.parse_args()
 
 
@@ -125,14 +129,24 @@ def load_seg_labels(seg_path: str) -> List[int]:
 
 def infer_defeature_predictions(model, device, step_path: str) -> Optional[List[int]]:
     """Run inference and return 5-class defeature predictions."""
+    import traceback
     from brepformer.infer import infer_single
 
-    result = infer_single(model, step_path, device)
+    try:
+        result = infer_single(model, step_path, device)
+    except Exception as e:
+        traceback.print_exc()
+        print(f"Inference failed for {step_path}: {e}", file=sys.stderr)
+        return None
+
     if "error" in result:
+        print(f"Inference error for {step_path}: {result['error']}", file=sys.stderr)
         return None
 
     face_preds = result.get("face_preds")
     if face_preds is None:
+        print(f"No face predictions returned for {step_path} "
+              f"(model may lack face segmentation head)", file=sys.stderr)
         return None
 
     num_model_classes = model.config.num_face_classes
@@ -206,6 +220,17 @@ def _validate_input_shape(shape, verbose: bool = False):
 # Core defeaturing engine (ENHANCED in v2)
 # ---------------------------------------------------------------------------
 
+def _count_faces(shape) -> int:
+    from OCC.Core.TopExp import TopExp_Explorer
+    from OCC.Core.TopAbs import TopAbs_FACE
+    n = 0
+    exp = TopExp_Explorer(shape, TopAbs_FACE)
+    while exp.More():
+        n += 1
+        exp.Next()
+    return n
+
+
 def _try_defeaturing(shape, faces_to_remove: list,
                      fuzzy_value: float = 0.0):
     """Attempt face removal with optional fuzzy tolerance.
@@ -213,6 +238,10 @@ def _try_defeaturing(shape, faces_to_remove: list,
     Returns (result_shape, history) on success, (None, None) on failure.
     The BRepTools_History tracks what happened to every face in the shape
     and is used for precise face mapping between phases.
+
+    A result is rejected as degenerate if it retains fewer than half
+    the expected surviving faces (OCC sometimes reports success but
+    produces a nearly-empty shape on invalid input geometry).
     """
     from OCC.Core.BRepAlgoAPI import BRepAlgoAPI_Defeaturing
 
@@ -229,12 +258,18 @@ def _try_defeaturing(shape, faces_to_remove: list,
     op.Build()
 
     if op.IsDone() and not op.HasErrors():
+        result = op.Shape()
+        orig_faces = _count_faces(shape)
+        result_faces = _count_faces(result)
+        expected_min = max((orig_faces - len(faces_to_remove)) // 2, 1)
+        if result_faces < expected_min:
+            return None, None
         history = None
         try:
             history = op.History()
         except Exception:
             pass
-        return op.Shape(), history
+        return result, history
     return None, None
 
 
@@ -481,6 +516,9 @@ def defeature_shape(shape, feature_faces_by_type: Dict[int, list],
     # --- Phase 0: Pre-validate ---
     shape = _validate_input_shape(shape, verbose=verbose)
 
+    from OCC.Core.BRepCheck import BRepCheck_Analyzer as _Analyzer
+    shape_is_invalid = not _Analyzer(shape).IsValid()
+
     # --- Phase 1: Try all at once (adaptive tolerance) ---
     result, history, tol = _try_defeaturing_adaptive(
         shape, all_features, verbose=verbose, max_fuzzy=max_fuzzy,
@@ -490,6 +528,12 @@ def defeature_shape(shape, feature_faces_by_type: Dict[int, list],
             print(f"    Phase 1: all {total_features} faces removed at once")
         result = _heal_shape(result, verbose=verbose)
         return result, total_features, 0
+
+    if shape_is_invalid:
+        if verbose:
+            print(f"    Phase 1 failed on invalid shape — "
+                  f"defeaturing not possible, skipping remaining phases")
+        return shape, 0, total_features
 
     if verbose:
         print(f"    Phase 1 failed ({total_features} faces), "
@@ -1099,6 +1143,26 @@ def main():
         if args.save_colored:
             colored_path = output_dir / f"{model_id}_colored.step"
             save_colored_step(step_path, preds, str(colored_path))
+
+        # Primitive fitting (optional)
+        if args.primitives and result["status"] in ("success", "no_features"):
+            from brepformer.primitives import fit_primitives_from_step
+
+            prim_path = output_dir / f"{model_id}_primitives.step"
+            print(f"\nFitting primitives...")
+            prim_report = fit_primitives_from_step(
+                str(out_path), str(prim_path),
+                verbose=args.verbose, tol=args.primitives_tol,
+            )
+            result["primitives"] = prim_report
+            if prim_report["status"] == "success":
+                print(f"  Primitives: {prim_report['num_primitives']} "
+                      f"({', '.join(prim_report['primitive_types'])})")
+                print(f"  Valid: {prim_report['valid']}")
+                print(f"  Output: {prim_path}")
+            else:
+                print(f"  Primitives failed: "
+                      f"{prim_report.get('message', 'unknown')}")
 
         # Save report
         report_path = output_dir / f"{model_id}_report.json"

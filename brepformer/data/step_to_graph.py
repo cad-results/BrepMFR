@@ -140,11 +140,42 @@ def build_face_adjacency(shape, faces: list) -> Tuple[List[List[int]], Dict]:
     return edge_pairs, edge_info
 
 
+def _is_degenerate_face_surface(surf_adaptor) -> bool:
+    """Check if a face has degenerate UV parameterisation that crashes OCC D0/D1."""
+    u_min = surf_adaptor.FirstUParameter()
+    u_max = surf_adaptor.LastUParameter()
+    v_min = surf_adaptor.FirstVParameter()
+    v_max = surf_adaptor.LastVParameter()
+    return (abs(u_max - u_min) < 1e-15) or (abs(v_max - v_min) < 1e-15)
+
+
+def _degenerate_face_centroid(face) -> Optional[Tuple[float, float, float]]:
+    """Get centroid of a degenerate face via brepgprop (safe when D0/D1 crash)."""
+    try:
+        props = GProp_GProps()
+        brepgprop.SurfaceProperties(face, props)
+        c = props.CentreOfMass()
+        return (c.X(), c.Y(), c.Z())
+    except Exception:
+        return None
+
+
 def compute_face_uv_grid(face, nu: int = 10, nv: int = 10) -> np.ndarray:
     """Sample a 7-channel UV grid from a face: x, y, z, nx, ny, nz, mask."""
     grid = np.zeros((7, nu, nv), dtype=np.float32)
 
     surf_adaptor = BRepAdaptor_Surface(face)
+    if _is_degenerate_face_surface(surf_adaptor):
+        centroid = _degenerate_face_centroid(face)
+        if centroid is not None:
+            for i in range(nu):
+                for j in range(nv):
+                    grid[0, i, j] = centroid[0]
+                    grid[1, i, j] = centroid[1]
+                    grid[2, i, j] = centroid[2]
+                    grid[6, i, j] = 1.0
+        return grid
+
     u_min = max(surf_adaptor.FirstUParameter(), -1e6)
     u_max = min(surf_adaptor.LastUParameter(), 1e6)
     v_min = max(surf_adaptor.FirstVParameter(), -1e6)
@@ -219,24 +250,25 @@ def compute_face_attributes(face) -> np.ndarray:
     except Exception:
         attrs[6] = 1.0
 
-    u_mid = (surf_adaptor.FirstUParameter() + surf_adaptor.LastUParameter()) / 2
-    v_mid = (surf_adaptor.FirstVParameter() + surf_adaptor.LastVParameter()) / 2
-    try:
-        pnt = gp_Pnt()
-        d1u = gp_Vec()
-        d1v = gp_Vec()
-        surf_adaptor.D1(u_mid, v_mid, pnt, d1u, d1v)
-        normal = d1u.Crossed(d1v)
-        mag = normal.Magnitude()
-        if mag > 1e-10:
-            normal.Divide(mag)
-            if face.Orientation() == TopAbs_REVERSED:
-                normal.Reverse()
-            attrs[7] = normal.X()
-            attrs[8] = normal.Y()
-            attrs[9] = normal.Z()
-    except Exception:
-        pass
+    if not _is_degenerate_face_surface(surf_adaptor):
+        u_mid = (surf_adaptor.FirstUParameter() + surf_adaptor.LastUParameter()) / 2
+        v_mid = (surf_adaptor.FirstVParameter() + surf_adaptor.LastVParameter()) / 2
+        try:
+            pnt = gp_Pnt()
+            d1u = gp_Vec()
+            d1v = gp_Vec()
+            surf_adaptor.D1(u_mid, v_mid, pnt, d1u, d1v)
+            normal = d1u.Crossed(d1v)
+            mag = normal.Magnitude()
+            if mag > 1e-10:
+                normal.Divide(mag)
+                if face.Orientation() == TopAbs_REVERSED:
+                    normal.Reverse()
+                attrs[7] = normal.X()
+                attrs[8] = normal.Y()
+                attrs[9] = normal.Z()
+        except Exception:
+            pass
 
     try:
         from OCC.Core.Bnd import Bnd_Box
@@ -287,13 +319,15 @@ def compute_edge_curve_grid(edge, n_pts: int = 10) -> np.ndarray:
 def _face_normal_at_point(face, x: float, y: float, z: float) -> Optional[np.ndarray]:
     """Get face normal at the closest point to (x, y, z)."""
     try:
+        surf_adaptor = BRepAdaptor_Surface(face)
+        if _is_degenerate_face_surface(surf_adaptor):
+            return None
         surface = BRep_Tool.Surface(face)
         if surface is None:
             return None
         sa_surface = ShapeAnalysis_Surface(surface)
         pnt = gp_Pnt(float(x), float(y), float(z))
         uv = sa_surface.ValueOfUV(pnt, 1e-3)
-        surf_adaptor = BRepAdaptor_Surface(face)
         p = gp_Pnt()
         d1u = gp_Vec()
         d1v = gp_Vec()

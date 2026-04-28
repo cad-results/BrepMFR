@@ -1122,6 +1122,56 @@ python -m brepformer.defeature_v2 \
 
 ---
 
+## Primitive Fitting
+
+### `brepsimplifier/primitives.py` (CLI)
+
+Fit geometric primitives (box, cylinder, cone, sphere, torus) to a STEP file. BSpline/freeform surfaces are handled in two ways depending on mode: single enclosing prisms (standard) or UV-grid tessellation into many small rectangular prisms (lenient).
+
+See [`brepformer/brepsimplifier/README.md`](brepsimplifier/README.md) and [`brepformer/brepsimplifier/SCRIPTS.md`](brepsimplifier/SCRIPTS.md) for full documentation.
+
+```bash
+# Direct mode: fit primitives to a defeatured STEP file
+python -m brepformer.brepsimplifier.primitives \
+    --step defeatured_model.step \
+    --output output_primitives.step --verbose
+
+# Direct + lenient: tessellate BSpline faces (for non-defeatured originals)
+python -m brepformer.brepsimplifier.primitives \
+    --step original_model.step \
+    --output output_primitives.step --lenient --verbose
+
+# Pipeline mode: defeature → primitives (lenient auto-activates on failure)
+python -m brepformer.brepsimplifier.primitives \
+    --step raw_model.step --pipeline \
+    --output_dir pipeline_output/ --verbose
+```
+
+| Argument | Default | Description |
+|----------|---------|-------------|
+| `--step` | required | Input STEP file |
+| `--output` | `{stem}_primitives.step` | Output STEP path (direct mode) |
+| `--pipeline` | false | Run defeature → primitives pipeline |
+| `--checkpoint` | None | Model checkpoint (pipeline mode) |
+| `--seg` | None | Pre-computed .seg predictions (pipeline mode) |
+| `--output_dir` | `brepformer/primitives_output` | Output directory (pipeline mode) |
+| `--tol` | 0.1 | Geometric tolerance for face grouping |
+| `--max_fuzzy` | 1e-3 | Max fuzzy tolerance for defeaturing |
+| `--lenient` | false | Tessellate BSpline faces into small prisms |
+| `--save_colored` | false | Save colored predictions STEP (pipeline) |
+| `--save_intermediate` | false | Keep defeatured STEP (pipeline) |
+| `--verbose` | false | Detailed progress output |
+
+### `scripts/run_primitives.sh`
+
+Shell wrapper for `primitives.py`. Same arguments.
+
+```bash
+./brepformer/scripts/run_primitives.sh --step model.step --lenient --verbose
+```
+
+---
+
 ## Analysis
 
 ### `analyze.py` ***recommended***
