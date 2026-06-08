@@ -2,6 +2,8 @@
 
 Code for BrepMFR: Enhancing machining feature recognition in B-rep models through deep learning and domain adaptation.
 
+**Model Weights:** [https://huggingface.co/cad-weights/BrepMFR](https://huggingface.co/cad-weights/BrepMFR)
+
 ![The network architecture of BrepMFR](docs/img/network_architecture.jpg)
 
 ## About BrepMFR
