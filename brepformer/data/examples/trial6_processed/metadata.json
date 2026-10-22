@@ -1,0 +1,31 @@
+{
+  "num_classes": 5,
+  "num_samples": 6,
+  "compute_descriptors": true,
+  "num_spatial": 64,
+  "d2_bins": 64,
+  "angle_bins": 64,
+  "external_labels": false,
+  "split_sizes": {
+    "train": 2,
+    "val": 2,
+    "test": 2
+  },
+  "combined_from": [
+    "brepformer/data/defeature_processed",
+    "brepformer/data/suitable_samples_pcq5_processed"
+  ],
+  "combined_source_sizes": {
+    "brepformer/data/defeature_processed": {
+      "train": 1248,
+      "val": 156,
+      "test": 157
+    },
+    "brepformer/data/suitable_samples_pcq5_processed": {
+      "train": 645,
+      "val": 81,
+      "test": 81
+    }
+  },
+  "example_subset_of": "brepformer/data/trial6_processed"
+}

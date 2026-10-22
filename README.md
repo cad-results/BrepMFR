@@ -78,6 +78,20 @@ dataset/
     └── ...
 ```
 
+#### Example data
+
+The BrepFormer corpora under `brepformer/data/` are too large to track (tens of GB),
+so [`brepformer/data/examples/`](brepformer/data/examples/README.md) holds a few
+samples from each one in the same layout (34 MB total). Pass an example folder
+wherever a corpus path goes:
+
+```bash
+python -m brepformer.infer --step_dir brepformer/data/examples/inference \
+    --checkpoint <ckpt> --output_dir /tmp/preds --no_preprocessed
+python -m brepformer.eval_per_class --checkpoint <ckpt> \
+    --data_dir brepformer/data/examples/mftrcad_processed --split test
+```
+
 ## Model Weights
 
 All checkpoints are hosted at [huggingface.co/cad-weights/BrepMFR](https://huggingface.co/cad-weights/BrepMFR). The `results/` paths that the commands in this README and in `brepformer/` use are not committed to git. The table maps each HuggingFace file to the local path the scripts expect. It holds every checkpoint the docs reference, plus the best checkpoint from each training run.

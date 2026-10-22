@@ -179,6 +179,7 @@ brepclassifier/data/
 
 # Generated outputs
 inference/
+!brepformer/data/examples/inference/
 brepformer/preds/
 brepformer/defeatured_output/
 

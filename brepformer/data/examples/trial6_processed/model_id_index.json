@@ -1,0 +1,8 @@
+{
+  "defeature_processed:01-33_Bumper_Mount_Channel": "brepformer/data/examples/trial6_processed/train/000000.pkl",
+  "defeature_processed:458396-01": "brepformer/data/examples/trial6_processed/train/000001.pkl",
+  "defeature_processed:S_TEE_NPT-F_NPT-F_NPT-F": "brepformer/data/examples/trial6_processed/val/000000.pkl",
+  "defeature_processed:Wye_Pattern_Strainers-WATTS-77F-CSSI_G_solid1": "brepformer/data/examples/trial6_processed/val/000001.pkl",
+  "defeature_processed:051-200-126": "brepformer/data/examples/trial6_processed/test/000000.pkl",
+  "defeature_processed:949-00307-BIM": "brepformer/data/examples/trial6_processed/test/000001.pkl"
+}

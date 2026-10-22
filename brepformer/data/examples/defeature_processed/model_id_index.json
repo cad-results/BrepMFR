@@ -1,0 +1,8 @@
+{
+  "BIMDeX-5556-01A01-00": "brepformer/data/examples/defeature_processed/train/00000.pkl",
+  "BIMDeX-PIR-2006-19A-01-A": "brepformer/data/examples/defeature_processed/train/00001.pkl",
+  "500224.ipt": "brepformer/data/examples/defeature_processed/val/00000.pkl",
+  "9429T35_Steel_Routing_Clamp": "brepformer/data/examples/defeature_processed/val/00001.pkl",
+  "051-200-126": "brepformer/data/examples/defeature_processed/test/00000.pkl",
+  "User_Library-A2W03_socket_button_head_cap_screw_am_B18.3.4M_-_8_x_1.25_x_10_SBHCS_--N": "brepformer/data/examples/defeature_processed/test/00001.pkl"
+}

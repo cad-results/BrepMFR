@@ -1,0 +1,27 @@
+# Example data
+
+A few samples from each corpus in `brepformer/data/`, in that corpus's own layout,
+so you can smoke-test the tools on a fresh clone. The full corpora are gitignored.
+Each folder here has the same name as the corpus it was sampled from.
+
+Regenerate with `python brepformer/data/make_examples.py` (needs the full corpora locally).
+
+| Folder | Contents | Source |
+|---|---|---|
+| `mftrcad/` | 3 models: `graphs/`, `labels/` (+ `_rel`), `steps/` | MFTRCAD synthetic, 27 classes, exact labels |
+| `defeature/` | 3 models: `graphs/`, `labels/`, `steps/`, `dataset_info.json` | real parts, 5 classes |
+| `defeature_uv/`, `defeature_uv0/` | 3 graphs + labels / 3 flat graphs | `defeature` re-extracted with other UV-mask conventions |
+| `suitable_samples_pcq/`, `suitable_samples_scaled/` | 3 models: `labels/`, `steps/` | GrabCAD pseudo-labels |
+| `suitable_samples_pcq5/`, `suitable_samples_pcq27/` | 3 models: `graphs/`, `labels/`, `steps/` | GrabCAD pseudo-labels, 5 and 27 classes |
+| `hard_samples/` | 3 raw STEPs, 1 model per `yes/` and `maybe/` triage bucket (`no/` is empty upstream), `PLAN.md` | GrabCAD downloads |
+| `inference/` | 3 STEP files | real parts for `brepformer.infer --step_dir` |
+| `*_processed/` | 2 pickles per split, with `metadata.json` (and `model_id_index.json` / `provenance.json` where the source has them) rewritten to match | output of `preprocess.py` |
+| `sample_processed/` | whole `train/val/test.pkl` | processed form of the tracked `brepformer/data/sample/` |
+
+The raw `brepformer/data/sample/` (50 MFTRCAD models) is already tracked, so it isn't duplicated here.
+
+Notes:
+- Pickles in `trial6*_processed/` are real copies (the source folders are symlink farms).
+- These are for checking that things run, not for measuring accuracy. Six pickles per corpus
+  give meaningless metrics, and `trial6*_processed/test` comes from a split that
+  leaks pseudo-labels.

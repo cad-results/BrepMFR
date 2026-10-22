@@ -1,0 +1,15 @@
+{
+  "num_classes": 5,
+  "num_samples": 6,
+  "compute_descriptors": true,
+  "num_spatial": 64,
+  "d2_bins": 64,
+  "angle_bins": 64,
+  "external_labels": false,
+  "split_sizes": {
+    "train": 2,
+    "val": 2,
+    "test": 2
+  },
+  "example_subset_of": "brepformer/data/suitable_samples_pcq5_processed"
+}

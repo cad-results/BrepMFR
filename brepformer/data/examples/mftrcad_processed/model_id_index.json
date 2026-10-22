@@ -1,0 +1,8 @@
+{
+  "20240116_231044_6533": "brepformer/data/examples/mftrcad_processed/train/00000.pkl",
+  "20240116_231044_9041": "brepformer/data/examples/mftrcad_processed/train/00001.pkl",
+  "20240124_001736_3465": "brepformer/data/examples/mftrcad_processed/val/00000.pkl",
+  "20240125_003844_1510": "brepformer/data/examples/mftrcad_processed/val/00001.pkl",
+  "20240116_231044_321": "brepformer/data/examples/mftrcad_processed/test/00000.pkl",
+  "20240124_001736_1335": "brepformer/data/examples/mftrcad_processed/test/00001.pkl"
+}

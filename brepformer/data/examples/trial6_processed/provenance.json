@@ -1,0 +1,14 @@
+{
+  "train": {
+    "000000": "defeature_processed/train/00044.pkl",
+    "000001": "defeature_processed/train/00389.pkl"
+  },
+  "val": {
+    "000000": "defeature_processed/val/00111.pkl",
+    "000001": "defeature_processed/val/00127.pkl"
+  },
+  "test": {
+    "000000": "defeature_processed/test/00019.pkl",
+    "000001": "defeature_processed/test/00065.pkl"
+  }
+}

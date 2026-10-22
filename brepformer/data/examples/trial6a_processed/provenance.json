@@ -1,0 +1,14 @@
+{
+  "train": {
+    "000000": "mftrcad_processed/train/01285.pkl",
+    "000001": "mftrcad_processed/train/22272.pkl"
+  },
+  "val": {
+    "000000": "mftrcad_processed/val/01482.pkl",
+    "000001": "mftrcad_processed/val/02417.pkl"
+  },
+  "test": {
+    "000000": "mftrcad_processed/test/00979.pkl",
+    "000001": "mftrcad_processed/test/02787.pkl"
+  }
+}

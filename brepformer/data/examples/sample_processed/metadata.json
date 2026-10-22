@@ -1,0 +1,14 @@
+{
+  "num_classes": 27,
+  "num_samples": 50,
+  "compute_descriptors": false,
+  "num_spatial": 64,
+  "d2_bins": 64,
+  "angle_bins": 64,
+  "external_labels": false,
+  "split_sizes": {
+    "train": 40,
+    "val": 5,
+    "test": 5
+  }
+}

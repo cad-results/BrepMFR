@@ -1,0 +1,29 @@
+{
+  "dataset": "navin_defeaturing",
+  "num_classes": 5,
+  "class_names": [
+    "random",
+    "hole",
+    "chamfer",
+    "fillet",
+    "cut"
+  ],
+  "label_remap": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 3,
+    "5": 4,
+    "6": 4
+  },
+  "num_models": 1561,
+  "total_faces": 115766,
+  "label_distribution": {
+    "random": 31550,
+    "hole": 27367,
+    "chamfer": 4348,
+    "fillet": 17194,
+    "cut": 35307
+  }
+}
