@@ -1,0 +1,2117 @@
+{
+  "records": [
+    {
+      "model": "dddd",
+      "face": 12,
+      "gt": 0,
+      "pred": 3,
+      "agreement": 0.667,
+      "confidence": 0.45,
+      "teacher": 0,
+      "teacher_conf": 0.6419047117233276,
+      "votes": {
+        "3": 2,
+        "0": 1
+      },
+      "masked": true,
+      "mask_reasons": [
+        "confidence 0.45 < 0.55"
+      ],
+      "final_label": -1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Valve",
+      "face": 73,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.6667,
+      "teacher": 0,
+      "teacher_conf": 0.6255379319190979,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Part9",
+      "face": 122,
+      "gt": 2,
+      "pred": 2,
+      "agreement": 1.0,
+      "confidence": 0.9,
+      "teacher": 2,
+      "teacher_conf": 0.461057186126709,
+      "votes": {
+        "2": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 2,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 6072,
+        "novel": false,
+        "dominant_row": "half_angle_degrees = 40-50",
+        "dominant_n": 2621,
+        "dominant_share": 0.848,
+        "expected": "chamfer",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "uh62382",
+      "face": 135,
+      "gt": 4,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.85,
+      "teacher": 4,
+      "teacher_conf": 0.6489242315292358,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 26365,
+        "novel": false,
+        "dominant_row": "surface_type x n_inner_wires = plane & n_inner_wires=2-4",
+        "dominant_n": 1343,
+        "dominant_share": 0.836,
+        "expected": "random",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "0000279817",
+      "face": 88,
+      "gt": 1,
+      "pred": 1,
+      "agreement": 1.0,
+      "confidence": 0.7,
+      "teacher": 2,
+      "teacher_conf": 0.577985942363739,
+      "votes": {
+        "1": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 6072,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "DDLLINCGD0103",
+      "face": 21,
+      "gt": 0,
+      "pred": 1,
+      "agreement": 1.0,
+      "confidence": 0.7333,
+      "teacher": 0,
+      "teacher_conf": 0.5188791155815125,
+      "votes": {
+        "1": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 6072,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "schaal_d131_25-55g",
+      "face": 38,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 0.75,
+      "confidence": 0.6625,
+      "teacher": 3,
+      "teacher_conf": 0.41503486037254333,
+      "votes": {
+        "3": 3,
+        "2": 1
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 1,
+      "challenge_class": 2,
+      "rarity": {
+        "support": 45018,
+        "joint_support": 4632,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 4
+    },
+    {
+      "model": "1_5_Habonim_Man_BW-TC",
+      "face": 135,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.7333,
+      "teacher": 3,
+      "teacher_conf": 0.5248201489448547,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Part4",
+      "face": 17,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 0.667,
+      "confidence": 0.45,
+      "teacher": 3,
+      "teacher_conf": 0.6081398129463196,
+      "votes": {
+        "4": 1,
+        "3": 2
+      },
+      "masked": true,
+      "mask_reasons": [
+        "confidence 0.45 < 0.55"
+      ],
+      "final_label": -1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "versaplanetary_thing",
+      "face": 24,
+      "gt": 4,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.6667,
+      "teacher": 4,
+      "teacher_conf": 0.5517134070396423,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "L_bracket-Shelf-01855190",
+      "face": 33,
+      "gt": 4,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.7333,
+      "teacher": 4,
+      "teacher_conf": 0.6098927855491638,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "AA1K_hd_central_plate_pivot_jaw_center_lg_2",
+      "face": 68,
+      "gt": 2,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.6667,
+      "teacher": 2,
+      "teacher_conf": 0.6501626372337341,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "dddd",
+      "face": 20,
+      "gt": 0,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.8833,
+      "teacher": 0,
+      "teacher_conf": 0.6640337109565735,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": "surface_type x accessibility = plane & accessibility=>=0.999",
+        "dominant_n": 14720,
+        "dominant_share": 0.861,
+        "expected": "random",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Clylinder.ipt",
+      "face": 8,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.85,
+      "teacher": 3,
+      "teacher_conf": 0.5194846391677856,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 45018,
+        "joint_support": 4632,
+        "novel": false,
+        "dominant_row": "surface_type x accessibility = torus & accessibility=>=0.999",
+        "dominant_n": 1578,
+        "dominant_share": 0.872,
+        "expected": "fillet",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "AA1K_hd_central_plate_pivot_jaw_center_lg_2",
+      "face": 63,
+      "gt": 2,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.88,
+      "teacher": 2,
+      "teacher_conf": 0.4926413297653198,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": "surface_type x accessibility = plane & accessibility=>=0.999",
+        "dominant_n": 14720,
+        "dominant_share": 0.861,
+        "expected": "random",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "d1133",
+      "face": 28,
+      "gt": 2,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.65,
+      "teacher": 2,
+      "teacher_conf": 0.5983739495277405,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Valve",
+      "face": 12,
+      "gt": 0,
+      "pred": 3,
+      "agreement": 0.667,
+      "confidence": 0.4,
+      "teacher": 0,
+      "teacher_conf": 0.6267626881599426,
+      "votes": {
+        "3": 2,
+        "4": 1
+      },
+      "masked": true,
+      "mask_reasons": [
+        "confidence 0.40 < 0.55"
+      ],
+      "final_label": -1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "AA1K_ba_ujoint_twist_middle_ring",
+      "face": 24,
+      "gt": 1,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.8,
+      "teacher": 1,
+      "teacher_conf": 0.6998886466026306,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 26365,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "pump_sub_plate_141",
+      "face": 23,
+      "gt": 4,
+      "pred": 1,
+      "agreement": 0.667,
+      "confidence": 0.5833,
+      "teacher": 4,
+      "teacher_conf": 0.5627419948577881,
+      "votes": {
+        "1": 2,
+        "0": 1
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 1,
+      "n_objections": 1,
+      "challenge_class": 0,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": "surface_type x coaxial_group_sweep_degrees = cylinder & coaxial_group_sweep_degrees=340-361",
+        "dominant_n": 26802,
+        "dominant_share": 0.876,
+        "expected": "hole",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Clylinder.ipt",
+      "face": 21,
+      "gt": 0,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.85,
+      "teacher": 3,
+      "teacher_conf": 0.607558012008667,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 4632,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "603552h00",
+      "face": 80,
+      "gt": 1,
+      "pred": 4,
+      "agreement": 0.667,
+      "confidence": 0.45,
+      "teacher": 0,
+      "teacher_conf": 0.40481680631637573,
+      "votes": {
+        "4": 2,
+        "1": 1
+      },
+      "masked": true,
+      "mask_reasons": [
+        "confidence 0.45 < 0.55"
+      ],
+      "final_label": -1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 51769,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "schaal_d131_25-55g",
+      "face": 64,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.8,
+      "teacher": 3,
+      "teacher_conf": 0.6460117101669312,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 51769,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Cliff_RV_Chassis_SCv1",
+      "face": 10,
+      "gt": 4,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.7,
+      "teacher": 4,
+      "teacher_conf": 0.6982618570327759,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "689674-02_asm_next_assembl-4814",
+      "face": 246,
+      "gt": 2,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.7667,
+      "teacher": 0,
+      "teacher_conf": 0.6935120224952698,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Cliff_RV_Chassis_SCv1",
+      "face": 23,
+      "gt": 4,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.7,
+      "teacher": 0,
+      "teacher_conf": 0.5872151255607605,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "pump_sub_plate_141",
+      "face": 56,
+      "gt": 4,
+      "pred": 1,
+      "agreement": 0.667,
+      "confidence": 0.6,
+      "teacher": 0,
+      "teacher_conf": 0.4669075310230255,
+      "votes": {
+        "1": 2,
+        "0": 1
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 1,
+      "n_objections": 1,
+      "challenge_class": 0,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": "surface_type x coaxial_group_sweep_degrees = cylinder & coaxial_group_sweep_degrees=340-361",
+        "dominant_n": 26802,
+        "dominant_share": 0.876,
+        "expected": "hole",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "0m-4664161",
+      "face": 103,
+      "gt": 2,
+      "pred": 4,
+      "agreement": 0.667,
+      "confidence": 0.4667,
+      "teacher": 2,
+      "teacher_conf": 0.6088628172874451,
+      "votes": {
+        "4": 2,
+        "0": 1
+      },
+      "masked": true,
+      "mask_reasons": [
+        "confidence 0.47 < 0.55"
+      ],
+      "final_label": -1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "0000279817",
+      "face": 95,
+      "gt": 1,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.89,
+      "teacher": 4,
+      "teacher_conf": 0.5760976672172546,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 45018,
+        "joint_support": 4632,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "front_leg-01675750",
+      "face": 23,
+      "gt": 2,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.7333,
+      "teacher": 3,
+      "teacher_conf": 0.521844744682312,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 5030,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "L_bracket-Shelf-01855190",
+      "face": 39,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.85,
+      "teacher": 3,
+      "teacher_conf": 0.6069626212120056,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Z_axis_Ball_Nut",
+      "face": 14,
+      "gt": 2,
+      "pred": 0,
+      "agreement": 0.5,
+      "confidence": 0.375,
+      "teacher": 1,
+      "teacher_conf": 0.516839861869812,
+      "votes": {
+        "3": 1,
+        "0": 2,
+        "4": 1
+      },
+      "masked": true,
+      "mask_reasons": [
+        "agreement 0.50 < 0.66",
+        "confidence 0.38 < 0.55"
+      ],
+      "final_label": -1,
+      "n_objections": 1,
+      "challenge_class": 0,
+      "rarity": {
+        "support": 51769,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 4
+    },
+    {
+      "model": "uh62382",
+      "face": 13,
+      "gt": 0,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.9,
+      "teacher": 4,
+      "teacher_conf": 0.6792137026786804,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": "surface_type x accessibility = plane & accessibility=>=0.999",
+        "dominant_n": 14720,
+        "dominant_share": 0.861,
+        "expected": "random",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "d1133",
+      "face": 67,
+      "gt": 0,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.9167,
+      "teacher": 0,
+      "teacher_conf": 0.5945665240287781,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 26365,
+        "novel": false,
+        "dominant_row": "surface_type x accessibility = plane & accessibility=>=0.999",
+        "dominant_n": 14720,
+        "dominant_share": 0.861,
+        "expected": "random",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Par\u00e7a7",
+      "face": 0,
+      "gt": 0,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.9,
+      "teacher": 4,
+      "teacher_conf": 0.5429742336273193,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": "surface_type x accessibility = plane & accessibility=>=0.999",
+        "dominant_n": 14720,
+        "dominant_share": 0.861,
+        "expected": "random",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "1054215-01",
+      "face": 7,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.7167,
+      "teacher": 3,
+      "teacher_conf": 0.47203725576400757,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "front_leg-01675750",
+      "face": 26,
+      "gt": 2,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.8833,
+      "teacher": 0,
+      "teacher_conf": 0.66551274061203,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": "surface_type x accessibility = plane & accessibility=>=0.999",
+        "dominant_n": 14720,
+        "dominant_share": 0.861,
+        "expected": "random",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Valve",
+      "face": 69,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 0.667,
+      "confidence": 0.4833,
+      "teacher": 0,
+      "teacher_conf": 0.5411961674690247,
+      "votes": {
+        "3": 2,
+        "0": 1
+      },
+      "masked": true,
+      "mask_reasons": [
+        "confidence 0.48 < 0.55"
+      ],
+      "final_label": -1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "uh62382",
+      "face": 15,
+      "gt": 0,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.8833,
+      "teacher": 0,
+      "teacher_conf": 0.584473192691803,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": "surface_type x accessibility = plane & accessibility=>=0.999",
+        "dominant_n": 14720,
+        "dominant_share": 0.861,
+        "expected": "random",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "d1133",
+      "face": 45,
+      "gt": 4,
+      "pred": 4,
+      "agreement": 0.667,
+      "confidence": 0.4667,
+      "teacher": 4,
+      "teacher_conf": 0.5519229769706726,
+      "votes": {
+        "4": 2,
+        "0": 1
+      },
+      "masked": true,
+      "mask_reasons": [
+        "confidence 0.47 < 0.55"
+      ],
+      "final_label": -1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 24160,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "AA1K_hd_central_plate_pivot_jaw_center_lg_2",
+      "face": 10,
+      "gt": 1,
+      "pred": 1,
+      "agreement": 1.0,
+      "confidence": 0.9233,
+      "teacher": 1,
+      "teacher_conf": 0.5518178939819336,
+      "votes": {
+        "1": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": "surface_type x coaxial_group_sweep_degrees = cylinder & coaxial_group_sweep_degrees=340-361",
+        "dominant_n": 26802,
+        "dominant_share": 0.876,
+        "expected": "hole",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "DDLLINCGD0103",
+      "face": 203,
+      "gt": 0,
+      "pred": 1,
+      "agreement": 0.667,
+      "confidence": 0.45,
+      "teacher": 0,
+      "teacher_conf": 0.6554766297340393,
+      "votes": {
+        "1": 2,
+        "2": 1
+      },
+      "masked": true,
+      "mask_reasons": [
+        "confidence 0.45 < 0.55"
+      ],
+      "final_label": -1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 6072,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "689674-02_asm_next_assembl-4814",
+      "face": 262,
+      "gt": 2,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.85,
+      "teacher": 0,
+      "teacher_conf": 0.6849969029426575,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "AA1K_hd_central_plate_pivot_jaw_center_lg_2",
+      "face": 30,
+      "gt": 1,
+      "pred": 1,
+      "agreement": 1.0,
+      "confidence": 0.95,
+      "teacher": 0,
+      "teacher_conf": 0.4367402195930481,
+      "votes": {
+        "1": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": "surface_type x coaxial_group_sweep_degrees = cylinder & coaxial_group_sweep_degrees=340-361",
+        "dominant_n": 26802,
+        "dominant_share": 0.876,
+        "expected": "hole",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "0m-4985064",
+      "face": 15,
+      "gt": 2,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.9,
+      "teacher": 0,
+      "teacher_conf": 0.5854071974754333,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": "surface_type x accessibility = plane & accessibility=>=0.999",
+        "dominant_n": 14720,
+        "dominant_share": 0.861,
+        "expected": "random",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "A2613-190024-A-M-J-002-D0003",
+      "face": 12,
+      "gt": 1,
+      "pred": 4,
+      "agreement": 0.667,
+      "confidence": 0.4733,
+      "teacher": 4,
+      "teacher_conf": 0.5219736099243164,
+      "votes": {
+        "4": 2,
+        "3": 1
+      },
+      "masked": true,
+      "mask_reasons": [
+        "confidence 0.47 < 0.55"
+      ],
+      "final_label": -1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 51769,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "1_5_Habonim_Man_BW-TC",
+      "face": 132,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.6667,
+      "teacher": 3,
+      "teacher_conf": 0.6469660997390747,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "SWP-08186",
+      "face": 241,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.7167,
+      "teacher": 3,
+      "teacher_conf": 0.5832990407943726,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 23531,
+        "joint_support": 5030,
+        "novel": false,
+        "dominant_row": "surface_type x n_tangential_edges = bspline & n_tangential_edges=3-5",
+        "dominant_n": 2762,
+        "dominant_share": 0.806,
+        "expected": "fillet",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "0m-4985064",
+      "face": 56,
+      "gt": 4,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.8833,
+      "teacher": 4,
+      "teacher_conf": 0.6538941860198975,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": "surface_type x accessibility = plane & accessibility=>=0.999",
+        "dominant_n": 14720,
+        "dominant_share": 0.861,
+        "expected": "random",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "1054215-01",
+      "face": 17,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.6833,
+      "teacher": 3,
+      "teacher_conf": 0.5169075727462769,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "d1133",
+      "face": 68,
+      "gt": 0,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.92,
+      "teacher": 0,
+      "teacher_conf": 0.6913259625434875,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 26365,
+        "novel": false,
+        "dominant_row": "surface_type x accessibility = plane & accessibility=>=0.999",
+        "dominant_n": 14720,
+        "dominant_share": 0.861,
+        "expected": "random",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Oventrop_Double_Door_Check_Valve",
+      "face": 16,
+      "gt": 1,
+      "pred": 1,
+      "agreement": 1.0,
+      "confidence": 0.94,
+      "teacher": 0,
+      "teacher_conf": 0.6338890194892883,
+      "votes": {
+        "1": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": "surface_type x coaxial_group_sweep_degrees = cylinder & coaxial_group_sweep_degrees=340-361",
+        "dominant_n": 26802,
+        "dominant_share": 0.876,
+        "expected": "hole",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "AA1K_tso_structure_twist_lg",
+      "face": 57,
+      "gt": 4,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.69,
+      "teacher": 4,
+      "teacher_conf": 0.667678713798523,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 26365,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "L_bracket-Shelf-01855190",
+      "face": 31,
+      "gt": 4,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.7,
+      "teacher": 4,
+      "teacher_conf": 0.6067712903022766,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "pump_sub_plate_141",
+      "face": 62,
+      "gt": 1,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.8833,
+      "teacher": 1,
+      "teacher_conf": 0.6389886140823364,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 1,
+      "challenge_class": 0,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 26365,
+        "novel": false,
+        "dominant_row": "surface_type x accessibility = plane & accessibility=>=0.999",
+        "dominant_n": 14720,
+        "dominant_share": 0.861,
+        "expected": "random",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Valve",
+      "face": 35,
+      "gt": 1,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.7833,
+      "teacher": 1,
+      "teacher_conf": 0.6287204623222351,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "000700694_Substitute_2020-07_22",
+      "face": 23,
+      "gt": 0,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.8,
+      "teacher": 1,
+      "teacher_conf": 0.5615498423576355,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "A2613-190024-A-M-J-002-D0003",
+      "face": 14,
+      "gt": 1,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.7167,
+      "teacher": 4,
+      "teacher_conf": 0.611954927444458,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "000700694_Substitute_2020-07_22",
+      "face": 34,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.7833,
+      "teacher": 3,
+      "teacher_conf": 0.6808122396469116,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 51769,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "0m-4664161",
+      "face": 157,
+      "gt": 2,
+      "pred": 0,
+      "agreement": 1.0,
+      "confidence": 0.8,
+      "teacher": 2,
+      "teacher_conf": 0.5699135065078735,
+      "votes": {
+        "0": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 0,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "uh62382",
+      "face": 227,
+      "gt": 4,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.7667,
+      "teacher": 4,
+      "teacher_conf": 0.6989924907684326,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "versaplanetary_thing",
+      "face": 31,
+      "gt": 4,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.6833,
+      "teacher": 4,
+      "teacher_conf": 0.6952244639396667,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "AA1K_tso_structure_twist_lg",
+      "face": 41,
+      "gt": 2,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.7,
+      "teacher": 2,
+      "teacher_conf": 0.6191650629043579,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Clylinder.ipt",
+      "face": 18,
+      "gt": 0,
+      "pred": 3,
+      "agreement": 1.0,
+      "confidence": 0.8833,
+      "teacher": 3,
+      "teacher_conf": 0.5849882960319519,
+      "votes": {
+        "3": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 3,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 4632,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "000700694_Substitute_2020-07_22",
+      "face": 12,
+      "gt": 3,
+      "pred": 3,
+      "agreement": 0.667,
+      "confidence": 0.45,
+      "teacher": 3,
+      "teacher_conf": 0.4991950988769531,
+      "votes": {
+        "-1": 1,
+        "3": 2
+      },
+      "masked": true,
+      "mask_reasons": [
+        "1 of 3 passes abstained",
+        "confidence 0.45 < 0.55"
+      ],
+      "final_label": -1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "AA1K_ba_bracket_gimbal_center_sidesway_connector",
+      "face": 66,
+      "gt": 2,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.6833,
+      "teacher": 2,
+      "teacher_conf": 0.5139069557189941,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 47217,
+        "joint_support": 39213,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "0000279817",
+      "face": 76,
+      "gt": 4,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.6667,
+      "teacher": 4,
+      "teacher_conf": 0.5253067016601562,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 51769,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "Oventrop_Double_Door_Check_Valve",
+      "face": 3,
+      "gt": 1,
+      "pred": 1,
+      "agreement": 1.0,
+      "confidence": 0.92,
+      "teacher": 0,
+      "teacher_conf": 0.5174573659896851,
+      "votes": {
+        "1": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 1,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 57160,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": "surface_type x coaxial_group_sweep_degrees = cylinder & coaxial_group_sweep_degrees=340-361",
+        "dominant_n": 26802,
+        "dominant_share": 0.876,
+        "expected": "hole",
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "603552h00",
+      "face": 78,
+      "gt": 1,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.75,
+      "teacher": 1,
+      "teacher_conf": 0.6909363865852356,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 51769,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    },
+    {
+      "model": "support",
+      "face": 10,
+      "gt": 1,
+      "pred": 4,
+      "agreement": 1.0,
+      "confidence": 0.7233,
+      "teacher": 0,
+      "teacher_conf": 0.5711492896080017,
+      "votes": {
+        "4": 3
+      },
+      "masked": false,
+      "mask_reasons": [],
+      "final_label": 4,
+      "n_objections": 0,
+      "challenge_class": null,
+      "rarity": {
+        "support": 51769,
+        "joint_support": 51465,
+        "novel": false,
+        "dominant_row": null,
+        "dominant_n": 0,
+        "dominant_share": 0.0,
+        "expected": null,
+        "rare_expected": false,
+        "hard": false
+      },
+      "n_passes": 3
+    }
+  ],
+  "n": 69,
+  "accuracy": 0.5217391304347826,
+  "api_calls": 209,
+  "passes": 3
+}

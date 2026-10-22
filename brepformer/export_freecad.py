@@ -27,8 +27,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from brepformer.data.classes import (
     CLASS_COLORS_HEX, UNLABELED_COLOR_HEX, NUM_CLASSES,
-    CLASS_NAMES, hex_to_rgb01, map_labels_to_real,
+    CLASS_NAMES, hex_to_rgb01, map_labels_to_real, map_labels_to_defeature,
     REAL_CLASS_COLORS_HEX, REAL_NUM_CLASSES,
+    DEFEATURE_CLASS_COLORS_HEX, DEFEATURE_NUM_CLASSES,
 )
 
 
@@ -54,9 +55,12 @@ def parse_args():
     parser.add_argument("--output", type=str, default=None, help="Output STEP file path")
     parser.add_argument("--output_dir", type=str, default=None, help="Output directory for batch mode")
 
-    # Post-processing
-    parser.add_argument("--real_classes", action="store_true",
-                        help="Remap 27 MFTRCAD classes to 8 real machining feature categories")
+    # Post-processing (mutually exclusive class remapping)
+    class_group = parser.add_mutually_exclusive_group()
+    class_group.add_argument("--8_classes", action="store_true", dest="eight_classes",
+                             help="Remap 27 MFTRCAD classes to 8 grouped machining feature categories")
+    class_group.add_argument("--5_classes", action="store_true", dest="five_classes",
+                             help="Remap 27 MFTRCAD classes to 5 defeature categories (random, hole, chamfer, fillet, cut)")
 
     # Defeaturing
     parser.add_argument("--defeature", action="store_true",
@@ -313,11 +317,17 @@ def main():
             print("Error: No labels available. Provide --seg, --seg_dir, --labels_json, --labels_dir, or --checkpoint")
             sys.exit(1)
 
-        if args.real_classes:
+        if args.eight_classes:
             labels = map_labels_to_real(labels)
-
-        colors_hex = REAL_CLASS_COLORS_HEX if args.real_classes else CLASS_COLORS_HEX
-        num_cls = REAL_NUM_CLASSES if args.real_classes else NUM_CLASSES
+            colors_hex = REAL_CLASS_COLORS_HEX
+            num_cls = REAL_NUM_CLASSES
+        elif args.five_classes:
+            labels = map_labels_to_defeature(labels)
+            colors_hex = DEFEATURE_CLASS_COLORS_HEX
+            num_cls = DEFEATURE_NUM_CLASSES
+        else:
+            colors_hex = CLASS_COLORS_HEX
+            num_cls = NUM_CLASSES
         output = args.output or str(Path(args.step).with_suffix(".colored.step"))
         export_colored_step(args.step, labels, output, colors_hex=colors_hex, num_cls=num_cls)
 
@@ -390,11 +400,17 @@ def main():
                 print(f"  Skipping {step_file.name}: no labels available")
                 continue
 
-            if args.real_classes:
+            if args.eight_classes:
                 labels = map_labels_to_real(labels)
-
-            colors_hex = REAL_CLASS_COLORS_HEX if args.real_classes else CLASS_COLORS_HEX
-            num_cls = REAL_NUM_CLASSES if args.real_classes else NUM_CLASSES
+                colors_hex = REAL_CLASS_COLORS_HEX
+                num_cls = REAL_NUM_CLASSES
+            elif args.five_classes:
+                labels = map_labels_to_defeature(labels)
+                colors_hex = DEFEATURE_CLASS_COLORS_HEX
+                num_cls = DEFEATURE_NUM_CLASSES
+            else:
+                colors_hex = CLASS_COLORS_HEX
+                num_cls = NUM_CLASSES
             output = output_dir / f"{model_id}.colored.step"
             export_colored_step(str(step_file), labels, str(output),
                                 colors_hex=colors_hex, num_cls=num_cls)

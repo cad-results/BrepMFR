@@ -105,12 +105,16 @@ def labels_to_json(labels: list) -> dict:
     return {"cls": cls_dict}
 
 
-def convert_step_to_graph(step_path: str) -> dict:
-    """Convert a STEP file to graph JSON format using step_to_graph."""
+def convert_step_to_graph(step_path: str, mftrcad_uv: bool = False) -> dict:
+    """Convert a STEP file to graph JSON format using step_to_graph.
+
+    ``mftrcad_uv`` forwards MFTRCAD's UV-grid convention (10% UV padding + trim masking).
+    Off by default; see ``step_to_graph.compute_face_uv_grid`` and README "Bug 8".
+    """
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
     from brepformer.data.step_to_graph import step_to_graph
 
-    data = step_to_graph(step_path)
+    data = step_to_graph(step_path, mftrcad_uv=mftrcad_uv)
     if data is None:
         return None
 
@@ -132,6 +136,14 @@ def main():
                         help="Source directory (navin_defeaturing)")
     parser.add_argument("--dest", type=str, required=True,
                         help="Destination directory (brepformer/data/defeature)")
+    parser.add_argument("--mftrcad_uv", action="store_true",
+                        help="Build face UV grids under MFTRCAD's published convention "
+                             "(pad the face UV box 10%% per side, then mask samples outside "
+                             "the trim loops) instead of the legacy 'grid the box, call "
+                             "everything valid' behaviour this corpus was built with. This "
+                             "is the fix for Bug 8: the pretraining corpus uses the MFTRCAD "
+                             "convention and this one does not, so face_grid channel 6 "
+                             "means different things on either side of the transfer.")
     parser.add_argument("--convert_graphs", action="store_true",
                         help="Also convert STEP files to graph JSONs (requires pythonocc)")
     args = parser.parse_args()
@@ -239,7 +251,7 @@ def main():
         for step_file in tqdm(graph_files, desc="Converting"):
             model_id = step_file.stem
             try:
-                graph_data = convert_step_to_graph(str(step_file))
+                graph_data = convert_step_to_graph(str(step_file), mftrcad_uv=args.mftrcad_uv)
                 if graph_data is None:
                     stats["graphs_fail"] += 1
                     continue

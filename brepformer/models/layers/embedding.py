@@ -175,6 +175,7 @@ class GraphNodeFeature(nn.Module):
         surface_encoder_channels: list = None,
         surface_encoder_output_dim: int = 128,
         num_degree: int = 128,
+        attr_layout: str = "onehot",
     ):
         """Initialize GraphNodeFeature.
 
@@ -185,9 +186,14 @@ class GraphNodeFeature(nn.Module):
             surface_encoder_channels: Channel sizes for SurfaceEncoder.
             surface_encoder_output_dim: SurfaceEncoder output dimension.
             num_degree: Number of in-degree embedding types.
+            attr_layout: How to decode ``face_attr``. ``"onehot"`` matches what is actually
+                written to disk; ``"categorical"`` reproduces the historical (incorrect)
+                indexing and exists only to re-score pre-fix checkpoints faithfully.
         """
         super().__init__()
         self.hidden_dim = hidden_dim
+        self.num_face_types = num_face_types
+        self.attr_layout = attr_layout
 
         # Surface encoder for UV-grid
         self.surface_encoder = SurfaceEncoder(
@@ -239,16 +245,49 @@ class GraphNodeFeature(nn.Module):
         # Encode UV-grid
         surface_feat = self.surface_encoder(face_grid)  # (batch, num_faces, surface_dim)
 
-        # Extract and encode face attributes
-        # face_attr layout: [type, area, cx, cy, cz, rationality, num_loops, nx, ny, nz, bx, by, bz, is_reversed]
-        face_type = face_attr[:, :, 0].long().clamp(0, self.face_type_encoder.num_embeddings - 1)
-        face_area = face_attr[:, :, 1:2]  # (batch, num_faces, 1)
-        face_centroid = face_attr[:, :, 2:5]  # (batch, num_faces, 3)
-        face_rationality = face_attr[:, :, 5].long().clamp(0, 1)
-        face_num_loops = face_attr[:, :, 6:7]  # (batch, num_faces, 1)
-        face_normal = face_attr[:, :, 7:10]  # (batch, num_faces, 3)
-        face_bbox = face_attr[:, :, 10:13]  # (batch, num_faces, 3)
-        face_reversed = face_attr[:, :, 13].long().clamp(0, 1)
+        # Extract and encode face attributes.
+        #
+        # There are two layouts in circulation and only one of them is ever on disk.
+        # `step_to_graph.normalize_geometry` builds its 14 columns as
+        #   [one_hot_type(0:6), 0, 0, 0, area(9), 0, cx(11), cy(12), cz(13)]
+        # and the MFTRCAD graph JSONs use the same convention. The "categorical" layout below
+        # -- [type, area, cx, cy, cz, rationality, num_loops, nx, ny, nz, bx, by, bz, reversed]
+        # -- is what `compute_face_attributes` produces *before* normalisation, so it never
+        # reaches a pickle. Reading it anyway is measurably destructive: `face_type` degrades to
+        # the single "is it a plane" bit, `face_area` becomes the "is it a cylinder" bit, and
+        # `face_centroid` becomes three type bits that are identically zero on most parts.
+        # Verified column-by-column against mftrcad_processed, defeature_processed and
+        # trial6_processed. See README "Training: Initialization Dwarfs Every Other Knob".
+        if self.attr_layout == "onehot":
+            onehot = face_attr[:, :, 0:6]
+            # Padded faces are an all-zero row; send them to the dedicated padding index
+            # (num_face_types) rather than silently claiming they are planes.
+            has_type = onehot.sum(dim=-1) > 0
+            face_type = torch.where(has_type, onehot.argmax(dim=-1),
+                                    torch.full_like(has_type, self.num_face_types,
+                                                    dtype=torch.long))
+            face_area = face_attr[:, :, 9:10]
+            face_centroid = face_attr[:, :, 11:14]
+            face_rationality = face_attr[:, :, 5].long().clamp(0, 1)  # the BSpline one-hot bit
+            # Loops, normal, bbox and orientation are dropped by `normalize_geometry` and are
+            # simply not on disk. Feed zeros rather than reinterpreting unrelated columns: the
+            # encoders then contribute a constant bias, which is honest about the absence and
+            # keeps every parameter shape identical so existing checkpoints still load.
+            zeros1 = face_attr.new_zeros(batch_size, num_faces, 1)
+            face_num_loops = zeros1
+            face_normal = face_attr.new_zeros(batch_size, num_faces, 3)
+            face_bbox = face_attr.new_zeros(batch_size, num_faces, 3)
+            face_reversed = torch.zeros(batch_size, num_faces, dtype=torch.long,
+                                        device=face_attr.device)
+        else:
+            face_type = face_attr[:, :, 0].long().clamp(0, self.face_type_encoder.num_embeddings - 1)
+            face_area = face_attr[:, :, 1:2]  # (batch, num_faces, 1)
+            face_centroid = face_attr[:, :, 2:5]  # (batch, num_faces, 3)
+            face_rationality = face_attr[:, :, 5].long().clamp(0, 1)
+            face_num_loops = face_attr[:, :, 6:7]  # (batch, num_faces, 1)
+            face_normal = face_attr[:, :, 7:10]  # (batch, num_faces, 3)
+            face_bbox = face_attr[:, :, 10:13]  # (batch, num_faces, 3)
+            face_reversed = face_attr[:, :, 13].long().clamp(0, 1)
 
         # Encode attributes
         type_feat = self.face_type_encoder(face_type)  # (batch, num_faces, hidden_dim)
@@ -321,6 +360,7 @@ class GraphAttnBias(nn.Module):
         curve_encoder_channels: list = None,
         d2_descriptor_dim: int = 64,
         angle_descriptor_dim: int = 64,
+        attr_layout: str = "onehot",
     ):
         """Initialize GraphAttnBias.
 
@@ -339,6 +379,7 @@ class GraphAttnBias(nn.Module):
         super().__init__()
         self.num_heads = num_heads
         self.multi_hop_max_dist = multi_hop_max_dist
+        self.attr_layout = attr_layout
 
         # Spatial position encoder (shortest path distance -> attention bias)
         self.spatial_pos_encoder = nn.Embedding(num_spatial + 1, num_heads, padding_idx=0)
@@ -365,7 +406,15 @@ class GraphAttnBias(nn.Module):
         # Edge distance decay encoder
         self.edge_dis_encoder = nn.Embedding(num_edge_dis + 1, num_heads, padding_idx=0)
 
-        # Edge convolution for multi-hop aggregation
+        # Edge convolution for multi-hop aggregation.
+        #
+        # DEAD: this module is constructed but never called in `forward`, so its parameters
+        # are allocated, saved into every checkpoint, and receive no gradient. Deliberately
+        # NOT removed: `load_from_checkpoint` is strict, so deleting it would make every
+        # existing checkpoint in `results/` unloadable for a change that buys nothing but a
+        # few thousand idle parameters. If multi-hop edge aggregation is ever wanted, wire
+        # this into `forward` — the module is already the right shape — rather than adding a
+        # second one beside it.
         self.edge_conv_layer = EdgeConv(num_heads, num_heads)
 
     def forward(
@@ -425,11 +474,38 @@ class GraphAttnBias(nn.Module):
             # Encode edge UV-grid
             curve_feat = self.curve_encoder(edge_grid)  # (batch, num_edges, num_heads)
 
-            # Encode edge attributes
-            edge_type = (edge_attr[:, :, 0].long() + 1).clamp(0, self.edge_type_encoder.num_embeddings - 1)
-            edge_len = edge_attr[:, :, 1:2]
-            edge_ang = edge_attr[:, :, 8:9]
-            edge_convexity = (edge_attr[:, :, 9].long() + 1).clamp(0, self.edge_conv_encoder.num_embeddings - 1)
+            # Encode edge attributes. Same two-layout problem as `face_attr`, and here it is
+            # worse, because the on-disk layout puts one-hot flags exactly where the historical
+            # indexing expects scalars:
+            #   [_, convex(1), smooth(2), length(3), concave(4), circle(5), _, line(7), other(8)]
+            # Under "categorical", `edge_type` reads column 0 (always 0 -> one constant type),
+            # `edge_len` reads the *convex flag* instead of the length, and `edge_convexity`
+            # reads column 9, which is always 0 -> convexity is a constant embedding. Convexity
+            # is the fillet-vs-chamfer discriminator and BRepNet's ablation prices its removal
+            # at -4.6 IoU, its single largest feature loss.
+            if self.attr_layout == "onehot":
+                # 1 = line, 2 = circle, 3 = other; 0 stays reserved for padding.
+                is_line, is_circle = edge_attr[:, :, 7], edge_attr[:, :, 5]
+                is_other = edge_attr[:, :, 8]
+                edge_type = (is_line.gt(0).long()
+                             + is_circle.gt(0).long() * 2
+                             + is_other.gt(0).long() * 3).clamp(
+                    0, self.edge_type_encoder.num_embeddings - 1)
+                edge_len = edge_attr[:, :, 3:4]
+                # The dihedral angle itself is dropped by `normalize_geometry`; only its
+                # discretisation into convex/smooth/concave survives. Feed zeros rather than an
+                # unrelated flag, keeping the encoder's shape for checkpoint compatibility.
+                edge_ang = edge_attr.new_zeros(edge_attr.shape[0], edge_attr.shape[1], 1)
+                # 1 = convex, 2 = smooth, 3 = concave; 0 = padding / unknown.
+                edge_convexity = (edge_attr[:, :, 1].gt(0).long()
+                                  + edge_attr[:, :, 2].gt(0).long() * 2
+                                  + edge_attr[:, :, 4].gt(0).long() * 3).clamp(
+                    0, self.edge_conv_encoder.num_embeddings - 1)
+            else:
+                edge_type = (edge_attr[:, :, 0].long() + 1).clamp(0, self.edge_type_encoder.num_embeddings - 1)
+                edge_len = edge_attr[:, :, 1:2]
+                edge_ang = edge_attr[:, :, 8:9]
+                edge_convexity = (edge_attr[:, :, 9].long() + 1).clamp(0, self.edge_conv_encoder.num_embeddings - 1)
 
             type_feat = self.edge_type_encoder(edge_type)  # (batch, num_edges, num_heads)
             len_feat = self.edge_len_encoder(edge_len)

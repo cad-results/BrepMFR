@@ -39,8 +39,9 @@ from OCC.Core.GeomAbs import (
     GeomAbs_BSplineCurve,
 )
 from OCC.Core.TopTools import TopTools_IndexedDataMapOfShapeListOfShape, TopTools_ListIteratorOfListOfShape
-from OCC.Core.TopAbs import TopAbs_SOLID, TopAbs_SHELL, TopAbs_COMPOUND
-from OCC.Core.gp import gp_Pnt, gp_Vec
+from OCC.Core.TopAbs import TopAbs_SOLID, TopAbs_SHELL, TopAbs_COMPOUND, TopAbs_OUT
+from OCC.Core.BRepTopAdaptor import BRepTopAdaptor_FClass2d
+from OCC.Core.gp import gp_Pnt, gp_Vec, gp_Pnt2d
 from OCC.Core.ShapeAnalysis import ShapeAnalysis_Surface
 from OCC.Core.BRepTools import breptools
 
@@ -160,8 +161,69 @@ def _degenerate_face_centroid(face) -> Optional[Tuple[float, float, float]]:
         return None
 
 
-def compute_face_uv_grid(face, nu: int = 10, nv: int = 10) -> np.ndarray:
-    """Sample a 7-channel UV grid from a face: x, y, z, nx, ny, nz, mask."""
+MFTRCAD_UV_PAD = 0.10
+
+
+def compute_face_uv_grid(face, nu: int = 10, nv: int = 10,
+                         mftrcad_uv: bool = False,
+                         uv_pad: float = MFTRCAD_UV_PAD) -> np.ndarray:
+    """Sample a 7-channel UV grid from a face: x, y, z, nx, ny, nz, mask.
+
+    ``mftrcad_uv`` selects which of two *different input distributions* to emit. This is
+    not a refinement; the two disagree about both where the samples are taken and what
+    channel 6 means.
+
+    - ``False`` -- historical, and what every corpus on disk was built with. Grids the
+      face's UV box exactly and writes ``mask = 1`` wherever the surface evaluated. A face
+      is a trimmed region of a surface and that region is almost never a box, so this
+      samples points **outside the face** (inside a through-hole, off the corner of a
+      triangular pocket floor, past the taper of a narrowing fillet), hands them the
+      underlying surface's xyz and normal, and declares them valid. Channel 6 is then
+      identically 1 and carries no information whatsoever.
+    - ``True`` -- reproduces MFTRCAD's published convention: expand the UV box by
+      ``MFTRCAD_UV_PAD`` of its extent on each side, then classify every sample against the
+      face's trim loops and mask anything ``TopAbs_OUT``.
+
+    **The padding is not a guess.** Running our trim test against MFTRCAD's own STEP files
+    and comparing to their published ``graph_face_grid`` masks on the same 410 faces of 15
+    models, their masked fraction is 0.452 while an unpadded trim test gives 0.196
+    (correlation 0.896 -- same quantity, wrong level). Sweeping the pad:
+
+        pad    masked   mean|diff|   corr
+        0.00    0.196      0.256    0.896
+        0.10    0.463      0.038    0.913     <-- MFTRCAD
+        0.15    0.678      0.227    0.843
+        0.20    0.680      0.228    0.839
+        0.30    0.687      0.238    0.790
+
+    0.10 lands on 0.463 against their 0.452 with mean absolute per-face error 0.038; every
+    other value is off by an order of magnitude more. Gridding the *underlying surface's*
+    full parameter range instead was the other hypothesis and it is wrong: that gives 0.866.
+
+    **Why it matters.** Every real-part corpus here (``defeature_processed`` and everything
+    derived from STEP through this module) was built with ``False``; the 27-class
+    pretraining corpus was built by MFTRCAD with ``True``. So the SurfaceEncoder learns
+    channel 6 as a validity gate on one corpus and is handed a constant on the other, *and*
+    the xyz/normal channels are sampled over a UV domain 10% narrower on each side than the
+    one it was pretrained on. Measured on 622 faces of 12 real ``defeature`` parts, 28.5% of
+    faces are currently fed at least one off-face sample as valid and 10.0% are more than
+    half off-face (mean 10.6% of points, median 0 -- concentrated, not diffuse), and the
+    faces it concentrates on are the trimmed ones: hole walls, pocket floors, tapered
+    fillets.
+
+    It does **not** distort the normalisation, which is what it first looked like it should:
+    ``normalize_geometry`` derives the bbox centre and scale from ``mask > 0.5``, but
+    measured, the scale is identical on 12/12 parts and the centre moves at most 0.6% of the
+    half-extent. The part bbox is set by the extreme faces, whose UV boxes are tight, and
+    the overshoot is interior. That claim is withdrawn.
+
+    Masked points keep their surface geometry rather than being zeroed, matching MFTRCAD (at
+    their masked points max ``|xyz|`` is 1.11 and max ``|normal|`` is 1.0). Gating is
+    channel 6's job; blanking the geometry too would be a second, unmeasured change.
+
+    Left opt-in rather than made the default because flipping it silently would make new
+    pickles incomparable with every number recorded in SCRIPTS.md. See README "Bug 8".
+    """
     grid = np.zeros((7, nu, nv), dtype=np.float32)
 
     surf_adaptor = BRepAdaptor_Surface(face)
@@ -181,16 +243,46 @@ def compute_face_uv_grid(face, nu: int = 10, nv: int = 10) -> np.ndarray:
     v_min = max(surf_adaptor.FirstVParameter(), -1e6)
     v_max = min(surf_adaptor.LastVParameter(), 1e6)
 
+    if mftrcad_uv:
+        # Pad before sampling, so the grid covers the same UV domain the pretraining corpus
+        # was gridded over. Padding without the trim classifier below would be strictly
+        # worse than doing nothing -- it would sample further off-face and still call it
+        # valid -- which is why the two are one flag rather than two.
+        # uv_pad = 0 is a deliberate, useful setting, not a disabled one: it gives trim
+        # masking over the unpadded box, which isolates the masking half of the fix from the
+        # sampling-domain half. Only MFTRCAD_UV_PAD reproduces their corpus.
+        du, dv = u_max - u_min, v_max - v_min
+        u_min, u_max = u_min - uv_pad * du, u_max + uv_pad * du
+        v_min, v_max = v_min - uv_pad * dv, v_max + uv_pad * dv
+
     surface = BRep_Tool.Surface(face)
     if surface is None:
         return grid
 
     is_reversed = face.Orientation() == TopAbs_REVERSED
 
+    # One classifier for the whole face, reused across all nu*nv samples: building it is the
+    # expensive part (it walks the trim loops), Perform() is a cheap 2D query.
+    classifier = None
+    if mftrcad_uv:
+        try:
+            classifier = BRepTopAdaptor_FClass2d(face, 1e-7)
+        except Exception:  # noqa: BLE001
+            # A face OCC cannot classify falls back to the untrimmed box rather than being
+            # dropped: an all-zero mask would make the face invisible to the encoder and
+            # would silently remove it from normalize_geometry's bbox.
+            classifier = None
+
     for i in range(nu):
         for j in range(nv):
             u = u_min + (u_max - u_min) * i / max(nu - 1, 1)
             v = v_min + (v_max - v_min) * j / max(nv - 1, 1)
+            if classifier is not None:
+                try:
+                    if classifier.Perform(gp_Pnt2d(u, v)) != TopAbs_OUT:
+                        grid[6, i, j] = 1.0
+                except Exception:  # noqa: BLE001
+                    grid[6, i, j] = 1.0
             try:
                 pnt = gp_Pnt()
                 surf_adaptor.D0(u, v, pnt)
@@ -212,8 +304,11 @@ def compute_face_uv_grid(face, nu: int = 10, nv: int = 10) -> np.ndarray:
                     grid[4, i, j] = normal.Y()
                     grid[5, i, j] = normal.Z()
 
-                grid[6, i, j] = 1.0
+                if classifier is None:
+                    grid[6, i, j] = 1.0
             except Exception:
+                # The surface failed to evaluate here, so nothing is valid regardless of
+                # what the trim classifier said.
                 grid[6, i, j] = 0.0
 
     return grid
@@ -525,11 +620,18 @@ def normalize_geometry(face_grid, face_attr, edge_grid, edge_attr):
     return face_grid, face_attr, edge_grid, edge_attr
 
 
-def step_to_graph(step_path: str) -> Optional[Dict]:
+def step_to_graph(step_path: str, mftrcad_uv: bool = False,
+                  uv_pad: float = MFTRCAD_UV_PAD) -> Optional[Dict]:
     """Convert a STEP file to raw graph data arrays.
 
     Args:
         step_path: Path to the STEP file.
+        mftrcad_uv: Sample the UV grid the way MFTRCAD's published graphs do -- pad the
+            face UV box by 10% per side, then mask samples outside the trim loops -- so
+            channel 6 is a real validity gate instead of the constant 1. Off by default;
+            see ``compute_face_uv_grid`` for the measurement that fixes the 10%.
+        uv_pad: Override the UV padding. Only meaningful with ``mftrcad_uv``. 0.0 gives trim
+            masking over the unpadded box, which isolates masking from sampling domain.
 
     Returns:
         Dictionary with graph data arrays, or None on failure.
@@ -549,7 +651,8 @@ def step_to_graph(step_path: str) -> Optional[Dict]:
     for face_i, face in enumerate(faces):
         try:
             face_attrs.append(compute_face_attributes(face))
-            face_grids.append(compute_face_uv_grid(face))
+            face_grids.append(
+                compute_face_uv_grid(face, mftrcad_uv=mftrcad_uv, uv_pad=uv_pad))
         except Exception as e:
             logger.warning("Face %d attribute/grid computation failed: %s", face_i, e)
             face_attrs.append(np.zeros(14, dtype=np.float32))
@@ -648,9 +751,14 @@ def step_to_preprocessed_sample(step_path: str, num_spatial: int = 64) -> Option
     if data is None:
         return None
 
-    # Extract face centroids and normals for descriptor computation
-    face_centroids = data["face_attr"][:, 2:5]  # (N, 3)
-    face_normals = data["face_attr"][:, 7:10]  # (N, 3)
+    # Post-normalisation, centroids are at 11:14 and normals are NOT in face_attr at all.
+    # This previously read 2:5 (cone/sphere/torus one-hot bits) and 7:10 ([0, 0, area]),
+    # which collapsed the D2 histogram's max_dist to ~1e-6 and emptied the channel. Take the
+    # centroid from its real column and the normals from the grid, matching preprocess.py --
+    # and pass face_grids so D2/angle sample real point clouds rather than one point each.
+    face_centroids = data["face_attr"][:, 11:14]  # (N, 3)
+    fg = data["face_grid"]
+    face_normals = fg[:, 3:6, :, :].mean(axis=(2, 3)) if fg.shape[1] >= 6 else None
 
     graph_features = precompute_graph_features(
         edge_index=data["edge_index"],
@@ -658,6 +766,7 @@ def step_to_preprocessed_sample(step_path: str, num_spatial: int = 64) -> Option
         num_spatial=num_spatial,
         face_centroids=face_centroids,
         face_normals=face_normals,
+        face_grids=fg,
     )
 
     model_id = Path(step_path).stem

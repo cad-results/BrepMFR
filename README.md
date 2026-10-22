@@ -2,7 +2,7 @@
 
 Code for BrepMFR: Enhancing machining feature recognition in B-rep models through deep learning and domain adaptation.
 
-**Model Weights:** [https://huggingface.co/cad-weights/BrepMFR](https://huggingface.co/cad-weights/BrepMFR)
+**Model Weights:** [https://huggingface.co/cad-weights/BrepMFR](https://huggingface.co/cad-weights/BrepMFR) — see [Model Weights](#model-weights) for every checkpoint and its local path
 
 ![The network architecture of BrepMFR](docs/img/network_architecture.jpg)
 
@@ -77,6 +77,69 @@ dataset/
     │   └── 00001234_abc123_trimesh_000.bin
     └── ...
 ```
+
+## Model Weights
+
+All checkpoints are hosted at [huggingface.co/cad-weights/BrepMFR](https://huggingface.co/cad-weights/BrepMFR). The `results/` paths that the commands in this README and in `brepformer/` use are not committed to git. The table maps each HuggingFace file to the local path the scripts expect. It holds every checkpoint the docs reference, plus the best checkpoint from each training run.
+
+Download one checkpoint to the path the scripts expect:
+
+```bash
+mkdir -p "results/trial1_finetune_ss/best-epoch=32-val"
+huggingface-cli download cad-weights/BrepMFR trial1_finetune_ss/best-epoch32-f1_0.9354.ckpt --local-dir /tmp/brepmfr_hf
+mv /tmp/brepmfr_hf/trial1_finetune_ss/best-epoch32-f1_0.9354.ckpt "results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt"
+```
+
+Or fetch everything with `huggingface-cli download cad-weights/BrepMFR --local-dir weights/`.
+
+`val F1` is model-level multi-label F1, which is what the filenames record. `face F1` is per-face macro F1. These two metrics rank checkpoints differently. See [Face Segmentation on Real Parts](brepformer/README.md#face-segmentation-on-real-parts-defeature-5-class) for scores on real parts.
+
+| HuggingFace file | Local path used by scripts | Metric | Notes |
+|---|---|---|---|
+| [`brepformer/best-epoch43-f1_0.8638.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/brepformer/best-epoch43-f1_0.8638.ckpt) | `results/brepformer/best-epoch=43-val/f1=0.8638.ckpt` | val F1 0.8638 | Legacy architecture (BatchNorm, single FFN); won't load into the current `BrepClassifier` |
+| [`brepformer/best-epoch97-f1_0.8482.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/brepformer/best-epoch97-f1_0.8482.ckpt) | `results/brepformer/best-epoch=97-val/f1=0.8482.ckpt` | val F1 0.8482 | Legacy architecture (BatchNorm, single FFN); won't load into the current `BrepClassifier` |
+| [`brepformer/best-epoch99-f1_0.8466.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/brepformer/best-epoch99-f1_0.8466.ckpt) | `results/brepformer/best-epoch=99-val/f1=0.8466.ckpt` | val F1 0.8466 | Legacy architecture (BatchNorm, single FFN); won't load into the current `BrepClassifier` |
+| [`brepsimplifier/f1_0.9415.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/brepsimplifier/f1_0.9415.ckpt) | `brepformer/brepsimplifier/model_checkpoint/f1=0.9415.ckpt` | val F1 0.9415 | Same file as `trial1_ss1500` epoch 57; path BrepSimplifier expects |
+| [`face_seg_heavy/best-epoch43-f1_0.8626.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/face_seg_heavy/best-epoch43-f1_0.8626.ckpt) | `results/face_seg_heavy/best-epoch=43-val/f1=0.8626.ckpt` | val F1 0.8626 | Legacy architecture (BatchNorm, single FFN); won't load into the current `BrepClassifier` |
+| [`face_seg_heavy/best-epoch46-f1_0.8608.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/face_seg_heavy/best-epoch46-f1_0.8608.ckpt) | `results/face_seg_heavy/best-epoch=46-val/f1=0.8608.ckpt` | val F1 0.8608 | Legacy architecture (BatchNorm, single FFN); won't load into the current `BrepClassifier` |
+| [`fix4_onehot_def/bestface-epoch81-face_f1_0.8714.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/fix4_onehot_def/bestface-epoch81-face_f1_0.8714.ckpt) | `results/fix4_onehot_def/bestface-epoch=81-val/face_f1=0.8714.ckpt` | face F1 0.8714 |  |
+| [`fix8_uv_def/bestface-epoch60-face_f1_0.8577.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/fix8_uv_def/bestface-epoch60-face_f1_0.8577.ckpt) | `results/fix8_uv_def/bestface-epoch=60-val/face_f1=0.8577.ckpt` | face F1 0.8577 |  |
+| [`fix8ctl_legacy_def/bestface-epoch00-face_f1_0.8653.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/fix8ctl_legacy_def/bestface-epoch00-face_f1_0.8653.ckpt) | `results/fix8ctl_legacy_def/bestface-epoch=00-val/face_f1=0.8653.ckpt` | face F1 0.8653 |  |
+| [`pipe_classifier/best-epoch64-f1_0.5517.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/pipe_classifier/best-epoch64-f1_0.5517.ckpt) | `results/pipe_classifier/best-epoch=64-val/f1=0.5517.ckpt` | val F1 0.5517 | Different model class (pipe classifier) |
+| [`t6_base/bestface-epoch01-face_f1_0.1255.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6_base/bestface-epoch01-face_f1_0.1255.ckpt) | `results/t6_base/bestface-epoch=01-val/face_f1=0.1255.ckpt` | face F1 0.1255 | Collapsed run, kept for the record |
+| [`t6_f/bestface-epoch00-face_f1_0.1255.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6_f/bestface-epoch00-face_f1_0.1255.ckpt) | `results/t6_f/bestface-epoch=00-val/face_f1=0.1255.ckpt` | face F1 0.1255 | Collapsed run, kept for the record |
+| [`t6_init_def/bestface-epoch00-face_f1_0.6958.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6_init_def/bestface-epoch00-face_f1_0.6958.ckpt) | `results/t6_init_def/bestface-epoch=00-val/face_f1=0.6958.ckpt` | face F1 0.6958 |  |
+| [`t6_init_def_wf/bestface-epoch61-face_f1_0.8448.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6_init_def_wf/bestface-epoch61-face_f1_0.8448.ckpt) | `results/t6_init_def_wf/bestface-epoch=61-val/face_f1=0.8448.ckpt` | face F1 0.8448 |  |
+| [`t6_init_ft/bestface-epoch52-face_f1_0.8212.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6_init_ft/bestface-epoch52-face_f1_0.8212.ckpt) | `results/t6_init_ft/bestface-epoch=52-val/face_f1=0.8212.ckpt` | face F1 0.8212 |  |
+| [`t6_init_ft_wf/bestface-epoch47-face_f1_0.8378.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6_init_ft_wf/bestface-epoch47-face_f1_0.8378.ckpt) | `results/t6_init_ft_wf/bestface-epoch=47-val/face_f1=0.8378.ckpt` | face F1 0.8378 |  |
+| [`t6_w/bestface-epoch00-face_f1_0.1982.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6_w/bestface-epoch00-face_f1_0.1982.ckpt) | `results/t6_w/bestface-epoch=00-val/face_f1=0.1982.ckpt` | face F1 0.1982 | Collapsed run, kept for the record |
+| [`t6_wf/bestface-epoch00-face_f1_0.1942.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6_wf/bestface-epoch00-face_f1_0.1942.ckpt) | `results/t6_wf/bestface-epoch=00-val/face_f1=0.1942.ckpt` | face F1 0.1942 | Collapsed run, kept for the record |
+| [`t6a_init_t5/bestface-epoch74-face_f1_0.8676.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6a_init_t5/bestface-epoch74-face_f1_0.8676.ckpt) | `results/t6a_init_t5/bestface-epoch=74-val/face_f1=0.8676.ckpt` | face F1 0.8676 |  |
+| [`t6a_init_t5_wf/bestface-epoch62-face_f1_0.8642.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6a_init_t5_wf/bestface-epoch62-face_f1_0.8642.ckpt) | `results/t6a_init_t5_wf/bestface-epoch=62-val/face_f1=0.8642.ckpt` | face F1 0.8642 |  |
+| [`t6a_init_t5_wf/bestface-epoch85-face_f1_0.8621.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6a_init_t5_wf/bestface-epoch85-face_f1_0.8621.ckpt) | `results/t6a_init_t5_wf/bestface-epoch=85-val/face_f1=0.8621.ckpt` | face F1 0.8621 |  |
+| [`t6actl_init_t5/bestface-epoch60-face_f1_0.8877.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6actl_init_t5/bestface-epoch60-face_f1_0.8877.ckpt) | `results/t6actl_init_t5/bestface-epoch=60-val/face_f1=0.8877.ckpt` | face F1 0.8877 |  |
+| [`t6actl_init_t5/bestface-epoch61-face_f1_0.8873.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6actl_init_t5/bestface-epoch61-face_f1_0.8873.ckpt) | `results/t6actl_init_t5/bestface-epoch=61-val/face_f1=0.8873.ckpt` | face F1 0.8873 |  |
+| [`t6ctl_base/bestface-epoch01-face_f1_0.1001.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6ctl_base/bestface-epoch01-face_f1_0.1001.ckpt) | `results/t6ctl_base/bestface-epoch=01-val/face_f1=0.1001.ckpt` | face F1 0.1001 | Collapsed run, kept for the record |
+| [`t6ctl_init_ft/bestface-epoch00-face_f1_0.8637.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6ctl_init_ft/bestface-epoch00-face_f1_0.8637.ckpt) | `results/t6ctl_init_ft/bestface-epoch=00-val/face_f1=0.8637.ckpt` | face F1 0.8637 |  |
+| [`t6ctl_wf/bestface-epoch02-face_f1_0.0887.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/t6ctl_wf/bestface-epoch02-face_f1_0.0887.ckpt) | `results/t6ctl_wf/bestface-epoch=02-val/face_f1=0.0887.ckpt` | face F1 0.0887 | Collapsed run, kept for the record |
+| [`trial1_finetune_ss/best-epoch26-f1_0.9356.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial1_finetune_ss/best-epoch26-f1_0.9356.ckpt) | `results/trial1_finetune_ss/best-epoch=26-val/f1=0.9356.ckpt` | val F1 0.9356 |  |
+| [`trial1_finetune_ss/best-epoch32-f1_0.9354.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial1_finetune_ss/best-epoch32-f1_0.9354.ckpt) | `results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt` | val F1 0.9354 | **Recommended** — best face macro F1 on real parts (0.8886) |
+| [`trial1_finetune_ss/last.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial1_finetune_ss/last.ckpt) | `results/trial1_finetune_ss/last.ckpt` | — |  |
+| [`trial1_ss/best-epoch41-f1_0.9476.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial1_ss/best-epoch41-f1_0.9476.ckpt) | `results/trial1_ss/best-epoch=41-val/f1=0.9476.ckpt` | val F1 0.9476 |  |
+| [`trial1_ss/last.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial1_ss/last.ckpt) | `results/trial1_ss/last.ckpt` | — |  |
+| [`trial1_ss1000/best-epoch28-f1_0.9146.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial1_ss1000/best-epoch28-f1_0.9146.ckpt) | `results/trial1_ss1000/best-epoch=28-val/f1=0.9146.ckpt` | val F1 0.9146 |  |
+| [`trial1_ss1500/best-epoch43-f1_0.9425.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial1_ss1500/best-epoch43-f1_0.9425.ckpt) | `results/trial1_ss1500/best-epoch=43-val/f1=0.9425.ckpt` | val F1 0.9425 |  |
+| [`trial1_ss1500/best-epoch46-f1_0.9455.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial1_ss1500/best-epoch46-f1_0.9455.ckpt) | `results/trial1_ss1500/best-epoch=46-val/f1=0.9455.ckpt` | val F1 0.9455 |  |
+| [`trial1_ss1500/best-epoch57-f1_0.9415.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial1_ss1500/best-epoch57-f1_0.9415.ckpt) | `results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt` | val F1 0.9415 | `defeature_v2.py` default |
+| [`trial1_ss1500/last.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial1_ss1500/last.ckpt) | `results/trial1_ss1500/last.ckpt` | — |  |
+| [`trial2/best-epoch111-f1_0.8558.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial2/best-epoch111-f1_0.8558.ckpt) | `results/trial2/best-epoch=111-val/f1=0.8558.ckpt` | val F1 0.8558 | Legacy architecture (BatchNorm, single FFN); won't load into the current `BrepClassifier` |
+| [`trial2_finetune_ss/best-epoch28-f1_0.9289.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial2_finetune_ss/best-epoch28-f1_0.9289.ckpt) | `results/trial2_finetune_ss/best-epoch=28-val/f1=0.9289.ckpt` | val F1 0.9289 |  |
+| [`trial2_finetune_ss/last.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial2_finetune_ss/last.ckpt) | `results/trial2_finetune_ss/last.ckpt` | — |  |
+| [`trial3/best-epoch41-f1_0.8799.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial3/best-epoch41-f1_0.8799.ckpt) | `results/trial3/best-epoch=41-val/f1=0.8799.ckpt` | val F1 0.8799 | Legacy architecture (BatchNorm, single FFN); won't load into the current `BrepClassifier` |
+| [`trial3/best-epoch42-f1_0.8795.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial3/best-epoch42-f1_0.8795.ckpt) | `results/trial3/best-epoch=42-val/f1=0.8795.ckpt` | val F1 0.8795 | Legacy architecture (BatchNorm, single FFN); won't load into the current `BrepClassifier` |
+| [`trial4/best-epoch26-f1_0.8839.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial4/best-epoch26-f1_0.8839.ckpt) | `results/trial4/best-epoch=26-val/f1=0.8839.ckpt` | val F1 0.8839 | Legacy architecture (BatchNorm, single FFN); won't load into the current `BrepClassifier` |
+| [`trial5/best-epoch39-f1_0.8832.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial5/best-epoch39-f1_0.8832.ckpt) | `results/trial5/best-epoch=39-val/f1=0.8832.ckpt` | val F1 0.8832 | 27-class MFTRCAD |
+| [`trial5/best-epoch43-f1_0.8823.ckpt`](https://huggingface.co/cad-weights/BrepMFR/resolve/main/trial5/best-epoch43-f1_0.8823.ckpt) | `results/trial5/best-epoch=43-val/f1=0.8823.ckpt` | val F1 0.8823 | 27-class MFTRCAD |
 
 ## Training
 
@@ -443,6 +506,129 @@ Results for the 23 models with detailed stats:
 **Batch 2 total: 6,837 feature faces removed, 0 failed, 23/23 valid shapes.**
 
 The remaining 27 models (sizes 242-1077 faces) also all completed with no errors. One OCC segfault occurred at the OS/WSL2 level between the two batches (not a defeaturing failure) and did not affect any output files.
+
+---
+
+## Inference and Visualization Pipeline
+
+The BrepFormer pipeline classifies each face of a B-rep STEP model, exports colored visualizations, and optionally defeatures the model. Three class taxonomies are available:
+
+| Mode | Classes | Flag | Description |
+|------|---------|------|-------------|
+| Full | 27 | *(default)* | All MFTRCAD machining feature classes |
+| Grouped | 8 | `--8_classes` | Grouped into: other, through_hole, blind_hole, chamfer, fillet, through_cut, blind_cut, extrude |
+| Defeature | 5 | `--5_classes` | Grouped into: random, hole, chamfer, fillet, cut |
+
+### All-in-One Pipeline Script
+
+```bash
+./brepformer/scripts/inference_pipeline.sh brepformer/data/defeature/steps/uh62382.step
+```
+
+This runs the full 6-step pipeline (inference → FreeCAD export → analysis → visualize_seg → defeature → visualize_defeature). See `brepformer/scripts/inference_pipeline.sh --help` for options.
+
+### Manual Pipeline (27-class, default)
+
+```bash
+# 1. Inference — predict per-face labels
+python -m brepformer.infer \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --checkpoint "results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt" \
+    --output brepformer/pipeline_output/uh62382/preds.seg
+
+# 2. Colored STEP export for FreeCAD
+python -m brepformer.export_freecad \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --seg brepformer/pipeline_output/uh62382/preds.seg \
+    --output brepformer/pipeline_output/uh62382/uh62382_colored.step
+
+# 3. Visualize face segmentation (interactive 3D viewer)
+python -m brepformer.visualize_seg \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --seg brepformer/pipeline_output/uh62382/preds.seg
+
+# 4. Defeature — remove predicted manufacturing features
+python -m brepformer.defeature_v2 \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --seg brepformer/pipeline_output/uh62382/preds.seg \
+    --output_dir brepformer/pipeline_output/uh62382/
+
+# 5. Visualize defeatured result (original vs defeatured comparison)
+python -m brepformer.visualize_defeature \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --defeatured brepformer/pipeline_output/uh62382/uh62382_defeatured.step \
+    --seg brepformer/pipeline_output/uh62382/preds.seg
+```
+
+### Pipeline with 8-class Grouping
+
+```bash
+# 1. Inference with 8-class remapping
+python -m brepformer.infer \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --checkpoint "results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt" \
+    --output brepformer/pipeline_output/uh62382/preds_8class.seg --8_classes
+
+# 2. Colored STEP export (8-class palette)
+python -m brepformer.export_freecad \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --seg brepformer/pipeline_output/uh62382/preds_8class.seg \
+    --output brepformer/pipeline_output/uh62382/uh62382_colored_8class.step \
+    --8_classes
+
+# 3. Visualize segmentation (8-class coloring)
+python -m brepformer.visualize_seg \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --seg brepformer/pipeline_output/uh62382/preds_8class.seg \
+    --8_classes
+
+# 4. Defeature (uses original 5-class predictions internally)
+python -m brepformer.defeature_v2 \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --seg brepformer/pipeline_output/uh62382/preds.seg \
+    --output_dir brepformer/pipeline_output/uh62382/
+
+# 5. Visualize defeatured (original vs defeatured comparison)
+python -m brepformer.visualize_defeature \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --defeatured brepformer/pipeline_output/uh62382/uh62382_defeatured.step \
+    --seg brepformer/pipeline_output/uh62382/preds.seg
+```
+
+### Pipeline with 5-class Defeature Categories
+
+```bash
+# 1. Inference with 5-class remapping
+python -m brepformer.infer \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --checkpoint "results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt" \
+    --output brepformer/pipeline_output/uh62382/preds_5class.seg --5_classes
+
+# 2. Colored STEP export (5-class palette)
+python -m brepformer.export_freecad \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --seg brepformer/pipeline_output/uh62382/preds_5class.seg \
+    --output brepformer/pipeline_output/uh62382/uh62382_colored_5class.step \
+    --5_classes
+
+# 3. Visualize segmentation (5-class coloring)
+python -m brepformer.visualize_seg \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --seg brepformer/pipeline_output/uh62382/preds_5class.seg \
+    --5_classes
+
+# 4. Defeature (5-class .seg is natively compatible)
+python -m brepformer.defeature_v2 \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --seg brepformer/pipeline_output/uh62382/preds_5class.seg \
+    --output_dir brepformer/pipeline_output/uh62382/
+
+# 5. Visualize defeatured (original vs defeatured comparison)
+python -m brepformer.visualize_defeature \
+    --step brepformer/data/defeature/steps/uh62382.step \
+    --defeatured brepformer/pipeline_output/uh62382/uh62382_defeatured.step \
+    --seg brepformer/pipeline_output/uh62382/preds_5class.seg
+```
 
 ---
 

@@ -56,6 +56,11 @@ class BrepClassifierConfig:
     lr_factor: float = 0.5  # ReduceLROnPlateau factor
     lr_patience: int = 5  # ReduceLROnPlateau patience
     min_lr: float = 1e-6
+    # Metric ReduceLROnPlateau watches. The historical value is "train/loss_epoch",
+    # which decays the LR on *training* loss and so keeps cutting it while the model
+    # overfits. "val/loss" or "val/face_f1" track generalisation instead; the mode is
+    # derived from the name (an f1/acc metric is maximised, a loss minimised).
+    lr_monitor: str = "train/loss_epoch"
     gradient_clip_val: float = 1.0
     max_epochs: int = 200  # official default
 
@@ -76,6 +81,17 @@ class BrepClassifierConfig:
 
     # Convexity types for edge convexity encoding
     num_convexity_types: int = 3  # convex, concave, smooth
+
+    # How to decode face_attr / edge_attr columns.
+    #   "onehot"      - the layout actually written to disk by step_to_graph.normalize_geometry
+    #                   and used by the MFTRCAD graph JSONs. Correct; the default.
+    #   "categorical" - the historical indexing, which read a layout that never reaches a
+    #                   pickle. Under it surface type collapses to an "is it a plane" bit, face
+    #                   area becomes an "is it a cylinder" bit, face centroid becomes three
+    #                   type bits that are zero on most parts, edge length reads the convexity
+    #                   flag, and edge convexity is a constant. Kept only so pre-fix
+    #                   checkpoints can be re-scored under the inputs they were trained on.
+    attr_layout: str = "onehot"
 
     # Face segmentation
     face_segmentation: bool = False  # enables face segmentation head

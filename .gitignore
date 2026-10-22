@@ -205,3 +205,18 @@ lightning_logs/
 
 # OS
 *:Zone.Identifier
+
+# Weights live on HuggingFace (see README "Model Weights")
+brepformer/brepsimplifier/model_checkpoint/
+# Generated outputs and third-party STEP inputs
+brepformer/brepsimplifier/pipeline_output*/
+brepformer/brepsimplifier/test_data/stepfiles/
+brepformer/test_partfield/*.step
+brepformer/test_partfield/stepfiles/
+# Corpora (GrabCAD downloads, pseudo-labelled and preprocessed sets)
+brepformer/data/aman_sample/
+brepformer/data/hard_samples*/
+brepformer/data/suitable_samples_*/
+brepformer/data/defeature_uv*/
+brepformer/data/trial6*_processed/
+brepformer/data/class_geometry_faces*.jsonl.gz

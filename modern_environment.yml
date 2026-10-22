@@ -11,10 +11,27 @@ dependencies:
   - pytorch-cuda=12.1
   - pythonocc-core>=7.9
   - PySide2
+  # --- rotator pipeline deps (rotator/environment.yml) ---
+  # PyQt5 is deliberately omitted: it clashes with PySide2 in one env. The
+  # rotator renders offscreen through VTK, so no Qt binding is needed.
+  - occt>=7.9
+  - vtk>=9.3
+  - scipy
+  # Required by preprocess.py for the stratified group-aware train/val/test
+  # split. Without it the split falls back to a group-aware but unstratified
+  # numpy path — correct, but it loses class balancing.
+  - scikit-learn>=1.3
+  - matplotlib
+  - pillow
+  - trimesh
   - pip
   - pip:
       - pytorch-lightning>=2.4
       - torch-geometric>=2.5
       - numpy>=1.26,<2.0
       - torchmetrics>=1.0
+      # Phase 2 bulk download (download_grabcad_playwright.py)
+      - playwright>=1.40
+      # Phase 4 visual reclassification (reclassify_visual.py)
+      - anthropic>=0.40
       # fairseq>=0.12.3  # Only needed for original BrepMFR (models/), may require Python <=3.10

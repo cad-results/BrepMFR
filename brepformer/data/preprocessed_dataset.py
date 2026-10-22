@@ -12,6 +12,7 @@ import random as _random
 from pathlib import Path
 from typing import Dict, List, Optional, Set
 
+import numpy as np
 import torch
 from torch.utils.data import Dataset
 
@@ -29,6 +30,9 @@ class PreprocessedDataset(Dataset):
         split: str = "train",
         transform=None,
         max_faces: int = None,
+        rotate_aug: str = "none",
+        rotate_seed: int = 0,
+        mask_policy: str = "asis",
     ):
         """Initialize PreprocessedDataset.
 
@@ -39,8 +43,48 @@ class PreprocessedDataset(Dataset):
             transform: Optional transform to apply to samples.
             max_faces: If set, skip samples that likely exceed this face count
                        (estimated from file size to avoid loading huge files).
+            rotate_aug: Rotation augmentation applied per __getitem__ call.
+                'none'        - no augmentation (the historical behaviour; the corpus is
+                                axis-aligned, so a model trained this way can be a
+                                world-frame detector).
+                'octahedral'  - one of the 24 axis-aligned 90-degree rotations. Cheap, and
+                                exactly the frames that `so3_probe.py` found the *worst*
+                                case in (t6_init_def_wf drops to 0.5770 on octahedral-2,
+                                below any random draw), so it is not a weak control here.
+                'so3'         - uniform SO(3). Matches how real GrabCAD parts arrive.
+                Only ever enable this on the *train* split: rotating val/test changes what
+                the metric means. See `brepformer/so3_probe.py` for the measurement that
+                motivates it and for the exact slots that carry the frame.
+            mask_policy: What to do with ``face_grid`` channel 6, the UV validity mask.
+                'asis'  - use whatever the pickle holds (the historical behaviour).
+                'const' - overwrite it with 1 everywhere, on EVERY split and corpus.
+                'zero'  - overwrite it with 0 everywhere.
+                This is the third of three candidate fixes for Bug 8, and the only one that
+                needs no re-preprocessing. Bug 8 is that channel 6 is identically 1 on every
+                STEP-derived corpus and 44.5% masked in MFTRCAD pretraining, so the encoder
+                learns it as a validity gate on one corpus and is handed a constant on the
+                other. `--mftrcad_uv` removes the mismatch by making real parts match
+                MFTRCAD; 'const' removes it by deleting the channel's information on BOTH
+                sides, which is the right fix if the channel carries little signal but a lot
+                of distribution shift. 'const' and 'zero' are equivalent in information and
+                differ only in what the first BatchNorm sees, which is why both exist: a
+                constant channel is not necessarily inert once BatchNorm normalises it.
+                Note this does NOT fix the other half of Bug 8 -- the 10%-narrower UV
+                sampling domain -- which only re-preprocessing can address.
+            rotate_seed: Base seed for the augmentation RNG. The per-item stream is derived
+                from (rotate_seed, epoch-independent item index, and a per-worker draw), so
+                each item sees a different frame on each visit rather than one frame
+                permanently baked in.
         """
         self.transform = transform
+        if rotate_aug not in ("none", "octahedral", "so3"):
+            raise ValueError(f"rotate_aug must be none|octahedral|so3, got {rotate_aug!r}")
+        self.rotate_aug = rotate_aug
+        if mask_policy not in ("asis", "const", "zero"):
+            raise ValueError(f"mask_policy must be asis|const|zero, got {mask_policy!r}")
+        self.mask_policy = mask_policy
+        self.rotate_seed = rotate_seed
+        self._rot_rng = None  # lazily built per worker process
         self.samples = None
         self._sample_files = None
 
@@ -110,6 +154,30 @@ class PreprocessedDataset(Dataset):
             return len(self._sample_files)
         return len(self.samples)
 
+    def _rotate(self, sample: dict) -> dict:
+        """Rotate one sample into a fresh frame.
+
+        Imported lazily so that `so3_probe`'s argparse/torch imports are not paid by every
+        dataloader worker when augmentation is off.
+        """
+        import numpy as np
+
+        from brepformer.so3_probe import (
+            octahedral_rotation, random_rotation, rotate_sample,
+        )
+
+        if self._rot_rng is None:
+            # Each worker process needs its own stream, or every worker draws the same
+            # sequence of frames and the augmentation is num_workers times less diverse
+            # than it looks.
+            info = torch.utils.data.get_worker_info()
+            wid = info.id if info is not None else 0
+            self._rot_rng = np.random.default_rng([self.rotate_seed, wid])
+
+        R = (octahedral_rotation(self._rot_rng) if self.rotate_aug == "octahedral"
+             else random_rotation(self._rot_rng))
+        return rotate_sample(sample, R, renormalize=True)
+
     def __getitem__(self, idx: int) -> Dict[str, torch.Tensor]:
         """Get a single sample.
 
@@ -124,6 +192,17 @@ class PreprocessedDataset(Dataset):
                 sample = pickle.load(f)
         else:
             sample = self.samples[idx]
+
+        if self.rotate_aug != "none":
+            sample = self._rotate(sample)
+
+        if self.mask_policy != "asis":
+            # Copy first: samples may be held in memory and reused across epochs, so
+            # mutating in place would be fine for a constant but would silently corrupt
+            # anything that later reads the real mask (the descriptors already did).
+            fg = np.array(sample["face_grid"], copy=True)
+            fg[:, 6, :, :] = 1.0 if self.mask_policy == "const" else 0.0
+            sample = {**sample, "face_grid": fg}
 
         # Convert numpy arrays to tensors
         output = {

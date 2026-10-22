@@ -1,0 +1,3322 @@
+{
+  "classes": {
+    "0": {
+      "name": "random",
+      "n_faces": 31550,
+      "numeric": {
+        "area_fraction_of_part": {
+          "n": 31550,
+          "p10": 0.0,
+          "p50": 0.007,
+          "p90": 0.1
+        },
+        "radius_vs_part_extent": {
+          "n": 7381,
+          "p10": 0.014,
+          "p50": 0.134,
+          "p90": 0.478
+        },
+        "u_sweep_degrees": {
+          "n": 7840,
+          "p10": 19.09,
+          "p50": 180.0,
+          "p90": 180.0
+        },
+        "coaxial_group_sweep_degrees": {
+          "n": 7247,
+          "p10": 30.36,
+          "p50": 360.0,
+          "p90": 360.0
+        },
+        "half_angle_degrees": {
+          "n": 1127,
+          "p10": 2.0,
+          "p50": 35.0,
+          "p90": 69.79
+        },
+        "n_neighbours": {
+          "n": 31550,
+          "p10": 4.0,
+          "p50": 4.0,
+          "p90": 13.0
+        },
+        "min_edge_normal_deviation_degrees": {
+          "n": 31550,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 90.0
+        },
+        "max_edge_normal_deviation_degrees": {
+          "n": 31550,
+          "p10": 60.0,
+          "p50": 90.0,
+          "p90": 90.0
+        },
+        "n_tangential_edges": {
+          "n": 31550,
+          "p10": 0.0,
+          "p50": 1.0,
+          "p90": 4.0
+        },
+        "n_convex_edges": {
+          "n": 31550,
+          "p10": 1.0,
+          "p50": 2.0,
+          "p90": 7.0
+        },
+        "n_concave_edges": {
+          "n": 31550,
+          "p10": 1.0,
+          "p50": 3.0,
+          "p90": 7.0
+        },
+        "n_faces_in_part": {
+          "n": 31550,
+          "p10": 27.0,
+          "p50": 86.0,
+          "p90": 234.0
+        },
+        "n_inner_wires": {
+          "n": 31550,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 1.0
+        },
+        "n_wires": {
+          "n": 31550,
+          "p10": 1.0,
+          "p50": 1.0,
+          "p90": 2.0
+        },
+        "accessibility": {
+          "n": 31550,
+          "p10": 0.2,
+          "p50": 1.0,
+          "p90": 1.0
+        },
+        "hull_depth_vs_extent": {
+          "n": 31226,
+          "p10": 0.0,
+          "p50": 0.004,
+          "p90": 0.087
+        },
+        "concave_component_size": {
+          "n": 31550,
+          "p10": 0.0,
+          "p50": 12.0,
+          "p90": 78.0
+        },
+        "concave_component_area_fraction": {
+          "n": 31550,
+          "p10": 0.0,
+          "p50": 0.208,
+          "p90": 0.948
+        },
+        "strict_component_size": {
+          "n": 31550,
+          "p10": 0.0,
+          "p50": 11.0,
+          "p90": 76.0
+        },
+        "strict_component_area_fraction": {
+          "n": 31550,
+          "p10": 0.0,
+          "p50": 0.199,
+          "p90": 0.944
+        }
+      },
+      "categorical": {
+        "surface_type": {
+          "plane": 0.721,
+          "cylinder": 0.194,
+          "cone": 0.036,
+          "bspline": 0.028,
+          "torus": 0.015,
+          "sphere": 0.004
+        },
+        "concave_surface": {
+          "False": 0.817,
+          "True": 0.183
+        },
+        "closed_in_u": {
+          "False": 0.991,
+          "True": 0.009
+        },
+        "on_convex_hull": {
+          "True": 0.516,
+          "False": 0.484
+        },
+        "is_saddle": {
+          "False": 0.982,
+          "True": 0.018
+        },
+        "mean_curvature_sign": {
+          "0": 0.722,
+          "-1": 0.219,
+          "1": 0.059
+        },
+        "gaussian_curvature_sign": {
+          "0": 0.966,
+          "-1": 0.018,
+          "1": 0.016
+        },
+        "strict_component_surfaces": {
+          "cylinder+plane": 0.548,
+          "cone+cylinder+plane": 0.165,
+          "plane": 0.112,
+          "bspline+cylinder+plane": 0.041,
+          "bspline+cone+cylinder+plane": 0.019,
+          "cylinder+plane+torus": 0.019
+        }
+      },
+      "neighbour_surface_share": {
+        "plane": 0.849,
+        "cylinder": 0.702,
+        "cone": 0.115,
+        "torus": 0.109,
+        "bspline": 0.096,
+        "sphere": 0.01
+      }
+    },
+    "1": {
+      "name": "hole",
+      "n_faces": 27367,
+      "numeric": {
+        "area_fraction_of_part": {
+          "n": 27367,
+          "p10": 0.0,
+          "p50": 0.001,
+          "p90": 0.01
+        },
+        "radius_vs_part_extent": {
+          "n": 25443,
+          "p10": 0.004,
+          "p50": 0.018,
+          "p90": 0.073
+        },
+        "u_sweep_degrees": {
+          "n": 25545,
+          "p10": 180.0,
+          "p50": 180.0,
+          "p90": 180.0
+        },
+        "coaxial_group_sweep_degrees": {
+          "n": 25435,
+          "p10": 360.0,
+          "p50": 360.0,
+          "p90": 360.0
+        },
+        "half_angle_degrees": {
+          "n": 1491,
+          "p10": 3.0,
+          "p50": 59.0,
+          "p90": 59.0
+        },
+        "n_neighbours": {
+          "n": 27367,
+          "p10": 4.0,
+          "p50": 4.0,
+          "p90": 4.0
+        },
+        "min_edge_normal_deviation_degrees": {
+          "n": 27367,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 7.24
+        },
+        "max_edge_normal_deviation_degrees": {
+          "n": 27367,
+          "p10": 90.0,
+          "p50": 90.0,
+          "p90": 90.0
+        },
+        "n_tangential_edges": {
+          "n": 27367,
+          "p10": 1.0,
+          "p50": 2.0,
+          "p90": 2.0
+        },
+        "n_convex_edges": {
+          "n": 27367,
+          "p10": 0.0,
+          "p50": 1.0,
+          "p90": 2.0
+        },
+        "n_concave_edges": {
+          "n": 27367,
+          "p10": 2.0,
+          "p50": 3.0,
+          "p90": 4.0
+        },
+        "n_faces_in_part": {
+          "n": 27367,
+          "p10": 35.0,
+          "p50": 111.0,
+          "p90": 354.0
+        },
+        "n_inner_wires": {
+          "n": 27367,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 0.0
+        },
+        "n_wires": {
+          "n": 27367,
+          "p10": 1.0,
+          "p50": 1.0,
+          "p90": 1.0
+        },
+        "accessibility": {
+          "n": 27367,
+          "p10": 0.0,
+          "p50": 0.333,
+          "p90": 0.8
+        },
+        "hull_depth_vs_extent": {
+          "n": 27242,
+          "p10": 0.002,
+          "p50": 0.018,
+          "p90": 0.083
+        },
+        "concave_component_size": {
+          "n": 27367,
+          "p10": 0.0,
+          "p50": 24.0,
+          "p90": 226.0
+        },
+        "concave_component_area_fraction": {
+          "n": 27367,
+          "p10": 0.0,
+          "p50": 0.442,
+          "p90": 0.98
+        },
+        "strict_component_size": {
+          "n": 27367,
+          "p10": 0.0,
+          "p50": 24.0,
+          "p90": 226.0
+        },
+        "strict_component_area_fraction": {
+          "n": 27367,
+          "p10": 0.0,
+          "p50": 0.428,
+          "p90": 0.98
+        }
+      },
+      "categorical": {
+        "surface_type": {
+          "cylinder": 0.875,
+          "plane": 0.063,
+          "cone": 0.054,
+          "torus": 0.004,
+          "bspline": 0.004,
+          "sphere": 0.0
+        },
+        "concave_surface": {
+          "True": 0.997,
+          "False": 0.003
+        },
+        "closed_in_u": {
+          "False": 0.968,
+          "True": 0.032
+        },
+        "on_convex_hull": {
+          "False": 0.798,
+          "True": 0.202
+        },
+        "is_saddle": {
+          "False": 0.999,
+          "True": 0.001
+        },
+        "mean_curvature_sign": {
+          "1": 0.933,
+          "0": 0.063,
+          "-1": 0.004
+        },
+        "gaussian_curvature_sign": {
+          "0": 0.994,
+          "1": 0.004,
+          "-1": 0.001
+        },
+        "strict_component_surfaces": {
+          "cylinder+plane": 0.694,
+          "cone+cylinder+plane": 0.202,
+          "cone+cylinder": 0.027,
+          "bspline+cone+cylinder+plane": 0.018,
+          "bspline+cylinder+plane": 0.016,
+          "cone+cylinder+plane+torus": 0.01
+        }
+      },
+      "neighbour_surface_share": {
+        "cylinder": 0.956,
+        "plane": 0.858,
+        "cone": 0.159,
+        "torus": 0.02,
+        "bspline": 0.011,
+        "sphere": 0.001
+      }
+    },
+    "2": {
+      "name": "chamfer",
+      "n_faces": 4348,
+      "numeric": {
+        "area_fraction_of_part": {
+          "n": 4348,
+          "p10": 0.0,
+          "p50": 0.001,
+          "p90": 0.011
+        },
+        "radius_vs_part_extent": {
+          "n": 2879,
+          "p10": 0.015,
+          "p50": 0.087,
+          "p90": 0.443
+        },
+        "u_sweep_degrees": {
+          "n": 2890,
+          "p10": 50.3,
+          "p50": 180.0,
+          "p90": 180.0
+        },
+        "coaxial_group_sweep_degrees": {
+          "n": 2875,
+          "p10": 60.0,
+          "p50": 360.0,
+          "p90": 360.0
+        },
+        "half_angle_degrees": {
+          "n": 2847,
+          "p10": 41.0,
+          "p50": 45.0,
+          "p90": 60.0
+        },
+        "n_neighbours": {
+          "n": 4348,
+          "p10": 3.0,
+          "p50": 4.0,
+          "p90": 5.0
+        },
+        "min_edge_normal_deviation_degrees": {
+          "n": 4348,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 45.0
+        },
+        "max_edge_normal_deviation_degrees": {
+          "n": 4348,
+          "p10": 45.0,
+          "p50": 49.0,
+          "p90": 90.0
+        },
+        "n_tangential_edges": {
+          "n": 4348,
+          "p10": 0.0,
+          "p50": 2.0,
+          "p90": 2.0
+        },
+        "n_convex_edges": {
+          "n": 4348,
+          "p10": 0.0,
+          "p50": 2.0,
+          "p90": 4.0
+        },
+        "n_concave_edges": {
+          "n": 4348,
+          "p10": 0.0,
+          "p50": 2.0,
+          "p90": 4.0
+        },
+        "n_faces_in_part": {
+          "n": 4348,
+          "p10": 27.0,
+          "p50": 85.0,
+          "p90": 208.0
+        },
+        "n_inner_wires": {
+          "n": 4348,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 0.0
+        },
+        "n_wires": {
+          "n": 4348,
+          "p10": 1.0,
+          "p50": 1.0,
+          "p90": 1.0
+        },
+        "accessibility": {
+          "n": 4348,
+          "p10": 0.55,
+          "p50": 0.833,
+          "p90": 1.0
+        },
+        "hull_depth_vs_extent": {
+          "n": 4248,
+          "p10": -0.012,
+          "p50": 0.003,
+          "p90": 0.045
+        },
+        "concave_component_size": {
+          "n": 4348,
+          "p10": 0.0,
+          "p50": 11.0,
+          "p90": 73.9
+        },
+        "concave_component_area_fraction": {
+          "n": 4348,
+          "p10": 0.0,
+          "p50": 0.123,
+          "p90": 0.924
+        },
+        "strict_component_size": {
+          "n": 4348,
+          "p10": 0.0,
+          "p50": 10.0,
+          "p90": 72.0
+        },
+        "strict_component_area_fraction": {
+          "n": 4348,
+          "p10": 0.0,
+          "p50": 0.119,
+          "p90": 0.92
+        }
+      },
+      "categorical": {
+        "surface_type": {
+          "cone": 0.655,
+          "plane": 0.312,
+          "bspline": 0.023,
+          "cylinder": 0.006,
+          "torus": 0.003,
+          "sphere": 0.001
+        },
+        "concave_surface": {
+          "True": 0.586,
+          "False": 0.414
+        },
+        "closed_in_u": {
+          "False": 0.983,
+          "True": 0.017
+        },
+        "on_convex_hull": {
+          "True": 0.611,
+          "False": 0.389
+        },
+        "is_saddle": {
+          "False": 0.985,
+          "True": 0.015
+        },
+        "mean_curvature_sign": {
+          "1": 0.399,
+          "0": 0.313,
+          "-1": 0.288
+        },
+        "gaussian_curvature_sign": {
+          "0": 0.981,
+          "-1": 0.015,
+          "1": 0.004
+        },
+        "strict_component_surfaces": {
+          "cone+cylinder+plane": 0.558,
+          "cylinder+plane": 0.122,
+          "cone+plane": 0.089,
+          "plane": 0.073,
+          "cone+cylinder": 0.066,
+          "bspline+cone+cylinder+plane": 0.022
+        }
+      },
+      "neighbour_surface_share": {
+        "plane": 0.975,
+        "cylinder": 0.629,
+        "cone": 0.525,
+        "bspline": 0.03,
+        "torus": 0.011,
+        "sphere": 0.002
+      }
+    },
+    "3": {
+      "name": "fillet",
+      "n_faces": 17194,
+      "numeric": {
+        "area_fraction_of_part": {
+          "n": 17194,
+          "p10": 0.0,
+          "p50": 0.001,
+          "p90": 0.011
+        },
+        "radius_vs_part_extent": {
+          "n": 10942,
+          "p10": 0.004,
+          "p50": 0.02,
+          "p90": 0.084
+        },
+        "u_sweep_degrees": {
+          "n": 14402,
+          "p10": 36.0,
+          "p50": 90.0,
+          "p90": 156.48
+        },
+        "coaxial_group_sweep_degrees": {
+          "n": 10426,
+          "p10": 45.0,
+          "p50": 90.0,
+          "p90": 90.0
+        },
+        "half_angle_degrees": {
+          "n": 137,
+          "p10": 0.5,
+          "p50": 4.0,
+          "p90": 65.16
+        },
+        "n_neighbours": {
+          "n": 17194,
+          "p10": 4.0,
+          "p50": 4.0,
+          "p90": 5.0
+        },
+        "min_edge_normal_deviation_degrees": {
+          "n": 17194,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 0.0
+        },
+        "max_edge_normal_deviation_degrees": {
+          "n": 17194,
+          "p10": 0.0,
+          "p50": 39.2,
+          "p90": 90.0
+        },
+        "n_tangential_edges": {
+          "n": 17194,
+          "p10": 2.0,
+          "p50": 3.0,
+          "p90": 4.0
+        },
+        "n_convex_edges": {
+          "n": 17194,
+          "p10": 1.0,
+          "p50": 2.0,
+          "p90": 3.0
+        },
+        "n_concave_edges": {
+          "n": 17194,
+          "p10": 1.0,
+          "p50": 2.0,
+          "p90": 3.0
+        },
+        "n_faces_in_part": {
+          "n": 17194,
+          "p10": 39.0,
+          "p50": 110.0,
+          "p90": 254.0
+        },
+        "n_inner_wires": {
+          "n": 17194,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 0.0
+        },
+        "n_wires": {
+          "n": 17194,
+          "p10": 1.0,
+          "p50": 1.0,
+          "p90": 1.0
+        },
+        "accessibility": {
+          "n": 17194,
+          "p10": 0.5,
+          "p50": 0.944,
+          "p90": 1.0
+        },
+        "hull_depth_vs_extent": {
+          "n": 17057,
+          "p10": -0.011,
+          "p50": 0.004,
+          "p90": 0.069
+        },
+        "concave_component_size": {
+          "n": 17194,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 34.0
+        },
+        "concave_component_area_fraction": {
+          "n": 17194,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 0.581
+        },
+        "strict_component_size": {
+          "n": 17194,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 32.0
+        },
+        "strict_component_area_fraction": {
+          "n": 17194,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 0.574
+        }
+      },
+      "categorical": {
+        "surface_type": {
+          "cylinder": 0.598,
+          "torus": 0.201,
+          "bspline": 0.156,
+          "sphere": 0.03,
+          "cone": 0.008,
+          "plane": 0.007
+        },
+        "concave_surface": {
+          "False": 0.723,
+          "True": 0.277
+        },
+        "closed_in_u": {
+          "False": 0.998,
+          "True": 0.002
+        },
+        "on_convex_hull": {
+          "True": 0.515,
+          "False": 0.485
+        },
+        "is_saddle": {
+          "False": 0.811,
+          "True": 0.189
+        },
+        "mean_curvature_sign": {
+          "-1": 0.721,
+          "1": 0.272,
+          "0": 0.007
+        },
+        "gaussian_curvature_sign": {
+          "0": 0.617,
+          "1": 0.194,
+          "-1": 0.189
+        },
+        "strict_component_surfaces": {
+          "cylinder+plane": 0.548,
+          "cone+cylinder+plane": 0.107,
+          "bspline+cylinder+plane": 0.067,
+          "cylinder": 0.048,
+          "cylinder+plane+torus": 0.034,
+          "cone+cylinder+plane+torus": 0.029
+        }
+      },
+      "neighbour_surface_share": {
+        "plane": 0.89,
+        "cylinder": 0.481,
+        "torus": 0.303,
+        "bspline": 0.272,
+        "cone": 0.071,
+        "sphere": 0.07
+      }
+    },
+    "4": {
+      "name": "cut",
+      "n_faces": 35307,
+      "numeric": {
+        "area_fraction_of_part": {
+          "n": 35307,
+          "p10": 0.0,
+          "p50": 0.001,
+          "p90": 0.011
+        },
+        "radius_vs_part_extent": {
+          "n": 12116,
+          "p10": 0.005,
+          "p50": 0.025,
+          "p90": 0.25
+        },
+        "u_sweep_degrees": {
+          "n": 12728,
+          "p10": 14.0,
+          "p50": 90.0,
+          "p90": 180.0
+        },
+        "coaxial_group_sweep_degrees": {
+          "n": 11869,
+          "p10": 14.6,
+          "p50": 90.0,
+          "p90": 180.0
+        },
+        "half_angle_degrees": {
+          "n": 481,
+          "p10": 1.0,
+          "p50": 2.0,
+          "p90": 45.0
+        },
+        "n_neighbours": {
+          "n": 35307,
+          "p10": 4.0,
+          "p50": 4.0,
+          "p90": 5.0
+        },
+        "min_edge_normal_deviation_degrees": {
+          "n": 35307,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 90.0
+        },
+        "max_edge_normal_deviation_degrees": {
+          "n": 35307,
+          "p10": 90.0,
+          "p50": 90.0,
+          "p90": 93.4
+        },
+        "n_tangential_edges": {
+          "n": 35307,
+          "p10": 0.0,
+          "p50": 2.0,
+          "p90": 2.0
+        },
+        "n_convex_edges": {
+          "n": 35307,
+          "p10": 1.0,
+          "p50": 2.0,
+          "p90": 3.0
+        },
+        "n_concave_edges": {
+          "n": 35307,
+          "p10": 1.0,
+          "p50": 2.0,
+          "p90": 4.0
+        },
+        "n_faces_in_part": {
+          "n": 35307,
+          "p10": 45.0,
+          "p50": 150.0,
+          "p90": 594.0
+        },
+        "n_inner_wires": {
+          "n": 35307,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 0.0
+        },
+        "n_wires": {
+          "n": 35307,
+          "p10": 1.0,
+          "p50": 1.0,
+          "p90": 1.0
+        },
+        "accessibility": {
+          "n": 35307,
+          "p10": 0.105,
+          "p50": 0.467,
+          "p90": 0.8
+        },
+        "hull_depth_vs_extent": {
+          "n": 35286,
+          "p10": 0.001,
+          "p50": 0.013,
+          "p90": 0.084
+        },
+        "concave_component_size": {
+          "n": 35307,
+          "p10": 0.0,
+          "p50": 41.0,
+          "p90": 594.0
+        },
+        "concave_component_area_fraction": {
+          "n": 35307,
+          "p10": 0.0,
+          "p50": 0.513,
+          "p90": 0.999
+        },
+        "strict_component_size": {
+          "n": 35307,
+          "p10": 0.0,
+          "p50": 41.0,
+          "p90": 594.0
+        },
+        "strict_component_area_fraction": {
+          "n": 35307,
+          "p10": 0.0,
+          "p50": 0.509,
+          "p90": 0.999
+        }
+      },
+      "categorical": {
+        "surface_type": {
+          "plane": 0.601,
+          "cylinder": 0.323,
+          "bspline": 0.037,
+          "torus": 0.017,
+          "cone": 0.014,
+          "sphere": 0.007
+        },
+        "concave_surface": {
+          "True": 0.796,
+          "False": 0.204
+        },
+        "closed_in_u": {
+          "False": 0.999,
+          "True": 0.001
+        },
+        "on_convex_hull": {
+          "False": 0.63,
+          "True": 0.37
+        },
+        "is_saddle": {
+          "False": 0.975,
+          "True": 0.025
+        },
+        "mean_curvature_sign": {
+          "0": 0.602,
+          "1": 0.318,
+          "-1": 0.08
+        },
+        "gaussian_curvature_sign": {
+          "0": 0.951,
+          "-1": 0.025,
+          "1": 0.024
+        },
+        "strict_component_surfaces": {
+          "cylinder+plane": 0.587,
+          "cone+cylinder+plane": 0.18,
+          "plane": 0.072,
+          "bspline+cylinder+plane": 0.042,
+          "cylinder+plane+torus": 0.028,
+          "bspline+cone+cylinder+plane": 0.017
+        }
+      },
+      "neighbour_surface_share": {
+        "plane": 0.956,
+        "cylinder": 0.507,
+        "bspline": 0.075,
+        "torus": 0.057,
+        "cone": 0.051,
+        "sphere": 0.017
+      }
+    }
+  },
+  "posteriors": {
+    "prior": {
+      "0": 0.2725,
+      "1": 0.2364,
+      "2": 0.0376,
+      "3": 0.1485,
+      "4": 0.305
+    },
+    "facts": {
+      "surface_type": {
+        "torus": {
+          "n": 4644,
+          "p": {
+            "fillet": 0.745,
+            "cut": 0.132,
+            "random": 0.099,
+            "hole": 0.022,
+            "chamfer": 0.002
+          }
+        },
+        "extrusion": {
+          "n": 150,
+          "p": {
+            "random": 0.62,
+            "cut": 0.353,
+            "fillet": 0.027
+          }
+        },
+        "sphere": {
+          "n": 909,
+          "p": {
+            "fillet": 0.568,
+            "cut": 0.272,
+            "random": 0.147,
+            "hole": 0.009,
+            "chamfer": 0.004
+          }
+        },
+        "bspline": {
+          "n": 5055,
+          "p": {
+            "fillet": 0.529,
+            "cut": 0.257,
+            "random": 0.174,
+            "chamfer": 0.02,
+            "hole": 0.02
+          }
+        },
+        "plane": {
+          "n": 47156,
+          "p": {
+            "random": 0.482,
+            "cut": 0.45,
+            "hole": 0.037,
+            "chamfer": 0.029,
+            "fillet": 0.002
+          }
+        },
+        "cone": {
+          "n": 6083,
+          "p": {
+            "chamfer": 0.468,
+            "hole": 0.245,
+            "random": 0.185,
+            "cut": 0.079,
+            "fillet": 0.023
+          }
+        },
+        "cylinder": {
+          "n": 51769,
+          "p": {
+            "hole": 0.463,
+            "cut": 0.22,
+            "fillet": 0.199,
+            "random": 0.118,
+            "chamfer": 0.001
+          }
+        }
+      },
+      "concave_surface": {
+        "True": {
+          "n": 40705,
+          "p": {
+            "hole": 0.623,
+            "cut": 0.232,
+            "fillet": 0.071,
+            "chamfer": 0.041,
+            "random": 0.033
+          }
+        },
+        "False": {
+          "n": 17147,
+          "p": {
+            "fillet": 0.44,
+            "random": 0.345,
+            "cut": 0.141,
+            "chamfer": 0.069,
+            "hole": 0.005
+          }
+        }
+      },
+      "coaxial_group_sweep_degrees": {
+        "340-361": {
+          "n": 31133,
+          "p": {
+            "hole": 0.799,
+            "random": 0.114,
+            "chamfer": 0.065,
+            "cut": 0.02,
+            "fillet": 0.001
+          }
+        },
+        ">=361": {
+          "n": 273,
+          "p": {
+            "random": 0.703,
+            "hole": 0.234,
+            "cut": 0.048,
+            "chamfer": 0.015
+          }
+        },
+        "100-200": {
+          "n": 6355,
+          "p": {
+            "cut": 0.659,
+            "random": 0.2,
+            "fillet": 0.078,
+            "hole": 0.045,
+            "chamfer": 0.018
+          }
+        },
+        "50-100": {
+          "n": 14186,
+          "p": {
+            "fillet": 0.602,
+            "cut": 0.301,
+            "random": 0.059,
+            "chamfer": 0.032,
+            "hole": 0.006
+          }
+        },
+        "200-340": {
+          "n": 747,
+          "p": {
+            "random": 0.501,
+            "cut": 0.333,
+            "hole": 0.094,
+            "chamfer": 0.041,
+            "fillet": 0.031
+          }
+        },
+        "0-50": {
+          "n": 5158,
+          "p": {
+            "cut": 0.486,
+            "fillet": 0.26,
+            "random": 0.198,
+            "chamfer": 0.048,
+            "hole": 0.008
+          }
+        }
+      },
+      "n_tangential_edges": {
+        "3-5": {
+          "n": 16834,
+          "p": {
+            "fillet": 0.559,
+            "random": 0.222,
+            "cut": 0.184,
+            "hole": 0.033,
+            "chamfer": 0.002
+          }
+        },
+        "1": {
+          "n": 8060,
+          "p": {
+            "random": 0.557,
+            "cut": 0.366,
+            "fillet": 0.033,
+            "chamfer": 0.023,
+            "hole": 0.021
+          }
+        },
+        ">=5": {
+          "n": 2611,
+          "p": {
+            "random": 0.491,
+            "fillet": 0.331,
+            "cut": 0.142,
+            "hole": 0.033,
+            "chamfer": 0.003
+          }
+        },
+        "0": {
+          "n": 31101,
+          "p": {
+            "cut": 0.465,
+            "random": 0.39,
+            "hole": 0.088,
+            "chamfer": 0.055,
+            "fillet": 0.002
+          }
+        },
+        "2": {
+          "n": 57160,
+          "p": {
+            "hole": 0.417,
+            "cut": 0.252,
+            "random": 0.174,
+            "fillet": 0.116,
+            "chamfer": 0.042
+          }
+        }
+      },
+      "half_angle_degrees": {
+        "40-50": {
+          "n": 2621,
+          "p": {
+            "chamfer": 0.848,
+            "random": 0.085,
+            "cut": 0.034,
+            "hole": 0.029,
+            "fillet": 0.005
+          }
+        },
+        "50-65": {
+          "n": 1758,
+          "p": {
+            "hole": 0.653,
+            "chamfer": 0.228,
+            "random": 0.105,
+            "cut": 0.011,
+            "fillet": 0.002
+          }
+        },
+        ">=65": {
+          "n": 289,
+          "p": {
+            "random": 0.457,
+            "chamfer": 0.28,
+            "fillet": 0.111,
+            "hole": 0.076,
+            "cut": 0.076
+          }
+        },
+        "0-20": {
+          "n": 1090,
+          "p": {
+            "random": 0.423,
+            "cut": 0.285,
+            "hole": 0.183,
+            "fillet": 0.077,
+            "chamfer": 0.032
+          }
+        },
+        "20-40": {
+          "n": 325,
+          "p": {
+            "random": 0.391,
+            "chamfer": 0.332,
+            "hole": 0.138,
+            "cut": 0.123,
+            "fillet": 0.015
+          }
+        }
+      },
+      "radius_vs_part_extent": {
+        "0.01-0.03": {
+          "n": 20850,
+          "p": {
+            "hole": 0.548,
+            "fillet": 0.198,
+            "cut": 0.184,
+            "random": 0.043,
+            "chamfer": 0.026
+          }
+        },
+        ">=0.3": {
+          "n": 3555,
+          "p": {
+            "random": 0.523,
+            "cut": 0.241,
+            "chamfer": 0.135,
+            "hole": 0.075,
+            "fillet": 0.026
+          }
+        },
+        "0": {
+          "n": 12886,
+          "p": {
+            "hole": 0.511,
+            "cut": 0.22,
+            "fillet": 0.219,
+            "random": 0.038,
+            "chamfer": 0.012
+          }
+        },
+        "0.03-0.1": {
+          "n": 14150,
+          "p": {
+            "hole": 0.401,
+            "fillet": 0.221,
+            "cut": 0.191,
+            "random": 0.123,
+            "chamfer": 0.064
+          }
+        },
+        "0.1-0.3": {
+          "n": 7320,
+          "p": {
+            "random": 0.327,
+            "cut": 0.255,
+            "hole": 0.202,
+            "chamfer": 0.108,
+            "fillet": 0.108
+          }
+        }
+      },
+      "n_concave_edges": {
+        ">=5": {
+          "n": 7342,
+          "p": {
+            "random": 0.696,
+            "cut": 0.187,
+            "hole": 0.065,
+            "fillet": 0.035,
+            "chamfer": 0.016
+          }
+        },
+        "2": {
+          "n": 36095,
+          "p": {
+            "cut": 0.387,
+            "random": 0.245,
+            "hole": 0.17,
+            "fillet": 0.162,
+            "chamfer": 0.036
+          }
+        },
+        "3-5": {
+          "n": 50530,
+          "p": {
+            "hole": 0.378,
+            "cut": 0.244,
+            "random": 0.23,
+            "fillet": 0.11,
+            "chamfer": 0.037
+          }
+        },
+        "1": {
+          "n": 16674,
+          "p": {
+            "cut": 0.374,
+            "random": 0.268,
+            "fillet": 0.258,
+            "hole": 0.064,
+            "chamfer": 0.036
+          }
+        },
+        "0": {
+          "n": 5125,
+          "p": {
+            "random": 0.294,
+            "cut": 0.268,
+            "fillet": 0.233,
+            "hole": 0.112,
+            "chamfer": 0.093
+          }
+        }
+      },
+      "area_fraction_of_part": {
+        ">=0.1": {
+          "n": 3616,
+          "p": {
+            "random": 0.871,
+            "cut": 0.071,
+            "hole": 0.051,
+            "fillet": 0.007,
+            "chamfer": 0.001
+          }
+        },
+        "0.02-0.1": {
+          "n": 11104,
+          "p": {
+            "random": 0.642,
+            "cut": 0.16,
+            "hole": 0.112,
+            "fillet": 0.068,
+            "chamfer": 0.019
+          }
+        },
+        "0.005-0.02": {
+          "n": 19065,
+          "p": {
+            "random": 0.392,
+            "cut": 0.222,
+            "hole": 0.183,
+            "fillet": 0.16,
+            "chamfer": 0.043
+          }
+        },
+        "0": {
+          "n": 52175,
+          "p": {
+            "cut": 0.39,
+            "hole": 0.283,
+            "random": 0.149,
+            "fillet": 0.143,
+            "chamfer": 0.035
+          }
+        },
+        "0.001-0.005": {
+          "n": 29805,
+          "p": {
+            "cut": 0.292,
+            "hole": 0.258,
+            "random": 0.202,
+            "fillet": 0.198,
+            "chamfer": 0.05
+          }
+        }
+      },
+      "on_convex_hull": {
+        "True": {
+          "n": 46058,
+          "p": {
+            "random": 0.35,
+            "cut": 0.283,
+            "fillet": 0.191,
+            "hole": 0.12,
+            "chamfer": 0.056
+          }
+        },
+        "False": {
+          "n": 69001,
+          "p": {
+            "cut": 0.322,
+            "hole": 0.315,
+            "random": 0.219,
+            "fillet": 0.12,
+            "chamfer": 0.024
+          }
+        }
+      },
+      "mean_curvature_sign": {
+        "1": {
+          "n": 45018,
+          "p": {
+            "hole": 0.567,
+            "cut": 0.249,
+            "fillet": 0.104,
+            "random": 0.041,
+            "chamfer": 0.039
+          }
+        },
+        "-1": {
+          "n": 23531,
+          "p": {
+            "fillet": 0.527,
+            "random": 0.294,
+            "cut": 0.121,
+            "chamfer": 0.053,
+            "hole": 0.005
+          }
+        },
+        "0": {
+          "n": 47217,
+          "p": {
+            "random": 0.482,
+            "cut": 0.45,
+            "hole": 0.036,
+            "chamfer": 0.029,
+            "fillet": 0.002
+          }
+        }
+      },
+      "is_saddle": {
+        "True": {
+          "n": 4782,
+          "p": {
+            "fillet": 0.681,
+            "cut": 0.182,
+            "random": 0.116,
+            "chamfer": 0.014,
+            "hole": 0.008
+          }
+        },
+        "False": {
+          "n": 110984,
+          "p": {
+            "cut": 0.31,
+            "random": 0.279,
+            "hole": 0.246,
+            "fillet": 0.126,
+            "chamfer": 0.039
+          }
+        }
+      },
+      "strict_component_surfaces": {
+        "torus": {
+          "n": 62,
+          "p": {
+            "fillet": 0.935,
+            "hole": 0.032,
+            "random": 0.032
+          }
+        },
+        "bspline+cylinder+extrusion+plane": {
+          "n": 163,
+          "p": {
+            "cut": 0.736,
+            "hole": 0.221,
+            "random": 0.043
+          }
+        },
+        "cone+cylinder+extrusion+plane": {
+          "n": 123,
+          "p": {
+            "cut": 0.715,
+            "random": 0.195,
+            "fillet": 0.081,
+            "hole": 0.008
+          }
+        },
+        "plane+torus": {
+          "n": 98,
+          "p": {
+            "random": 0.694,
+            "cut": 0.173,
+            "fillet": 0.112,
+            "hole": 0.02
+          }
+        },
+        "cylinder+plane+sphere": {
+          "n": 200,
+          "p": {
+            "random": 0.68,
+            "hole": 0.21,
+            "cut": 0.06,
+            "fillet": 0.05
+          }
+        },
+        "bspline": {
+          "n": 56,
+          "p": {
+            "random": 0.643,
+            "fillet": 0.232,
+            "cut": 0.125
+          }
+        },
+        "cylinder+torus": {
+          "n": 171,
+          "p": {
+            "fillet": 0.632,
+            "random": 0.216,
+            "hole": 0.076,
+            "cut": 0.076
+          }
+        },
+        "bspline+torus": {
+          "n": 42,
+          "p": {
+            "random": 0.619,
+            "fillet": 0.333,
+            "cut": 0.048
+          }
+        },
+        "bspline+plane": {
+          "n": 699,
+          "p": {
+            "cut": 0.617,
+            "random": 0.305,
+            "fillet": 0.047,
+            "hole": 0.017,
+            "chamfer": 0.014
+          }
+        },
+        "cone+cylinder": {
+          "n": 950,
+          "p": {
+            "hole": 0.615,
+            "chamfer": 0.206,
+            "random": 0.149,
+            "cut": 0.017,
+            "fillet": 0.013
+          }
+        },
+        "cone": {
+          "n": 80,
+          "p": {
+            "random": 0.6,
+            "hole": 0.163,
+            "chamfer": 0.113,
+            "cut": 0.1,
+            "fillet": 0.025
+          }
+        },
+        "cylinder+plane+sphere+torus": {
+          "n": 50,
+          "p": {
+            "random": 0.6,
+            "fillet": 0.18,
+            "hole": 0.16,
+            "cut": 0.06
+          }
+        },
+        "cone+plane+sphere": {
+          "n": 35,
+          "p": {
+            "cut": 0.6,
+            "random": 0.371,
+            "chamfer": 0.029
+          }
+        },
+        "bspline+cone+plane": {
+          "n": 458,
+          "p": {
+            "cut": 0.585,
+            "random": 0.284,
+            "hole": 0.076,
+            "fillet": 0.037,
+            "chamfer": 0.017
+          }
+        },
+        "cylinder+extrusion+plane": {
+          "n": 300,
+          "p": {
+            "cut": 0.55,
+            "random": 0.45
+          }
+        },
+        "plane": {
+          "n": 5160,
+          "p": {
+            "random": 0.547,
+            "cut": 0.403,
+            "chamfer": 0.042,
+            "hole": 0.006,
+            "fillet": 0.002
+          }
+        },
+        "cone+plane+torus": {
+          "n": 89,
+          "p": {
+            "cut": 0.539,
+            "random": 0.382,
+            "fillet": 0.045,
+            "chamfer": 0.034
+          }
+        },
+        "cylinder": {
+          "n": 425,
+          "p": {
+            "fillet": 0.527,
+            "cut": 0.167,
+            "hole": 0.165,
+            "random": 0.139,
+            "chamfer": 0.002
+          }
+        },
+        "bspline+cone+cylinder+extrusion+plane": {
+          "n": 214,
+          "p": {
+            "cut": 0.514,
+            "random": 0.29,
+            "fillet": 0.084,
+            "chamfer": 0.079,
+            "hole": 0.033
+          }
+        },
+        "bspline+cylinder": {
+          "n": 298,
+          "p": {
+            "random": 0.5,
+            "fillet": 0.379,
+            "cut": 0.081,
+            "hole": 0.04
+          }
+        },
+        "cylinder+plane+torus": {
+          "n": 1604,
+          "p": {
+            "cut": 0.498,
+            "random": 0.294,
+            "hole": 0.109,
+            "fillet": 0.098,
+            "chamfer": 0.001
+          }
+        },
+        "bspline+cone+cylinder+extrusion+plane+torus": {
+          "n": 76,
+          "p": {
+            "hole": 0.461,
+            "cut": 0.276,
+            "chamfer": 0.145,
+            "random": 0.092,
+            "fillet": 0.026
+          }
+        },
+        "cone+plane": {
+          "n": 764,
+          "p": {
+            "random": 0.421,
+            "chamfer": 0.346,
+            "cut": 0.177,
+            "hole": 0.05,
+            "fillet": 0.007
+          }
+        },
+        "bspline+cylinder+plane": {
+          "n": 2949,
+          "p": {
+            "cut": 0.412,
+            "random": 0.35,
+            "hole": 0.12,
+            "fillet": 0.105,
+            "chamfer": 0.013
+          }
+        },
+        "bspline+cone+cylinder+plane+torus": {
+          "n": 596,
+          "p": {
+            "random": 0.406,
+            "hole": 0.193,
+            "cut": 0.183,
+            "fillet": 0.154,
+            "chamfer": 0.064
+          }
+        },
+        "bspline+cylinder+plane+torus": {
+          "n": 297,
+          "p": {
+            "random": 0.397,
+            "fillet": 0.279,
+            "cut": 0.263,
+            "hole": 0.054,
+            "chamfer": 0.007
+          }
+        },
+        "cone+cylinder+plane+sphere": {
+          "n": 92,
+          "p": {
+            "random": 0.391,
+            "hole": 0.359,
+            "fillet": 0.109,
+            "cut": 0.098,
+            "chamfer": 0.043
+          }
+        },
+        "cylinder+plane": {
+          "n": 48778,
+          "p": {
+            "cut": 0.348,
+            "hole": 0.309,
+            "random": 0.283,
+            "fillet": 0.052,
+            "chamfer": 0.007
+          }
+        },
+        "cone+cylinder+plane": {
+          "n": 15878,
+          "p": {
+            "cut": 0.327,
+            "hole": 0.276,
+            "random": 0.262,
+            "chamfer": 0.104,
+            "fillet": 0.031
+          }
+        },
+        "cone+cylinder+plane+torus": {
+          "n": 1023,
+          "p": {
+            "cut": 0.326,
+            "random": 0.27,
+            "hole": 0.217,
+            "fillet": 0.132,
+            "chamfer": 0.055
+          }
+        },
+        "bspline+cone+cylinder+plane": {
+          "n": 1568,
+          "p": {
+            "cut": 0.32,
+            "random": 0.305,
+            "hole": 0.251,
+            "fillet": 0.084,
+            "chamfer": 0.041
+          }
+        }
+      },
+      "accessibility": {
+        ">=0.999": {
+          "n": 26522,
+          "p": {
+            "random": 0.61,
+            "fillet": 0.274,
+            "chamfer": 0.062,
+            "cut": 0.044,
+            "hole": 0.01
+          }
+        },
+        "0": {
+          "n": 18882,
+          "p": {
+            "hole": 0.546,
+            "cut": 0.264,
+            "random": 0.165,
+            "fillet": 0.021,
+            "chamfer": 0.004
+          }
+        },
+        "0.2-0.5": {
+          "n": 26343,
+          "p": {
+            "cut": 0.502,
+            "hole": 0.334,
+            "random": 0.111,
+            "fillet": 0.044,
+            "chamfer": 0.009
+          }
+        },
+        "0.5-0.8": {
+          "n": 25391,
+          "p": {
+            "cut": 0.39,
+            "random": 0.211,
+            "hole": 0.168,
+            "fillet": 0.165,
+            "chamfer": 0.066
+          }
+        },
+        "0.8-0.999": {
+          "n": 18628,
+          "p": {
+            "cut": 0.323,
+            "fillet": 0.224,
+            "random": 0.214,
+            "hole": 0.2,
+            "chamfer": 0.039
+          }
+        }
+      },
+      "hull_depth_vs_extent": {
+        ">=0.3": {
+          "n": 99,
+          "p": {
+            "cut": 0.485,
+            "random": 0.303,
+            "hole": 0.212
+          }
+        },
+        "-1e+09-0.005": {
+          "n": 45778,
+          "p": {
+            "random": 0.352,
+            "cut": 0.281,
+            "fillet": 0.192,
+            "hole": 0.118,
+            "chamfer": 0.057
+          }
+        },
+        "0.005-0.03": {
+          "n": 34674,
+          "p": {
+            "hole": 0.344,
+            "cut": 0.324,
+            "random": 0.184,
+            "fillet": 0.119,
+            "chamfer": 0.029
+          }
+        },
+        "0.1-0.3": {
+          "n": 7920,
+          "p": {
+            "cut": 0.331,
+            "random": 0.31,
+            "hole": 0.235,
+            "fillet": 0.107,
+            "chamfer": 0.017
+          }
+        },
+        "0.03-0.1": {
+          "n": 26588,
+          "p": {
+            "cut": 0.32,
+            "hole": 0.301,
+            "random": 0.235,
+            "fillet": 0.125,
+            "chamfer": 0.019
+          }
+        }
+      },
+      "n_inner_wires": {
+        ">=4": {
+          "n": 1826,
+          "p": {
+            "random": 0.91,
+            "cut": 0.07,
+            "hole": 0.017,
+            "fillet": 0.003,
+            "chamfer": 0.001
+          }
+        },
+        "2-4": {
+          "n": 1415,
+          "p": {
+            "random": 0.826,
+            "cut": 0.157,
+            "hole": 0.014,
+            "fillet": 0.002,
+            "chamfer": 0.001
+          }
+        },
+        "1": {
+          "n": 5059,
+          "p": {
+            "random": 0.619,
+            "hole": 0.219,
+            "cut": 0.154,
+            "fillet": 0.007,
+            "chamfer": 0.002
+          }
+        },
+        "0": {
+          "n": 107466,
+          "p": {
+            "cut": 0.318,
+            "hole": 0.244,
+            "random": 0.238,
+            "fillet": 0.16,
+            "chamfer": 0.04
+          }
+        }
+      },
+      "strict_component_size": {
+        "5-9": {
+          "n": 7215,
+          "p": {
+            "random": 0.498,
+            "hole": 0.198,
+            "cut": 0.193,
+            "fillet": 0.066,
+            "chamfer": 0.044
+          }
+        },
+        "3-5": {
+          "n": 5448,
+          "p": {
+            "random": 0.479,
+            "hole": 0.195,
+            "cut": 0.178,
+            "fillet": 0.121,
+            "chamfer": 0.027
+          }
+        },
+        "2": {
+          "n": 3714,
+          "p": {
+            "random": 0.414,
+            "hole": 0.262,
+            "cut": 0.138,
+            "fillet": 0.121,
+            "chamfer": 0.065
+          }
+        },
+        "0-2": {
+          "n": 32286,
+          "p": {
+            "fillet": 0.388,
+            "cut": 0.198,
+            "random": 0.196,
+            "hole": 0.175,
+            "chamfer": 0.043
+          }
+        },
+        ">=9": {
+          "n": 67103,
+          "p": {
+            "cut": 0.388,
+            "hole": 0.272,
+            "random": 0.261,
+            "fillet": 0.046,
+            "chamfer": 0.034
+          }
+        }
+      },
+      "strict_component_area_fraction": {
+        "0.01-0.05": {
+          "n": 6082,
+          "p": {
+            "random": 0.453,
+            "cut": 0.239,
+            "hole": 0.155,
+            "fillet": 0.11,
+            "chamfer": 0.044
+          }
+        },
+        ">=0.6": {
+          "n": 36315,
+          "p": {
+            "cut": 0.444,
+            "random": 0.246,
+            "hole": 0.233,
+            "fillet": 0.046,
+            "chamfer": 0.032
+          }
+        },
+        "0.05-0.2": {
+          "n": 11416,
+          "p": {
+            "random": 0.392,
+            "cut": 0.278,
+            "hole": 0.244,
+            "fillet": 0.044,
+            "chamfer": 0.042
+          }
+        },
+        "0.2-0.6": {
+          "n": 23154,
+          "p": {
+            "hole": 0.358,
+            "random": 0.296,
+            "cut": 0.264,
+            "fillet": 0.046,
+            "chamfer": 0.036
+          }
+        },
+        "0": {
+          "n": 38799,
+          "p": {
+            "fillet": 0.343,
+            "random": 0.221,
+            "cut": 0.217,
+            "hole": 0.178,
+            "chamfer": 0.042
+          }
+        }
+      },
+      "surface_type x coaxial_group_sweep_degrees": {
+        "cylinder & coaxial_group_sweep_degrees=340-361": {
+          "n": 26802,
+          "p": {
+            "hole": 0.876,
+            "random": 0.105,
+            "cut": 0.018
+          }
+        },
+        "cylinder & coaxial_group_sweep_degrees=50-100": {
+          "n": 13440,
+          "p": {
+            "fillet": 0.631,
+            "cut": 0.31,
+            "random": 0.053
+          }
+        },
+        "cylinder & coaxial_group_sweep_degrees=100-200": {
+          "n": 5997,
+          "p": {
+            "cut": 0.686,
+            "random": 0.195,
+            "fillet": 0.078
+          }
+        },
+        "cylinder & coaxial_group_sweep_degrees=0-50": {
+          "n": 4640,
+          "p": {
+            "cut": 0.511,
+            "fillet": 0.281,
+            "random": 0.198
+          }
+        },
+        "cone & coaxial_group_sweep_degrees=340-361": {
+          "n": 4331,
+          "p": {
+            "chamfer": 0.466,
+            "hole": 0.327,
+            "random": 0.17
+          }
+        },
+        "cone & coaxial_group_sweep_degrees=50-100": {
+          "n": 746,
+          "p": {
+            "chamfer": 0.598,
+            "random": 0.18,
+            "cut": 0.145
+          }
+        },
+        "cylinder & coaxial_group_sweep_degrees=200-340": {
+          "n": 649,
+          "p": {
+            "random": 0.518,
+            "cut": 0.367,
+            "hole": 0.083
+          }
+        },
+        "cone & coaxial_group_sweep_degrees=0-50": {
+          "n": 518,
+          "p": {
+            "chamfer": 0.456,
+            "cut": 0.259,
+            "random": 0.197
+          }
+        },
+        "cone & coaxial_group_sweep_degrees=100-200": {
+          "n": 358,
+          "p": {
+            "chamfer": 0.316,
+            "random": 0.288,
+            "cut": 0.207
+          }
+        },
+        "cylinder & coaxial_group_sweep_degrees=>=361": {
+          "n": 241,
+          "p": {
+            "random": 0.739,
+            "hole": 0.232,
+            "cut": 0.029
+          }
+        },
+        "cone & coaxial_group_sweep_degrees=200-340": {
+          "n": 98,
+          "p": {
+            "random": 0.388,
+            "chamfer": 0.316,
+            "hole": 0.163
+          }
+        }
+      },
+      "surface_type x concave_surface": {
+        "cylinder & concave_surface=True": {
+          "n": 36878,
+          "p": {
+            "hole": 0.648,
+            "cut": 0.249,
+            "fillet": 0.077
+          }
+        },
+        "cylinder & concave_surface=False": {
+          "n": 14891,
+          "p": {
+            "fillet": 0.499,
+            "random": 0.346,
+            "cut": 0.149
+          }
+        },
+        "cone & concave_surface=True": {
+          "n": 3827,
+          "p": {
+            "chamfer": 0.437,
+            "hole": 0.384,
+            "random": 0.095
+          }
+        },
+        "cone & concave_surface=False": {
+          "n": 2256,
+          "p": {
+            "chamfer": 0.52,
+            "random": 0.338,
+            "cut": 0.087
+          }
+        }
+      },
+      "surface_type x n_tangential_edges": {
+        "cylinder & n_tangential_edges=2": {
+          "n": 39601,
+          "p": {
+            "hole": 0.565,
+            "cut": 0.193,
+            "fillet": 0.153
+          }
+        },
+        "plane & n_tangential_edges=0": {
+          "n": 26365,
+          "p": {
+            "cut": 0.475,
+            "random": 0.422,
+            "hole": 0.063
+          }
+        },
+        "plane & n_tangential_edges=2": {
+          "n": 11411,
+          "p": {
+            "cut": 0.505,
+            "random": 0.471,
+            "chamfer": 0.017
+          }
+        },
+        "cylinder & n_tangential_edges=3-5": {
+          "n": 6497,
+          "p": {
+            "fillet": 0.576,
+            "cut": 0.196,
+            "random": 0.168
+          }
+        },
+        "plane & n_tangential_edges=1": {
+          "n": 5946,
+          "p": {
+            "random": 0.62,
+            "cut": 0.361,
+            "chamfer": 0.015
+          }
+        },
+        "cone & n_tangential_edges=2": {
+          "n": 4152,
+          "p": {
+            "chamfer": 0.509,
+            "hole": 0.316,
+            "random": 0.128
+          }
+        },
+        "torus & n_tangential_edges=3-5": {
+          "n": 3744,
+          "p": {
+            "fillet": 0.762,
+            "cut": 0.132,
+            "random": 0.084
+          }
+        },
+        "cylinder & n_tangential_edges=0": {
+          "n": 3518,
+          "p": {
+            "cut": 0.502,
+            "hole": 0.28,
+            "random": 0.213
+          }
+        },
+        "bspline & n_tangential_edges=3-5": {
+          "n": 2762,
+          "p": {
+            "fillet": 0.806,
+            "cut": 0.105,
+            "random": 0.079
+          }
+        },
+        "plane & n_tangential_edges=3-5": {
+          "n": 2386,
+          "p": {
+            "random": 0.716,
+            "cut": 0.259,
+            "fillet": 0.012
+          }
+        },
+        "cylinder & n_tangential_edges=1": {
+          "n": 1450,
+          "p": {
+            "cut": 0.443,
+            "random": 0.345,
+            "fillet": 0.119
+          }
+        },
+        "bspline & n_tangential_edges=2": {
+          "n": 1404,
+          "p": {
+            "cut": 0.555,
+            "random": 0.217,
+            "fillet": 0.136
+          }
+        },
+        "plane & n_tangential_edges=>=5": {
+          "n": 1048,
+          "p": {
+            "random": 0.809,
+            "cut": 0.177,
+            "fillet": 0.01
+          }
+        },
+        "cone & n_tangential_edges=0": {
+          "n": 926,
+          "p": {
+            "chamfer": 0.686,
+            "random": 0.112,
+            "hole": 0.104
+          }
+        },
+        "sphere & n_tangential_edges=3-5": {
+          "n": 829,
+          "p": {
+            "fillet": 0.613,
+            "cut": 0.29,
+            "random": 0.088
+          }
+        },
+        "cylinder & n_tangential_edges=>=5": {
+          "n": 703,
+          "p": {
+            "fillet": 0.442,
+            "random": 0.388,
+            "hole": 0.085
+          }
+        },
+        "cone & n_tangential_edges=3-5": {
+          "n": 614,
+          "p": {
+            "random": 0.528,
+            "cut": 0.305,
+            "hole": 0.085
+          }
+        },
+        "torus & n_tangential_edges=2": {
+          "n": 429,
+          "p": {
+            "fillet": 0.671,
+            "random": 0.163,
+            "cut": 0.142
+          }
+        },
+        "torus & n_tangential_edges=>=5": {
+          "n": 397,
+          "p": {
+            "fillet": 0.743,
+            "random": 0.111,
+            "cut": 0.096
+          }
+        },
+        "bspline & n_tangential_edges=>=5": {
+          "n": 361,
+          "p": {
+            "fillet": 0.662,
+            "cut": 0.166,
+            "random": 0.163
+          }
+        },
+        "cone & n_tangential_edges=1": {
+          "n": 297,
+          "p": {
+            "random": 0.384,
+            "chamfer": 0.293,
+            "cut": 0.121
+          }
+        },
+        "bspline & n_tangential_edges=1": {
+          "n": 296,
+          "p": {
+            "random": 0.51,
+            "cut": 0.399,
+            "fillet": 0.054
+          }
+        },
+        "bspline & n_tangential_edges=0": {
+          "n": 232,
+          "p": {
+            "random": 0.634,
+            "cut": 0.216,
+            "chamfer": 0.125
+          }
+        },
+        "extrusion & n_tangential_edges=2": {
+          "n": 101,
+          "p": {
+            "random": 0.802,
+            "cut": 0.198
+          }
+        },
+        "cone & n_tangential_edges=>=5": {
+          "n": 94,
+          "p": {
+            "random": 0.564,
+            "cut": 0.287,
+            "fillet": 0.064
+          }
+        },
+        "sphere & n_tangential_edges=2": {
+          "n": 62,
+          "p": {
+            "random": 0.823,
+            "fillet": 0.097,
+            "chamfer": 0.048
+          }
+        },
+        "torus & n_tangential_edges=1": {
+          "n": 55,
+          "p": {
+            "random": 0.491,
+            "fillet": 0.4,
+            "cut": 0.109
+          }
+        }
+      },
+      "surface_type x accessibility": {
+        "plane & accessibility=>=0.999": {
+          "n": 14720,
+          "p": {
+            "random": 0.861,
+            "cut": 0.063,
+            "chamfer": 0.058
+          }
+        },
+        "cylinder & accessibility=0.2-0.5": {
+          "n": 13409,
+          "p": {
+            "hole": 0.605,
+            "cut": 0.297,
+            "random": 0.05
+          }
+        },
+        "cylinder & accessibility=0.5-0.8": {
+          "n": 11196,
+          "p": {
+            "hole": 0.342,
+            "cut": 0.336,
+            "fillet": 0.211
+          }
+        },
+        "cylinder & accessibility=0": {
+          "n": 10565,
+          "p": {
+            "hole": 0.787,
+            "cut": 0.135,
+            "random": 0.055
+          }
+        },
+        "plane & accessibility=0.2-0.5": {
+          "n": 10517,
+          "p": {
+            "cut": 0.778,
+            "random": 0.171,
+            "hole": 0.048
+          }
+        },
+        "plane & accessibility=0.5-0.8": {
+          "n": 9481,
+          "p": {
+            "cut": 0.575,
+            "random": 0.371,
+            "hole": 0.032
+          }
+        },
+        "cylinder & accessibility=0.8-0.999": {
+          "n": 8814,
+          "p": {
+            "hole": 0.415,
+            "fillet": 0.265,
+            "cut": 0.229
+          }
+        },
+        "cylinder & accessibility=>=0.999": {
+          "n": 7785,
+          "p": {
+            "fillet": 0.606,
+            "random": 0.363,
+            "cut": 0.025
+          }
+        },
+        "plane & accessibility=0.8-0.999": {
+          "n": 6853,
+          "p": {
+            "cut": 0.556,
+            "random": 0.394,
+            "chamfer": 0.041
+          }
+        },
+        "plane & accessibility=0": {
+          "n": 5585,
+          "p": {
+            "cut": 0.512,
+            "random": 0.366,
+            "hole": 0.116
+          }
+        },
+        "cone & accessibility=0.5-0.8": {
+          "n": 1926,
+          "p": {
+            "chamfer": 0.751,
+            "random": 0.137,
+            "cut": 0.055
+          }
+        },
+        "cone & accessibility=0": {
+          "n": 1810,
+          "p": {
+            "hole": 0.697,
+            "random": 0.149,
+            "cut": 0.128
+          }
+        },
+        "torus & accessibility=>=0.999": {
+          "n": 1578,
+          "p": {
+            "fillet": 0.872,
+            "random": 0.112,
+            "hole": 0.007
+          }
+        },
+        "bspline & accessibility=0.5-0.8": {
+          "n": 1415,
+          "p": {
+            "fillet": 0.478,
+            "cut": 0.271,
+            "random": 0.192
+          }
+        },
+        "torus & accessibility=0.5-0.8": {
+          "n": 1217,
+          "p": {
+            "fillet": 0.817,
+            "cut": 0.128,
+            "random": 0.043
+          }
+        },
+        "bspline & accessibility=0.8-0.999": {
+          "n": 1184,
+          "p": {
+            "fillet": 0.753,
+            "cut": 0.117,
+            "random": 0.115
+          }
+        },
+        "bspline & accessibility=>=0.999": {
+          "n": 1080,
+          "p": {
+            "fillet": 0.759,
+            "random": 0.177,
+            "cut": 0.032
+          }
+        },
+        "cone & accessibility=>=0.999": {
+          "n": 1069,
+          "p": {
+            "chamfer": 0.684,
+            "random": 0.24,
+            "fillet": 0.07
+          }
+        },
+        "bspline & accessibility=0.2-0.5": {
+          "n": 950,
+          "p": {
+            "cut": 0.522,
+            "fillet": 0.232,
+            "random": 0.221
+          }
+        },
+        "torus & accessibility=0.8-0.999": {
+          "n": 947,
+          "p": {
+            "fillet": 0.868,
+            "random": 0.096,
+            "cut": 0.034
+          }
+        },
+        "cone & accessibility=0.8-0.999": {
+          "n": 705,
+          "p": {
+            "chamfer": 0.6,
+            "random": 0.326,
+            "hole": 0.027
+          }
+        },
+        "cone & accessibility=0.2-0.5": {
+          "n": 573,
+          "p": {
+            "chamfer": 0.354,
+            "hole": 0.23,
+            "cut": 0.213
+          }
+        },
+        "torus & accessibility=0.2-0.5": {
+          "n": 540,
+          "p": {
+            "cut": 0.496,
+            "fillet": 0.378,
+            "random": 0.063
+          }
+        },
+        "bspline & accessibility=0": {
+          "n": 426,
+          "p": {
+            "cut": 0.57,
+            "random": 0.169,
+            "fillet": 0.162
+          }
+        },
+        "torus & accessibility=0": {
+          "n": 362,
+          "p": {
+            "cut": 0.401,
+            "random": 0.29,
+            "fillet": 0.177
+          }
+        },
+        "sphere & accessibility=>=0.999": {
+          "n": 275,
+          "p": {
+            "fillet": 0.851,
+            "random": 0.138,
+            "chamfer": 0.011
+          }
+        },
+        "sphere & accessibility=0.2-0.5": {
+          "n": 263,
+          "p": {
+            "cut": 0.589,
+            "fillet": 0.331,
+            "random": 0.072
+          }
+        },
+        "sphere & accessibility=0.5-0.8": {
+          "n": 131,
+          "p": {
+            "fillet": 0.71,
+            "random": 0.16,
+            "cut": 0.122
+          }
+        },
+        "sphere & accessibility=0.8-0.999": {
+          "n": 124,
+          "p": {
+            "fillet": 0.718,
+            "random": 0.218,
+            "cut": 0.065
+          }
+        },
+        "sphere & accessibility=0": {
+          "n": 116,
+          "p": {
+            "cut": 0.586,
+            "random": 0.25,
+            "fillet": 0.112
+          }
+        },
+        "extrusion & accessibility=0.2-0.5": {
+          "n": 91,
+          "p": {
+            "random": 0.769,
+            "cut": 0.209,
+            "fillet": 0.022
+          }
+        }
+      },
+      "surface_type x on_convex_hull": {
+        "cylinder & on_convex_hull=False": {
+          "n": 35266,
+          "p": {
+            "hole": 0.529,
+            "cut": 0.236,
+            "fillet": 0.135
+          }
+        },
+        "plane & on_convex_hull=False": {
+          "n": 24160,
+          "p": {
+            "cut": 0.5,
+            "random": 0.418,
+            "hole": 0.064
+          }
+        },
+        "plane & on_convex_hull=True": {
+          "n": 22871,
+          "p": {
+            "random": 0.548,
+            "cut": 0.399,
+            "chamfer": 0.044
+          }
+        },
+        "cylinder & on_convex_hull=True": {
+          "n": 16283,
+          "p": {
+            "fillet": 0.338,
+            "hole": 0.319,
+            "cut": 0.187
+          }
+        },
+        "cone & on_convex_hull=False": {
+          "n": 3877,
+          "p": {
+            "hole": 0.358,
+            "chamfer": 0.318,
+            "random": 0.199
+          }
+        },
+        "bspline & on_convex_hull=False": {
+          "n": 2543,
+          "p": {
+            "fillet": 0.576,
+            "cut": 0.242,
+            "random": 0.144
+          }
+        },
+        "torus & on_convex_hull=False": {
+          "n": 2529,
+          "p": {
+            "fillet": 0.665,
+            "cut": 0.206,
+            "random": 0.095
+          }
+        },
+        "bspline & on_convex_hull=True": {
+          "n": 2510,
+          "p": {
+            "fillet": 0.482,
+            "cut": 0.272,
+            "random": 0.204
+          }
+        },
+        "cone & on_convex_hull=True": {
+          "n": 2021,
+          "p": {
+            "chamfer": 0.749,
+            "random": 0.145,
+            "hole": 0.044
+          }
+        },
+        "torus & on_convex_hull=True": {
+          "n": 1942,
+          "p": {
+            "fillet": 0.845,
+            "random": 0.102,
+            "cut": 0.042
+          }
+        },
+        "sphere & on_convex_hull=False": {
+          "n": 529,
+          "p": {
+            "cut": 0.446,
+            "fillet": 0.382,
+            "random": 0.155
+          }
+        },
+        "sphere & on_convex_hull=True": {
+          "n": 378,
+          "p": {
+            "fillet": 0.831,
+            "random": 0.132,
+            "cut": 0.029
+          }
+        },
+        "extrusion & on_convex_hull=False": {
+          "n": 97,
+          "p": {
+            "random": 0.825,
+            "cut": 0.155,
+            "fillet": 0.021
+          }
+        },
+        "extrusion & on_convex_hull=True": {
+          "n": 53,
+          "p": {
+            "cut": 0.717,
+            "random": 0.245,
+            "fillet": 0.038
+          }
+        }
+      },
+      "surface_type x n_inner_wires": {
+        "cylinder & n_inner_wires=0": {
+          "n": 51465,
+          "p": {
+            "hole": 0.464,
+            "cut": 0.221,
+            "fillet": 0.2
+          }
+        },
+        "plane & n_inner_wires=0": {
+          "n": 39213,
+          "p": {
+            "cut": 0.514,
+            "random": 0.433,
+            "chamfer": 0.034
+          }
+        },
+        "cone & n_inner_wires=0": {
+          "n": 6072,
+          "p": {
+            "chamfer": 0.469,
+            "hole": 0.246,
+            "random": 0.184
+          }
+        },
+        "bspline & n_inner_wires=0": {
+          "n": 5030,
+          "p": {
+            "fillet": 0.532,
+            "cut": 0.257,
+            "random": 0.171
+          }
+        },
+        "plane & n_inner_wires=1": {
+          "n": 4826,
+          "p": {
+            "random": 0.623,
+            "hole": 0.217,
+            "cut": 0.155
+          }
+        },
+        "torus & n_inner_wires=0": {
+          "n": 4632,
+          "p": {
+            "fillet": 0.746,
+            "cut": 0.132,
+            "random": 0.098
+          }
+        },
+        "plane & n_inner_wires=>=4": {
+          "n": 1774,
+          "p": {
+            "random": 0.913,
+            "cut": 0.072,
+            "hole": 0.014
+          }
+        },
+        "plane & n_inner_wires=2-4": {
+          "n": 1343,
+          "p": {
+            "random": 0.836,
+            "cut": 0.159,
+            "hole": 0.004
+          }
+        },
+        "sphere & n_inner_wires=0": {
+          "n": 906,
+          "p": {
+            "fillet": 0.57,
+            "cut": 0.273,
+            "random": 0.145
+          }
+        },
+        "cylinder & n_inner_wires=1": {
+          "n": 194,
+          "p": {
+            "random": 0.479,
+            "hole": 0.299,
+            "cut": 0.149
+          }
+        },
+        "extrusion & n_inner_wires=0": {
+          "n": 148,
+          "p": {
+            "random": 0.615,
+            "cut": 0.358,
+            "fillet": 0.027
+          }
+        },
+        "cylinder & n_inner_wires=2-4": {
+          "n": 68,
+          "p": {
+            "random": 0.632,
+            "hole": 0.221,
+            "cut": 0.103
+          }
+        }
+      },
+      "strict_component_surfaces x accessibility": {
+        "cylinder+plane & accessibility=0.2-0.5": {
+          "n": 11317,
+          "p": {
+            "cut": 0.503,
+            "hole": 0.403,
+            "random": 0.082
+          }
+        },
+        "cylinder+plane & accessibility=0.5-0.8": {
+          "n": 10773,
+          "p": {
+            "cut": 0.476,
+            "hole": 0.272,
+            "random": 0.189
+          }
+        },
+        "cylinder+plane & accessibility=>=0.999": {
+          "n": 10326,
+          "p": {
+            "random": 0.794,
+            "fillet": 0.118,
+            "cut": 0.054
+          }
+        },
+        "cylinder+plane & accessibility=0.8-0.999": {
+          "n": 8770,
+          "p": {
+            "cut": 0.424,
+            "hole": 0.338,
+            "random": 0.178
+          }
+        },
+        "cylinder+plane & accessibility=0": {
+          "n": 7592,
+          "p": {
+            "hole": 0.594,
+            "cut": 0.249,
+            "random": 0.145
+          }
+        },
+        "cone+cylinder+plane & accessibility=0.2-0.5": {
+          "n": 5121,
+          "p": {
+            "cut": 0.605,
+            "hole": 0.305,
+            "random": 0.059
+          }
+        },
+        "cone+cylinder+plane & accessibility=0": {
+          "n": 3258,
+          "p": {
+            "hole": 0.662,
+            "random": 0.166,
+            "cut": 0.154
+          }
+        },
+        "cone+cylinder+plane & accessibility=>=0.999": {
+          "n": 3103,
+          "p": {
+            "random": 0.709,
+            "chamfer": 0.152,
+            "cut": 0.063
+          }
+        },
+        "cone+cylinder+plane & accessibility=0.5-0.8": {
+          "n": 2928,
+          "p": {
+            "cut": 0.332,
+            "chamfer": 0.266,
+            "random": 0.21
+          }
+        },
+        "plane & accessibility=>=0.999": {
+          "n": 1500,
+          "p": {
+            "random": 0.859,
+            "chamfer": 0.087,
+            "cut": 0.051
+          }
+        },
+        "cone+cylinder+plane & accessibility=0.8-0.999": {
+          "n": 1468,
+          "p": {
+            "random": 0.337,
+            "cut": 0.294,
+            "chamfer": 0.185
+          }
+        },
+        "plane & accessibility=0.5-0.8": {
+          "n": 1103,
+          "p": {
+            "random": 0.549,
+            "cut": 0.412,
+            "chamfer": 0.027
+          }
+        },
+        "plane & accessibility=0.8-0.999": {
+          "n": 952,
+          "p": {
+            "cut": 0.587,
+            "random": 0.353,
+            "chamfer": 0.056
+          }
+        },
+        "plane & accessibility=0.2-0.5": {
+          "n": 903,
+          "p": {
+            "cut": 0.641,
+            "random": 0.351,
+            "hole": 0.007
+          }
+        },
+        "bspline+cylinder+plane & accessibility=0.5-0.8": {
+          "n": 897,
+          "p": {
+            "cut": 0.509,
+            "random": 0.227,
+            "hole": 0.151
+          }
+        },
+        "bspline+cylinder+plane & accessibility=0.2-0.5": {
+          "n": 702,
+          "p": {
+            "cut": 0.563,
+            "hole": 0.222,
+            "random": 0.184
+          }
+        },
+        "plane & accessibility=0": {
+          "n": 702,
+          "p": {
+            "cut": 0.585,
+            "random": 0.392,
+            "hole": 0.017
+          }
+        },
+        "cylinder+plane+torus & accessibility=0.2-0.5": {
+          "n": 574,
+          "p": {
+            "cut": 0.699,
+            "hole": 0.174,
+            "random": 0.113
+          }
+        },
+        "bspline+cylinder+plane & accessibility=>=0.999": {
+          "n": 571,
+          "p": {
+            "random": 0.702,
+            "fillet": 0.198,
+            "cut": 0.084
+          }
+        },
+        "bspline+cylinder+plane & accessibility=0.8-0.999": {
+          "n": 536,
+          "p": {
+            "cut": 0.478,
+            "random": 0.319,
+            "fillet": 0.149
+          }
+        },
+        "cone+cylinder & accessibility=0": {
+          "n": 496,
+          "p": {
+            "hole": 0.899,
+            "random": 0.077,
+            "cut": 0.016
+          }
+        },
+        "cylinder+plane+torus & accessibility=0.5-0.8": {
+          "n": 455,
+          "p": {
+            "cut": 0.589,
+            "random": 0.209,
+            "fillet": 0.147
+          }
+        },
+        "bspline+cone+cylinder+plane & accessibility=0.5-0.8": {
+          "n": 450,
+          "p": {
+            "cut": 0.507,
+            "random": 0.191,
+            "hole": 0.171
+          }
+        },
+        "bspline+plane & accessibility=0.2-0.5": {
+          "n": 312,
+          "p": {
+            "cut": 0.83,
+            "random": 0.163,
+            "hole": 0.006
+          }
+        },
+        "bspline+cone+cylinder+plane & accessibility=0": {
+          "n": 311,
+          "p": {
+            "cut": 0.408,
+            "hole": 0.392,
+            "random": 0.186
+          }
+        },
+        "bspline+cone+cylinder+plane & accessibility=0.2-0.5": {
+          "n": 310,
+          "p": {
+            "random": 0.342,
+            "cut": 0.316,
+            "hole": 0.261
+          }
+        },
+        "bspline+cone+cylinder+plane & accessibility=0.8-0.999": {
+          "n": 271,
+          "p": {
+            "hole": 0.406,
+            "random": 0.266,
+            "fillet": 0.173
+          }
+        },
+        "cone+cylinder+plane+torus & accessibility=0.2-0.5": {
+          "n": 257,
+          "p": {
+            "cut": 0.681,
+            "hole": 0.261,
+            "random": 0.047
+          }
+        },
+        "cone+plane & accessibility=>=0.999": {
+          "n": 254,
+          "p": {
+            "random": 0.618,
+            "chamfer": 0.339,
+            "hole": 0.024
+          }
+        },
+        "cone+cylinder+plane+torus & accessibility=>=0.999": {
+          "n": 254,
+          "p": {
+            "random": 0.516,
+            "fillet": 0.35,
+            "chamfer": 0.079
+          }
+        },
+        "bspline+cylinder+plane & accessibility=0": {
+          "n": 243,
+          "p": {
+            "random": 0.519,
+            "cut": 0.243,
+            "hole": 0.156
+          }
+        },
+        "cylinder+plane+torus & accessibility=>=0.999": {
+          "n": 243,
+          "p": {
+            "random": 0.724,
+            "fillet": 0.185,
+            "cut": 0.07
+          }
+        },
+        "bspline+cone+cylinder+plane & accessibility=>=0.999": {
+          "n": 226,
+          "p": {
+            "random": 0.69,
+            "fillet": 0.133,
+            "chamfer": 0.097
+          }
+        },
+        "cone+cylinder+plane+torus & accessibility=0": {
+          "n": 222,
+          "p": {
+            "hole": 0.595,
+            "cut": 0.203,
+            "random": 0.14
+          }
+        },
+        "cone+cylinder & accessibility=0.5-0.8": {
+          "n": 204,
+          "p": {
+            "chamfer": 0.686,
+            "random": 0.172,
+            "hole": 0.103
+          }
+        },
+        "bspline+cone+plane & accessibility=0": {
+          "n": 196,
+          "p": {
+            "cut": 0.878,
+            "random": 0.077,
+            "hole": 0.046
+          }
+        },
+        "cylinder+plane+torus & accessibility=0.8-0.999": {
+          "n": 193,
+          "p": {
+            "random": 0.43,
+            "cut": 0.394,
+            "fillet": 0.161
+          }
+        },
+        "bspline+cone+cylinder+plane+torus & accessibility=0.5-0.8": {
+          "n": 183,
+          "p": {
+            "random": 0.388,
+            "cut": 0.284,
+            "fillet": 0.158
+          }
+        },
+        "bspline+plane & accessibility=0": {
+          "n": 169,
+          "p": {
+            "cut": 0.817,
+            "random": 0.118,
+            "hole": 0.059
+          }
+        },
+        "cone+cylinder+plane+torus & accessibility=0.5-0.8": {
+          "n": 168,
+          "p": {
+            "cut": 0.429,
+            "random": 0.31,
+            "chamfer": 0.101
+          }
+        },
+        "cone+plane & accessibility=0.5-0.8": {
+          "n": 156,
+          "p": {
+            "chamfer": 0.551,
+            "random": 0.333,
+            "cut": 0.064
+          }
+        },
+        "bspline+cone+cylinder+plane+torus & accessibility=0.2-0.5": {
+          "n": 146,
+          "p": {
+            "random": 0.356,
+            "cut": 0.322,
+            "hole": 0.158
+          }
+        },
+        "cone+plane & accessibility=0": {
+          "n": 142,
+          "p": {
+            "cut": 0.585,
+            "random": 0.31,
+            "hole": 0.092
+          }
+        },
+        "cylinder+plane+torus & accessibility=0": {
+          "n": 139,
+          "p": {
+            "random": 0.374,
+            "hole": 0.317,
+            "cut": 0.266
+          }
+        },
+        "cone+cylinder & accessibility=0.2-0.5": {
+          "n": 133,
+          "p": {
+            "hole": 0.842,
+            "chamfer": 0.075,
+            "random": 0.06
+          }
+        },
+        "bspline+cone+plane & accessibility=0.2-0.5": {
+          "n": 129,
+          "p": {
+            "cut": 0.45,
+            "random": 0.349,
+            "hole": 0.155
+          }
+        },
+        "cylinder & accessibility=>=0.999": {
+          "n": 124,
+          "p": {
+            "fillet": 0.702,
+            "random": 0.298
+          }
+        },
+        "cone+cylinder+plane+torus & accessibility=0.8-0.999": {
+          "n": 122,
+          "p": {
+            "random": 0.41,
+            "fillet": 0.238,
+            "cut": 0.238
+          }
+        },
+        "cone+plane & accessibility=0.8-0.999": {
+          "n": 122,
+          "p": {
+            "chamfer": 0.557,
+            "random": 0.426,
+            "cut": 0.016
+          }
+        },
+        "bspline+cylinder & accessibility=0.5-0.8": {
+          "n": 117,
+          "p": {
+            "random": 0.521,
+            "fillet": 0.35,
+            "cut": 0.077
+          }
+        },
+        "cylinder & accessibility=0.5-0.8": {
+          "n": 112,
+          "p": {
+            "fillet": 0.5,
+            "cut": 0.411,
+            "random": 0.054
+          }
+        },
+        "bspline+cone+cylinder+plane+torus & accessibility=>=0.999": {
+          "n": 101,
+          "p": {
+            "random": 0.782,
+            "fillet": 0.099,
+            "chamfer": 0.079
+          }
+        },
+        "bspline+cone+cylinder+plane+torus & accessibility=0": {
+          "n": 97,
+          "p": {
+            "hole": 0.918,
+            "random": 0.072,
+            "cut": 0.01
+          }
+        },
+        "bspline+plane & accessibility=>=0.999": {
+          "n": 94,
+          "p": {
+            "random": 0.755,
+            "cut": 0.128,
+            "fillet": 0.064
+          }
+        },
+        "cone+plane & accessibility=0.2-0.5": {
+          "n": 90,
+          "p": {
+            "cut": 0.389,
+            "chamfer": 0.244,
+            "random": 0.189
+          }
+        },
+        "bspline+cone+plane & accessibility=0.5-0.8": {
+          "n": 89,
+          "p": {
+            "random": 0.427,
+            "cut": 0.36,
+            "chamfer": 0.09
+          }
+        },
+        "cylinder+extrusion+plane & accessibility=0.2-0.5": {
+          "n": 89,
+          "p": {
+            "random": 0.775,
+            "cut": 0.225
+          }
+        },
+        "bspline+plane & accessibility=0.5-0.8": {
+          "n": 87,
+          "p": {
+            "random": 0.655,
+            "cut": 0.195,
+            "fillet": 0.126
+          }
+        },
+        "cone+cylinder & accessibility=>=0.999": {
+          "n": 84,
+          "p": {
+            "random": 0.548,
+            "chamfer": 0.369,
+            "fillet": 0.083
+          }
+        },
+        "bspline+cylinder+extrusion+plane & accessibility=0.5-0.8": {
+          "n": 83,
+          "p": {
+            "cut": 1.0
+          }
+        },
+        "cylinder & accessibility=0.8-0.999": {
+          "n": 81,
+          "p": {
+            "fillet": 0.79,
+            "hole": 0.123,
+            "random": 0.062
+          }
+        },
+        "cylinder+extrusion+plane & accessibility=0.5-0.8": {
+          "n": 79,
+          "p": {
+            "cut": 0.886,
+            "random": 0.114
+          }
+        },
+        "bspline+cylinder+plane+torus & accessibility=0.5-0.8": {
+          "n": 77,
+          "p": {
+            "fillet": 0.442,
+            "random": 0.338,
+            "cut": 0.221
+          }
+        },
+        "cylinder+plane+sphere & accessibility=0.2-0.5": {
+          "n": 76,
+          "p": {
+            "random": 0.474,
+            "hole": 0.421,
+            "cut": 0.079
+          }
+        },
+        "bspline+cylinder+plane+torus & accessibility=>=0.999": {
+          "n": 75,
+          "p": {
+            "random": 0.587,
+            "fillet": 0.36,
+            "cut": 0.027
+          }
+        },
+        "bspline+cone+cylinder+extrusion+plane & accessibility=0.5-0.8": {
+          "n": 71,
+          "p": {
+            "cut": 0.761,
+            "random": 0.113,
+            "chamfer": 0.113
+          }
+        },
+        "bspline+cylinder & accessibility=>=0.999": {
+          "n": 71,
+          "p": {
+            "random": 0.535,
+            "fillet": 0.465
+          }
+        },
+        "bspline+cone+cylinder+extrusion+plane & accessibility=0.2-0.5": {
+          "n": 70,
+          "p": {
+            "cut": 0.471,
+            "random": 0.257,
+            "fillet": 0.186
+          }
+        },
+        "cylinder+extrusion+plane & accessibility=0.8-0.999": {
+          "n": 70,
+          "p": {
+            "cut": 0.971,
+            "random": 0.029
+          }
+        },
+        "bspline+cone+cylinder+plane+torus & accessibility=0.8-0.999": {
+          "n": 69,
+          "p": {
+            "random": 0.478,
+            "fillet": 0.435,
+            "cut": 0.087
+          }
+        },
+        "cylinder+extrusion+plane & accessibility=>=0.999": {
+          "n": 61,
+          "p": {
+            "random": 0.885,
+            "cut": 0.115
+          }
+        },
+        "cylinder & accessibility=0.2-0.5": {
+          "n": 59,
+          "p": {
+            "cut": 0.322,
+            "hole": 0.305,
+            "fillet": 0.288
+          }
+        },
+        "bspline+cylinder+plane+torus & accessibility=0.2-0.5": {
+          "n": 54,
+          "p": {
+            "cut": 0.667,
+            "hole": 0.148,
+            "random": 0.148
+          }
+        }
+      }
+    }
+  },
+  "meta": {
+    "models": 1561,
+    "models_failed": 0,
+    "label_space": "5",
+    "steps": "brepformer/data/defeature/steps",
+    "faces": 115766
+  }
+}

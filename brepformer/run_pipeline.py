@@ -114,8 +114,11 @@ def parse_args():
                              "Manifest auto-propagated to test/analyze stages.")
 
     # --- Test/Analysis ---
-    parser.add_argument("--real_classes", action="store_true", default=False,
-                        help="Remap 27 classes to 8 real machining feature categories for test/analysis")
+    class_group = parser.add_mutually_exclusive_group()
+    class_group.add_argument("--8_classes", action="store_true", dest="eight_classes",
+                             help="Remap 27 classes to 8 grouped machining feature categories for test/analysis")
+    class_group.add_argument("--5_classes", action="store_true", dest="five_classes",
+                             help="Remap 27 classes to 5 defeature categories for test/analysis")
     parser.add_argument("--analyze_modes", type=str, default="all",
                         help="Comma-separated analysis modes or 'all'")
     parser.add_argument("--num_samples", type=int, default=1000,
@@ -282,8 +285,10 @@ def main():
         ]
         if args.face_segmentation:
             cmd += ["--output_face_preds", str(face_preds_output)]
-        if args.real_classes:
-            cmd.append("--real_classes")
+        if args.eight_classes:
+            cmd.append("--8_classes")
+        elif args.five_classes:
+            cmd.append("--5_classes")
         if manifest_path.exists():
             cmd += ["--limit_data_manifest", str(manifest_path)]
         run(cmd, "Stage 3/4: Testing")
@@ -301,8 +306,10 @@ def main():
         ]
         if args.face_segmentation:
             cmd += ["--output_face_preds", str(train_face_preds_output)]
-        if args.real_classes:
-            cmd.append("--real_classes")
+        if args.eight_classes:
+            cmd.append("--8_classes")
+        elif args.five_classes:
+            cmd.append("--5_classes")
         if manifest_path.exists():
             cmd += ["--limit_data_manifest", str(manifest_path)]
         run(cmd, "Stage 3b/4: Train set evaluation")
@@ -319,8 +326,10 @@ def main():
             "--num_workers", str(args.num_workers),
             "--num_samples", str(args.num_samples),
         ]
-        if args.real_classes:
-            cmd.append("--real_classes")
+        if args.eight_classes:
+            cmd.append("--8_classes")
+        elif args.five_classes:
+            cmd.append("--5_classes")
         if manifest_path.exists():
             cmd += ["--limit_data_manifest", str(manifest_path)]
         run(cmd, "Stage 4/4: Analysis")

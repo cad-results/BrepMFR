@@ -98,6 +98,18 @@ def parse_args():
     parser.add_argument("--num_workers", type=int, default=0, help="Number of data loader workers (0 = main process only, saves RAM)")
     parser.add_argument("--accumulate_grad_batches", type=int, default=None, help="Gradient accumulation steps (auto-detected if batch_size not set)")
     parser.add_argument("--max_faces", type=int, default=500, help="Max faces per sample; filters extreme outliers by file size")
+    parser.add_argument("--lr_monitor", type=str, default="train/loss_epoch",
+                        help="Metric ReduceLROnPlateau watches. Default is the historical "
+                             "train/loss_epoch, which decays LR on training loss and so "
+                             "keeps cutting it while the model overfits. Prefer val/loss "
+                             "or val/face_f1.")
+    parser.add_argument("--early_stop_monitor", type=str, default="val/loss",
+                        help="Metric EarlyStopping watches. val/loss is the historical "
+                             "default, but on a pseudo-labelled corpus it mixes ground "
+                             "truth with teacher noise; val/face_f1 stops on the axis "
+                             "the model is actually deployed for.")
+    parser.add_argument("--early_stop_patience", type=int, default=20,
+                        help="EarlyStopping patience in epochs")
 
     # Output arguments
     parser.add_argument("--output_dir", type=str, default="results", help="Output directory")
@@ -109,6 +121,37 @@ def parse_args():
     parser.add_argument("--precision", type=int, default=32, help="Training precision (16 or 32)")
     parser.add_argument("--fast_dev_run", action="store_true", help="Run a fast development test")
     parser.add_argument("--resume_from", type=str, default=None, help="Resume from checkpoint")
+    parser.add_argument("--init_weights", type=str, default=None,
+                        help="Warm-start from a checkpoint's WEIGHTS only, on a fresh "
+                             "optimizer and LR schedule. Layers whose name or shape "
+                             "does not match (typically the classifier heads when the "
+                             "class count differs) are left at their initial values. "
+                             "Use this to continue a trained model on a new corpus; use "
+                             "--resume_from only to restart an interrupted run.")
+    parser.add_argument("--attr_layout", default="onehot", choices=["onehot", "categorical"],
+                        help="How the model decodes face_attr/edge_attr columns. 'onehot' is "
+                             "the layout actually written to disk and is correct. "
+                             "'categorical' reproduces the historical indexing, under which "
+                             "surface type collapses to an is-it-a-plane bit, face area becomes "
+                             "an is-it-a-cylinder bit, edge length reads the convexity flag and "
+                             "edge convexity is a constant; use it only to reproduce a pre-fix "
+                             "run. NOTE: weights trained under one layout are not valid under "
+                             "the other -- the incumbent checkpoint drops 82.95%% -> 32.75%% "
+                             "face accuracy if decoded the other way -- so --init_weights "
+                             "across layouts warm-starts the body but forces the attribute "
+                             "encoders to re-adapt.")
+    parser.add_argument("--mask_policy", default="asis",
+                        choices=["asis", "const", "zero"],
+                        help="Overwrite face_grid channel 6, the UV validity mask, with a constant. 'asis' keeps the pickle's mask. This is candidate fix C for Bug 8: channel 6 is identically 1 on every STEP-derived corpus and 44.5%% masked in MFTRCAD pretraining, so the encoder learns it as a validity gate on one corpus and is handed a constant on the other. Rather than repairing the mask (--mftrcad_uv in steps_to_graphs), 'const'/'zero' delete the channel's information on BOTH sides, needing no re-preprocessing. Use it on train AND eval or the shift is merely moved.")
+    parser.add_argument("--rotate_aug", default="none", choices=["none", "octahedral", "so3"],
+                        help="Rotation augmentation on the TRAIN split only. The corpus is "
+                             "axis-aligned and the pipeline had no augmentation of any kind, so "
+                             "a model can key on world-frame normals; so3_probe measured `hole` "
+                             "face F1 falling 0.971 -> 0.120 in the worst frame, and that worst "
+                             "frame was axis-aligned. 'octahedral' draws from the 24 axis-aligned "
+                             "90-degree rotations, 'so3' uniformly from SO(3), which is how real "
+                             "GrabCAD parts arrive. Val stays unrotated so the early-stop metric "
+                             "remains comparable across runs.")
     parser.add_argument("--limit_data", type=int, default=None,
                         help="Limit total dataset to N samples (proportionally across splits). "
                              "Saves a manifest JSON for reproducible subsetting in test/analyze/infer.")
@@ -188,15 +231,35 @@ def main():
         face_seg_hidden_dim=args.face_seg_hidden_dim,
         face_seg_dropout=args.face_seg_dropout,
         use_rope=args.use_rope,
+        # The RoPE frequency table must cover the longest sequence the model can see, which
+        # is max_faces + 1 (the extra slot is the graph token). The default 512 is smaller
+        # than the max_faces=1000 every run in SCRIPTS.md uses, so --use_rope would have
+        # crashed on the first part with >511 faces. Size the table from max_faces instead
+        # of leaving a constant that silently disagrees with the data.
+        max_seq_len=max(512, args.max_faces + 1),
         gradient_checkpointing=args.gradient_checkpointing,
+        lr_monitor=args.lr_monitor,
+        attr_layout=args.attr_layout,
     )
 
     # Create datasets (max_faces filters extreme outliers by file size)
     print("Loading preprocessed training dataset...")
-    train_dataset = PreprocessedDataset(str(data_dir), split="train", max_faces=args.max_faces)
+    train_dataset = PreprocessedDataset(str(data_dir), split="train", max_faces=args.max_faces,
+                                        rotate_aug=args.rotate_aug, rotate_seed=args.seed,
+                                        mask_policy=args.mask_policy)
+    if args.rotate_aug != "none":
+        print(f"Rotation augmentation: {args.rotate_aug} (train split only)")
+    if args.mask_policy != "asis":
+        # On val too, unlike rotate_aug: this is an input-distribution change, not an
+        # augmentation, and val has to see the same inputs the model will be deployed on.
+        print(f"UV validity mask (face_grid ch6) forced to {args.mask_policy} on train AND val")
 
     print("Loading preprocessed validation dataset...")
-    val_dataset = PreprocessedDataset(str(data_dir), split="val", max_faces=args.max_faces)
+    # Deliberately NOT augmented: rotating val changes what val/face_f1 measures, and the
+    # early-stop monitor has to stay comparable to every run in SCRIPTS.md. Measure
+    # rotation robustness after the fact with `python -m brepformer.so3_probe`.
+    val_dataset = PreprocessedDataset(str(data_dir), split="val", max_faces=args.max_faces,
+                                      mask_policy=args.mask_policy)
 
     # Apply limit_data subsetting if requested
     if args.limit_data:
@@ -280,6 +343,33 @@ def main():
     print("Creating model...")
     model = BrepClassifier(config)
 
+    if args.init_weights:
+        # Weights-only warm start. Deliberately NOT --resume_from: that restores the
+        # optimizer state, epoch counter and LR schedule, so continuing a 58-epoch run
+        # would start at epoch 58 and stop immediately against --max_epochs. Here we
+        # want the learned representation on a fresh schedule over a different corpus.
+        ckpt = torch.load(args.init_weights, map_location="cpu", weights_only=False)
+        src = ckpt.get("state_dict", ckpt)
+        own = model.state_dict()
+        loaded, skipped = [], []
+        for k, v in src.items():
+            if k in own and own[k].shape == v.shape:
+                own[k] = v
+                loaded.append(k)
+            else:
+                skipped.append(k)
+        model.load_state_dict(own)
+        print(f"init_weights {args.init_weights}: loaded {len(loaded)} tensors, "
+              f"skipped {len(skipped)} (shape/name mismatch)")
+        if skipped:
+            # Heads are the expected mismatch when the class count differs; anything
+            # else means the checkpoint is from a different architecture and the run
+            # is quietly training a mostly-random model.
+            heads = [k for k in skipped if "classifier" in k or "head" in k]
+            print(f"  skipped heads: {len(heads)}; other: {len(skipped) - len(heads)}")
+            for k in skipped[:8]:
+                print(f"    {k}")
+
     # Callbacks
     class GarbageCollectionCallback(pl.Callback):
         """Periodic gc to bound RAM without the overhead of per-batch gc.collect()."""
@@ -310,10 +400,27 @@ def main():
             save_top_k=3,
             save_last=True,
         ),
+    ]
+    if args.face_segmentation:
+        # val/f1 above is the MODEL-level multi-label F1, not per-face segmentation
+        # quality — the two rank epochs differently, so selecting on val/f1 alone can
+        # hand back a checkpoint that is worse at the task the model is used for
+        # (defeature_v2 consumes face_preds, not model_classes). Keep a separate
+        # best-face-* checkpoint so face segmentation can be compared across runs
+        # without re-scoring every epoch.
+        callbacks.append(ModelCheckpoint(
+            dirpath=output_dir,
+            filename="bestface-{epoch:02d}-{val/face_f1:.4f}",
+            monitor="val/face_f1",
+            mode="max",
+            save_top_k=3,
+        ))
+    callbacks += [
         EarlyStopping(
-            monitor="val/loss",
-            patience=20,
-            mode="min",
+            monitor=args.early_stop_monitor,
+            patience=args.early_stop_patience,
+            mode="max" if args.early_stop_monitor.rsplit("/", 1)[-1]
+            in ("f1", "face_f1", "acc", "face_acc") else "min",
         ),
         LearningRateMonitor(logging_interval="step"),
     ]

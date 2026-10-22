@@ -49,6 +49,7 @@ class BrepEncoder(nn.Module):
             surface_encoder_channels=config.surface_encoder_channels,
             surface_encoder_output_dim=config.surface_encoder_output_dim,
             num_degree=config.num_degree,
+            attr_layout=getattr(config, "attr_layout", "onehot"),
         )
 
         # Attention bias from edges/topology
@@ -63,6 +64,7 @@ class BrepEncoder(nn.Module):
             curve_encoder_channels=config.curve_encoder_channels,
             d2_descriptor_dim=config.d2_descriptor_dim,
             angle_descriptor_dim=config.angle_descriptor_dim,
+            attr_layout=getattr(config, "attr_layout", "onehot"),
         )
 
         # Transformer encoder layers

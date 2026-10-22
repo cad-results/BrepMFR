@@ -28,6 +28,7 @@ from brepformer.data.preprocessed_dataset import PreprocessedDataset
 from brepformer.data.collator import BrepCollator
 from brepformer.data.classes import (
     CLASS_TO_REAL_CLASS, REAL_CLASS_NAMES, REAL_NUM_CLASSES,
+    CLASS_TO_DEFEATURE, DEFEATURE_CLASS_NAMES, DEFEATURE_NUM_CLASSES,
 )
 
 
@@ -57,8 +58,14 @@ def parse_args():
                         help="Output JSON file for per-face predictions (face segmentation mode)")
     parser.add_argument("--split", type=str, default="test", choices=["train", "val", "test"],
                         help="Dataset split to evaluate (default: test)")
-    parser.add_argument("--real_classes", action="store_true",
-                        help="Remap 27 MFTRCAD classes to 8 real machining feature categories")
+    class_group = parser.add_mutually_exclusive_group()
+    class_group.add_argument("--8_classes", action="store_true", dest="eight_classes",
+                             help="Remap 27 MFTRCAD classes to 8 grouped machining feature categories")
+    class_group.add_argument("--5_classes", action="store_true", dest="five_classes",
+                             help="Remap 27 MFTRCAD classes to 5 defeature categories (random, hole, chamfer, fillet, cut)")
+    parser.add_argument("--mask_policy", default="asis",
+                        choices=["asis", "const", "zero"],
+                        help="Overwrite face_grid channel 6 (the UV validity mask) with a constant, matching --mask_policy at train time. Bug 8 candidate fix C. Must match the training setting or the eval measures a shift the model never saw.")
     parser.add_argument("--limit_data_manifest", type=str, default=None,
                         help="Path to limit_data_manifest.json for reproducible dataset subsetting")
 
@@ -83,7 +90,8 @@ def main():
 
     # Create dataset for the requested split
     print(f"Loading preprocessed {args.split} dataset...")
-    test_dataset = PreprocessedDataset(args.data_dir, split=args.split)
+    test_dataset = PreprocessedDataset(args.data_dir, split=args.split,
+                                       mask_policy=args.mask_policy)
 
     if args.limit_data_manifest:
         from brepformer.data.preprocessed_dataset import (
@@ -128,13 +136,15 @@ def main():
     if not config.multi_label:
         print("\nComputing per-class metrics...")
         compute_per_class_metrics(model, test_loader, config.num_classes,
-                                  real_classes=args.real_classes)
+                                  real_classes=args.eight_classes,
+                                  defeature_classes=args.five_classes)
 
     # Face segmentation per-face predictions
     if config.face_segmentation and args.output_face_preds:
         print("\nComputing per-face predictions...")
         compute_face_predictions(model, test_loader, config, args.output_face_preds,
-                                 real_classes=args.real_classes)
+                                 real_classes=args.eight_classes,
+                                 defeature_classes=args.five_classes)
 
     # Save results
     if args.output_file:
@@ -145,7 +155,8 @@ def main():
         print(f"\nResults saved to {output_path}")
 
 
-def compute_per_class_metrics(model, dataloader, num_classes, real_classes=False):
+def compute_per_class_metrics(model, dataloader, num_classes, real_classes=False,
+                              defeature_classes=False):
     """Compute per-class precision, recall, F1.
 
     Args:
@@ -153,6 +164,7 @@ def compute_per_class_metrics(model, dataloader, num_classes, real_classes=False
         dataloader: Test data loader.
         num_classes: Number of classes.
         real_classes: If True, remap predictions/targets to 8 real classes.
+        defeature_classes: If True, remap predictions/targets to 5 defeature classes.
     """
     device = next(model.parameters()).device
     model.eval()
@@ -181,6 +193,12 @@ def compute_per_class_metrics(model, dataloader, num_classes, real_classes=False
         all_targets = remap[all_targets]
         num_classes = REAL_NUM_CLASSES
         class_names = REAL_CLASS_NAMES
+    elif defeature_classes:
+        remap = torch.tensor(CLASS_TO_DEFEATURE, dtype=torch.long)
+        all_preds = remap[all_preds]
+        all_targets = remap[all_targets]
+        num_classes = DEFEATURE_NUM_CLASSES
+        class_names = DEFEATURE_CLASS_NAMES
     else:
         class_names = None
 
@@ -197,7 +215,12 @@ def compute_per_class_metrics(model, dataloader, num_classes, real_classes=False
     recall = tp / (tp + fn + 1e-8)
     f1 = 2 * precision * recall / (precision + recall + 1e-8)
 
-    label_str = "real classes" if real_classes else "classes"
+    if real_classes:
+        label_str = "8 classes"
+    elif defeature_classes:
+        label_str = "5 defeature classes"
+    else:
+        label_str = "classes"
     print(f"\nPer-class metrics ({label_str}):")
     print("-" * 60)
     print(f"{'Class':>25} {'Precision':>10} {'Recall':>10} {'F1':>10}")
@@ -209,7 +232,8 @@ def compute_per_class_metrics(model, dataloader, num_classes, real_classes=False
     print(f"{'Macro Avg':>25} {precision.mean().item():>10.4f} {recall.mean().item():>10.4f} {f1.mean().item():>10.4f}")
 
 
-def compute_face_predictions(model, dataloader, config, output_path, real_classes=False):
+def compute_face_predictions(model, dataloader, config, output_path, real_classes=False,
+                             defeature_classes=False):
     """Compute per-face predictions and metrics for face segmentation.
 
     Args:
@@ -218,6 +242,7 @@ def compute_face_predictions(model, dataloader, config, output_path, real_classe
         config: Model config.
         output_path: Path to save JSON output.
         real_classes: If True, remap predictions/targets to 8 real classes.
+        defeature_classes: If True, remap predictions/targets to 5 defeature classes.
     """
     device = next(model.parameters()).device
     model.eval()
@@ -271,6 +296,11 @@ def compute_face_predictions(model, dataloader, config, output_path, real_classe
             all_fp = remap[all_fp]
             all_ft = remap[all_ft]
             num_face_classes = REAL_NUM_CLASSES
+        elif defeature_classes:
+            remap = torch.tensor(CLASS_TO_DEFEATURE, dtype=torch.long)
+            all_fp = remap[all_fp]
+            all_ft = remap[all_ft]
+            num_face_classes = DEFEATURE_NUM_CLASSES
         else:
             num_face_classes = config.num_face_classes
 

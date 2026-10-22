@@ -241,10 +241,11 @@ class MTFRCADDataset(Dataset):
 
         # Precompute graph features
         if self.precompute_features:
-            # Extract face centroids and normals for descriptors
-            # Assuming face_attr layout includes centroid at indices 2:5
-            # and we can estimate normals from face_grid
-            face_centroids = face_attr[:, 2:5] if face_attr.shape[1] >= 5 else None
+            # Centroids are at 11:14 post-normalisation, NOT 2:5 -- 2:5 are the
+            # cone/sphere/torus one-hot bits, and reading them here collapsed the D2
+            # histogram's max_dist to 1e-6, emptying the channel. Normals are not in
+            # face_attr at all after normalisation, so they come from the grid.
+            face_centroids = face_attr[:, 11:14] if face_attr.shape[1] >= 14 else None
 
             # Estimate face normals from grid (average of grid normals)
             # face_grid has normals at channels 3:6

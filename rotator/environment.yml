@@ -1,0 +1,19 @@
+name: rotator
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  - python=3.9
+  - pythonocc-core=7.9.0
+  - occt=7.9.0
+  - vtk=9.4.2
+  - numpy=1.23.5
+  - scipy
+  - matplotlib
+  - pillow
+  - trimesh
+  - pyqt5
+  - pip:
+      - scipy

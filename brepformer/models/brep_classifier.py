@@ -430,9 +430,14 @@ class BrepClassifier(pl.LightningModule):
         )
 
         # ReduceLROnPlateau scheduler (from official implementation)
+        monitor = getattr(self.config, "lr_monitor", "train/loss_epoch")
+        # An f1/accuracy metric improves upward, a loss downward; getting this wrong
+        # silently decays the LR on every epoch that *improved*.
+        mode = "max" if monitor.rsplit("/", 1)[-1] in ("f1", "face_f1", "acc",
+                                                       "face_acc") else "min"
         scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
             optimizer,
-            mode="min",
+            mode=mode,
             factor=self.config.lr_factor,
             patience=self.config.lr_patience,
             min_lr=self.config.min_lr,
@@ -442,7 +447,7 @@ class BrepClassifier(pl.LightningModule):
             "optimizer": optimizer,
             "lr_scheduler": {
                 "scheduler": scheduler,
-                "monitor": "train/loss_epoch",  # Use train loss if no validation
+                "monitor": monitor,
                 "interval": "epoch",
                 "frequency": 1,
                 "strict": False,  # Don't error if metric not found
@@ -472,6 +477,14 @@ class BrepClassifier(pl.LightningModule):
             using_native_amp: Whether using native AMP.
             using_lbfgs: Whether using LBFGS optimizer.
         """
+        # Lightning 2.x dropped optimizer_idx from this hook and passes the closure in
+        # that positional slot, which leaves optimizer_closure=None here and makes the
+        # step below run WITHOUT the closure -- Lightning then raises "The closure
+        # hasn't been executed". Detect the shift by type rather than by version, so the
+        # hook works on both 1.x and 2.x.
+        if optimizer_closure is None and callable(optimizer_idx):
+            optimizer_closure = optimizer_idx
+
         # Linear warmup
         if self.current_step < self.warmup_steps:
             lr_scale = min(1.0, float(self.current_step + 1) / self.warmup_steps)

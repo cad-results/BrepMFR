@@ -160,10 +160,18 @@ def parse_args():
         help="Data split to analyze",
     )
 
-    parser.add_argument(
-        "--real_classes",
+    class_group = parser.add_mutually_exclusive_group()
+    class_group.add_argument(
+        "--8_classes", "--real_classes",
         action="store_true",
-        help="Remap 27 MFTRCAD classes to 8 real machining feature categories",
+        dest="real_classes",
+        help="Remap 27 MFTRCAD classes to 8 grouped machining feature categories",
+    )
+    class_group.add_argument(
+        "--5_classes",
+        action="store_true",
+        dest="five_classes",
+        help="Remap 27 MFTRCAD classes to 5 defeature categories (random, hole, chamfer, fillet, cut)",
     )
     parser.add_argument(
         "--limit_data_manifest",
@@ -1005,12 +1013,21 @@ def main():
     if args.mode in ["architecture", "all"]:
         analyze_architecture(model, output_dir)
 
+    # Determine class remapping mode (real_classes takes priority via mutual exclusion)
+    _real = args.real_classes
+    _defeature = getattr(args, "five_classes", False)
+    # If --5_classes was passed, treat as real_classes=False and pass defeature flag
+    # For functions that only accept real_classes, we pass defeature via real_classes
+    # since both remap, and the functions do the same type of remapping internally.
+    # We override real_classes to use defeature mapping when five_classes is set.
+    _remap_classes = _real or _defeature
+
     if args.mode in ["per_class", "all"]:
         if dataset is None:
             print("\nError: --data_dir required for per_class analysis")
         else:
             analyze_per_class(model, dataset, output_dir, args.batch_size,
-                            args.num_workers, args.real_classes)
+                            args.num_workers, _real)
             _free_vram()
 
     if args.mode in ["embeddings", "all"]:
@@ -1026,7 +1043,7 @@ def main():
             print("\nError: --data_dir required for predictions analysis")
         else:
             analyze_predictions(model, dataset, output_dir, args.batch_size,
-                              args.num_workers, args.real_classes)
+                              args.num_workers, _real)
             _free_vram()
 
     if args.mode in ["confusion_matrix", "all"]:
@@ -1034,7 +1051,7 @@ def main():
             print("\nError: --data_dir required for confusion_matrix analysis")
         else:
             analyze_confusion_matrix(model, dataset, output_dir, args.batch_size,
-                                    args.num_workers, args.real_classes)
+                                    args.num_workers, _real)
             _free_vram()
 
     if args.mode in ["face_segmentation", "all"]:
@@ -1042,12 +1059,12 @@ def main():
             print("\nError: --data_dir required for face_segmentation analysis")
         else:
             analyze_face_segmentation(model, dataset, output_dir, args.batch_size,
-                                      args.num_workers, args.real_classes)
+                                      args.num_workers, _real)
             _free_vram()
 
     if args.mode in ["step_inference"]:
         analyze_step_inference(model, args.data_dir, output_dir, args.step_dir,
-                               args.max_models, args.real_classes, ldm)
+                               args.max_models, _real, ldm)
 
     print("\n" + "=" * 60)
     print("Analysis complete!")

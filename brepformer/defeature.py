@@ -48,8 +48,9 @@ from brepformer.data.classes import (
     CLASS_TO_DEFEATURE, NUM_CLASSES,
 )
 
-# Default checkpoint for the defeature model
-DEFAULT_CHECKPOINT = "results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt"
+# Default checkpoint for the defeature model. Best face macro F1 on
+# defeature_processed/test (157 real parts): 0.8886, vs 0.8564 for trial1_ss1500 ep57.
+DEFAULT_CHECKPOINT = "results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt"
 
 # Feature classes to remove (everything except random=0)
 FEATURE_CLASSES = {

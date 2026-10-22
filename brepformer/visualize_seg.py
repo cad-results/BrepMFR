@@ -188,9 +188,11 @@ class SegViewer(QtWidgets.QMainWindow):
         step_dir: Optional[str] = None,
         seg_dir: Optional[str] = None,
         real_classes: bool = False,
+        five_classes: bool = False,
     ):
         super().__init__()
         self.real_classes = real_classes
+        self.five_classes = five_classes
 
         # Auto-detect defeature mode from paths
         self.defeature_mode = False
@@ -200,7 +202,7 @@ class SegViewer(QtWidgets.QMainWindow):
                 break
 
         # Select class palette based on mode
-        if self.defeature_mode:
+        if self.five_classes or self.defeature_mode:
             self._class_names = DEFEATURE_CLASS_NAMES
             self._class_colors_hex = DEFEATURE_CLASS_COLORS_HEX
             self._num_classes = DEFEATURE_NUM_CLASSES
@@ -217,10 +219,10 @@ class SegViewer(QtWidgets.QMainWindow):
             self._get_class_name = get_class_name
 
         title = "BrepFormer Seg Viewer"
-        if self.defeature_mode:
-            title += " [Defeature 5-class]"
+        if self.five_classes or self.defeature_mode:
+            title += " [5-class Defeature]"
         elif self.real_classes:
-            title += " [Real Classes]"
+            title += " [8-class Grouped]"
         self.setWindowTitle(title)
         self.resize(1600, 1000)
         self.setMinimumSize(1200, 800)
@@ -406,10 +408,10 @@ class SegViewer(QtWidgets.QMainWindow):
         panel_layout.addSpacing(8)
 
         # Legend
-        if self.defeature_mode:
+        if self.five_classes or self.defeature_mode:
             legend_title = "5 Defeature Classes"
         elif self.real_classes:
-            legend_title = "8 Real Classes"
+            legend_title = "8 Grouped Classes"
         else:
             legend_title = "27 MFTRCAD Classes"
         legend_label = QtWidgets.QLabel(legend_title)
@@ -590,10 +592,10 @@ class SegViewer(QtWidgets.QMainWindow):
                 name = self._get_class_name(label)
                 counts[name] = counts.get(name, 0) + 1
 
-        if self.defeature_mode:
+        if self.five_classes or self.defeature_mode:
             mode_label = "5 Defeature Classes"
         elif self.real_classes:
-            mode_label = "8 Real Classes"
+            mode_label = "8 Grouped Classes"
         else:
             mode_label = "27 MFTRCAD Classes"
         lines = [mode_label, f"Total faces: {len(labels)}", f"Unlabeled: {unlabeled}", ""]
@@ -901,6 +903,14 @@ class SegViewer(QtWidgets.QMainWindow):
 
         if self.real_classes:
             return [CLASS_TO_REAL_CLASS[l] if l is not None and 0 <= l < NUM_CLASSES else l for l in raw]
+        if self.five_classes:
+            from brepformer.data.classes import CLASS_TO_DEFEATURE
+            # Only remap if labels are in 27-class space (max > 4).
+            # If already in 5-class space (all labels <= 4), skip remapping.
+            max_label = max((l for l in raw if l is not None), default=-1)
+            if max_label >= DEFEATURE_NUM_CLASSES:
+                return [CLASS_TO_DEFEATURE[l] if l is not None and 0 <= l < NUM_CLASSES else l for l in raw]
+            return raw
         return raw
 
     def _apply_colors(self) -> None:
@@ -1064,10 +1074,10 @@ class SegViewer(QtWidgets.QMainWindow):
             parts.append(f"Model {self.batch_index + 1}/{len(self.step_files)}")
         parts.append(f"Faces: {len(self.face_items)}")
         parts.append(f"Mode: {self.display_mode.upper()}")
-        if self.defeature_mode:
+        if self.five_classes or self.defeature_mode:
             parts.append("Classes: 5 defeature")
         elif self.real_classes:
-            parts.append("Classes: 8 real")
+            parts.append("Classes: 8 grouped")
         if self.gt_labels:
             parts.append("GT: loaded")
         if self.pred_labels:
@@ -1101,10 +1111,10 @@ class SegViewer(QtWidgets.QMainWindow):
             self.info_label.setText("")
 
         title = "BrepFormer Seg Viewer"
-        if self.defeature_mode:
-            title += " [Defeature]"
+        if self.five_classes or self.defeature_mode:
+            title += " [5-class Defeature]"
         elif self.real_classes:
-            title += " [Real Classes]"
+            title += " [8-class Grouped]"
         title += f" - {os.path.basename(self.step_path or '')}"
         self.setWindowTitle(title)
 
@@ -1114,7 +1124,11 @@ class SegViewer(QtWidgets.QMainWindow):
         idx = self.current_index
         gt = self.gt_labels[idx] if self.gt_labels and idx < len(self.gt_labels) else None
         pred = self.pred_labels[idx] if self.pred_labels and idx < len(self.pred_labels) else None
-        if self.real_classes and not self.defeature_mode:
+        if self.five_classes and not self.defeature_mode:
+            from brepformer.data.classes import CLASS_TO_DEFEATURE
+            gt_r = CLASS_TO_DEFEATURE[gt] if gt is not None and 0 <= gt < NUM_CLASSES else gt
+            pred_r = CLASS_TO_DEFEATURE[pred] if pred is not None and 0 <= pred < NUM_CLASSES else pred
+        elif self.real_classes and not self.defeature_mode:
             gt_r = CLASS_TO_REAL_CLASS[gt] if gt is not None and 0 <= gt < NUM_CLASSES else gt
             pred_r = CLASS_TO_REAL_CLASS[pred] if pred is not None and 0 <= pred < NUM_CLASSES else pred
             print(f"Face {idx}: GT={gt_r} ({get_real_class_name(gt_r) if gt_r is not None else 'N/A'}), "
@@ -1138,8 +1152,11 @@ def main() -> int:
                         help="Directory of STEP files for batch browsing")
     parser.add_argument("--seg_dir", type=str, default=None,
                         help="Directory of .seg prediction files (auto-matches by model_id)")
-    parser.add_argument("--real_classes", action="store_true",
-                        help="Remap 27 MFTRCAD classes to 8 real machining feature categories")
+    class_group = parser.add_mutually_exclusive_group()
+    class_group.add_argument("--8_classes", "--real_classes", action="store_true", dest="real_classes",
+                             help="Remap 27 MFTRCAD classes to 8 grouped machining feature categories")
+    class_group.add_argument("--5_classes", action="store_true", dest="five_classes",
+                             help="Remap 27 MFTRCAD classes to 5 defeature categories (random, hole, chamfer, fillet, cut)")
     parser.add_argument("--defeature", action="store_true",
                         help="Enable defeaturing: press F to remove predicted features and save result")
     parser.add_argument("--defeature_output_dir", type=str, default="brepformer/defeatured_output",
@@ -1156,6 +1173,7 @@ def main() -> int:
         step_dir=args.step_dir,
         seg_dir=args.seg_dir,
         real_classes=args.real_classes,
+        five_classes=args.five_classes,
     )
     window.defeature_enabled = args.defeature
     window.defeature_output_dir = args.defeature_output_dir

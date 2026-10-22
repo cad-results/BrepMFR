@@ -1,0 +1,53 @@
+# Slugs confirmed unattainable or not worth attempting, one per line.
+# Consulted by download_grabcad_api.py via --skip_slugs (on by default).
+#
+# Why this file exists: these slugs are re-attempted from scratch on every
+# coverage re-run and fail every time, after the downloader has already pulled
+# the full payload. `dana-60-high-pinion-ford-1` (368 MB) and
+# `ford-5-0-coyote-engine` (282 MB) alone burned 18-28 minutes per run before
+# being rejected by the size cap. Two consecutive re-runs yielded +4 and 0 new
+# files almost entirely because of this; skipping them recovered the yield
+# immediately (the next run kept 46).
+#
+# Two categories, both permanent:
+#   1. Oversized — exceeds --max_size_mb. Nearly all are large multi-body
+#      assemblies (a motherboard, a truck, an engine, 3D printers, a shipping
+#      container house, a water-cooled PC build). These would be rejected by
+#      curate_corpus.py as assemblies even if they fit, since MFTRCAD is
+#      single-body machined parts and the teacher's pseudo-labels are least
+#      reliable on multi-body input. Losing them costs no training signal.
+#   2. Publishes no STEP/archive candidate, or hangs the request.
+#
+# A slug here is excluded on the judgement that it cannot become a good
+# training sample, not merely that it is inconvenient. If --max_size_mb is ever
+# raised substantially, revisit category 1 rather than assuming it still holds.
+
+abracadeira-dimensionavel-clamp-scalable-1
+aluminum-alloy-stretcher-1
+asus-rampage-v-extreme-x99-lga-2011-3-motherboard-1
+chain-and-sprocket
+container-house-5x40-1
+control-valve--1
+dana-60-high-pinion-ford-1
+data-of-makeblock-parts-1
+direct-start-electrical-cabinet-tablero-electrico-de-arranque-directo-control-local-and-remote-2
+door-lock-assembly-2
+electric-bicycle-bicicleta-electrica-1
+electrical-control-panel-1
+emax-mt2204-2300kv-dc-motor-brushless-for-fpv-quadcopter-1
+ford-5-0-coyote-engine
+fv1-hardtail-by-fehe-1
+isuzu-giga-fvm-34-w-truck-1
+lian-li-rog-o11-dynamic-xl-water-cooled-workstation-computer-1
+lulzbot-taz-4-3d-printer-1
+mixing-dosing-tanks-on-skid
+my-work-desk-1
+phanteks-evolv-1
+phobya-case-stage-2-entry
+prusa-i3-3d-printer-modification-1
+quarter-turn-panel-lock-1
+tatra-phoenix-8x8-mining-version-1
+terrafugia-tf-x-1
+toggle-clamp-25
+truss-robots-1
+wire-rope-cable-with-pressed-connector-and-thimble-1

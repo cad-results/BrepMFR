@@ -45,6 +45,15 @@ def reshape_for_broadcast(freqs_cis: torch.Tensor, x: torch.Tensor) -> torch.Ten
     ndim = x.ndim
     assert ndim >= 2
     seq_len = x.shape[2]
+    # Without this the slice below silently returns a SHORTER table and the view() a few
+    # lines down fails with an opaque shape error deep in the attention stack. A B-rep
+    # sequence is num_faces + 1, so the table has to be sized from max_faces, not left at
+    # the 512 default while runs use max_faces=1000.
+    if freqs_cis.shape[0] < seq_len:
+        raise ValueError(
+            f"RoPE table covers {freqs_cis.shape[0]} positions but the batch has "
+            f"{seq_len} (num_faces + 1). Raise BrepClassifierConfig.max_seq_len to at "
+            f"least {seq_len}; train_preprocessed.py sets it to max_faces + 1.")
     freqs_cis = freqs_cis[:seq_len]
     shape = [1, 1, seq_len, x.shape[-1] // 2, 2]
     return freqs_cis.view(*shape)
