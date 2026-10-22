@@ -175,7 +175,7 @@ brepformer/data/mftrcad_processed/
 brepformer/data/defeature/
 brepformer/data/defeature_processed/
 brepformer/data/sample_processed/
-brepclassifier/data/
+brepclassifier/data/ssdata*/
 
 # Generated outputs
 inference/

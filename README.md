@@ -82,7 +82,8 @@ dataset/
 
 The BrepFormer corpora under `brepformer/data/` are too large to track (tens of GB),
 so [`brepformer/data/examples/`](brepformer/data/examples/README.md) holds a few
-samples from each one in the same layout (34 MB total). Pass an example folder
+samples from each one in the same layout (34 MB total); the pipe-fitting
+classifier's equivalent is `brepclassifier/data/examples/`. Pass an example folder
 wherever a corpus path goes:
 
 ```bash
@@ -90,6 +91,10 @@ python -m brepformer.infer --step_dir brepformer/data/examples/inference \
     --checkpoint <ckpt> --output_dir /tmp/preds --no_preprocessed
 python -m brepformer.eval_per_class --checkpoint <ckpt> \
     --data_dir brepformer/data/examples/mftrcad_processed --split test
+python brepformer/train_preprocessed.py --face_segmentation --fast_dev_run \
+    --data_dir brepformer/data/examples/mftrcad_processed --output_dir /tmp/run
+python brepclassifier/train.py --fast_dev_run \
+    --data_dir brepclassifier/data/examples/ssdata1_processed --output_dir /tmp/run_cls
 ```
 
 ## Model Weights

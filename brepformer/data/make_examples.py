@@ -1,4 +1,6 @@
-"""Build ``brepformer/data/examples/``: a few samples from every local corpus.
+"""Build ``brepformer/data/examples/`` and ``brepclassifier/data/examples/``.
+
+A few samples from every local corpus.
 
 The full corpora are gitignored (tens of GB). This copies a handful of matched
 samples per folder, keeping each folder's own layout, so a fresh clone can run
@@ -18,6 +20,8 @@ so they stay small without being degenerate one-face parts.
 import argparse
 import json
 import shutil
+import subprocess
+import sys
 from pathlib import Path
 
 DATA = Path(__file__).resolve().parent
@@ -148,11 +152,39 @@ def build_hard_samples(out, n):
     return kept
 
 
+def build_brepclassifier(n):
+    """``n`` STEPs per pipe-fitting class, converted and preprocessed in place.
+
+    The full ``ssdata1/labels.json`` gets overwritten by any ``convert_steps.py
+    --limit`` run, so rather than copy it, regenerate graphs, labels and the
+    processed split pickles from the copied STEPs with the real tools.
+    """
+    src = REPO / "brepclassifier/data/ssdata1"
+    dst = REPO / "brepclassifier/data/examples/ssdata1"
+    processed = dst.parent / "ssdata1_processed"
+    for d in (dst, processed):
+        if d.exists():
+            shutil.rmtree(d)
+    for folder in sorted(p for p in src.iterdir() if p.is_dir() and p.name[0].isdigit()):
+        steps = [p for p in folder.iterdir() if p.suffix.lower() in STEP_SUFFIXES]
+        for p in pick(steps, n, lambda p: p.stat().st_size):
+            copy(p, dst / folder.name / p.name)
+    for cmd in (
+        ["brepclassifier/convert_steps.py", "--data_dir", str(dst)],
+        ["brepclassifier/preprocess.py", "--data_dir", str(dst), "--output_dir", str(processed),
+         "--split_ratio", "0.34,0.33,0.33"],  # stratified: one per class per split
+    ):
+        subprocess.run([sys.executable, *cmd], cwd=REPO, check=True)
+    return sum(1 for _ in (dst / "graphs").glob("*.json"))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", type=Path, default=DATA / "examples")
     ap.add_argument("--n", type=int, default=3, help="models per raw corpus")
     ap.add_argument("--per_split", type=int, default=2, help="pickles per split per processed corpus")
+    ap.add_argument("--skip_brepclassifier", action="store_true",
+                    help="don't rebuild brepclassifier/data/examples (needs OCC to convert STEPs)")
     args = ap.parse_args()
 
     # Clear previous examples but keep the hand-written README.
@@ -178,6 +210,8 @@ def main():
         for p in (DATA / "sample_processed").iterdir():
             copy(p, args.out / "sample_processed" / p.name)
         print("sample_processed: copied whole")
+    if (REPO / "brepclassifier/data/ssdata1").is_dir() and not args.skip_brepclassifier:
+        print(f"brepclassifier ssdata1: {build_brepclassifier(args.n)} graphs")
 
 
 if __name__ == "__main__":

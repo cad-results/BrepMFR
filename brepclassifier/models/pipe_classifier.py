@@ -286,6 +286,12 @@ class PipeFittingClassifier(pl.LightningModule):
         using_lbfgs: bool = False,
     ):
         """Custom optimizer step with warmup."""
+        # Lightning 2.x dropped optimizer_idx and passes the closure in its slot;
+        # without this the step runs closure-less and Lightning raises. Same fix
+        # as brepformer/models/brep_classifier.py.
+        if optimizer_closure is None and callable(optimizer_idx):
+            optimizer_closure = optimizer_idx
+
         if self.current_step < self.warmup_steps:
             lr_scale = min(1.0, float(self.current_step + 1) / self.warmup_steps)
             for pg in optimizer.param_groups:

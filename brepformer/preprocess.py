@@ -345,10 +345,10 @@ def preprocess_sample(
     external_labels: Optional[Dict],
     num_classes: int,
     compute_descriptors: bool,
-    descriptors_ignore_mask: bool = False,
     num_spatial: int,
     d2_bins: int,
     angle_bins: int,
+    descriptors_ignore_mask: bool = False,
 ) -> Dict:
     """Preprocess a single sample.
 
@@ -358,10 +358,10 @@ def preprocess_sample(
         external_labels: External labels dictionary (or None).
         num_classes: Number of classes.
         compute_descriptors: Whether to compute D2/angle descriptors.
-        descriptors_ignore_mask: Sample descriptors from all UV points, not just valid ones.
         num_spatial: Maximum spatial distance.
         d2_bins: Number of D2 bins.
         angle_bins: Number of angle bins.
+        descriptors_ignore_mask: Sample descriptors from all UV points, not just valid ones.
 
     Returns:
         Preprocessed sample dictionary.
