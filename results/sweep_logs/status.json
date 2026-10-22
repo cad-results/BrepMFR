@@ -1,0 +1,183 @@
+{
+  "t6ctl_base": {
+    "returncode": 0,
+    "minutes": 56.9,
+    "data": "brepformer/data/defeature_processed",
+    "extra": [],
+    "family": 5,
+    "log": "results/sweep_logs/t6ctl_base.log"
+  },
+  "t6ctl_wf": {
+    "returncode": 0,
+    "minutes": 76.3,
+    "data": "brepformer/data/defeature_processed",
+    "extra": [
+      "--weighted_crossentropy",
+      "--face_seg_weight",
+      "2.0",
+      "--model_cls_weight",
+      "0.5"
+    ],
+    "family": 5,
+    "log": "results/sweep_logs/t6ctl_wf.log"
+  },
+  "t6ctl_init_ft": {
+    "returncode": 0,
+    "minutes": 52.5,
+    "data": "brepformer/data/defeature_processed",
+    "extra": [
+      "--init_weights",
+      "results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt"
+    ],
+    "family": 5,
+    "log": "results/sweep_logs/t6ctl_init_ft.log"
+  },
+  "t6_base": {
+    "returncode": 0,
+    "minutes": 286.0,
+    "data": "brepformer/data/trial6_processed",
+    "extra": [],
+    "family": 5,
+    "log": "results/sweep_logs/t6_base.log"
+  },
+  "t6_w": {
+    "returncode": 0,
+    "minutes": 257.9,
+    "data": "brepformer/data/trial6_processed",
+    "extra": [
+      "--weighted_crossentropy"
+    ],
+    "family": 5,
+    "log": "results/sweep_logs/t6_w.log"
+  },
+  "t6_f": {
+    "returncode": 0,
+    "minutes": 255.3,
+    "data": "brepformer/data/trial6_processed",
+    "extra": [
+      "--face_seg_weight",
+      "2.0",
+      "--model_cls_weight",
+      "0.5"
+    ],
+    "family": 5,
+    "log": "results/sweep_logs/t6_f.log"
+  },
+  "t6_wf": {
+    "returncode": 0,
+    "minutes": 252.3,
+    "data": "brepformer/data/trial6_processed",
+    "extra": [
+      "--weighted_crossentropy",
+      "--face_seg_weight",
+      "2.0",
+      "--model_cls_weight",
+      "0.5"
+    ],
+    "family": 5,
+    "log": "results/sweep_logs/t6_wf.log"
+  },
+  "t6_init_def": {
+    "returncode": 0,
+    "minutes": 259.6,
+    "data": "brepformer/data/trial6_processed",
+    "extra": [
+      "--init_weights",
+      "results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt"
+    ],
+    "family": 5,
+    "log": "results/sweep_logs/t6_init_def.log"
+  },
+  "t6_init_def_wf": {
+    "returncode": 0,
+    "minutes": 968.8,
+    "data": "brepformer/data/trial6_processed",
+    "extra": [
+      "--init_weights",
+      "results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt",
+      "--weighted_crossentropy",
+      "--face_seg_weight",
+      "2.0",
+      "--model_cls_weight",
+      "0.5"
+    ],
+    "family": 5,
+    "log": "results/sweep_logs/t6_init_def_wf.log"
+  },
+  "t6_init_ft": {
+    "returncode": 0,
+    "minutes": 876.1,
+    "data": "brepformer/data/trial6_processed",
+    "extra": [
+      "--init_weights",
+      "results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt"
+    ],
+    "family": 5,
+    "log": "results/sweep_logs/t6_init_ft.log"
+  },
+  "t6_init_ft_wf": {
+    "returncode": 0,
+    "minutes": 789.5,
+    "data": "brepformer/data/trial6_processed",
+    "extra": [
+      "--init_weights",
+      "results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt",
+      "--weighted_crossentropy",
+      "--face_seg_weight",
+      "2.0",
+      "--model_cls_weight",
+      "0.5"
+    ],
+    "family": 5,
+    "log": "results/sweep_logs/t6_init_ft_wf.log"
+  },
+  "t6a_init_t5": {
+    "returncode": 0,
+    "minutes": 3716.3,
+    "data": "brepformer/data/trial6a_processed",
+    "extra": [
+      "--init_weights",
+      "results/trial5/best-epoch=39-val/f1=0.8832.ckpt"
+    ],
+    "family": 27,
+    "log": "results/sweep_logs/t6a_init_t5.log",
+    "attr_layout": "categorical",
+    "rotate_aug": "none",
+    "scratch": false
+  },
+  "t6a_init_t5_wf": {
+    "returncode": 0,
+    "minutes": 3035.6,
+    "attempts": 1,
+    "data": "brepformer/data/trial6a_processed",
+    "extra": [
+      "--init_weights",
+      "results/trial5/best-epoch=39-val/f1=0.8832.ckpt",
+      "--weighted_crossentropy",
+      "--face_seg_weight",
+      "2.0",
+      "--model_cls_weight",
+      "0.5"
+    ],
+    "family": 27,
+    "log": "results/sweep_logs/t6a_init_t5_wf.log",
+    "attr_layout": "categorical",
+    "rotate_aug": "none",
+    "scratch": false
+  },
+  "t6actl_init_t5": {
+    "returncode": 0,
+    "minutes": 2444.9,
+    "attempts": 1,
+    "data": "brepformer/data/mftrcad_processed",
+    "extra": [
+      "--init_weights",
+      "results/trial5/best-epoch=39-val/f1=0.8832.ckpt"
+    ],
+    "family": 27,
+    "log": "results/sweep_logs/t6actl_init_t5.log",
+    "attr_layout": "categorical",
+    "rotate_aug": "none",
+    "scratch": false
+  }
+}

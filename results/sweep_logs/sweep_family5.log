@@ -1,0 +1,31 @@
+sweep: 11 runs (t6_base, t6_w, t6_f, t6_wf, t6_init_def, t6_init_def_wf, t6_init_ft, t6_init_ft_wf, t6ctl_base, t6ctl_wf, t6ctl_init_ft)
+
+[1/11] t6_base -> results/t6_base
+    log results/sweep_logs/t6_base.log
+    OK in 286.0 min
+[2/11] t6_w -> results/t6_w
+    log results/sweep_logs/t6_w.log
+    OK in 257.9 min
+[3/11] t6_f -> results/t6_f
+    log results/sweep_logs/t6_f.log
+    OK in 255.3 min
+[4/11] t6_wf -> results/t6_wf
+    log results/sweep_logs/t6_wf.log
+    OK in 252.3 min
+[5/11] t6_init_def -> results/t6_init_def
+    log results/sweep_logs/t6_init_def.log
+    OK in 259.6 min
+[6/11] t6_init_def_wf -> results/t6_init_def_wf
+    log results/sweep_logs/t6_init_def_wf.log
+    OK in 968.8 min
+[7/11] t6_init_ft -> results/t6_init_ft
+    log results/sweep_logs/t6_init_ft.log
+    OK in 876.1 min
+[8/11] t6_init_ft_wf -> results/t6_init_ft_wf
+    log results/sweep_logs/t6_init_ft_wf.log
+    OK in 789.5 min
+[9/11] t6ctl_base: already complete, skipped
+[10/11] t6ctl_wf: already complete, skipped
+[11/11] t6ctl_init_ft: already complete, skipped
+
+status written to results/sweep_logs/status.json

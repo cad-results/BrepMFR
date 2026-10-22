@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "output": "brepformer/pipeline_output/1117T11_Iron_Pipe_Fitting_with_Flanged_Ends/1117T11_Iron_Pipe_Fitting_with_Flanged_Ends_defeatured.step",
+  "num_faces": 32,
+  "kept": 12,
+  "removed": 20,
+  "failed": 0,
+  "valid": true,
+  "elapsed_s": 1.61
+}

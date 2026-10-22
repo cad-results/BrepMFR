@@ -1,0 +1,113 @@
+{
+  "label_space": "5",
+  "target_precision": 0.95,
+  "delta": 0.05,
+  "delta_per_class": 0.01,
+  "thresholds": {
+    "4": 0.90413,
+    "1": 0.91688,
+    "0": 0.943946,
+    "3": 0.976136
+  },
+  "per_class": {
+    "4": {
+      "name": "cut",
+      "n": 5252,
+      "accuracy": 0.9228865194211728,
+      "threshold": 0.90413,
+      "accepted": 4383,
+      "coverage": 0.8345392231530845,
+      "observed_precision": 0.9603011635865846,
+      "certified_precision": 0.9501583919729875
+    },
+    "1": {
+      "name": "hole",
+      "n": 3182,
+      "accuracy": 0.9314896291640478,
+      "threshold": 0.91688,
+      "accepted": 2898,
+      "coverage": 0.9107479572595851,
+      "observed_precision": 0.9623878536922015,
+      "certified_precision": 0.9500108892720183
+    },
+    "0": {
+      "name": "random",
+      "n": 2845,
+      "accuracy": 0.843585237258348,
+      "threshold": 0.943946,
+      "accepted": 1656,
+      "coverage": 0.5820738137082601,
+      "observed_precision": 0.966183574879227,
+      "certified_precision": 0.950058150686086
+    },
+    "3": {
+      "name": "fillet",
+      "n": 1692,
+      "accuracy": 0.8546099290780141,
+      "threshold": 0.976136,
+      "accepted": 864,
+      "coverage": 0.5106382978723404,
+      "observed_precision": 0.9722222222222222,
+      "certified_precision": 0.9504686206624975
+    },
+    "2": {
+      "name": "chamfer",
+      "n": 474,
+      "accuracy": 0.8143459915611815,
+      "threshold": null,
+      "accepted": 0,
+      "coverage": 0.0,
+      "observed_precision": null,
+      "certified_precision": null
+    }
+  },
+  "n_faces": 13445,
+  "accepted": 9801,
+  "coverage": 0.7289698772777984,
+  "global_threshold": 0.916706,
+  "global_coverage": 0.8003718854592785,
+  "global_per_class": {
+    "4": {
+      "name": "cut",
+      "accepted": 4316,
+      "observed_precision": 0.9631603336422614,
+      "certified_precision": 0.9549215310768331,
+      "meets_target": true
+    },
+    "1": {
+      "name": "hole",
+      "accepted": 2898,
+      "observed_precision": 0.9623878536922015,
+      "certified_precision": 0.9521256182340243,
+      "meets_target": true
+    },
+    "0": {
+      "name": "random",
+      "accepted": 1853,
+      "observed_precision": 0.9557474365893146,
+      "certified_precision": 0.9417909451048952,
+      "meets_target": false
+    },
+    "3": {
+      "name": "fillet",
+      "accepted": 1301,
+      "observed_precision": 0.9362029208301307,
+      "certified_precision": 0.9166195196836753,
+      "meets_target": false
+    },
+    "2": {
+      "name": "chamfer",
+      "accepted": 393,
+      "observed_precision": 0.8854961832061069,
+      "certified_precision": 0.8390936151125383,
+      "meets_target": false
+    }
+  },
+  "class_names": [
+    "random",
+    "hole",
+    "chamfer",
+    "fillet",
+    "cut"
+  ]
+}

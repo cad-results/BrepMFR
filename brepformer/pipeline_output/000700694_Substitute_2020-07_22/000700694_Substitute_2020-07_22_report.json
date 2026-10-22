@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "output": "brepformer/pipeline_output/000700694_Substitute_2020-07_22/000700694_Substitute_2020-07_22_defeatured.step",
+  "num_faces": 45,
+  "kept": 21,
+  "removed": 24,
+  "failed": 0,
+  "valid": true,
+  "elapsed_s": 0.32
+}

@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "output": "brepformer/pipeline_output/0_5-ssmn-0_5000/0_5-ssmn-0_5000_defeatured.step",
+  "num_faces": 13,
+  "kept": 3,
+  "removed": 10,
+  "failed": 0,
+  "valid": true,
+  "elapsed_s": 0.22
+}

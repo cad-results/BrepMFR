@@ -161,32 +161,15 @@ cython_debug/
 
 # this is .gitignore file
 # Exclude results/ but keep specific best model checkpoints
-results/
-!results/trial1_ss1500/
-results/trial1_ss1500/*
-!results/trial1_ss1500/best-epoch=57-val/
-results/trial1_ss1500/best-epoch=57-val/*
+# Checkpoints live on HuggingFace (see README "Model Weights"); the four below predate that and stay in LFS
+results/**/*.ckpt
 !results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt
-
-!results/trial1_ss/
-results/trial1_ss/*
-!results/trial1_ss/best-epoch=41-val/
-results/trial1_ss/best-epoch=41-val/*
 !results/trial1_ss/best-epoch=41-val/f1=0.9476.ckpt
-
-!results/face_seg_heavy/
-results/face_seg_heavy/*
-!results/face_seg_heavy/best-epoch=46-val/
-results/face_seg_heavy/best-epoch=46-val/*
 !results/face_seg_heavy/best-epoch=46-val/f1=0.8608.ckpt
-
-!results/trial2/
-results/trial2/*
-!results/trial2/best-epoch=111-val/
-results/trial2/best-epoch=111-val/*
 !results/trial2/best-epoch=111-val/f1=0.8558.ckpt
-
-# Large data directories
+# Uncompacted training stdout (tqdm frames); compacted copies sit one level up
+results/sweep_logs/full/
+!results/**/*.log
 brepformer/data/mftrcad/
 brepformer/data/mftrcad_processed/
 brepformer/data/defeature/
@@ -198,10 +181,6 @@ brepclassifier/data/
 inference/
 brepformer/preds/
 brepformer/defeatured_output/
-brepformer/plots/
-brepformer/analysis_results/
-brepformer/pipeline_output/
-lightning_logs/
 
 # OS
 *:Zone.Identifier
@@ -209,7 +188,6 @@ lightning_logs/
 # Weights live on HuggingFace (see README "Model Weights")
 brepformer/brepsimplifier/model_checkpoint/
 # Generated outputs and third-party STEP inputs
-brepformer/brepsimplifier/pipeline_output*/
 brepformer/brepsimplifier/test_data/stepfiles/
 brepformer/test_partfield/*.step
 brepformer/test_partfield/stepfiles/
@@ -220,3 +198,7 @@ brepformer/data/suitable_samples_*/
 brepformer/data/defeature_uv*/
 brepformer/data/trial6*_processed/
 brepformer/data/class_geometry_faces*.jsonl.gz
+# Pipeline outputs: keep reports, segmentations and renders; derived geometry is data
+brepformer/pipeline_output/**/*.step
+brepformer/brepsimplifier/pipeline_output*/**/*.step
+brepformer/brepsimplifier/test_data/results/**/*.step

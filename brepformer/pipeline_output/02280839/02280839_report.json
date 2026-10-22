@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "output": "brepformer/pipeline_output/02280839/02280839_defeatured.step",
+  "num_faces": 35,
+  "kept": 14,
+  "removed": 21,
+  "failed": 0,
+  "valid": true,
+  "elapsed_s": 0.7
+}

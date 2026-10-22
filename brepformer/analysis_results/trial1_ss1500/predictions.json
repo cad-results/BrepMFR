@@ -1,0 +1,3948 @@
+{
+  "summary": {
+    "total_samples": 157,
+    "correct": 104,
+    "accuracy": 0.6624203821656051
+  },
+  "predictions": [
+    {
+      "model_id": "-_680490.ipt",
+      "predicted_classes": [
+        0,
+        4
+      ],
+      "target_classes": [
+        0,
+        4
+      ],
+      "num_pred": 2,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.0012350082397460938,
+        "2": 0.016845703125,
+        "3": 0.0009622573852539062,
+        "4": 0.9990234375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "0-00530-547-PS-01P",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.00022518634796142578,
+        "3": 0.99951171875,
+        "4": 0.03265380859375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "0-J-Hook",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1
+      ],
+      "num_pred": 3,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 0.99853515625,
+        "1": 0.98974609375,
+        "2": 0.001155853271484375,
+        "3": 0.08135986328125,
+        "4": 0.974609375
+      },
+      "jaccard_similarity": 0.6666666666666666,
+      "correct": false
+    },
+    {
+      "model_id": "0-P1045_UNISTRUT",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.9990234375,
+        "1": 0.99853515625,
+        "2": 0.007965087890625,
+        "3": 0.984375,
+        "4": 0.99462890625
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "0-UNISTRUT_P1873",
+      "predicted_classes": [
+        0,
+        1,
+        2
+      ],
+      "target_classes": [
+        0,
+        1
+      ],
+      "num_pred": 3,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.9990234375,
+        "2": 0.9892578125,
+        "3": 0.0009183883666992188,
+        "4": 0.0008592605590820312
+      },
+      "jaccard_similarity": 0.6666666666666666,
+      "correct": false
+    },
+    {
+      "model_id": "0.50_Std_Duty_Pipe_Clamp_A4-00410",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.0013990402221679688,
+        "3": 0.9990234375,
+        "4": 0.007724761962890625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "0.5_Vibration-Damping_Routing_Clamp",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99658203125,
+        "2": 0.0009813308715820312,
+        "3": 0.998046875,
+        "4": 0.95068359375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "0.75in_-_0.5_Aluminum_Pipe_Reducer",
+      "predicted_classes": [
+        0,
+        1,
+        2
+      ],
+      "target_classes": [
+        0,
+        1,
+        2
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.9990234375,
+        "2": 0.9990234375,
+        "3": 0.0010528564453125,
+        "4": 0.0018100738525390625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "01-04-VersaBlock",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 0.99853515625,
+        "1": 0.99853515625,
+        "2": 0.437744140625,
+        "3": 0.998046875,
+        "4": 0.986328125
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "01-05-VersaFrame_Gusset",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "num_pred": 5,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.99072265625,
+        "3": 0.9462890625,
+        "4": 0.9931640625
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "01-25_Electronics_plate_standoff_1.5in_churro",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.9990234375,
+        "1": 0.9970703125,
+        "2": 0.0025501251220703125,
+        "3": 0.0276336669921875,
+        "4": 0.98193359375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "01-34_bumper_mount_support",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.98828125,
+        "2": 0.00034737586975097656,
+        "3": 0.0012693405151367188,
+        "4": 0.9873046875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "01-36_Side_Bumper_Mount_Channel",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.9951171875,
+        "2": 0.001674652099609375,
+        "3": 0.00634002685546875,
+        "4": 0.99560546875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "02-MLLBIRDMM1163_BIM_160630",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.9990234375,
+        "2": 0.0026111602783203125,
+        "3": 0.9990234375,
+        "4": 0.41796875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "02280839",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99853515625,
+        "1": 0.99853515625,
+        "2": 0.0255584716796875,
+        "3": 0.9990234375,
+        "4": 0.8515625
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "03-29-01_DEStiny_Tensioner_bearing_plate",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.998046875,
+        "2": 0.01287078857421875,
+        "3": 0.01107025146484375,
+        "4": 0.99755859375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "049-006-354",
+      "predicted_classes": [
+        0,
+        3
+      ],
+      "target_classes": [
+        0,
+        3,
+        4
+      ],
+      "num_pred": 2,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.0295867919921875,
+        "2": 0.003429412841796875,
+        "3": 0.9990234375,
+        "4": 0.478515625
+      },
+      "jaccard_similarity": 0.6666666666666666,
+      "correct": false
+    },
+    {
+      "model_id": "050203a1",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.9990234375,
+        "1": 0.9990234375,
+        "2": 0.03326416015625,
+        "3": 0.035003662109375,
+        "4": 0.9990234375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "051-200-053",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.984375,
+        "3": 0.9658203125,
+        "4": 0.99853515625
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "051-200-126",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.9990234375,
+        "1": 0.99951171875,
+        "2": 0.994140625,
+        "3": 0.0809326171875,
+        "4": 0.9248046875
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "051-200-142",
+      "predicted_classes": [
+        0,
+        1,
+        2
+      ],
+      "target_classes": [
+        0,
+        1,
+        2
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.9990234375,
+        "3": 0.0009660720825195312,
+        "4": 0.002010345458984375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "051-200-213",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.001674652099609375,
+        "3": 0.99951171875,
+        "4": 0.0055999755859375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "051-200-672",
+      "predicted_classes": [
+        0,
+        3
+      ],
+      "target_classes": [
+        0,
+        3
+      ],
+      "num_pred": 2,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.049407958984375,
+        "2": 0.002521514892578125,
+        "3": 0.99853515625,
+        "4": 0.00621795654296875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "0694-006_DRAIN_VALVE_-_OIL_PIPE-PUMP_BALL_VALVE_.ipt",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "num_pred": 5,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.9990234375,
+        "2": 0.9921875,
+        "3": 0.99853515625,
+        "4": 0.92138671875
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "104259",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.99853515625,
+        "3": 0.0017137527465820312,
+        "4": 0.99658203125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "1054215-01",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 0.99462890625,
+        "1": 0.9931640625,
+        "2": 0.84521484375,
+        "3": 0.9775390625,
+        "4": 0.88720703125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "10in_Systecon_Std_Spool",
+      "predicted_classes": [
+        0,
+        1
+      ],
+      "target_classes": [
+        0,
+        1
+      ],
+      "num_pred": 2,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99853515625,
+        "2": 0.0006718635559082031,
+        "3": 0.00399017333984375,
+        "4": 0.1815185546875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "12141008_PLATINE_ROUE_200_scale1",
+      "predicted_classes": [
+        0,
+        1,
+        2
+      ],
+      "target_classes": [
+        0,
+        1,
+        2
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99853515625,
+        "2": 0.99853515625,
+        "3": 0.0010204315185546875,
+        "4": 0.0037078857421875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "12mm_GRD80_HT_Lifting_Eyenut",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.00015473365783691406,
+        "3": 0.99853515625,
+        "4": 0.00669097900390625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "13-16_Strut_Channel_Cap",
+      "predicted_classes": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.0029125213623046875,
+        "2": 0.99755859375,
+        "3": 0.99755859375,
+        "4": 0.9921875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "13-16x1_5-8_Strut_Channel_18in",
+      "predicted_classes": [
+        0,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        3,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.00131988525390625,
+        "2": 0.006389617919921875,
+        "3": 1.0,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "1452-12000-ZCK-Y43.ipt",
+      "predicted_classes": [
+        0,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        3,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.0028228759765625,
+        "2": 0.0018968582153320312,
+        "3": 0.9931640625,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "16inch-1816-1600L",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.9990234375,
+        "1": 0.9970703125,
+        "2": 0.00646209716796875,
+        "3": 0.97314453125,
+        "4": 0.998046875
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "19070-0125",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.98583984375,
+        "2": 0.0006361007690429688,
+        "3": 0.9990234375,
+        "4": 0.9990234375
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "2.2_3.2_4.2",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.9990234375,
+        "2": 0.0013561248779296875,
+        "3": 0.99853515625,
+        "4": 0.9990234375
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "200-AEH-ELV-C-1208",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0008134841918945312,
+        "3": 0.99951171875,
+        "4": 0.048126220703125
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "22.03-Belly_support_link_-_01",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.9990234375,
+        "2": 0.0009927749633789062,
+        "3": 0.99853515625,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "2200-CV103-TRANS-03-02_solid5",
+      "predicted_classes": [
+        0,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        3,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.002216339111328125,
+        "2": 0.00815582275390625,
+        "3": 1.0,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "254-001-202",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99853515625,
+        "2": 0.046478271484375,
+        "3": 0.99951171875,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "2788-K1-024",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.0010814666748046875,
+        "3": 0.99951171875,
+        "4": 0.1654052734375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "3-lo-lm_ps-15_brkt1_rnm.0001",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.9990234375,
+        "2": 0.000583648681640625,
+        "3": 0.998046875,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "303970472_Roam_Top_Cover_Door_Retainer_Hat",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0007762908935546875,
+        "3": 0.99951171875,
+        "4": 0.031494140625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "30400_8824ce97_29",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.99560546875,
+        "3": 0.004230499267578125,
+        "4": 0.9970703125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "304B0001-1_Washer_-_Arbor_Lock_Bolt",
+      "predicted_classes": [
+        0,
+        1,
+        2
+      ],
+      "target_classes": [
+        0,
+        1,
+        2
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99853515625,
+        "2": 0.99951171875,
+        "3": 0.0009112358093261719,
+        "4": 0.0018463134765625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "3243007-008-REV_B_-_Base_-_UB_Fixing_Plate",
+      "predicted_classes": [
+        0,
+        1,
+        2
+      ],
+      "target_classes": [
+        0,
+        1,
+        2
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.9873046875,
+        "3": 0.001495361328125,
+        "4": 0.00763702392578125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "42001-0250P",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99755859375,
+        "2": 0.0026531219482421875,
+        "3": 0.003223419189453125,
+        "4": 0.9951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "45728_7dd5a904_0",
+      "predicted_classes": [
+        0,
+        4
+      ],
+      "target_classes": [
+        0,
+        4
+      ],
+      "num_pred": 2,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.00269317626953125,
+        "2": 0.0083465576171875,
+        "3": 0.00469970703125,
+        "4": 0.9970703125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "4583841_.75_SWEAT_SHUTT_OFF_VALVE",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99853515625,
+        "2": 0.998046875,
+        "3": 0.9287109375,
+        "4": 0.97998046875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "490549",
+      "predicted_classes": [
+        0,
+        3
+      ],
+      "target_classes": [
+        0,
+        3
+      ],
+      "num_pred": 2,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.018798828125,
+        "2": 0.001979827880859375,
+        "3": 0.99853515625,
+        "4": 0.00609588623046875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "4984-06A-00-03_Pulley_Bracket",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.998046875,
+        "2": 0.001941680908203125,
+        "3": 0.99462890625,
+        "4": 0.998046875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "4984-600-4-10.STEP-2",
+      "predicted_classes": [
+        0,
+        4
+      ],
+      "target_classes": [
+        0,
+        4
+      ],
+      "num_pred": 2,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.0027141571044921875,
+        "2": 0.0019044876098632812,
+        "3": 0.003692626953125,
+        "4": 0.99853515625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "509490-VALVE-BALL_MAN_FLG_F15-30_FLOWTEK_BA-910",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1
+      ],
+      "num_pred": 3,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.9990234375,
+        "2": 0.0002551078796386719,
+        "3": 0.98828125,
+        "4": 0.244873046875
+      },
+      "jaccard_similarity": 0.6666666666666666,
+      "correct": false
+    },
+    {
+      "model_id": "511434_-_20240202",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.9970703125,
+        "2": 0.99609375,
+        "3": 0.96044921875,
+        "4": 0.47705078125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "51150068v000",
+      "predicted_classes": [
+        0,
+        3
+      ],
+      "target_classes": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 2,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.00757598876953125,
+        "2": 0.054595947265625,
+        "3": 0.99951171875,
+        "4": 0.0120086669921875
+      },
+      "jaccard_similarity": 0.5,
+      "correct": false
+    },
+    {
+      "model_id": "530-Lighting_controller",
+      "predicted_classes": [
+        0,
+        3
+      ],
+      "target_classes": [
+        0,
+        3
+      ],
+      "num_pred": 2,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.005161285400390625,
+        "2": 0.007965087890625,
+        "3": 0.99951171875,
+        "4": 0.011199951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "534-bs-1101-E1097...ipt",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.004791259765625,
+        "3": 0.99755859375,
+        "4": 0.99853515625
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "5_inch_Small_Extension_Arm_Rim_plate",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99853515625,
+        "2": 0.002002716064453125,
+        "3": 0.99951171875,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "601089h01",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.9970703125,
+        "3": 0.76123046875,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "603552h00",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0027141571044921875,
+        "3": 0.99951171875,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "61794-1",
+      "predicted_classes": [
+        0,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.0020275115966796875,
+        "2": 0.035736083984375,
+        "3": 0.99951171875,
+        "4": 1.0
+      },
+      "jaccard_similarity": 0.5,
+      "correct": false
+    },
+    {
+      "model_id": "6in_2-Bolt_Removable_Lift_Lug",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "num_pred": 5,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.98876953125,
+        "3": 0.98974609375,
+        "4": 0.9541015625
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "85-7-2332_02",
+      "predicted_classes": [
+        0,
+        2,
+        3
+      ],
+      "target_classes": [
+        0,
+        2,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.0022430419921875,
+        "2": 0.994140625,
+        "3": 0.99755859375,
+        "4": 0.007373809814453125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "8500051997",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.96484375,
+        "3": 0.273193359375,
+        "4": 0.99853515625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "901-100-111",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.9912109375,
+        "3": 0.0070648193359375,
+        "4": 0.99853515625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "9109189-000",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.72705078125,
+        "3": 0.99951171875,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "949-00307-BIM",
+      "predicted_classes": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.021575927734375,
+        "2": 0.89990234375,
+        "3": 1.0,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "AA1K_arm_hand_interface_right",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.9951171875,
+        "3": 0.98486328125,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "AA1K_arm_ujoint_ctr",
+      "predicted_classes": [
+        0,
+        2,
+        3
+      ],
+      "target_classes": [
+        0,
+        2,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.001506805419921875,
+        "2": 0.9931640625,
+        "3": 0.990234375,
+        "4": 0.002132415771484375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "AA1K_arm_upper_spacer_D95-T15-P88-N65_2",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.00577545166015625,
+        "3": 0.97998046875,
+        "4": 0.99853515625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "AA1K_ba_plate_gimbal_mounting",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0018177032470703125,
+        "3": 0.9990234375,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "AA1K_ba_ring_middle",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.98681640625,
+        "3": 0.09844970703125,
+        "4": 0.99658203125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "AA1K_enclosure_maxon3",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.9990234375,
+        "2": 0.005062103271484375,
+        "3": 0.9990234375,
+        "4": 1.0
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "AA1K_nk_crankarm",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.99462890625,
+        "3": 0.9072265625,
+        "4": 0.99658203125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "AA1K_nk_ujoint_btm_76in",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.984375,
+        "3": 0.99462890625,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "AA1K_pcb_drive_gecko",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0282745361328125,
+        "3": 0.9990234375,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "AA1K_tso_hip_ear",
+      "predicted_classes": [
+        0,
+        1
+      ],
+      "target_classes": [
+        0,
+        1
+      ],
+      "num_pred": 2,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0015249252319335938,
+        "3": 0.0012350082397460938,
+        "4": 0.004573822021484375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "ASME_ANSI_B16.1_Flanged_90_Deg_Elbow_-_Class_125_12.ipt",
+      "predicted_classes": [
+        0,
+        1
+      ],
+      "target_classes": [
+        0,
+        1
+      ],
+      "num_pred": 2,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0013456344604492188,
+        "3": 0.00319671630859375,
+        "4": 0.006771087646484375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "Actuator-LVDT_Clamp",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.9990234375,
+        "1": 0.99072265625,
+        "2": 0.001220703125,
+        "3": 0.0293731689453125,
+        "4": 0.99609375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "Alignment_Bracket.ipt",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "num_pred": 5,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.99560546875,
+        "3": 0.9609375,
+        "4": 0.8994140625
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "B6_HALF_INCH_HANDLE",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0004124641418457031,
+        "3": 0.99951171875,
+        "4": 0.0264129638671875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "BIMDeX-1400-4984-600-4-12",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99853515625,
+        "2": 0.99658203125,
+        "3": 0.984375,
+        "4": 0.00821685791015625
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "BIMDeX-1400-4984-600-4-5",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.9990234375,
+        "2": 0.03948974609375,
+        "3": 0.99853515625,
+        "4": 0.99755859375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "BIMDeX-2649-K1-168",
+      "predicted_classes": [
+        0,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        3,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.003429412841796875,
+        "2": 0.0100555419921875,
+        "3": 1.0,
+        "4": 0.99462890625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "BIMDeX-4984-600-L7",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.007373809814453125,
+        "3": 0.09075927734375,
+        "4": 0.99853515625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "BIMDeX-P800-4713-800-3410-SL-64-3",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.99658203125,
+        "3": 0.0038547515869140625,
+        "4": 0.9921875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "BIRDMV3158",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.035003662109375,
+        "3": 0.9990234375,
+        "4": 0.99755859375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "Back_Plate",
+      "predicted_classes": [
+        0,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 2,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.9990234375,
+        "1": 0.0177764892578125,
+        "2": 0.003185272216796875,
+        "3": 0.01009368896484375,
+        "4": 0.998046875
+      },
+      "jaccard_similarity": 0.6666666666666666,
+      "correct": false
+    },
+    {
+      "model_id": "Base_1.ipt",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.99609375,
+        "3": 0.99755859375,
+        "4": 1.0
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "Cylinder_Mount_Angle_101514",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.7392578125,
+        "2": 0.0003407001495361328,
+        "3": 0.99365234375,
+        "4": 0.0640869140625
+      },
+      "jaccard_similarity": 0.6666666666666666,
+      "correct": false
+    },
+    {
+      "model_id": "DDLLINCGD0003",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99560546875,
+        "2": 0.0010080337524414062,
+        "3": 0.0115509033203125,
+        "4": 0.98486328125
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "DDLLINCGD0021",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0009145736694335938,
+        "3": 0.99951171875,
+        "4": 0.0401611328125
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "DDLLINCGD0055",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99755859375,
+        "2": 0.0016613006591796875,
+        "3": 0.0521240234375,
+        "4": 0.99755859375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "DDLLINCGD0104",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.998046875,
+        "3": 0.98828125,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "DDLLINCGD0110",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.0014104843139648438,
+        "3": 0.99951171875,
+        "4": 0.13037109375
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "DN25_Ball_Valve_PN40_Right_Body",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "num_pred": 5,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.99755859375,
+        "3": 0.9638671875,
+        "4": 0.98779296875
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "Door-01837118",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1
+      ],
+      "num_pred": 3,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 0.99853515625,
+        "1": 0.99853515625,
+        "2": 0.0066680908203125,
+        "3": 0.03277587890625,
+        "4": 0.97802734375
+      },
+      "jaccard_similarity": 0.6666666666666666,
+      "correct": false
+    },
+    {
+      "model_id": "EISH_220524_MW-06_BA_WL3_METALLIC_SUPPORT_2",
+      "predicted_classes": [
+        0,
+        1,
+        2
+      ],
+      "target_classes": [
+        0,
+        1,
+        2
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.9970703125,
+        "3": 0.002834320068359375,
+        "4": 0.005641937255859375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "EISH_220820_MW-17_CBT_1202P-FUR_OUTLET",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0057525634765625,
+        "3": 0.99951171875,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "ELBOW_22.5_AWWA_C153_DI_MJ",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.9990234375,
+        "2": 0.98876953125,
+        "3": 0.986328125,
+        "4": 0.0018463134765625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "F17D_3_PE_g15_v2",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.9990234375,
+        "1": 0.99951171875,
+        "2": 0.202392578125,
+        "3": 0.97216796875,
+        "4": 0.9990234375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "F17X_5_HP_g13_v1",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.0160980224609375,
+        "3": 0.9990234375,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "Fin_Plate_-_Circular",
+      "predicted_classes": [
+        0,
+        1,
+        2
+      ],
+      "target_classes": [
+        0,
+        1
+      ],
+      "num_pred": 3,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.9990234375,
+        "3": 0.002471923828125,
+        "4": 0.0025119781494140625
+      },
+      "jaccard_similarity": 0.6666666666666666,
+      "correct": false
+    },
+    {
+      "model_id": "HS-5015641_PARTA",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.9990234375,
+        "2": 0.0016107559204101562,
+        "3": 0.9990234375,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "ISOLATOR_MED",
+      "predicted_classes": [
+        0,
+        3
+      ],
+      "target_classes": [
+        0,
+        3
+      ],
+      "num_pred": 2,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.00260162353515625,
+        "2": 0.0037078857421875,
+        "3": 0.99951171875,
+        "4": 0.11578369140625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "Kessil_Adapter",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 5,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99755859375,
+        "1": 0.998046875,
+        "2": 0.88525390625,
+        "3": 0.99072265625,
+        "4": 0.9375
+      },
+      "jaccard_similarity": 0.6,
+      "correct": false
+    },
+    {
+      "model_id": "Link-Cup",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.000263214111328125,
+        "3": 0.99951171875,
+        "4": 0.08251953125
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "MountingBracket.ipt",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99365234375,
+        "2": 0.001918792724609375,
+        "3": 0.99951171875,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "NEON_AND_FUSED_SPUR",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99658203125,
+        "2": 0.004848480224609375,
+        "3": 0.9990234375,
+        "4": 1.0
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "Oventrop_Double_Door_Check_Valve",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0025310516357421875,
+        "3": 0.99951171875,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "Part3.ipt",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.99365234375,
+        "3": 0.387939453125,
+        "4": 0.9990234375
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "Par\u00e7a13",
+      "predicted_classes": [
+        0,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.0007853507995605469,
+        "2": 0.0033512115478515625,
+        "3": 0.7880859375,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 0.6666666666666666,
+      "correct": false
+    },
+    {
+      "model_id": "Pivot_chair_case.ipt",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.00392913818359375,
+        "3": 0.998046875,
+        "4": 0.9990234375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "RVL_-_CN15.15_-_CONDUIT_FITTING_-_HANGER_-_1.5_INCH.ipt",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.0004458427429199219,
+        "3": 0.99951171875,
+        "4": 0.00690460205078125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "STNS_FT_CF_ID-TECHNIK_K36-52_Top.ipt",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.9990234375,
+        "2": 0.0004124641418457031,
+        "3": 0.9990234375,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "SWP-08586",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99853515625,
+        "2": 0.98779296875,
+        "3": 0.98388671875,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "SWP-08597",
+      "predicted_classes": [
+        0,
+        1,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.0018892288208007812,
+        "3": 0.99951171875,
+        "4": 0.00891876220703125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "SWP-12121",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99853515625,
+        "2": 0.908203125,
+        "3": 0.998046875,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "SWPR-Moderate_Machine_Part_5",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 1.0,
+        "2": 0.92236328125,
+        "3": 0.9814453125,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "Screw_lack_cup.ipt",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.9990234375,
+        "1": 0.99951171875,
+        "2": 0.0006747245788574219,
+        "3": 0.6328125,
+        "4": 0.88720703125
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "Side_burner_front_control_panel-01833148",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.99267578125,
+        "3": 0.998046875,
+        "4": 0.9921875
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "T-457267-01",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.99365234375,
+        "3": 0.998046875,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "TRACK",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1
+      ],
+      "num_pred": 3,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99755859375,
+        "2": 0.0006613731384277344,
+        "3": 0.0032482147216796875,
+        "4": 0.974609375
+      },
+      "jaccard_similarity": 0.6666666666666666,
+      "correct": false
+    },
+    {
+      "model_id": "TeaCoaster",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.998046875,
+        "1": 0.712890625,
+        "2": 0.0194549560546875,
+        "3": 0.0058441162109375,
+        "4": 0.9951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "T\u201ern\u201d_table-Attachment_plate-00143623",
+      "predicted_classes": [
+        0,
+        1,
+        2
+      ],
+      "target_classes": [
+        0,
+        1,
+        2
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.9990234375,
+        "3": 0.204833984375,
+        "4": 0.0053863525390625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "USPLICE",
+      "predicted_classes": [
+        0,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        3,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.00307464599609375,
+        "2": 0.0016107559204101562,
+        "3": 1.0,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "User_Library-A2W03_socket_button_head_cap_screw_am_B18.3.4M_-_8_x_1.25_x_10_SBHCS_--N",
+      "predicted_classes": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.0017070770263671875,
+        "2": 0.92236328125,
+        "3": 0.99853515625,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "VHK3-12F-12F_BODY",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 0.998046875,
+        "1": 0.99853515625,
+        "2": 0.09515380859375,
+        "3": 0.9931640625,
+        "4": 0.9677734375
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "WAKINDIGD2325_20251110",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0018529891967773438,
+        "3": 0.9990234375,
+        "4": 0.9990234375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "WING_NUT_M6_ZP",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99853515625,
+        "1": 0.9921875,
+        "2": 0.0017070770263671875,
+        "3": 0.98046875,
+        "4": 0.9560546875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "ZB1035",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99658203125,
+        "2": 0.0010242462158203125,
+        "3": 0.00391387939453125,
+        "4": 0.9951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "adapter_plate_mm",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.9970703125,
+        "2": 0.001987457275390625,
+        "3": 0.006145477294921875,
+        "4": 0.998046875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "base_plunger",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99853515625,
+        "2": 0.006412506103515625,
+        "3": 0.99951171875,
+        "4": 0.99365234375
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "body_210_1",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0066680908203125,
+        "3": 0.9990234375,
+        "4": 1.0
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "dddd",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.47802734375,
+        "3": 0.998046875,
+        "4": 0.99755859375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "disc",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.9990234375,
+        "2": 0.0023326873779296875,
+        "3": 0.0237274169921875,
+        "4": 0.998046875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "drawer_side_left_low-01817052",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99853515625,
+        "2": 0.0010528564453125,
+        "3": 0.99755859375,
+        "4": 0.818359375
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "eo_tube_end_reducer_-_steel_and",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.9970703125,
+        "3": 0.0035247802734375,
+        "4": 0.99853515625
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "flag_bushing_hv_E1097.ipt",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.61572265625,
+        "3": 0.99658203125,
+        "4": 0.01009368896484375
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "flansch_standard_any",
+      "predicted_classes": [
+        0,
+        1,
+        2
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.99853515625,
+        "3": 0.0018606185913085938,
+        "4": 0.00266265869140625
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "food_pusher",
+      "predicted_classes": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.00989532470703125,
+        "2": 0.9580078125,
+        "3": 0.998046875,
+        "4": 0.99755859375
+      },
+      "jaccard_similarity": 0.6,
+      "correct": false
+    },
+    {
+      "model_id": "fundamenttrekant",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.9990234375,
+        "2": 0.10052490234375,
+        "3": 0.99853515625,
+        "4": 0.99853515625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "hbld01072101",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.9814453125,
+        "3": 0.9970703125,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "ipl516dtrblockrh",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 1.0,
+        "2": 0.9638671875,
+        "3": 0.71484375,
+        "4": 0.99658203125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "link1",
+      "predicted_classes": [
+        0,
+        1
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 2,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.0006566047668457031,
+        "3": 0.0032863616943359375,
+        "4": 0.00974273681640625
+      },
+      "jaccard_similarity": 0.6666666666666666,
+      "correct": false
+    },
+    {
+      "model_id": "newport_2-08x08",
+      "predicted_classes": [
+        0,
+        1,
+        2
+      ],
+      "target_classes": [
+        0,
+        1,
+        2
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99853515625,
+        "2": 0.99365234375,
+        "3": 0.0017137527465820312,
+        "4": 0.0017271041870117188
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "part4.ipt",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99853515625,
+        "1": 0.9990234375,
+        "2": 0.97607421875,
+        "3": 0.98876953125,
+        "4": 0.18701171875
+      },
+      "jaccard_similarity": 0.6,
+      "correct": false
+    },
+    {
+      "model_id": "pc_leg2_2.ipt",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.9990234375,
+        "1": 0.93896484375,
+        "2": 0.0009584426879882812,
+        "3": 0.00701141357421875,
+        "4": 0.74462890625
+      },
+      "jaccard_similarity": 0.4,
+      "correct": false
+    },
+    {
+      "model_id": "pump_adaptor_plate_F",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 5,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.99169921875,
+        "3": 0.98876953125,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "setup_sheet_sample",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.9990234375,
+        "2": 0.89013671875,
+        "3": 0.9990234375,
+        "4": 0.9990234375
+      },
+      "jaccard_similarity": 0.6,
+      "correct": false
+    },
+    {
+      "model_id": "ss_case1",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3
+      ],
+      "num_pred": 4,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99755859375,
+        "1": 0.970703125,
+        "2": 0.10430908203125,
+        "3": 0.9990234375,
+        "4": 0.82958984375
+      },
+      "jaccard_similarity": 0.75,
+      "correct": false
+    },
+    {
+      "model_id": "t-lst_top",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99853515625,
+        "2": 0.0020904541015625,
+        "3": 0.0136871337890625,
+        "4": 0.99853515625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "uh36643_a1",
+      "predicted_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 4,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.99951171875,
+        "2": 0.00234222412109375,
+        "3": 0.60498046875,
+        "4": 0.998046875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "uh62382",
+      "predicted_classes": [
+        0,
+        1,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        4
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 0.99951171875,
+        "1": 0.98046875,
+        "2": 0.0016679763793945312,
+        "3": 0.00473785400390625,
+        "4": 0.99853515625
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "wing_bolt_type_1_jis",
+      "predicted_classes": [
+        0,
+        3
+      ],
+      "target_classes": [
+        0,
+        3
+      ],
+      "num_pred": 2,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.004100799560546875,
+        "2": 0.03125,
+        "3": 0.99951171875,
+        "4": 0.0079345703125
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "wing_screw_din",
+      "predicted_classes": [
+        0,
+        2,
+        3
+      ],
+      "target_classes": [
+        0,
+        2,
+        3
+      ],
+      "num_pred": 3,
+      "num_target": 3,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.0024623870849609375,
+        "2": 0.97119140625,
+        "3": 0.9970703125,
+        "4": 0.0022869110107421875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    },
+    {
+      "model_id": "\u00be\u00b5\u00cf\u00f2LS-96_solid1",
+      "predicted_classes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_classes": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "num_pred": 5,
+      "num_target": 4,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.99951171875,
+        "2": 0.935546875,
+        "3": 0.99755859375,
+        "4": 0.99951171875
+      },
+      "jaccard_similarity": 0.8,
+      "correct": false
+    },
+    {
+      "model_id": "\u00be\u00b5\u00cf\u00f2XAS01_solid2",
+      "predicted_classes": [
+        0,
+        3
+      ],
+      "target_classes": [
+        0,
+        3
+      ],
+      "num_pred": 2,
+      "num_target": 2,
+      "class_probabilities": {
+        "0": 1.0,
+        "1": 0.006824493408203125,
+        "2": 0.00867462158203125,
+        "3": 0.99951171875,
+        "4": 0.0060272216796875
+      },
+      "jaccard_similarity": 1.0,
+      "correct": true
+    }
+  ]
+}

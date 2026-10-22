@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "output": "brepformer/pipeline_output/Red._ECC_ASME_B16.5_2003_STEEL_FF/Red._ECC_ASME_B16.5_2003_STEEL_FF_defeatured.step",
+  "num_faces": 32,
+  "kept": 10,
+  "removed": 22,
+  "failed": 0,
+  "valid": true,
+  "elapsed_s": 0.83
+}

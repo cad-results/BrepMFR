@@ -1,0 +1,4544 @@
+conda run -n new_brepmfr --no-capture-output ~/miniconda3/envs/new_brepmfr/bin/python brepformer/train_preprocessed.py --data_dir brepformer/data/defeature_processed --num_classes 5 --num_face_classes 5 --max_faces 1000 --batch_size 2 --accumulate_grad_batches 16 --learning_rate 0.001 --max_epochs 200 --seed 42 --output_dir results --face_segmentation --lr_monitor val/face_f1 --early_stop_monitor val/face_f1 --early_stop_patience 25 --exp_name t6ctl_base
+
+Seed set to 42
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+~/miniconda3/envs/new_brepmfr/lib/python3.11/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:881: Checkpoint directory results/t6ctl_base exists and is not empty.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+   | Name            | Type                       | Params | Mode  | FLOPs
+--------------------------------------------------------------------------------
+0  | encoder         | BrepEncoder                | 8.7 M  | train | 0
+1  | pooling         | GraphPooling               | 0      | train | 0
+2  | classifier      | NonLinearClassifier        | 529 K  | train | 0
+3  | loss_fn         | BCEWithLogitsLoss          | 0      | train | 0
+4  | face_classifier | FaceSegmentationClassifier | 398 K  | train | 0
+5  | face_loss_fn    | CrossEntropyLoss           | 0      | train | 0
+6  | train_acc       | MultilabelAccuracy         | 0      | train | 0
+7  | train_f1        | MultilabelF1Score          | 0      | train | 0
+8  | val_acc         | MultilabelAccuracy         | 0      | train | 0
+9  | val_f1          | MultilabelF1Score          | 0      | train | 0
+10 | val_precision   | MultilabelPrecision        | 0      | train | 0
+11 | val_recall      | MultilabelRecall           | 0      | train | 0
+12 | test_acc        | MultilabelAccuracy         | 0      | train | 0
+13 | test_f1         | MultilabelF1Score          | 0      | train | 0
+14 | test_precision  | MultilabelPrecision        | 0      | train | 0
+15 | test_recall     | MultilabelRecall           | 0      | train | 0
+16 | train_face_acc  | MulticlassAccuracy         | 0      | train | 0
+17 | train_face_f1   | MulticlassF1Score          | 0      | train | 0
+18 | val_face_acc    | MulticlassAccuracy         | 0      | train | 0
+19 | val_face_f1     | MulticlassF1Score          | 0      | train | 0
+20 | test_face_acc   | MulticlassAccuracy         | 0      | train | 0
+21 | test_face_f1    | MulticlassF1Score          | 0      | train | 0
+--------------------------------------------------------------------------------
+9.7 M     Trainable params
+0         Non-trainable params
+9.7 M     Total params
+38.654    Total estimated model params size (MB)
+280       Modules in train mode
+0         Modules in eval mode
+0         Total Flops
+Loaded metadata: {'num_classes': 5, 'num_samples': 1561, 'compute_descriptors': True, 'num_spatial': 64, 'd2_bins': 64, 'angle_bins': 64, 'external_labels': False, 'split_sizes': {'train': 1248, 'val': 156, 'test': 157}}
+Loading preprocessed training dataset...
+Found 1248 preprocessed samples in brepformer/data/defeature_processed/train
+Loading preprocessed validation dataset...
+Found 156 preprocessed samples in brepformer/data/defeature_processed/val
+Train samples: 1248, Val samples: 156
+Using unweighted CrossEntropyLoss for face segmentation
+Creating model...
+Starting training...
+
+Sanity Checking: |          | 0/? [00:00<?, ?it/s]~/miniconda3/envs/new_brepmfr/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:434: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=31` in the `DataLoader` to improve performance.
+
+Sanity Checking DataLoader 0:   0%|          | 0/2 [00:00<?, ?it/s]~/miniconda3/envs/new_brepmfr/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 2. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+
+Sanity Checking DataLoader 0: 100%|██████████| 2/2 [00:00<00:00,  4.07it/s]
+                                                                           ~/miniconda3/envs/new_brepmfr/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:434: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=31` in the `DataLoader` to improve performance.
+
+
+Training: |          | 0/? [00:00<?, ?it/s]
+Epoch 0: 100%|██████████| 624/624 [01:31<00:00,  6.82it/s, v_num=0, train/loss_step=2.100]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 23.41it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:02, 27.02it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:02, 27.94it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:02, 27.83it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:02, 28.44it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:02, 28.37it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:11,  6.07it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:10,  6.56it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:09,  7.04it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:09,  7.06it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:09,  7.44it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:08,  7.91it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:07,  8.33it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:07,  8.75it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:06,  9.16it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:06,  9.57it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:01<00:06,  9.22it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:01<00:06,  9.56it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:01<00:05,  9.90it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:01<00:05, 10.15it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:05, 10.46it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:05, 10.62it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05, 10.90it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:04, 11.16it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:04, 11.46it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:04, 11.70it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:04, 11.88it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 11.82it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:04, 12.10it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:03, 12.32it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:03, 12.57it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:03, 12.81it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:02<00:03, 12.98it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:02<00:03, 12.94it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:02<00:03, 13.08it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:02<00:03, 13.20it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:02<00:03, 13.32it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:02<00:02, 13.46it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:02<00:02, 13.67it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:02<00:02, 13.88it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:02<00:02, 13.92it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:02<00:02, 14.12it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:02, 14.31it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:02, 14.48it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 14.61it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 14.74it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 14.92it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:01, 15.10it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:01, 15.27it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:01, 15.19it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:01, 15.31it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 15.42it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:03<00:01, 15.49it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:03<00:01, 15.62it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:03<00:01, 15.70it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:03<00:01, 15.83it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:03<00:01, 15.94it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:03<00:01, 16.04it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:03<00:01, 16.18it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:03<00:01, 16.34it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:03<00:01, 16.47it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:03<00:00, 16.62it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:03<00:00, 16.75it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:03<00:00, 16.86it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:03<00:00, 16.94it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:03<00:00, 16.96it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:03<00:00, 16.97it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:04<00:00, 16.89it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 16.92it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:04<00:00, 16.99it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:04<00:00, 17.09it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:04<00:00, 17.15it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:04<00:00, 17.08it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:04<00:00, 17.16it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:04<00:00, 17.27it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:04<00:00, 17.30it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:04<00:00, 17.26it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:04<00:00, 17.38it/s][A
+
+                                                                        [A
+Epoch 0:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.100, val/loss=2.210, val/acc=0.495, val/f1=0.527, val/face_acc=0.286, train/loss_epoch=2.360, train/acc=0.416, train/face_acc=0.259]
+Epoch 1: 100%|██████████| 624/624 [01:48<00:00,  5.72it/s, v_num=0, train/loss_step=2.250, val/loss=2.210, val/acc=0.495, val/f1=0.527, val/face_acc=0.286, train/loss_epoch=2.360, train/acc=0.416, train/face_acc=0.259]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 22.92it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:02, 26.82it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:02, 27.99it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:02, 27.53it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:02, 28.26it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:02, 28.14it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:12,  5.83it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:11,  6.28it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:10,  6.82it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:09,  6.97it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:08,  7.46it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:08,  7.90it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:07,  8.30it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:07,  8.73it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:06,  9.07it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:06,  9.47it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:01<00:06,  9.26it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:01<00:06,  9.60it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:01<00:05, 10.00it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:01<00:05, 10.26it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:01<00:05, 10.63it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:05, 10.89it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:04, 11.10it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:04, 11.37it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:04, 11.59it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:04, 11.80it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:04, 12.07it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 12.19it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:03, 12.47it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:03, 12.75it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:03, 12.90it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:03, 13.17it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:02<00:03, 13.25it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:02<00:03, 13.39it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:02<00:03, 13.58it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:02<00:03, 13.76it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:02<00:02, 13.96it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:02<00:02, 14.13it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:02<00:02, 14.32it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:02<00:02, 14.54it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:02<00:02, 14.58it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:02<00:02, 14.75it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:02<00:02, 14.84it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:02<00:02, 15.05it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:02<00:02, 15.21it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 15.27it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 15.44it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:01, 15.64it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:01, 15.77it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:01, 15.69it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:01, 15.75it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 15.75it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:03<00:01, 15.90it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:03<00:01, 16.01it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:03<00:01, 16.03it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:03<00:01, 16.13it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:03<00:01, 16.21it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:03<00:01, 16.27it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:03<00:01, 16.32it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:03<00:01, 16.38it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:03<00:01, 16.43it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:03<00:00, 16.53it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:03<00:00, 16.67it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:03<00:00, 16.78it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:03<00:00, 16.87it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:03<00:00, 16.84it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:03<00:00, 16.90it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:04<00:00, 16.90it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 16.87it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:04<00:00, 16.98it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:04<00:00, 17.03it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:04<00:00, 17.00it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:04<00:00, 16.94it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:04<00:00, 17.05it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:04<00:00, 17.07it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:04<00:00, 17.10it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:04<00:00, 17.10it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:04<00:00, 17.16it/s][A
+
+                                                                        [A
+Epoch 1:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.250, val/loss=2.160, val/acc=0.760, val/f1=0.706, val/face_acc=0.291, train/loss_epoch=2.130, train/acc=0.663, train/face_acc=0.286]
+Epoch 2: 100%|██████████| 624/624 [01:29<00:00,  6.99it/s, v_num=0, train/loss_step=2.660, val/loss=2.160, val/acc=0.760, val/f1=0.706, val/face_acc=0.291, train/loss_epoch=2.130, train/acc=0.663, train/face_acc=0.286]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 20.85it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 22.14it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 24.36it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:02, 24.77it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:02, 25.17it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:02, 25.84it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:11,  5.96it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:10,  6.46it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:09,  7.02it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:09,  7.16it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:08,  7.64it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:08,  8.09it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:07,  8.54it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:07,  8.92it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:06,  9.25it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:06,  9.66it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:01<00:06,  9.33it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:01<00:06,  9.58it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:01<00:05,  9.85it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:01<00:05, 10.10it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:05, 10.32it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:05, 10.56it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05, 10.89it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:04, 11.18it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:04, 11.48it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:04, 11.74it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:04, 12.02it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 12.06it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:03, 12.31it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:03, 12.58it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:03, 12.81it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:03, 13.02it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:02<00:03, 13.17it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:02<00:03, 13.34it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:02<00:03, 13.56it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:02<00:03, 13.71it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:02<00:02, 13.91it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:02<00:02, 14.03it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:02<00:02, 14.23it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:02<00:02, 14.44it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:02<00:02, 14.50it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:02<00:02, 14.72it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:02<00:02, 14.90it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:02<00:02, 15.11it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:02<00:02, 15.31it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:02<00:02, 15.46it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:01, 15.52it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:01, 15.62it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:01, 15.73it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:01, 15.69it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:01, 15.81it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 15.87it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:03<00:01, 16.03it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:03<00:01, 16.05it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:03<00:01, 16.11it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:03<00:01, 16.14it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:03<00:01, 16.25it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:03<00:01, 16.41it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:03<00:01, 16.43it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:03<00:01, 16.52it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:03<00:01, 16.61it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:03<00:00, 16.75it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:03<00:00, 16.89it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:03<00:00, 17.01it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:03<00:00, 17.11it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:03<00:00, 17.17it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:03<00:00, 17.19it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:03<00:00, 17.17it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 17.21it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:04<00:00, 17.28it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:04<00:00, 17.41it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:04<00:00, 17.39it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:04<00:00, 17.28it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:04<00:00, 17.38it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:04<00:00, 17.49it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:04<00:00, 17.57it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:04<00:00, 17.49it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:04<00:00, 17.59it/s][A
+
+                                                                        [A
+Epoch 2:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.660, val/loss=2.050, val/acc=0.758, val/f1=0.705, val/face_acc=0.273, train/loss_epoch=2.000, train/acc=0.763, train/face_acc=0.292]
+Epoch 3: 100%|██████████| 624/624 [01:37<00:00,  6.43it/s, v_num=0, train/loss_step=1.950, val/loss=2.050, val/acc=0.758, val/f1=0.705, val/face_acc=0.273, train/loss_epoch=2.000, train/acc=0.763, train/face_acc=0.292]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 22.02it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 24.10it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 22.90it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 22.98it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 23.47it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 23.91it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:14,  4.88it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:13,  5.27it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:12,  5.59it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:12,  5.62it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:11,  5.94it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:10,  6.28it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:09,  6.53it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:02<00:09,  6.85it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:02<00:08,  7.12it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:02<00:08,  7.39it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:02<00:08,  7.16it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:02<00:08,  7.39it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:07,  7.63it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:07,  7.86it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:07,  8.09it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:06,  8.20it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:06,  8.34it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:06,  8.43it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:06,  8.62it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:05,  8.77it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:03<00:05,  8.87it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:03<00:05,  8.95it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:03<00:05,  9.11it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:03<00:05,  9.29it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:03<00:04,  9.46it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:03<00:04,  9.59it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:03<00:04,  9.70it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:03<00:04,  9.75it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:03<00:04,  9.92it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:03<00:04, 10.08it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:03<00:04, 10.18it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:03<00:03, 10.28it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 10.44it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:03, 10.61it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:03, 10.68it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:03, 10.82it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:03, 10.89it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:03, 11.01it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:04<00:02, 11.08it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:04<00:02, 11.12it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:04<00:02, 11.18it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:04<00:02, 11.26it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:04<00:02, 11.38it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:04<00:02, 11.36it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:04<00:02, 11.46it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:04<00:02, 11.55it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:04<00:02, 11.67it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:04<00:02, 11.78it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:04<00:01, 11.85it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:04<00:01, 11.89it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:04<00:01, 11.96it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:04<00:01, 12.06it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:04<00:01, 12.15it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 12.23it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 12.31it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:04<00:01, 12.41it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:05<00:01, 12.49it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:05<00:01, 12.49it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:05<00:01, 12.52it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:05<00:00, 12.55it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:05<00:00, 12.57it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:05<00:00, 12.58it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:05<00:00, 12.59it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:05<00:00, 12.62it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:05<00:00, 12.65it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:05<00:00, 12.67it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:05<00:00, 12.60it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:05<00:00, 12.67it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:05<00:00, 12.75it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:05<00:00, 12.77it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:06<00:00, 12.77it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:06<00:00, 12.82it/s][A
+
+                                                                        [A
+Epoch 3:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=1.950, val/loss=2.040, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.970, train/acc=0.763, train/face_acc=0.285]
+Epoch 4: 100%|██████████| 624/624 [02:45<00:00,  3.76it/s, v_num=0, train/loss_step=2.070, val/loss=2.040, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.970, train/acc=0.763, train/face_acc=0.285]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:02, 34.40it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:02, 32.03it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:02, 28.60it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:02, 28.02it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:02, 25.48it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:02, 24.98it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:09<01:34,  0.75it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:09<01:22,  0.85it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:09<01:12,  0.95it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:09<01:05,  1.04it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:09<00:59,  1.13it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:09<00:53,  1.23it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:09<00:49,  1.32it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:09<00:45,  1.42it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:09<00:41,  1.51it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:09<00:38,  1.61it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:10<00:36,  1.67it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:10<00:34,  1.76it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:10<00:31,  1.85it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:10<00:30,  1.93it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:10<00:28,  2.02it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:10<00:26,  2.11it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:10<00:25,  2.20it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:10<00:23,  2.29it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:10<00:22,  2.37it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:10<00:21,  2.46it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:10<00:20,  2.54it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:10<00:19,  2.61it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:10<00:18,  2.69it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:10<00:17,  2.77it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:10<00:16,  2.85it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:10<00:15,  2.92it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:11<00:15,  2.99it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:11<00:14,  3.06it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:11<00:13,  3.14it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:11<00:13,  3.21it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:11<00:12,  3.28it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:11<00:11,  3.35it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:11<00:11,  3.42it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:11<00:10,  3.50it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:11<00:10,  3.56it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:11<00:09,  3.63it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:11<00:09,  3.71it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:11<00:09,  3.78it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:11<00:08,  3.85it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:11<00:08,  3.92it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:11<00:07,  3.98it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:11<00:07,  4.05it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:11<00:07,  4.12it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:12<00:06,  4.16it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:12<00:06,  4.22it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:12<00:06,  4.28it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:12<00:05,  4.35it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:12<00:05,  4.42it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:12<00:05,  4.48it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:12<00:04,  4.54it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:12<00:04,  4.61it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:12<00:04,  4.68it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:12<00:04,  4.73it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:12<00:03,  4.80it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:12<00:03,  4.85it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:12<00:03,  4.91it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:12<00:03,  4.97it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:12<00:02,  5.03it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:12<00:02,  5.08it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:12<00:02,  5.12it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:12<00:02,  5.17it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:13<00:01,  5.21it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:13<00:01,  5.25it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:13<00:01,  5.31it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:13<00:01,  5.37it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:13<00:01,  5.41it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:13<00:00,  5.44it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:13<00:00,  5.49it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:13<00:00,  5.55it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:13<00:00,  5.59it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:13<00:00,  5.62it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:13<00:00,  5.67it/s][A
+
+                                                                        [A
+Epoch 4:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.070, val/loss=2.030, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.970, train/acc=0.763, train/face_acc=0.279]
+Epoch 5: 100%|██████████| 624/624 [02:02<00:00,  5.11it/s, v_num=0, train/loss_step=1.710, val/loss=2.030, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.970, train/acc=0.763, train/face_acc=0.279]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 25.39it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 22.18it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 23.11it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 19.58it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 20.39it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 20.95it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:17,  4.09it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:15,  4.49it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:14,  4.84it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:02<00:13,  5.00it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:02<00:12,  5.32it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:02<00:11,  5.72it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:02<00:10,  6.04it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:02<00:10,  6.35it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:02<00:09,  6.63it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:02<00:08,  6.95it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:02<00:08,  6.81it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:02<00:08,  7.10it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:07,  7.38it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:07,  7.59it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:07,  7.82it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:06,  8.07it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:06,  8.34it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:06,  8.60it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:06,  8.79it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:05,  8.98it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:05,  9.11it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:03<00:05,  9.08it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:03<00:05,  9.28it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:03<00:05,  9.44it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:03<00:04,  9.60it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:03<00:04,  9.73it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:03<00:04,  9.88it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:03<00:04,  9.97it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:03<00:04, 10.15it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:03<00:04, 10.28it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:03<00:03, 10.44it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:03<00:03, 10.54it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 10.67it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:03, 10.83it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:03, 10.88it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:03, 11.00it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:03, 11.12it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:03, 11.25it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 11.34it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:04<00:02, 11.38it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:04<00:02, 11.50it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:04<00:02, 11.64it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:04<00:02, 11.78it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:04<00:02, 11.79it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:04<00:02, 11.90it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:04<00:02, 11.98it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:04<00:02, 12.07it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:04<00:01, 12.18it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:04<00:01, 12.21it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:04<00:01, 12.34it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:04<00:01, 12.41it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:04<00:01, 12.54it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:04<00:01, 12.64it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 12.76it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 12.84it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:04<00:01, 12.94it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:04<00:01, 13.05it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:04<00:01, 13.06it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:04<00:00, 13.10it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:05<00:00, 13.14it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:05<00:00, 13.10it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:05<00:00, 13.04it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:05<00:00, 13.08it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:05<00:00, 13.20it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:05<00:00, 13.28it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:05<00:00, 13.26it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:05<00:00, 13.24it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:05<00:00, 13.28it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:05<00:00, 13.32it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:05<00:00, 13.33it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:05<00:00, 13.30it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:05<00:00, 13.37it/s][A
+
+                                                                        [A
+Epoch 5:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=1.710, val/loss=2.020, val/acc=0.759, val/f1=0.706, val/face_acc=0.285, train/loss_epoch=1.980, train/acc=0.761, train/face_acc=0.278]
+Epoch 6: 100%|██████████| 624/624 [02:56<00:00,  3.54it/s, v_num=0, train/loss_step=2.440, val/loss=2.020, val/acc=0.759, val/f1=0.706, val/face_acc=0.285, train/loss_epoch=1.980, train/acc=0.761, train/face_acc=0.278]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:02, 26.90it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 25.26it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 20.03it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:04, 17.89it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 19.60it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 19.32it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:15<02:35,  0.46it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:15<02:14,  0.52it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:15<01:58,  0.58it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:15<01:47,  0.63it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:15<01:36,  0.69it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:15<01:27,  0.75it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:16<01:20,  0.81it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:16<01:13,  0.87it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:16<01:07,  0.93it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:16<01:02,  0.99it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:16<00:59,  1.03it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:16<00:55,  1.09it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:16<00:51,  1.14it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:16<00:48,  1.20it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:16<00:45,  1.25it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:16<00:42,  1.31it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:16<00:40,  1.36it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:16<00:38,  1.42it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:16<00:35,  1.47it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:17<00:34,  1.53it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:17<00:32,  1.58it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:17<00:30,  1.62it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:17<00:29,  1.67it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:17<00:27,  1.73it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:17<00:26,  1.78it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:17<00:25,  1.83it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:17<00:23,  1.88it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:17<00:22,  1.92it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:17<00:21,  1.98it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:17<00:20,  2.02it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:17<00:19,  2.07it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:17<00:18,  2.11it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:18<00:18,  2.16it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:18<00:17,  2.21it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:18<00:16,  2.25it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:18<00:15,  2.30it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:18<00:14,  2.35it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:18<00:14,  2.39it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:18<00:13,  2.44it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:18<00:12,  2.49it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:18<00:12,  2.53it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:18<00:11,  2.58it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:18<00:11,  2.63it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:18<00:10,  2.66it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:18<00:09,  2.71it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:18<00:09,  2.75it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:18<00:08,  2.80it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:18<00:08,  2.84it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:19<00:07,  2.88it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:19<00:07,  2.93it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:19<00:07,  2.97it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:19<00:06,  3.01it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:19<00:06,  3.05it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:19<00:05,  3.10it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:19<00:05,  3.14it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:19<00:05,  3.19it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:19<00:04,  3.23it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:19<00:04,  3.27it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:19<00:03,  3.30it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:19<00:03,  3.34it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:19<00:03,  3.38it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:19<00:02,  3.41it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:20<00:02,  3.44it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:20<00:02,  3.48it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:20<00:01,  3.52it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:20<00:01,  3.55it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:20<00:01,  3.57it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:20<00:01,  3.61it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:20<00:00,  3.65it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:20<00:00,  3.69it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:20<00:00,  3.72it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:20<00:00,  3.76it/s][A
+
+                                                                        [A
+Epoch 6:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.440, val/loss=2.010, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.970, train/acc=0.763, train/face_acc=0.292]
+Epoch 7: 100%|██████████| 624/624 [02:10<00:00,  4.79it/s, v_num=0, train/loss_step=2.030, val/loss=2.010, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.970, train/acc=0.763, train/face_acc=0.292]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 20.83it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 21.72it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 21.70it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 22.17it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 22.93it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 21.29it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:09<01:41,  0.70it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:10<01:28,  0.80it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:10<01:17,  0.89it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:10<01:10,  0.97it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:10<01:03,  1.06it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:10<00:57,  1.15it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:10<00:52,  1.24it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:10<00:48,  1.33it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:10<00:44,  1.41it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:10<00:41,  1.50it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:10<00:38,  1.56it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:10<00:36,  1.65it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:10<00:34,  1.73it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:11<00:31,  1.82it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:11<00:29,  1.90it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:11<00:28,  1.98it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:11<00:26,  2.07it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:11<00:25,  2.15it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:11<00:23,  2.23it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:11<00:22,  2.31it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:11<00:21,  2.39it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:11<00:20,  2.45it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:11<00:19,  2.53it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:11<00:18,  2.61it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:11<00:17,  2.68it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:11<00:16,  2.76it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:11<00:15,  2.84it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:11<00:15,  2.91it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:11<00:14,  2.98it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:11<00:13,  3.06it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:11<00:13,  3.13it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:11<00:12,  3.19it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:11<00:11,  3.26it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:11<00:11,  3.33it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:12<00:10,  3.39it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:12<00:10,  3.46it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:12<00:09,  3.52it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:12<00:09,  3.59it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:12<00:09,  3.67it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:12<00:08,  3.73it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:12<00:08,  3.80it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:12<00:07,  3.87it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:12<00:07,  3.94it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:12<00:07,  3.98it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:12<00:06,  4.05it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:12<00:06,  4.11it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:12<00:05,  4.17it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:12<00:05,  4.23it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:12<00:05,  4.28it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:12<00:05,  4.35it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:12<00:04,  4.41it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:12<00:04,  4.47it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:13<00:04,  4.53it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:13<00:03,  4.60it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:13<00:03,  4.66it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:13<00:03,  4.72it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:13<00:03,  4.79it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:13<00:02,  4.85it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:13<00:02,  4.89it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:13<00:02,  4.94it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:13<00:02,  4.99it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:13<00:01,  5.03it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:13<00:01,  5.07it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:13<00:01,  5.13it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:13<00:01,  5.18it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:13<00:01,  5.23it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:13<00:00,  5.27it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:13<00:00,  5.32it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:13<00:00,  5.38it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:14<00:00,  5.43it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:14<00:00,  5.47it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:14<00:00,  5.52it/s][A
+
+                                                                        [A
+Epoch 7:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.030, val/loss=2.010, val/acc=0.759, val/f1=0.706, val/face_acc=0.285, train/loss_epoch=1.960, train/acc=0.766, train/face_acc=0.279]
+Epoch 8: 100%|██████████| 624/624 [03:01<00:00,  3.43it/s, v_num=0, train/loss_step=1.810, val/loss=2.010, val/acc=0.759, val/f1=0.706, val/face_acc=0.285, train/loss_epoch=1.960, train/acc=0.766, train/face_acc=0.279]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:02, 31.90it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:02, 26.36it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:02, 28.00it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:02, 30.52it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:02, 29.18it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:02, 27.20it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:16,  4.21it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:15,  4.54it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:14,  4.71it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:02<00:16,  4.07it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:02<00:15,  4.37it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:02<00:14,  4.66it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:02<00:13,  4.88it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:02<00:12,  5.14it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:02<00:11,  5.36it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:02<00:11,  5.60it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:03<00:14,  4.31it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:04<00:13,  4.48it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:04<00:12,  4.68it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:04<00:12,  4.83it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:04<00:11,  5.01it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:04<00:10,  5.15it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:04<00:10,  5.31it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:04<00:09,  5.43it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:04<00:09,  5.60it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:04<00:09,  5.75it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:04<00:08,  5.89it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:04<00:08,  5.94it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:04<00:08,  6.06it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:04<00:07,  6.15it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:04<00:07,  6.27it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:04<00:07,  6.40it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:05<00:06,  6.47it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:05<00:06,  6.57it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:05<00:06,  6.69it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:05<00:06,  6.77it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:05<00:05,  6.87it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:05<00:05,  6.96it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:05<00:05,  7.07it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:05<00:05,  7.18it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:05<00:05,  7.21it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:05<00:04,  7.28it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:05<00:04,  7.34it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:05<00:04,  7.41it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:05<00:04,  7.51it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:06<00:04,  7.60it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:06<00:04,  7.68it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:06<00:03,  7.78it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:06<00:03,  7.86it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:06<00:03,  7.79it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:06<00:03,  7.87it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:06<00:03,  7.93it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:06<00:03,  8.00it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:06<00:02,  8.09it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:06<00:02,  8.12it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:06<00:02,  8.19it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:06<00:02,  8.23it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:07<00:02,  8.28it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:07<00:02,  8.35it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:07<00:02,  8.42it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:07<00:02,  8.46it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:07<00:01,  8.52it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:07<00:01,  8.60it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:07<00:01,  8.67it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:07<00:01,  8.74it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:07<00:01,  8.75it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:07<00:01,  8.78it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:07<00:01,  8.75it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:07<00:01,  8.79it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:07<00:00,  8.87it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:07<00:00,  8.93it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:08<00:00,  8.93it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:08<00:00,  8.87it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:08<00:00,  8.91it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:08<00:00,  8.98it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:08<00:00,  9.03it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:08<00:00,  8.97it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:08<00:00,  8.99it/s][A
+
+                                                                        [A
+Epoch 8:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=1.810, val/loss=2.020, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.767, train/face_acc=0.278]
+Epoch 9: 100%|██████████| 624/624 [01:56<00:00,  5.35it/s, v_num=0, train/loss_step=1.950, val/loss=2.020, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.767, train/face_acc=0.278]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:02, 29.39it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:04, 18.40it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 19.98it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 21.27it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 19.54it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 19.78it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:04<00:49,  1.44it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:04<00:43,  1.60it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:05<00:38,  1.77it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:05<00:35,  1.90it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:05<00:32,  2.07it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:05<00:29,  2.22it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:05<00:27,  2.39it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:05<00:25,  2.55it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:05<00:23,  2.71it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:05<00:21,  2.87it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:05<00:20,  2.94it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:05<00:19,  3.09it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:05<00:18,  3.23it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:05<00:17,  3.37it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:05<00:16,  3.51it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:06<00:15,  3.65it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:06<00:14,  3.80it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:06<00:13,  3.93it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:06<00:13,  4.05it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:06<00:12,  4.18it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:06<00:11,  4.29it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:06<00:11,  4.36it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:06<00:10,  4.49it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:06<00:10,  4.61it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:06<00:09,  4.73it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:06<00:09,  4.85it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:06<00:09,  4.93it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:06<00:08,  5.00it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:06<00:08,  5.10it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:06<00:08,  5.20it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:07<00:07,  5.28it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:07<00:07,  5.37it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:07<00:07,  5.47it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:07<00:06,  5.56it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:07<00:06,  5.62it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:07<00:06,  5.72it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:07<00:06,  5.82it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:07<00:05,  5.91it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:07<00:05,  6.01it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:07<00:05,  6.08it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:07<00:05,  6.17it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:07<00:04,  6.26it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:07<00:04,  6.36it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:07<00:04,  6.40it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:07<00:04,  6.50it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:07<00:03,  6.57it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:07<00:03,  6.67it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:07<00:03,  6.75it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:08<00:03,  6.83it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:08<00:03,  6.92it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:08<00:02,  7.01it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:08<00:02,  7.10it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:08<00:02,  7.19it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:08<00:02,  7.26it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:08<00:02,  7.35it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:08<00:02,  7.43it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:08<00:01,  7.52it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:08<00:01,  7.59it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:08<00:01,  7.66it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:08<00:01,  7.71it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:08<00:01,  7.75it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:08<00:01,  7.78it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:08<00:01,  7.80it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:08<00:01,  7.85it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:08<00:00,  7.92it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:09<00:00,  7.95it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:09<00:00,  7.95it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:09<00:00,  8.00it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:09<00:00,  8.07it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:09<00:00,  8.11it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:09<00:00,  8.14it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:09<00:00,  8.21it/s][A
+
+                                                                        [A
+Epoch 9:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=1.950, val/loss=2.020, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.769, train/face_acc=0.280]
+Epoch 10: 100%|██████████| 624/624 [01:52<00:00,  5.53it/s, v_num=0, train/loss_step=2.130, val/loss=2.020, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.769, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 21.47it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 20.88it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:04, 18.10it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:04, 18.14it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 19.66it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 20.43it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:17,  3.96it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:16,  4.26it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:14,  4.66it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:02<00:16,  4.12it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:02<00:15,  4.46it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:02<00:13,  4.79it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:02<00:12,  5.09it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:02<00:11,  5.40it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:02<00:11,  5.65it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:02<00:10,  5.93it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:03<00:11,  5.27it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:03<00:10,  5.49it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:03<00:10,  5.72it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:03<00:09,  5.88it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:03<00:09,  6.09it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:03<00:08,  6.31it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:03<00:08,  6.53it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:03<00:08,  6.74it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:03<00:07,  6.96it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:03<00:07,  7.11it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:03<00:06,  7.31it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:03<00:06,  7.23it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:03<00:06,  7.43it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:03<00:06,  7.60it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:03<00:06,  7.78it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:04<00:05,  7.93it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:04<00:05,  8.07it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:04<00:05,  8.19it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:04<00:05,  8.36it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:04<00:04,  8.52it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:04<00:04,  8.66it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:04<00:04,  8.76it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:04<00:04,  8.89it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:04<00:04,  9.03it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:04<00:04,  8.87it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:04<00:03,  9.02it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:04<00:03,  9.16it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:04<00:03,  9.27it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:04<00:03,  9.36it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:04<00:03,  9.46it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:04<00:03,  9.56it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:04<00:03,  9.66it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:05<00:02,  9.76it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:05<00:02,  9.71it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:05<00:02,  9.84it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:05<00:02,  9.90it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:05<00:02, 10.01it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:05<00:02, 10.12it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:05<00:02, 10.19it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:05<00:02, 10.27it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:05<00:02, 10.33it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:05<00:01, 10.39it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:05<00:01, 10.46it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:05<00:01, 10.56it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:05<00:01, 10.62it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:05<00:01, 10.70it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:05<00:01, 10.80it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:05<00:01, 10.89it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:05<00:01, 10.95it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:06<00:01, 10.84it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:06<00:01, 10.86it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:06<00:00, 10.60it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:06<00:00, 10.63it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:06<00:00, 10.70it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:06<00:00, 10.78it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:06<00:00, 10.82it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:06<00:00, 10.77it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:06<00:00, 10.86it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:06<00:00, 10.95it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:06<00:00, 11.02it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:07<00:00, 10.88it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:07<00:00, 10.95it/s][A
+
+                                                                        [A
+Epoch 10:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.130, val/loss=2.010, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.766, train/face_acc=0.280]
+Epoch 11: 100%|██████████| 624/624 [01:42<00:00,  6.09it/s, v_num=0, train/loss_step=2.030, val/loss=2.010, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.766, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 20.45it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 23.30it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 24.18it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 24.06it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 22.74it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 23.64it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:13,  5.44it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:12,  5.80it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:11,  6.22it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:10,  6.38it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:09,  6.80it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:09,  7.22it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:08,  7.57it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:08,  7.94it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:07,  8.23it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:07,  8.61it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:02<00:07,  8.30it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:02<00:07,  8.55it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:06,  8.80it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:06,  9.00it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:06,  9.29it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:05,  9.55it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05,  9.77it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:05, 10.05it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:05, 10.23it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:04, 10.41it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:04, 10.53it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 10.57it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:04, 10.78it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:04, 10.93it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:04, 11.08it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:04, 11.17it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:02<00:03, 11.33it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:02<00:03, 11.40it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:03<00:03, 11.52it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:03<00:03, 11.67it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:03<00:03, 11.83it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:03<00:03, 11.92it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 12.10it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:03, 12.25it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:03, 12.26it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:02, 12.44it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:02, 12.59it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:02, 12.64it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 12.76it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 12.74it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 12.80it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:02, 12.90it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:02, 12.95it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:02, 12.93it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:02, 12.98it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 13.01it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:04<00:01, 13.10it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:04<00:01, 13.21it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:04<00:01, 13.19it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:04<00:01, 13.33it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:04<00:01, 13.41it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:04<00:01, 13.53it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:04<00:01, 13.55it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 13.62it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 13.69it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:04<00:01, 13.76it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:04<00:01, 13.83it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:04<00:01, 13.90it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:04<00:00, 13.93it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:04<00:00, 13.94it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:04<00:00, 13.94it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:04<00:00, 13.87it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 13.89it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:05<00:00, 13.95it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:05<00:00, 14.05it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:05<00:00, 14.06it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:05<00:00, 14.01it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:05<00:00, 14.10it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:05<00:00, 14.14it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:05<00:00, 14.11it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:05<00:00, 14.04it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:05<00:00, 14.09it/s][A
+
+                                                                        [A
+Epoch 11:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.030, val/loss=2.010, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.767, train/face_acc=0.280]
+Epoch 12: 100%|██████████| 624/624 [02:06<00:00,  4.95it/s, v_num=0, train/loss_step=1.850, val/loss=2.010, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.767, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 23.24it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 24.08it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 22.99it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 24.53it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 23.66it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 23.54it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:12,  5.55it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:11,  5.94it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:10,  6.29it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:10,  6.35it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:10,  6.64it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:09,  7.09it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:08,  7.31it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:08,  7.67it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:07,  8.02it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:07,  8.36it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:02<00:07,  7.94it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:02<00:07,  8.22it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:06,  8.49it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:06,  8.73it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:06,  8.94it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:06,  9.16it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05,  9.41it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:05,  9.59it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:05,  9.82it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:05,  9.98it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:05, 10.18it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 10.12it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:04, 10.23it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:04, 10.28it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:04, 10.35it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:03<00:04, 10.37it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:03<00:04, 10.46it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:03<00:04, 10.55it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:03<00:04, 10.69it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:03<00:03, 10.79it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:03<00:03, 10.90it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:03<00:03, 10.88it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 10.99it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:03, 11.14it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:03, 11.14it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:03, 11.22it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:03, 11.33it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:02, 11.46it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 11.56it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 11.60it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:04<00:02, 11.73it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:04<00:02, 11.85it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:04<00:02, 11.95it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:04<00:02, 11.87it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:04<00:02, 11.93it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:04<00:02, 11.94it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:04<00:02, 12.04it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:04<00:01, 12.12it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:04<00:01, 12.17it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:04<00:01, 12.19it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:04<00:01, 12.19it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:04<00:01, 12.20it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:04<00:01, 12.18it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 12.25it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 12.26it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:05<00:01, 12.32it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:05<00:01, 12.41it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:05<00:01, 12.51it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:05<00:01, 12.58it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:05<00:00, 12.62it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:05<00:00, 12.64it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:05<00:00, 12.60it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:05<00:00, 12.66it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:05<00:00, 12.76it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:05<00:00, 12.86it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:05<00:00, 12.86it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:05<00:00, 12.82it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:05<00:00, 12.91it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:05<00:00, 13.01it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:05<00:00, 13.03it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:05<00:00, 13.03it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:05<00:00, 13.07it/s][A
+
+                                                                        [A
+Epoch 12:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=1.850, val/loss=2.010, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.766, train/face_acc=0.285]
+Epoch 13: 100%|██████████| 624/624 [01:33<00:00,  6.67it/s, v_num=0, train/loss_step=2.120, val/loss=2.010, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.766, train/face_acc=0.285]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:04, 17.17it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 19.62it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 22.08it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 20.54it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 21.80it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 22.28it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:13,  5.40it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:12,  5.72it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:11,  6.26it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:10,  6.37it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:09,  6.72it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:09,  7.17it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:08,  7.55it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:08,  7.86it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:07,  8.17it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:07,  8.52it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:02<00:07,  8.19it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:02<00:07,  8.47it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:06,  8.78it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:06,  9.01it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:06,  9.23it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:05,  9.40it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05,  9.68it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:05,  9.86it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:05, 10.11it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:05, 10.31it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:04, 10.51it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 10.53it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:04, 10.71it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:04, 10.96it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:04, 11.19it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:04, 11.39it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:02<00:03, 11.51it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:02<00:03, 11.68it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:02<00:03, 11.91it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:02<00:03, 12.08it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:03<00:03, 12.25it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:03<00:03, 12.38it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 12.52it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:03, 12.65it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:02, 12.71it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:02, 12.88it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:02, 13.01it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:02, 13.09it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 13.18it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 13.25it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 13.32it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:02, 13.41it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:02, 13.49it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:02, 13.42it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:01, 13.53it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 13.60it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:03<00:01, 13.70it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:03<00:01, 13.83it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:03<00:01, 13.86it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:04<00:01, 13.94it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:04<00:01, 14.00it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:04<00:01, 14.07it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:04<00:01, 14.10it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 14.24it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 14.35it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:04<00:01, 14.47it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:04<00:01, 14.58it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:04<00:00, 14.69it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:04<00:00, 14.79it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:04<00:00, 14.75it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:04<00:00, 14.71it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:04<00:00, 14.71it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 14.76it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:04<00:00, 14.87it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:04<00:00, 14.92it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:04<00:00, 14.89it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:04<00:00, 14.82it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:04<00:00, 14.85it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:05<00:00, 14.90it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:05<00:00, 14.90it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:05<00:00, 14.91it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:05<00:00, 15.01it/s][A
+
+                                                                        [A
+Epoch 13:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.120, val/loss=2.000, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.766, train/face_acc=0.280]
+Epoch 14: 100%|██████████| 624/624 [01:45<00:00,  5.93it/s, v_num=0, train/loss_step=1.970, val/loss=2.000, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.766, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:02, 28.43it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 24.99it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:02, 26.58it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:02, 27.07it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:02, 27.61it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 23.60it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:18,  3.82it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:16,  4.18it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:15,  4.53it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:03<00:21,  3.21it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:03<00:19,  3.48it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:03<00:17,  3.74it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:03<00:16,  4.00it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:03<00:15,  4.26it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:03<00:13,  4.53it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:03<00:12,  4.80it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:04<00:17,  3.50it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:04<00:16,  3.67it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:04<00:15,  3.85it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:04<00:14,  4.00it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:05<00:13,  4.18it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:05<00:12,  4.35it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:05<00:12,  4.52it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:05<00:11,  4.68it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:05<00:10,  4.84it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:05<00:10,  4.98it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:05<00:09,  5.13it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:05<00:09,  5.21it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:05<00:09,  5.36it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:05<00:08,  5.50it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:05<00:08,  5.64it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:05<00:07,  5.78it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:05<00:07,  5.90it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:05<00:07,  5.93it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:05<00:07,  6.05it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:05<00:06,  6.19it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:05<00:06,  6.31it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:05<00:06,  6.40it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:05<00:05,  6.53it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:06<00:05,  6.66it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:06<00:05,  6.54it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:06<00:05,  6.66it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:06<00:05,  6.79it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:06<00:04,  6.91it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:06<00:04,  7.02it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:06<00:04,  7.11it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:06<00:04,  7.22it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:06<00:04,  7.33it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:06<00:03,  7.42it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:06<00:03,  7.20it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:06<00:03,  7.30it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:07<00:03,  7.39it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:07<00:03,  7.50it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:07<00:03,  7.60it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:07<00:03,  7.61it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:07<00:02,  7.69it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:07<00:02,  7.79it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:07<00:02,  7.89it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:07<00:02,  7.97it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:07<00:02,  8.06it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:07<00:02,  8.13it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:07<00:01,  8.20it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:07<00:01,  8.29it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:07<00:01,  8.37it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:07<00:01,  8.43it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:07<00:01,  8.37it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:07<00:01,  8.41it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:08<00:01,  8.20it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:08<00:01,  8.26it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:08<00:00,  8.34it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:08<00:00,  8.40it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:08<00:00,  8.44it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:08<00:00,  8.19it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:08<00:00,  8.26it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:09<00:00,  8.33it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:09<00:00,  8.39it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:09<00:00,  8.41it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:09<00:00,  8.49it/s][A
+
+                                                                        [A
+Epoch 14:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=1.970, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.768, train/face_acc=0.280]
+Epoch 15: 100%|██████████| 624/624 [01:58<00:00,  5.28it/s, v_num=0, train/loss_step=2.270, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.960, train/acc=0.768, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:02, 30.69it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:02, 31.75it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:02, 30.59it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:02, 30.90it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:02, 30.96it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:02, 30.25it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:14,  4.96it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:13,  5.31it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:12,  5.63it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:11,  5.74it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:11,  6.06it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:10,  6.46it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:09,  6.82it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:09,  7.09it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:02<00:08,  7.45it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:02<00:07,  7.80it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:02<00:08,  7.53it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:02<00:07,  7.72it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:07,  7.92it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:07,  8.08it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:06,  8.31it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:06,  8.53it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:06,  8.74it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:06,  8.94it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:05,  9.12it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:05,  9.24it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:05,  9.42it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:05,  9.47it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:05,  9.68it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:03<00:04,  9.87it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:03<00:04, 10.05it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:03<00:04, 10.22it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:03<00:04, 10.37it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:03<00:04, 10.44it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:03<00:04, 10.59it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:03<00:03, 10.73it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:03<00:03, 10.79it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:03<00:03, 10.86it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 11.01it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:03, 11.17it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:03, 11.19it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:03, 11.34it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:03, 11.44it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:02, 11.52it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 11.62it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 11.69it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 11.81it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:04<00:02, 11.91it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:04<00:02, 11.94it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:04<00:02, 11.85it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:04<00:02, 11.88it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:04<00:02, 11.89it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:04<00:02, 11.97it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:04<00:01, 12.06it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:04<00:01, 12.12it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:04<00:01, 12.24it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:04<00:01, 12.24it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:04<00:01, 12.30it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:04<00:01, 12.36it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 12.45it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 12.47it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:04<00:01, 12.54it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:04<00:01, 12.65it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:05<00:01, 12.73it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:05<00:01, 12.79it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:05<00:00, 12.79it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:05<00:00, 12.80it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:05<00:00, 12.79it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:05<00:00, 12.81it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:05<00:00, 12.86it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:05<00:00, 12.88it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:05<00:00, 12.83it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:05<00:00, 12.76it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:05<00:00, 12.83it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:05<00:00, 12.90it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:05<00:00, 12.95it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:05<00:00, 12.93it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:06<00:00, 12.93it/s][A
+
+                                                                        [A
+Epoch 15:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.270, val/loss=2.000, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.280]
+Epoch 16: 100%|██████████| 624/624 [02:21<00:00,  4.40it/s, v_num=0, train/loss_step=2.070, val/loss=2.000, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 23.39it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 25.27it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 19.31it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 19.34it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 18.73it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:04, 17.85it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:02<00:22,  3.13it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:02<00:20,  3.45it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:02<00:18,  3.76it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:03<00:24,  2.80it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:03<00:22,  3.02it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:03<00:20,  3.26it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:03<00:18,  3.47it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:03<00:17,  3.69it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:03<00:16,  3.91it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:03<00:15,  4.13it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:05<00:19,  3.18it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:05<00:18,  3.33it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:05<00:16,  3.50it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:05<00:15,  3.64it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:05<00:14,  3.80it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:05<00:14,  3.95it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:05<00:13,  4.12it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:05<00:12,  4.24it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:05<00:12,  4.40it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:05<00:11,  4.53it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:05<00:10,  4.65it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:05<00:10,  4.69it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:06<00:10,  4.82it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:06<00:09,  4.95it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:06<00:09,  5.06it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:06<00:08,  5.19it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:06<00:08,  5.30it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:06<00:08,  5.35it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:06<00:07,  5.47it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:06<00:07,  5.58it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:06<00:07,  5.70it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:06<00:06,  5.79it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:06<00:06,  5.88it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:06<00:06,  6.01it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:06<00:06,  5.93it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:06<00:05,  6.03it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:07<00:05,  6.13it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:07<00:05,  6.25it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:07<00:05,  6.36it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:07<00:04,  6.46it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:07<00:04,  6.54it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:07<00:04,  6.65it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:07<00:04,  6.76it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:07<00:04,  6.62it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:07<00:04,  6.71it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:07<00:03,  6.77it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:07<00:03,  6.87it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:07<00:03,  6.94it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:07<00:03,  7.00it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:07<00:03,  7.10it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:07<00:02,  7.18it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:07<00:02,  7.27it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:08<00:02,  7.33it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:08<00:02,  7.42it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:08<00:02,  7.49it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:08<00:02,  7.59it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:08<00:01,  7.68it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:08<00:01,  7.75it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:08<00:01,  7.81it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:08<00:01,  7.86it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:08<00:01,  7.91it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:08<00:01,  7.61it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:09<00:01,  7.67it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:09<00:01,  7.73it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:09<00:00,  7.80it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:09<00:00,  7.79it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:09<00:00,  7.49it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:09<00:00,  7.55it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:09<00:00,  7.63it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:09<00:00,  7.69it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:10<00:00,  7.68it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:10<00:00,  7.75it/s][A
+
+                                                                        [A
+Epoch 16:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.070, val/loss=2.000, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.280]
+Epoch 17: 100%|██████████| 624/624 [02:14<00:00,  4.65it/s, v_num=0, train/loss_step=1.670, val/loss=2.000, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 23.54it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 21.43it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 22.32it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 23.05it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:02, 24.58it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:02, 25.11it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:12,  5.78it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:11,  6.20it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:10,  6.60it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:10,  6.68it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:09,  7.12it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:08,  7.59it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:08,  7.94it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:07,  8.36it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:07,  8.77it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:06,  9.18it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:01<00:06,  8.77it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:01<00:06,  9.07it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:06,  9.31it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:06,  9.61it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:05,  9.94it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:05, 10.20it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05, 10.47it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:05, 10.60it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:04, 10.84it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:04, 10.97it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:04, 11.22it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 11.20it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:04, 11.32it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:04, 11.43it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:04, 11.57it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:03, 11.69it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:02<00:03, 11.82it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:02<00:03, 11.92it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:02<00:03, 12.12it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:02<00:03, 12.25it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:02<00:03, 12.43it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:03<00:03, 12.53it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 12.66it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:02, 12.81it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:02, 12.83it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:02, 12.94it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:02, 13.09it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:02, 13.26it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 13.39it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 13.48it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 13.62it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:02, 13.70it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:02, 13.74it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:02, 13.67it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:01, 13.73it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 13.70it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:03<00:01, 13.84it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:03<00:01, 13.99it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:03<00:01, 14.08it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:03<00:01, 14.21it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:03<00:01, 14.26it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:04<00:01, 14.39it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:04<00:01, 14.47it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 14.60it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 14.72it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:04<00:01, 14.81it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:04<00:01, 14.87it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:04<00:00, 14.96it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:04<00:00, 15.06it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:04<00:00, 15.04it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:04<00:00, 15.09it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:04<00:00, 15.05it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 15.10it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:04<00:00, 15.12it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:04<00:00, 15.21it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:04<00:00, 15.26it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:04<00:00, 15.20it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:04<00:00, 15.31it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:04<00:00, 15.40it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:04<00:00, 15.49it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:04<00:00, 15.45it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:05<00:00, 15.47it/s][A
+
+                                                                        [A
+Epoch 17:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=1.670, val/loss=2.000, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.768, train/face_acc=0.280]
+Epoch 18: 100%|██████████| 624/624 [01:56<00:00,  5.35it/s, v_num=0, train/loss_step=1.750, val/loss=2.000, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.768, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:05, 15.33it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:05, 15.05it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:04, 16.41it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:04, 17.83it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:04, 18.15it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:04, 17.91it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:02<00:24,  2.86it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:02<00:22,  3.08it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:02<00:20,  3.31it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:02<00:19,  3.48it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:03<00:18,  3.65it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:03<00:17,  3.87it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:03<00:16,  3.95it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:03<00:15,  4.10it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:03<00:14,  4.33it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:03<00:13,  4.53it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:03<00:13,  4.46it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:03<00:13,  4.55it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:04<00:12,  4.62it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:04<00:12,  4.79it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:04<00:11,  4.95it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:04<00:10,  5.10it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:04<00:10,  5.25it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:04<00:10,  5.37it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:04<00:09,  5.51it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:04<00:09,  5.64it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:04<00:08,  5.80it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:04<00:08,  5.83it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:04<00:08,  5.95it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:04<00:07,  6.07it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:05<00:07,  6.17it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:05<00:07,  6.26it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:05<00:07,  6.35it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:05<00:06,  6.44it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:05<00:06,  6.56it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:05<00:06,  6.66it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:05<00:06,  6.74it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:05<00:05,  6.81it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:05<00:05,  6.93it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:05<00:05,  7.03it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:05<00:05,  7.09it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:05<00:05,  7.19it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:05<00:04,  7.29it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:05<00:04,  7.39it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:06<00:04,  7.44it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:06<00:04,  7.51it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:06<00:04,  7.59it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:06<00:03,  7.66it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:06<00:03,  7.74it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:06<00:03,  7.76it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:06<00:03,  7.83it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:06<00:03,  7.89it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:06<00:03,  7.97it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:06<00:02,  8.05it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:06<00:02,  8.06it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:06<00:02,  8.13it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:06<00:02,  8.20it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:06<00:02,  8.29it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:07<00:02,  8.35it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:07<00:02,  8.45it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:07<00:01,  8.52it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:07<00:01,  8.60it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:07<00:01,  8.69it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:07<00:01,  8.75it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:07<00:01,  8.80it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:07<00:01,  8.84it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:07<00:01,  8.90it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:07<00:01,  8.94it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:07<00:01,  9.00it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:07<00:00,  9.05it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:07<00:00,  9.13it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:07<00:00,  9.16it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:07<00:00,  9.17it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:08<00:00,  9.23it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:08<00:00,  9.30it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:08<00:00,  9.36it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:08<00:00,  9.41it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:08<00:00,  9.48it/s][A
+
+                                                                        [A
+Epoch 18:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=1.750, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.280]
+Epoch 19: 100%|██████████| 624/624 [01:52<00:00,  5.53it/s, v_num=0, train/loss_step=1.830, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 24.60it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 22.50it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 23.72it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 22.04it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 22.36it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 22.54it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:15,  4.71it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:13,  5.08it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:12,  5.55it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:11,  5.73it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:10,  6.13it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:10,  6.58it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:09,  6.97it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:08,  7.36it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:08,  7.66it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:02<00:07,  7.97it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:02<00:07,  7.77it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:02<00:07,  8.08it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:07,  8.39it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:06,  8.62it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:06,  8.83it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:06,  9.04it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05,  9.34it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:05,  9.60it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:05,  9.82it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:05, 10.00it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:04, 10.26it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 10.34it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:04, 10.52it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:04, 10.64it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:04, 10.75it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:04, 10.90it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:02<00:04, 11.06it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:03<00:03, 11.20it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:03<00:03, 11.36it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:03<00:03, 11.56it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:03<00:03, 11.71it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:03<00:03, 11.85it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 12.02it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:03, 12.21it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:03, 12.26it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:02, 12.45it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:02, 12.62it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:02, 12.78it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 12.94it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 13.03it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 13.19it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:02, 13.32it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:02, 13.48it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:02, 13.44it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:01, 13.55it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 13.62it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:03<00:01, 13.76it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:03<00:01, 13.89it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:03<00:01, 13.98it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:03<00:01, 14.14it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:03<00:01, 14.26it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:04<00:01, 14.29it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:04<00:01, 14.34it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 14.44it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 14.48it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:04<00:01, 14.59it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:04<00:01, 14.71it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:04<00:00, 14.80it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:04<00:00, 14.89it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:04<00:00, 14.92it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:04<00:00, 14.96it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:04<00:00, 14.95it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 14.98it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:04<00:00, 15.09it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:04<00:00, 15.20it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:04<00:00, 15.11it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:04<00:00, 15.03it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:04<00:00, 15.09it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:04<00:00, 15.19it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:04<00:00, 15.26it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:05<00:00, 15.25it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:05<00:00, 15.34it/s][A
+
+                                                                        [A
+Epoch 19:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=1.830, val/loss=2.000, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.768, train/face_acc=0.280]
+Epoch 20: 100%|██████████| 624/624 [01:48<00:00,  5.76it/s, v_num=0, train/loss_step=1.750, val/loss=2.000, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.768, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:04, 16.93it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 19.64it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 19.89it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 20.05it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 21.50it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 22.11it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:18,  3.94it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:16,  4.31it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:14,  4.69it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:02<00:13,  4.90it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:02<00:12,  5.21it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:02<00:11,  5.56it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:02<00:11,  5.86it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:02<00:10,  6.22it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:02<00:09,  6.53it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:02<00:09,  6.86it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:02<00:09,  6.74it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:02<00:08,  7.02it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:08,  7.31it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:07,  7.57it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:07,  7.85it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:06,  8.10it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:06,  8.35it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:06,  8.56it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:06,  8.74it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:05,  8.91it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:05,  9.12it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:03<00:05,  9.16it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:03<00:05,  9.30it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:03<00:05,  9.50it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:03<00:04,  9.61it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:03<00:04,  9.74it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:03<00:04,  9.89it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:03<00:04,  9.96it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:03<00:04, 10.09it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:03<00:04, 10.22it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:03<00:03, 10.39it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:03<00:03, 10.50it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 10.58it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:03, 10.74it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:03, 10.79it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:03, 10.89it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:03, 11.02it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:03, 11.10it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:04<00:02, 11.19it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:04<00:02, 11.26it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:04<00:02, 11.36it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:04<00:02, 11.48it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:04<00:02, 11.60it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:04<00:02, 11.58it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:04<00:02, 11.65it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:04<00:02, 11.71it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:04<00:02, 11.78it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:04<00:02, 11.89it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:04<00:01, 11.94it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:04<00:01, 12.06it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:04<00:01, 12.14it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:04<00:01, 12.19it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:04<00:01, 12.22it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 12.30it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 12.33it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:05<00:01, 12.35it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:05<00:01, 12.44it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:05<00:01, 12.49it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:05<00:01, 12.58it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:05<00:00, 12.50it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:05<00:00, 12.49it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:05<00:00, 12.47it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:05<00:00, 12.50it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:05<00:00, 12.59it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:05<00:00, 12.68it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:05<00:00, 12.62it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:05<00:00, 12.57it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:05<00:00, 12.60it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:05<00:00, 12.61it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:06<00:00, 12.65it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:06<00:00, 12.63it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:06<00:00, 12.66it/s][A
+
+                                                                        [A
+Epoch 20:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=1.750, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.280]
+Epoch 21: 100%|██████████| 624/624 [01:35<00:00,  6.56it/s, v_num=0, train/loss_step=2.000, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:04, 19.05it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 21.54it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 20.63it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 19.49it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 21.05it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 21.81it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:12,  5.50it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:11,  5.94it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:10,  6.41it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:10,  6.58it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:09,  6.92it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:08,  7.36it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:08,  7.81it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:07,  8.16it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:07,  8.51it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:06,  8.86it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:01<00:07,  8.59it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:02<00:06,  8.89it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:06,  9.17it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:06,  9.45it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:05,  9.76it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:05, 10.04it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05, 10.31it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:05, 10.55it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:04, 10.83it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:04, 11.10it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:04, 11.28it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 11.32it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:04, 11.46it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:04, 11.70it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:03, 11.88it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:03, 12.06it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:02<00:03, 12.15it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:02<00:03, 12.28it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:02<00:03, 12.40it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:02<00:03, 12.54it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:02<00:03, 12.70it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:02<00:03, 12.74it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 12.86it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:02, 13.00it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:02, 13.04it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:02, 13.18it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:02, 13.30it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:02, 13.39it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 13.53it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 13.67it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 13.81it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:02, 13.90it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:02, 13.99it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:02, 13.94it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:01, 14.07it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 14.20it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:03<00:01, 14.36it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:03<00:01, 14.44it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:03<00:01, 14.44it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:03<00:01, 14.59it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:03<00:01, 14.68it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:03<00:01, 14.82it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:03<00:01, 14.91it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 14.97it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 15.00it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:04<00:01, 15.08it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:04<00:00, 15.14it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:04<00:00, 15.27it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:04<00:00, 15.36it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:04<00:00, 15.39it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:04<00:00, 15.44it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:04<00:00, 15.43it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 15.47it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:04<00:00, 15.55it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:04<00:00, 15.58it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:04<00:00, 15.61it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:04<00:00, 15.56it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:04<00:00, 15.60it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:04<00:00, 15.64it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:04<00:00, 15.62it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:04<00:00, 15.63it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:04<00:00, 15.70it/s][A
+
+                                                                        [A
+Epoch 21:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.000, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.770, train/face_acc=0.280]
+Epoch 22: 100%|██████████| 624/624 [01:39<00:00,  6.29it/s, v_num=0, train/loss_step=2.110, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.770, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 19.68it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 20.07it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 19.93it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 19.69it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:04, 18.10it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:04, 17.73it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:13,  5.34it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:12,  5.72it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:11,  6.20it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:10,  6.35it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:09,  6.75it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:09,  7.19it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:08,  7.53it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:08,  7.92it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:07,  8.23it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:07,  8.63it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:02<00:07,  8.37it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:02<00:06,  8.64it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:06,  8.91it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:06,  9.16it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:06,  9.39it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:05,  9.64it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05,  9.91it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:05, 10.11it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:05, 10.39it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:04, 10.64it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:04, 10.86it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 10.85it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:04, 11.07it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:04, 11.24it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:04, 11.32it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:04, 11.41it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:02<00:03, 11.51it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:02<00:03, 11.62it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:02<00:03, 11.77it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:03<00:03, 11.90it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:03<00:03, 12.06it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:03<00:03, 12.18it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 12.35it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:03, 12.54it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:02, 12.56it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:02, 12.73it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:02, 12.88it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:02, 13.03it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 13.14it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 13.20it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 13.35it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:02, 13.49it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:02, 13.63it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:02, 13.58it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:01, 13.70it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 13.74it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:03<00:01, 13.85it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:03<00:01, 13.94it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:03<00:01, 14.02it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:03<00:01, 14.12it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:04<00:01, 14.16it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:04<00:01, 14.19it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:04<00:01, 14.20it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 14.25it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 14.24it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:04<00:01, 14.29it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:04<00:01, 14.32it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:04<00:00, 14.40it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:04<00:00, 14.45it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:04<00:00, 14.43it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:04<00:00, 14.42it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:04<00:00, 14.39it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 14.41it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:04<00:00, 14.46it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:04<00:00, 14.54it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:04<00:00, 14.54it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:05<00:00, 14.48it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:05<00:00, 14.57it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:05<00:00, 14.66it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:05<00:00, 14.65it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:05<00:00, 14.59it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:05<00:00, 14.62it/s][A
+
+                                                                        [A
+Epoch 22:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.110, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.770, train/face_acc=0.280]
+Epoch 23: 100%|██████████| 624/624 [02:06<00:00,  4.92it/s, v_num=0, train/loss_step=1.760, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.770, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:02, 36.01it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:02, 29.09it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 23.18it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 24.48it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 22.47it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:03, 22.37it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:12,  5.58it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:11,  5.94it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:10,  6.49it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:10,  6.66it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:09,  7.12it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:08,  7.60it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:08,  8.07it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:07,  8.52it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:07,  8.96it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:06,  9.31it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:01<00:06,  9.00it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:01<00:06,  9.31it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:01<00:06,  9.65it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:05,  9.91it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:05, 10.21it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:05, 10.41it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05, 10.69it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:04, 10.91it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:04, 11.20it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:04, 11.33it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:04, 11.42it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 11.42it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:04, 11.57it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:04, 11.73it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:03, 11.91it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:03, 12.14it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:02<00:03, 12.28it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:02<00:03, 12.36it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:02<00:03, 12.49it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:02<00:03, 12.66it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:02<00:03, 12.79it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:02<00:03, 12.86it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 12.99it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:02, 13.20it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:02, 13.19it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:02, 13.35it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:02, 13.47it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:02, 13.68it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 13.87it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 13.97it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 14.12it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:02, 14.21it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:02, 14.30it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:01, 14.26it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:01, 14.41it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 14.45it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:03<00:01, 14.59it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:03<00:01, 14.71it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:03<00:01, 14.75it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:03<00:01, 14.91it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:03<00:01, 15.00it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:03<00:01, 15.09it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:03<00:01, 15.14it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:03<00:01, 15.18it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 15.20it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:04<00:01, 15.24it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:04<00:00, 15.29it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:04<00:00, 15.37it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:04<00:00, 15.46it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:04<00:00, 15.49it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:04<00:00, 15.51it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:04<00:00, 15.42it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 15.48it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:04<00:00, 15.59it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:04<00:00, 15.69it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:04<00:00, 15.68it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:04<00:00, 15.64it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:04<00:00, 15.75it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:04<00:00, 15.82it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:04<00:00, 15.92it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:04<00:00, 15.89it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:04<00:00, 15.98it/s][A
+
+                                                                        [A
+Epoch 23:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=1.760, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.768, train/face_acc=0.280]
+Epoch 24: 100%|██████████| 624/624 [01:31<00:00,  6.80it/s, v_num=0, train/loss_step=2.070, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.768, train/face_acc=0.280]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:02, 36.05it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:02, 32.93it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:02, 31.35it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:02, 29.02it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:02, 28.20it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:02, 26.83it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:12,  5.63it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:11,  5.97it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:10,  6.48it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:10,  6.60it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:09,  7.01it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:08,  7.51it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:08,  7.95it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:07,  8.30it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:07,  8.69it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:06,  9.02it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:01<00:07,  8.70it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:02<00:06,  8.98it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:06,  9.26it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:06,  9.48it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:05,  9.75it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:05, 10.00it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05, 10.30it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:05, 10.52it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:04, 10.76it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:04, 10.92it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:04, 11.12it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 11.11it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:04, 11.34it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:04, 11.49it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:04, 11.67it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:03, 11.79it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:02<00:03, 11.93it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:02<00:03, 12.04it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:02<00:03, 12.23it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:02<00:03, 12.35it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:02<00:03, 12.47it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:03<00:03, 12.54it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 12.68it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:02, 12.83it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:02, 12.86it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:02, 12.99it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:02, 13.13it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:02, 13.25it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 13.35it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 13.48it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 13.66it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:02, 13.86it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:02, 14.02it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:02, 13.99it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:01, 14.08it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 14.13it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:03<00:01, 14.21it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:03<00:01, 14.35it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:03<00:01, 14.41it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:03<00:01, 14.50it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:03<00:01, 14.63it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:03<00:01, 14.66it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:03<00:01, 14.78it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 14.92it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 14.92it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:04<00:01, 15.00it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:04<00:00, 15.08it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:04<00:00, 15.13it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:04<00:00, 15.21it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:04<00:00, 15.20it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:04<00:00, 15.26it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:04<00:00, 15.27it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 15.30it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:04<00:00, 15.33it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:04<00:00, 15.40it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:04<00:00, 15.39it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:04<00:00, 15.34it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:04<00:00, 15.41it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:04<00:00, 15.46it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:04<00:00, 15.49it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:04<00:00, 15.46it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:05<00:00, 15.47it/s][A
+
+                                                                        [A
+Epoch 24:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=2.070, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.281]
+Epoch 25: 100%|██████████| 624/624 [01:30<00:00,  6.92it/s, v_num=0, train/loss_step=1.760, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.281]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:03, 20.80it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:03, 23.65it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 23.07it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:03, 24.11it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:03, 23.73it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:02, 24.16it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:12,  5.77it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:11,  6.11it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:10,  6.67it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:09,  6.87it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:09,  7.30it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:08,  7.71it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:08,  8.12it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:07,  8.59it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:06,  9.02it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:06,  9.37it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:01<00:06,  9.03it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:01<00:06,  9.39it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:01<00:06,  9.76it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:01<00:05, 10.05it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:05, 10.31it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:05, 10.61it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05, 10.87it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:04, 11.15it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:04, 11.47it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:04, 11.66it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:04, 11.90it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:04, 11.99it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:04, 12.21it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:03, 12.44it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:03, 12.67it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:03, 12.80it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:02<00:03, 13.02it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:02<00:03, 13.20it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:02<00:03, 13.45it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:02<00:03, 13.61it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:02<00:02, 13.81it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:02<00:02, 13.93it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:02<00:02, 14.09it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:02<00:02, 14.24it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:02<00:02, 14.23it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:02<00:02, 14.35it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:02<00:02, 14.49it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:02<00:02, 14.68it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 14.90it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 14.99it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 15.12it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:01, 15.27it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:01, 15.43it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:01, 15.37it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:01, 15.50it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 15.54it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:03<00:01, 15.70it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:03<00:01, 15.83it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:03<00:01, 15.85it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:03<00:01, 16.02it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:03<00:01, 16.16it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:03<00:01, 16.23it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:03<00:01, 16.31it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:03<00:01, 16.46it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:03<00:01, 16.56it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:03<00:00, 16.61it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:03<00:00, 16.65it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:03<00:00, 16.69it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:03<00:00, 16.75it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:03<00:00, 16.80it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:03<00:00, 16.84it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:04<00:00, 16.78it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 16.82it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:04<00:00, 16.94it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:04<00:00, 17.05it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:04<00:00, 17.01it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:04<00:00, 16.99it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:04<00:00, 17.04it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:04<00:00, 17.10it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:04<00:00, 17.15it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:04<00:00, 17.16it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:04<00:00, 17.25it/s][A
+
+                                                                        [A
+Epoch 25:   0%|          | 0/624 [00:00<?, ?it/s, v_num=0, train/loss_step=1.760, val/loss=1.980, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.281]
+Epoch 26: 100%|██████████| 624/624 [02:16<00:00,  4.58it/s, v_num=0, train/loss_step=1.990, val/loss=1.980, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.281]
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation: |          | 0/? [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   0%|          | 0/78 [00:00<?, ?it/s][A
+
+Validation DataLoader 0:   1%|▏         | 1/78 [00:00<00:02, 32.57it/s][A
+
+Validation DataLoader 0:   3%|▎         | 2/78 [00:00<00:02, 28.81it/s][A
+
+Validation DataLoader 0:   4%|▍         | 3/78 [00:00<00:03, 22.65it/s][A
+
+Validation DataLoader 0:   5%|▌         | 4/78 [00:00<00:02, 25.18it/s][A
+
+Validation DataLoader 0:   6%|▋         | 5/78 [00:00<00:02, 25.13it/s][A
+
+Validation DataLoader 0:   8%|▊         | 6/78 [00:00<00:02, 24.74it/s][A
+
+Validation DataLoader 0:   9%|▉         | 7/78 [00:01<00:12,  5.69it/s][A
+
+Validation DataLoader 0:  10%|█         | 8/78 [00:01<00:11,  5.99it/s][A
+
+Validation DataLoader 0:  12%|█▏        | 9/78 [00:01<00:10,  6.34it/s][A
+
+Validation DataLoader 0:  13%|█▎        | 10/78 [00:01<00:10,  6.36it/s][A
+
+Validation DataLoader 0:  14%|█▍        | 11/78 [00:01<00:09,  6.79it/s][A
+
+Validation DataLoader 0:  15%|█▌        | 12/78 [00:01<00:09,  7.25it/s][A
+
+Validation DataLoader 0:  17%|█▋        | 13/78 [00:01<00:08,  7.52it/s][A
+
+Validation DataLoader 0:  18%|█▊        | 14/78 [00:01<00:08,  7.83it/s][A
+
+Validation DataLoader 0:  19%|█▉        | 15/78 [00:01<00:07,  8.13it/s][A
+
+Validation DataLoader 0:  21%|██        | 16/78 [00:01<00:07,  8.38it/s][A
+
+Validation DataLoader 0:  22%|██▏       | 17/78 [00:02<00:07,  8.02it/s][A
+
+Validation DataLoader 0:  23%|██▎       | 18/78 [00:02<00:07,  8.21it/s][A
+
+Validation DataLoader 0:  24%|██▍       | 19/78 [00:02<00:06,  8.47it/s][A
+
+Validation DataLoader 0:  26%|██▌       | 20/78 [00:02<00:06,  8.63it/s][A
+
+Validation DataLoader 0:  27%|██▋       | 21/78 [00:02<00:06,  8.86it/s][A
+
+Validation DataLoader 0:  28%|██▊       | 22/78 [00:02<00:06,  9.03it/s][A
+
+Validation DataLoader 0:  29%|██▉       | 23/78 [00:02<00:05,  9.27it/s][A
+
+Validation DataLoader 0:  31%|███       | 24/78 [00:02<00:05,  9.45it/s][A
+
+Validation DataLoader 0:  32%|███▏      | 25/78 [00:02<00:05,  9.66it/s][A
+
+Validation DataLoader 0:  33%|███▎      | 26/78 [00:02<00:05,  9.79it/s][A
+
+Validation DataLoader 0:  35%|███▍      | 27/78 [00:02<00:05, 10.01it/s][A
+
+Validation DataLoader 0:  36%|███▌      | 28/78 [00:02<00:05,  9.96it/s][A
+
+Validation DataLoader 0:  37%|███▋      | 29/78 [00:02<00:04, 10.20it/s][A
+
+Validation DataLoader 0:  38%|███▊      | 30/78 [00:02<00:04, 10.40it/s][A
+
+Validation DataLoader 0:  40%|███▉      | 31/78 [00:02<00:04, 10.60it/s][A
+
+Validation DataLoader 0:  41%|████      | 32/78 [00:02<00:04, 10.83it/s][A
+
+Validation DataLoader 0:  42%|████▏     | 33/78 [00:03<00:04, 11.00it/s][A
+
+Validation DataLoader 0:  44%|████▎     | 34/78 [00:03<00:03, 11.15it/s][A
+
+Validation DataLoader 0:  45%|████▍     | 35/78 [00:03<00:03, 11.35it/s][A
+
+Validation DataLoader 0:  46%|████▌     | 36/78 [00:03<00:03, 11.53it/s][A
+
+Validation DataLoader 0:  47%|████▋     | 37/78 [00:03<00:03, 11.62it/s][A
+
+Validation DataLoader 0:  49%|████▊     | 38/78 [00:03<00:03, 11.71it/s][A
+
+Validation DataLoader 0:  50%|█████     | 39/78 [00:03<00:03, 11.87it/s][A
+
+Validation DataLoader 0:  51%|█████▏    | 40/78 [00:03<00:03, 12.04it/s][A
+
+Validation DataLoader 0:  53%|█████▎    | 41/78 [00:03<00:03, 12.01it/s][A
+
+Validation DataLoader 0:  54%|█████▍    | 42/78 [00:03<00:02, 12.14it/s][A
+
+Validation DataLoader 0:  55%|█████▌    | 43/78 [00:03<00:02, 12.28it/s][A
+
+Validation DataLoader 0:  56%|█████▋    | 44/78 [00:03<00:02, 12.37it/s][A
+
+Validation DataLoader 0:  58%|█████▊    | 45/78 [00:03<00:02, 12.50it/s][A
+
+Validation DataLoader 0:  59%|█████▉    | 46/78 [00:03<00:02, 12.57it/s][A
+
+Validation DataLoader 0:  60%|██████    | 47/78 [00:03<00:02, 12.65it/s][A
+
+Validation DataLoader 0:  62%|██████▏   | 48/78 [00:03<00:02, 12.80it/s][A
+
+Validation DataLoader 0:  63%|██████▎   | 49/78 [00:03<00:02, 12.94it/s][A
+
+Validation DataLoader 0:  64%|██████▍   | 50/78 [00:03<00:02, 12.92it/s][A
+
+Validation DataLoader 0:  65%|██████▌   | 51/78 [00:03<00:02, 12.99it/s][A
+
+Validation DataLoader 0:  67%|██████▋   | 52/78 [00:03<00:01, 13.00it/s][A
+
+Validation DataLoader 0:  68%|██████▊   | 53/78 [00:04<00:01, 13.12it/s][A
+
+Validation DataLoader 0:  69%|██████▉   | 54/78 [00:04<00:01, 13.21it/s][A
+
+Validation DataLoader 0:  71%|███████   | 55/78 [00:04<00:01, 13.27it/s][A
+
+Validation DataLoader 0:  72%|███████▏  | 56/78 [00:04<00:01, 13.30it/s][A
+
+Validation DataLoader 0:  73%|███████▎  | 57/78 [00:04<00:01, 13.40it/s][A
+
+Validation DataLoader 0:  74%|███████▍  | 58/78 [00:04<00:01, 13.51it/s][A
+
+Validation DataLoader 0:  76%|███████▌  | 59/78 [00:04<00:01, 13.60it/s][A
+
+Validation DataLoader 0:  77%|███████▋  | 60/78 [00:04<00:01, 13.71it/s][A
+
+Validation DataLoader 0:  78%|███████▊  | 61/78 [00:04<00:01, 13.75it/s][A
+
+Validation DataLoader 0:  79%|███████▉  | 62/78 [00:04<00:01, 13.87it/s][A
+
+Validation DataLoader 0:  81%|████████  | 63/78 [00:04<00:01, 13.98it/s][A
+
+Validation DataLoader 0:  82%|████████▏ | 64/78 [00:04<00:00, 14.03it/s][A
+
+Validation DataLoader 0:  83%|████████▎ | 65/78 [00:04<00:00, 14.09it/s][A
+
+Validation DataLoader 0:  85%|████████▍ | 66/78 [00:04<00:00, 14.05it/s][A
+
+Validation DataLoader 0:  86%|████████▌ | 67/78 [00:04<00:00, 14.01it/s][A
+
+Validation DataLoader 0:  87%|████████▋ | 68/78 [00:04<00:00, 13.99it/s][A
+
+Validation DataLoader 0:  88%|████████▊ | 69/78 [00:04<00:00, 13.96it/s][A
+
+Validation DataLoader 0:  90%|████████▉ | 70/78 [00:04<00:00, 14.01it/s][A
+
+Validation DataLoader 0:  91%|█████████ | 71/78 [00:05<00:00, 14.08it/s][A
+
+Validation DataLoader 0:  92%|█████████▏| 72/78 [00:05<00:00, 14.10it/s][A
+
+Validation DataLoader 0:  94%|█████████▎| 73/78 [00:05<00:00, 14.03it/s][A
+
+Validation DataLoader 0:  95%|█████████▍| 74/78 [00:05<00:00, 14.06it/s][A
+
+Validation DataLoader 0:  96%|█████████▌| 75/78 [00:05<00:00, 14.15it/s][A
+
+Validation DataLoader 0:  97%|█████████▋| 76/78 [00:05<00:00, 14.14it/s][A
+
+Validation DataLoader 0:  99%|█████████▊| 77/78 [00:05<00:00, 14.13it/s][A
+
+Validation DataLoader 0: 100%|██████████| 78/78 [00:05<00:00, 14.18it/s][A
+
+                                                                        [A
+Epoch 26: 100%|██████████| 624/624 [02:22<00:00,  4.39it/s, v_num=0, train/loss_step=1.990, val/loss=1.990, val/acc=0.759, val/f1=0.706, val/face_acc=0.273, train/loss_epoch=1.950, train/acc=0.769, train/face_acc=0.281]
+Training complete! Best model saved to results/t6ctl_base

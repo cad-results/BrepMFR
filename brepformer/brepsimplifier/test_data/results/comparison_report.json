@@ -1,0 +1,142 @@
+{
+  "method": "BrepMFR OCC-based primitive fitting",
+  "comparison_against": "PartField statistical primitive fitting",
+  "results": [
+    {
+      "model_id": "4756040110",
+      "status": "success",
+      "original_faces": 714,
+      "original_volume": 263423.41,
+      "original_surface_types": {
+        "torus": 76,
+        "cone": 29,
+        "cylinder": 220,
+        "plane": 347,
+        "other": 34,
+        "sphere": 8
+      },
+      "result_volume": 263423.41,
+      "volume_ratio": 1.0,
+      "num_primitives": 298,
+      "primitive_types": {
+        "cone": 23,
+        "torus": 47,
+        "cylinder": 164,
+        "plane": 55,
+        "sphere": 8,
+        "other": 1
+      },
+      "surface_fidelity": {
+        "torus": 0.618421052631579,
+        "cone": 0.0,
+        "cylinder": 0.07272727272727272,
+        "plane": 1.0,
+        "sphere": 1.0
+      },
+      "valid_brep": true,
+      "elapsed_s": 1.38,
+      "output": "brepformer/brepsimplifier/test_data/results/4756040110_primitives.step"
+    },
+    {
+      "model_id": "Guide_Roller_Assembly",
+      "status": "success",
+      "original_faces": 1076,
+      "original_volume": 446887.99,
+      "original_surface_types": {
+        "cylinder": 334,
+        "plane": 130,
+        "torus": 14,
+        "cone": 598
+      },
+      "result_volume": 446887.99,
+      "volume_ratio": 1.0,
+      "num_primitives": 548,
+      "primitive_types": {
+        "cylinder": 178,
+        "plane": 13,
+        "torus": 10,
+        "cone": 347
+      },
+      "surface_fidelity": {
+        "cylinder": 0.04790419161676647,
+        "plane": 1.0,
+        "torus": 0.7142857142857143,
+        "cone": 0.008361204013377926
+      },
+      "valid_brep": true,
+      "elapsed_s": 1.75,
+      "output": "brepformer/brepsimplifier/test_data/results/Guide_Roller_Assembly_primitives.step"
+    },
+    {
+      "model_id": "g-MEC-GRUNDFOSPUMP-P410_LOD400",
+      "status": "success",
+      "original_faces": 216,
+      "original_volume": 2633924.89,
+      "original_surface_types": {
+        "plane": 110,
+        "cylinder": 58,
+        "other": 37,
+        "cone": 11
+      },
+      "result_volume": 2633924.89,
+      "volume_ratio": 1.0,
+      "num_primitives": 44,
+      "primitive_types": {
+        "cylinder": 30,
+        "cone": 1,
+        "plane": 13
+      },
+      "surface_fidelity": {
+        "plane": 1.0,
+        "cylinder": 0.017241379310344827,
+        "cone": 0.0
+      },
+      "valid_brep": true,
+      "elapsed_s": 0.45,
+      "output": "brepformer/brepsimplifier/test_data/results/g-MEC-GRUNDFOSPUMP-P410_LOD400_primitives.step"
+    },
+    {
+      "model_id": "\u00c1111Van",
+      "status": "success",
+      "original_faces": 406,
+      "original_volume": 761003.07,
+      "original_surface_types": {
+        "cylinder": 121,
+        "plane": 183,
+        "torus": 20,
+        "cone": 55,
+        "other": 23,
+        "sphere": 4
+      },
+      "result_volume": 761003.07,
+      "volume_ratio": 1.0,
+      "num_primitives": 227,
+      "primitive_types": {
+        "cylinder": 121,
+        "torus": 20,
+        "cone": 55,
+        "sphere": 4,
+        "plane": 25,
+        "other": 2
+      },
+      "surface_fidelity": {
+        "cylinder": 0.2727272727272727,
+        "plane": 1.0,
+        "torus": 1.0,
+        "cone": 0.32727272727272727,
+        "sphere": 1.0
+      },
+      "valid_brep": true,
+      "elapsed_s": 0.69,
+      "output": "brepformer/brepsimplifier/test_data/results/\u00c1111Van_primitives.step"
+    }
+  ],
+  "partfield_limitations": {
+    "cylinder_radius": "PartField derives radius as sqrt(d1^2 + d2^2)/2 from the bounding box cross-section. This circumscribes the rectangle, overestimating radius by ~41% for a square cross-section. BrepMFR reads exact radius from BRepAdaptor_Surface.Cylinder().",
+    "cylinder_axis": "PartField uses PCA principal component as axis. PCA finds the direction of maximum variance in point cloud, which is only accurate when points are uniformly sampled on the surface. BrepMFR reads the exact axis from the OCC kernel geometry.",
+    "sphere_center": "PartField optimizes center via Powell minimization of distance variance. This is sensitive to sampling density and outliers. BrepMFR reads exact center from BRepAdaptor_Surface.Sphere().",
+    "cone_parameters": "PartField does not fit cones at all \u2014 they fall back to cylinders or oriented bounding boxes. BrepMFR reads exact cone parameters (axis, semi-angle, apex) from the OCC kernel.",
+    "torus_support": "PartField has no torus primitive. Tori are approximated as ellipsoids or boxes. BrepMFR reads exact torus parameters (axis, major/minor radius) from the kernel.",
+    "surface_type_detection": "PartField uses PCA + radial uniformity scoring (statistical) to guess if a cluster is cylindrical. BrepMFR queries the exact analytic surface type from OCCT's BRepAdaptor_Surface.GetType(), which is authoritative \u2014 the CAD kernel knows what surface it is."
+  }
+}

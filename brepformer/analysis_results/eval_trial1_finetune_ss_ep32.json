@@ -1,0 +1,80 @@
+{
+  "checkpoint": "results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt",
+  "split": "test",
+  "label_space": "5",
+  "n_faces": 13445,
+  "per_class": {
+    "cut": {
+      "n": 5425,
+      "precision": 0.9228865194211728,
+      "recall": 0.8934562211981567,
+      "f1": 0.9079329399644094,
+      "n_predicted": 5252,
+      "mean_area": 0.029377422110995376,
+      "mean_conf": 0.9355161093182278
+    },
+    "hole": {
+      "n": 3032,
+      "precision": 0.9314896291640478,
+      "recall": 0.9775725593667546,
+      "f1": 0.9539748953974896,
+      "n_predicted": 3182,
+      "mean_area": 0.04281137347826215,
+      "mean_conf": 0.9768087006810473
+    },
+    "random": {
+      "n": 3011,
+      "precision": 0.843585237258348,
+      "recall": 0.7970773829292593,
+      "f1": 0.819672131147541,
+      "n_predicted": 2845,
+      "mean_area": 0.29879383511165253,
+      "mean_conf": 0.8987840956645485
+    },
+    "fillet": {
+      "n": 1568,
+      "precision": 0.8546099290780141,
+      "recall": 0.9221938775510204,
+      "f1": 0.8871165644171779,
+      "n_predicted": 1692,
+      "mean_area": 0.03359345031848753,
+      "mean_conf": 0.928434783782886
+    },
+    "chamfer": {
+      "n": 409,
+      "precision": 0.8143459915611815,
+      "recall": 0.9437652811735942,
+      "f1": 0.8742921857304644,
+      "n_predicted": 474,
+      "mean_area": 0.0395978988692777,
+      "mean_conf": 0.9584637395764329
+    }
+  },
+  "confusion": {
+    "cut->random": 366,
+    "cut->cut": 4847,
+    "random->random": 2400,
+    "random->cut": 300,
+    "fillet->fillet": 1446,
+    "fillet->random": 36,
+    "hole->hole": 2964,
+    "random->hole": 135,
+    "random->fillet": 118,
+    "fillet->cut": 78,
+    "random->chamfer": 58,
+    "cut->hole": 69,
+    "chamfer->chamfer": 386,
+    "cut->fillet": 123,
+    "chamfer->cut": 3,
+    "hole->random": 35,
+    "chamfer->hole": 11,
+    "cut->chamfer": 20,
+    "fillet->chamfer": 5,
+    "chamfer->fillet": 1,
+    "hole->fillet": 4,
+    "hole->cut": 24,
+    "chamfer->random": 8,
+    "hole->chamfer": 5,
+    "fillet->hole": 3
+  }
+}

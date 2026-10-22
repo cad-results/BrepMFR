@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "output": "brepformer/pipeline_output/05-gland/05-gland_defeatured.step",
+  "num_faces": 35,
+  "kept": 8,
+  "removed": 27,
+  "failed": 0,
+  "valid": true,
+  "elapsed_s": 0.29
+}

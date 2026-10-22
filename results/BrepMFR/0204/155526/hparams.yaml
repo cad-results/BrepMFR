@@ -1,0 +1,19 @@
+args: !!python/object:argparse.Namespace
+  act_dropout: 0.3
+  attention_dropout: 0.3
+  batch_size: 4
+  checkpoint: null
+  d_model: 512
+  dataset: cadsynth
+  dataset_path: data/abc
+  devices: 1
+  dim_node: 256
+  dropout: 0.3
+  experiment_name: BrepMFR
+  gradient_clip_val: 1.0
+  max_epochs: 1
+  n_heads: 32
+  n_layers_encode: 8
+  num_classes: 25
+  num_workers: 4
+  traintest: train

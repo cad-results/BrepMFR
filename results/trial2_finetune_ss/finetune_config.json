@@ -1,0 +1,12 @@
+{
+  "pretrained": "results/trial5/best-epoch=39-val/f1=0.8832.ckpt",
+  "data_dir": "brepformer/data/defeature_processed",
+  "num_classes": 5,
+  "num_face_classes": 5,
+  "freeze_encoder_epochs": 0,
+  "encoder_lr_factor": 0.1,
+  "learning_rate": 0.0001,
+  "warm_start": true,
+  "max_epochs": 100,
+  "batch_size": 8
+}

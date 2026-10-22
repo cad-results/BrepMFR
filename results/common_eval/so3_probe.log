@@ -1,0 +1,83 @@
+~/miniconda3/envs/new_brepmfr/lib/python3.11/site-packages/lightning_fabric/utilities/cloud_io.py:73: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt`
+157 labelled models from brepformer/data/defeature_processed/test (cpu)
+
+[identity]
+  macro 0.8564  weighted 0.8619  trial1_ss1500/best-epoch=57-val
+  macro 0.8886  weighted 0.8951  trial1_finetune_ss/best-epoch=32-val
+  macro 0.8454  weighted 0.8556  t6_init_def_wf/bestface-epoch=29-val
+
+[octahedral-0]
+  macro 0.8203  weighted 0.8317  trial1_ss1500/best-epoch=57-val
+  macro 0.8794  weighted 0.8864  trial1_finetune_ss/best-epoch=32-val
+  macro 0.7518  weighted 0.7488  t6_init_def_wf/bestface-epoch=29-val
+
+[octahedral-1]
+  macro 0.8564  weighted 0.8619  trial1_ss1500/best-epoch=57-val
+  macro 0.8886  weighted 0.8951  trial1_finetune_ss/best-epoch=32-val
+  macro 0.8454  weighted 0.8556  t6_init_def_wf/bestface-epoch=29-val
+
+[octahedral-2]
+  macro 0.6391  weighted 0.6445  trial1_ss1500/best-epoch=57-val
+  macro 0.8836  weighted 0.8909  trial1_finetune_ss/best-epoch=32-val
+  macro 0.5770  weighted 0.5522  t6_init_def_wf/bestface-epoch=29-val
+
+[so3-0]
+  macro 0.8461  weighted 0.8420  trial1_ss1500/best-epoch=57-val
+  macro 0.8753  weighted 0.8837  trial1_finetune_ss/best-epoch=32-val
+  macro 0.8449  weighted 0.8566  t6_init_def_wf/bestface-epoch=29-val
+
+[so3-1]
+  macro 0.5898  weighted 0.6105  trial1_ss1500/best-epoch=57-val
+  macro 0.8503  weighted 0.8605  trial1_finetune_ss/best-epoch=32-val
+  macro 0.5945  weighted 0.5693  t6_init_def_wf/bestface-epoch=29-val
+
+[so3-2]
+  macro 0.7445  weighted 0.7697  trial1_ss1500/best-epoch=57-val
+  macro 0.8697  weighted 0.8797  trial1_finetune_ss/best-epoch=32-val
+  macro 0.7233  weighted 0.7166  t6_init_def_wf/bestface-epoch=29-val
+
+[so3-3]
+  macro 0.7860  weighted 0.8224  trial1_ss1500/best-epoch=57-val
+  macro 0.8602  weighted 0.8751  trial1_finetune_ss/best-epoch=32-val
+  macro 0.7111  weighted 0.6998  t6_init_def_wf/bestface-epoch=29-val
+
+[so3-4]
+  macro 0.7649  weighted 0.7377  trial1_ss1500/best-epoch=57-val
+  macro 0.8722  weighted 0.8846  trial1_finetune_ss/best-epoch=32-val
+  macro 0.7660  weighted 0.7624  t6_init_def_wf/bestface-epoch=29-val
+
+[so3-5]
+  macro 0.7331  weighted 0.7967  trial1_ss1500/best-epoch=57-val
+  macro 0.8470  weighted 0.8602  trial1_finetune_ss/best-epoch=32-val
+  macro 0.8337  weighted 0.8442  t6_init_def_wf/bestface-epoch=29-val
+
+results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt
+  -> retains 86.9% of macro F1 under SO(3), 90.1% under the 90-degree augmentation it was trained with
+
+results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt
+  -> retains 97.1% of macro F1 under SO(3), 99.5% under the 90-degree augmentation it was trained with
+
+results/t6_init_def_wf/bestface-epoch=29-val/face_f1=0.8177.ckpt
+  -> retains 88.2% of macro F1 under SO(3), 85.7% under the 90-degree augmentation it was trained with
+
+wrote results/common_eval/so3_probe_defeature_test.json

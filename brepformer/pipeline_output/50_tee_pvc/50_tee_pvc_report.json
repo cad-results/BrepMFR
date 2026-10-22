@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "output": "brepformer/pipeline_output/50_tee_pvc/50_tee_pvc_defeatured.step",
+  "num_faces": 31,
+  "kept": 8,
+  "removed": 23,
+  "failed": 0,
+  "valid": true,
+  "elapsed_s": 0.2
+}

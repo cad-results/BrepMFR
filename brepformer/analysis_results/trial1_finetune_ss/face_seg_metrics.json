@@ -1,0 +1,51 @@
+{
+  "face_accuracy": 0.8957976698875427,
+  "mean_iou": 0.8024642148302714,
+  "per_class": [
+    {
+      "class_id": 0,
+      "class_name": "chamfer",
+      "precision": 0.843585237258348,
+      "recall": 0.7970773829292593,
+      "f1": 0.819672131147541,
+      "iou": 0.6944444444444444,
+      "support": 3011
+    },
+    {
+      "class_id": 1,
+      "class_name": "through_hole",
+      "precision": 0.9314896291640478,
+      "recall": 0.9775725593667546,
+      "f1": 0.9539748953974896,
+      "iou": 0.912,
+      "support": 3032
+    },
+    {
+      "class_id": 2,
+      "class_name": "triangular_passage",
+      "precision": 0.8143459915611815,
+      "recall": 0.9437652811735942,
+      "f1": 0.8742921857304644,
+      "iou": 0.7766599597585513,
+      "support": 409
+    },
+    {
+      "class_id": 3,
+      "class_name": "rectangular_passage",
+      "precision": 0.854695806261075,
+      "recall": 0.9228316326530612,
+      "f1": 0.8874578350199325,
+      "iou": 0.7976846747519294,
+      "support": 1568
+    },
+    {
+      "class_id": 4,
+      "class_name": "6sides_passage",
+      "precision": 0.9230622738525995,
+      "recall": 0.8934562211981567,
+      "f1": 0.9080179842637692,
+      "iou": 0.8315319951964316,
+      "support": 5425
+    }
+  ]
+}

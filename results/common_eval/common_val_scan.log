@@ -1,0 +1,40 @@
+~/miniconda3/envs/new_brepmfr/lib/python3.11/site-packages/lightning_fabric/utilities/cloud_io.py:73: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt`
+results/trial1_finetune_ss/best-epoch=32-val: 1 checkpoints
+results/trial1_ss1500/best-epoch=57-val: 1 checkpoints
+results/t6ctl_init_ft/bestface-epoch=00-val: 1 checkpoints
+results/t6ctl_init_ft/bestface-epoch=01-val: 1 checkpoints
+results/t6ctl_init_ft/bestface-epoch=02-val: 1 checkpoints
+results/t6_init_def/bestface-epoch=00-val: 1 checkpoints
+results/t6_init_def/bestface-epoch=22-val: 1 checkpoints
+results/t6_init_def/bestface-epoch=25-val: 1 checkpoints
+results/t6_init_def_wf/bestface-epoch=25-val: 1 checkpoints
+results/t6_init_def_wf/bestface-epoch=29-val: 1 checkpoints
+loaded 157 labelled models from brepformer/data/defeature_processed/test
+scoring 10 checkpoints on 5-class face F1 (cpu)
+
+  [1/10] macro 0.8886  weighted 0.8951  minclass 0.8197  trial1_finetune_ss/best-epoch=32-val  (eta 2m)
+  [2/10] macro 0.8564  weighted 0.8619  minclass 0.7776  trial1_ss1500/best-epoch=57-val  (eta 2m)
+  [3/10] macro 0.8819  weighted 0.8892  minclass 0.8041  t6ctl_init_ft/bestface-epoch=00-val  (eta 2m)
+  [4/10] macro 0.8860  weighted 0.8959  minclass 0.8192  t6ctl_init_ft/bestface-epoch=01-val  (eta 2m)
+  [5/10] macro 0.8808  weighted 0.8905  minclass 0.8134  t6ctl_init_ft/bestface-epoch=02-val  (eta 1m)
+  [6/10] macro 0.7669  weighted 0.7689  minclass 0.6389  t6_init_def/bestface-epoch=00-val  (eta 1m)
+  [7/10] macro 0.6807  weighted 0.6878  minclass 0.4098  t6_init_def/bestface-epoch=22-val  (eta 1m)
+  [8/10] macro 0.6525  weighted 0.6330  minclass 0.4437  t6_init_def/bestface-epoch=25-val  (eta 1m)
+  [9/10] macro 0.8339  weighted 0.8484  minclass 0.7651  t6_init_def_wf/bestface-epoch=25-val  (eta 0m)
+  [10/10] macro 0.8454  weighted 0.8556  minclass 0.7765  t6_init_def_wf/bestface-epoch=29-val  (eta 0m)
+
+rank    macro  weight  minCls      random      hole   chamfer    fillet       cut  run/epoch
+1      0.8886  0.8951  0.8197       0.820     0.954     0.874     0.887     0.908  trial1_finetune_ss/best-epoch=32-val
+2      0.8860  0.8959  0.8192       0.819     0.955     0.857     0.887     0.911  t6ctl_init_ft/bestface-epoch=01-val
+3      0.8819  0.8892  0.8041       0.804     0.950     0.865     0.886     0.905  t6ctl_init_ft/bestface-epoch=00-val
+4      0.8808  0.8905  0.8134       0.813     0.947     0.853     0.884     0.906  t6ctl_init_ft/bestface-epoch=02-val
+5      0.8564  0.8619  0.7776       0.778     0.976     0.836     0.839     0.853  trial1_ss1500/best-epoch=57-val
+6      0.8454  0.8556  0.7765       0.777     0.971     0.810     0.821     0.849  t6_init_def_wf/bestface-epoch=29-val
+7      0.8339  0.8484  0.7651       0.765     0.964     0.778     0.819     0.844  t6_init_def_wf/bestface-epoch=25-val
+8      0.7669  0.7689  0.6389       0.639     0.889     0.821     0.694     0.792  t6_init_def/bestface-epoch=00-val
+9      0.6807  0.6878  0.4098       0.410     0.893     0.666     0.713     0.722  t6_init_def/bestface-epoch=22-val
+10     0.6525  0.6330  0.4437       0.444     0.890     0.646     0.713     0.571  t6_init_def/bestface-epoch=25-val
+
+wrote results/common_eval/common_val_defeature_test.json (10 checkpoints)

@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "output": "brepformer/pipeline_output/uh62382/uh62382_defeatured.step",
+  "num_faces": 1395,
+  "kept": 952,
+  "removed": 443,
+  "failed": 0,
+  "valid": true,
+  "elapsed_s": 145.12
+}

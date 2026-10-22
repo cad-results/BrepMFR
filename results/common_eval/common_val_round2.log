@@ -1,0 +1,34 @@
+~/miniconda3/envs/new_brepmfr/lib/python3.11/site-packages/lightning_fabric/utilities/cloud_io.py:73: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_finetune_ss/best-epoch=32-val/f1=0.9354.ckpt`
+Lightning automatically upgraded your loaded checkpoint from v1.7.1 to v2.6.1. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint results/trial1_ss1500/best-epoch=57-val/f1=0.9415.ckpt`
+results/trial1_finetune_ss/best-epoch=32-val: 1 checkpoints
+results/trial1_ss1500/best-epoch=57-val: 1 checkpoints
+results/t6_init_def_wf/bestface-epoch=61-val: 1 checkpoints
+results/t6_init_def_wf/bestface-epoch=66-val: 1 checkpoints
+results/t6_init_def_wf/bestface-epoch=67-val: 1 checkpoints
+results/t6_init_ft/bestface-epoch=44-val: 1 checkpoints
+results/t6_init_ft/bestface-epoch=50-val: 1 checkpoints
+results/t6_init_ft/bestface-epoch=52-val: 1 checkpoints
+loaded 157 labelled models from brepformer/data/defeature_processed/test
+scoring 8 checkpoints on 5-class face F1 (cpu)
+
+  [1/8] macro 0.8886  weighted 0.8951  minclass 0.8197  trial1_finetune_ss/best-epoch=32-val  (eta 2m)
+  [2/8] macro 0.8564  weighted 0.8619  minclass 0.7776  trial1_ss1500/best-epoch=57-val  (eta 2m)
+  [3/8] macro 0.8559  weighted 0.8672  minclass 0.7924  t6_init_def_wf/bestface-epoch=61-val  (eta 1m)
+  [4/8] macro 0.8543  weighted 0.8629  minclass 0.7905  t6_init_def_wf/bestface-epoch=66-val  (eta 1m)
+  [5/8] macro 0.8579  weighted 0.8662  minclass 0.7899  t6_init_def_wf/bestface-epoch=67-val  (eta 1m)
+  [6/8] macro 0.8380  weighted 0.8520  minclass 0.7540  t6_init_ft/bestface-epoch=44-val  (eta 1m)
+  [7/8] macro 0.8425  weighted 0.8541  minclass 0.7560  t6_init_ft/bestface-epoch=50-val  (eta 0m)
+  [8/8] macro 0.8426  weighted 0.8546  minclass 0.7592  t6_init_ft/bestface-epoch=52-val  (eta 0m)
+
+rank    macro  weight  minCls      random      hole   chamfer    fillet       cut  run/epoch
+1      0.8886  0.8951  0.8197       0.820     0.954     0.874     0.887     0.908  trial1_finetune_ss/best-epoch=32-val
+2      0.8579  0.8662  0.7899       0.790     0.966     0.830     0.841     0.862  t6_init_def_wf/bestface-epoch=67-val
+3      0.8564  0.8619  0.7776       0.778     0.976     0.836     0.839     0.853  trial1_ss1500/best-epoch=57-val
+4      0.8559  0.8672  0.7924       0.792     0.966     0.816     0.840     0.865  t6_init_def_wf/bestface-epoch=61-val
+5      0.8543  0.8629  0.7905       0.790     0.965     0.822     0.837     0.857  t6_init_def_wf/bestface-epoch=66-val
+6      0.8426  0.8546  0.7592       0.759     0.944     0.812     0.830     0.868  t6_init_ft/bestface-epoch=52-val
+7      0.8425  0.8541  0.7560       0.756     0.945     0.816     0.827     0.868  t6_init_ft/bestface-epoch=50-val
+8      0.8380  0.8520  0.7540       0.754     0.945     0.798     0.828     0.866  t6_init_ft/bestface-epoch=44-val
+
+wrote results/common_eval/common_val_round2.json (8 checkpoints)

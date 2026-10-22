@@ -1,0 +1,34 @@
+{
+  "brepformer/data/defeature_uv_processed/test": {
+    "faces": 13445,
+    "masked_mean": 0.39995983637039795,
+    "masked_median": 0.36,
+    "masked_p90": 0.56,
+    "frac_faces_any_masked": 1.0,
+    "frac_faces_over_half_masked": 0.11372257344737821
+  },
+  "brepformer/data/defeature_uv_processed/train": {
+    "faces": 14191,
+    "masked_mean": 0.4033774927771123,
+    "masked_median": 0.36,
+    "masked_p90": 0.56,
+    "frac_faces_any_masked": 1.0,
+    "frac_faces_over_half_masked": 0.1221196533013882
+  },
+  "brepformer/data/defeature_processed/test": {
+    "faces": 13445,
+    "masked_mean": 0.0,
+    "masked_median": 0.0,
+    "masked_p90": 0.0,
+    "frac_faces_any_masked": 0.0,
+    "frac_faces_over_half_masked": 0.0
+  },
+  "brepformer/data/mftrcad_processed/test": {
+    "faces": 4961,
+    "masked_mean": 0.44455150171336427,
+    "masked_median": 0.36,
+    "masked_p90": 0.64,
+    "frac_faces_any_masked": 1.0,
+    "frac_faces_over_half_masked": 0.22092320096754686
+  }
+}
